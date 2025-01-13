@@ -6,6 +6,11 @@ body {
   background-color: #ecf0f1;
 }
 
+.highlight {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
 header {
   text-align: center;
   padding: 20px;
@@ -13,7 +18,7 @@ header {
 }
 
 header h1 {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 18px;
   color: #34495e; /* Contraste con el fondo claro */
 }
@@ -33,17 +38,14 @@ iframe {
 }
 
 section {
-  margin-bottom: 50px;
+  margin: 40px auto; /* Más uniforme y centrado */
   padding: 20px;
+  max-width: 800px; /* Asegura que las secciones no se expandan demasiado */
 }
 
 /* Espaciado interno dentro de cada sección */
 section h2 {
   margin-bottom: 20px;
-}
-
-header h1 {
-  margin-top: 20px;
 }
 
 #benefits,
@@ -134,19 +136,23 @@ header h1 {
   }
 }
 
+/* MÓVILES */
+
 /* Media queries para móviles (pantallas de menos de 768px) */
 @media (max-width: 767px) {
   body {
-    font-size: 16px; /* Ajusta el tamaño del texto */
+    font-size: 14px; /* Ajusta el tamaño del texto */
     padding: 0 10px; /* Espaciado lateral para móviles */
   }
 
-  /* Hacer que el formulario y las secciones se ajusten a pantallas pequeñas */
-  .contact-form,
+  header img {
+    width: 75%; /* El logo ocupa más espacio */
+  }
+
   #benefits,
-  #video-demo {
-    max-width: 90%; /* Reduce el ancho para pantallas pequeñas */
-    padding: 15px;
+  #video-demo,
+  .contact-form {
+    max-width: 95%; /* Reduce el ancho para pantallas pequeñas */
   }
 
   /* Centra el video y ajusta su tamaño */
@@ -161,10 +167,6 @@ header h1 {
     max-width: 300px; /* No excede los 300px */
   }
 
-  header h1 {
-    font-size: 20px; /* Reduce el tamaño del título */
-  }
-
   /* Beneficios: Mejora el espaciado en móviles */
   #benefits ul {
     padding: 0;
@@ -175,15 +177,6 @@ header h1 {
     font-size: 16px;
   }
 
-  /* Botón del formulario */
-  .contact-form button {
-    font-size: 16px;
-    padding: 10px 15px; /* Más espacio en el botón */
-  }
-  header img {
-    width: 80%; /* El logo ocupa más espacio */
-  }
-
   header h1 {
     font-size: 18px; /* Reduce más el tamaño del texto */
   }
@@ -192,8 +185,20 @@ header h1 {
     font-size: 14px; /* Texto más compacto */
   }
 
+  #video-demo video {
+    width: 90%; /* Más espacio para bordes */
+    max-width: 600px; /* Asegura que no sea demasiado grande */
+    margin: 0 auto; /* Centrado */
+  }
+
+  .contact-form {
+    margin: 20px auto;
+    padding: 20px 15px; /* Reduce padding en pantallas pequeñas */
+  }
+
+  /* Botón del formulario */
   .contact-form button {
-    font-size: 14px;
-    padding: 8px 10px;
+    font-size: 16px;
+    padding: 10px 15px; /* Más espacio en el botón */
   }
 }
