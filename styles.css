@@ -17,12 +17,6 @@ header {
   color: #2c3e50; /* Gris oscuro para el texto */
 }
 
-header h1 {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #34495e; /* Contraste con el fondo claro */
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -130,10 +124,6 @@ section h2 {
   #video-demo {
     max-width: 80%; /* Reduce el ancho */
   }
-
-  header h1 {
-    font-size: 24px;
-  }
 }
 
 /* MÓVILES */
@@ -175,10 +165,6 @@ section h2 {
   #benefits ul li {
     margin: 10px 0;
     font-size: 16px;
-  }
-
-  header h1 {
-    font-size: 18px; /* Reduce más el tamaño del texto */
   }
 
   ul li {
