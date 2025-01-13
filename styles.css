@@ -1,20 +1,35 @@
+:root {
+  --color-primary: #1abc9c; /* Turquesa principal de 'Viva' */
+  --color-primary-dark: #16a085; /* Turquesa más oscuro de la onda */
+  --color-primary-darker: #0e6655; /* Turquesa aún más oscuro para el hover */
+  --color-primary-shadow: rgba(26, 188, 156, 0.5);
+  --color-dark: #34495e; /* Gris oscuro de 'Speak' */
+  --color-text: #2c3e50; /* Color de texto más oscuro del eslogan y fondo oscuro */
+  --color-light: #ecf0f1; /* Gris claro del 'Speak' en fondo oscuro */
+  --color-border: #bdc3c7; /* Color del borde y del eslogan con fondo oscuro */
+  --color-white: #ffffff; /* Blanco */
+  --color-black: rgba(0, 0, 0, 0.1); /* Negro con transparencia */
+  --color-black-20: rgba(0, 0, 0, 0.2);
+  --color-black-30: rgba(0, 0, 0, 0.3);
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  color: #34495e;
-  background-color: #ecf0f1;
+  color: var(--color-dark);
+  background-color: var(--color-light);
 }
 
 .highlight {
-  color: #1abc9c;
+  color: var(--color-primary);
   font-weight: bold;
 }
 
 header {
   text-align: center;
   padding: 20px;
-  color: #2c3e50; /* Gris oscuro para el texto */
+  color: var(--color-text);
 }
 
 ul {
@@ -56,7 +71,7 @@ section h2 {
   max-width: 80%; /* Ajusta el ancho máximo del video */
   height: auto; /* Mantiene la proporción del video */
   border-radius: 10px; /* Opcional: para bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: añade una sombra para mejorar el diseño */
+  box-shadow: 0 4px 8px var(--color-black-20); /* Opcional: añade una sombra para mejorar el diseño */
 }
 
 /* Formulario */
@@ -64,15 +79,15 @@ section h2 {
   margin: 20px auto;
   padding: 20px;
   max-width: 600px;
-  background-color: #ffffff; /* Fondo blanco para contraste */
+  background-color: var(--color-white); /* Fondo blanco para contraste */
   border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+  box-shadow: 0 4px 8px var(--color-black); /* Sombra para un efecto de elevación */
 }
 
 .contact-form label {
   display: block;
   font-weight: bold;
-  color: #34495e; /* Color de texto gris oscuro */
+  color: var(--color-dark);
   margin-bottom: 10px;
 }
 
@@ -82,7 +97,7 @@ section h2 {
   width: 100%; /* Ajusta el ancho de los campos al contenedor */
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #bdc3c7; /* Borde gris claro */
+  border: 1px solid var(--color-border); /* Borde del campo */
   border-radius: 5px; /* Bordes redondeados */
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
@@ -96,21 +111,23 @@ section h2 {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #1abc9c; /* Cambia el color del borde al enfocar */
+  border-color: var(--color-primary); /* Cambia el color del borde al enfocar */
   outline: none; /* Elimina el borde azul predeterminado */
-  box-shadow: 0 0 5px rgba(26, 188, 156, 0.5); /* Añade un efecto de enfoque */
+  box-shadow: 0 0 5px var(--color-primary-shadow); /* Añade un efecto de enfoque */
 }
 
 .contact-form button {
-  background-color: #1abc9c; /* Color principal */
-  color: white; /* Texto blanco */
+  background-color: var(--color-primary); /* Color principal */
+  color: var(--color-white); /* Texto blanco */
   border: none; /* Sin borde */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Transición para un efecto suave */
 }
 
 .contact-form button:hover {
-  background-color: #16a085; /* Color más oscuro al pasar el mouse */
+  background-color: var(
+    --color-primary-dark
+  ); /* Color más oscuro al pasar el mouse */
 }
 
 /* Media queries para tabletas (pantallas entre 768px y 1024px) */
