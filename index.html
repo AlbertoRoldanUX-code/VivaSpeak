@@ -3,17 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <title>VivaSpeak</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <!-- JavaScript -->
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script defer src="index.js" charset="utf-8"></script>
   </head>
   <body>
     <!-- - **Inicio**: Presentación breve con el logo y un texto atractivo.   -->
     <header>
-      <img
-        src="assets/Logo transparente.png"
-        alt="VivaSpeak Logo with the slogan 'Amplify Your Voice. Connect Everywhere.'"
-      />
+      <div class="header-container">
+        <div class="brand">
+          <img
+            src="assets/Logo transparente cropped.png"
+            alt="VivaSpeak Logo with the slogan 'Amplify Your Voice. Connect Everywhere.'"
+          />
+        </div>
+        <nav class="top-nav">
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list" style="display: none">
+            <li>
+              <a href="#benefits">Benefits</a>
+            </li>
+            <li>
+              <a href="#video-demo">Video Demo</a>
+            </li>
+            <li>
+              <a class="btn" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- - **Beneficios**: Una lista con íconos y texto (como "24/7 support," "Answer customer questions").   -->
@@ -67,5 +93,10 @@
         </form>
       </div>
     </section>
+    <footer>
+      <p class="Copyright">
+        © <span id="year"></span> VivaSpeak. All rights reserved.
+      </p>
+    </footer>
   </body>
 </html>

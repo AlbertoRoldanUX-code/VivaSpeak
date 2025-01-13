@@ -19,6 +19,11 @@ body {
   padding: 0;
   color: var(--color-dark);
   background-color: var(--color-light);
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .highlight {
@@ -26,18 +31,180 @@ body {
   font-weight: bold;
 }
 
+/* **********NAV BAR*********** */
 header {
+  background-color: var(--color-white);
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
   text-align: center;
-  padding: 20px;
   color: var(--color-text);
 }
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 80px;
+}
+
+.brand {
+  padding-left: 20px;
+}
+
+.brand img,
+.brand img:visited {
+  color: var(--color-white);
+  text-decoration: none;
+  height: 70px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  float: left;
+  position: relative;
+}
+
+nav ul li a {
+  cursor: pointer;
+  display: block;
+  padding: 0 20px;
+  line-height: 80px;
+  background: var(--color-white);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: var(--color-primary-darker);
+  color: var(--color-text);
+}
+
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+
+nav ul li .btn {
+  line-height: 80px; /* Ajusta esto al mismo line-height que los otros enlaces */
+  margin: 0; /* Elimina el margen si no es necesario */
+}
+
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 75px;
+  width: 75px;
+}
+
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: var(--color-text); /* El color del símbolo en la navegación */
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+
+#nav-toggle span:before {
+  top: -10px;
+}
+
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle.active span {
+  background-color: transparent;
+}
+
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
+  top: 0;
+}
+
+#nav-toggle.active span:before {
+  transform: rotate(-45deg);
+}
+
+#nav-toggle.active span:after {
+  transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  .top-nav {
+    position: absolute;
+    width: 100%;
+    padding: 74px 0 15px;
+    display: block;
+    top: 0;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul li {
+    float: none;
+  }
+
+  nav ul li a {
+    padding: 20px;
+    line-height: 20px;
+  }
+
+  nav ul li .btn {
+    line-height: 20px;
+    margin: 0;
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+
+/*****************TOP-CONTAINER*****************/
 
 ul {
   list-style: none;
   padding: 0;
 }
 
-ul li {
+#benefits ul li {
   margin: 10px 0;
 }
 
@@ -63,6 +230,7 @@ section h2 {
   margin: 20px auto;
   max-width: 800px;
   text-align: center;
+  padding: 70px 2rem 130px;
 }
 
 #video-demo video {
@@ -132,10 +300,6 @@ section h2 {
 
 /* Media queries para tabletas (pantallas entre 768px y 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-  header img {
-    width: 50%;
-  }
-
   .contact-form,
   #benefits,
   #video-demo {
@@ -143,35 +307,42 @@ section h2 {
   }
 }
 
-/* MÓVILES */
+/*****************FOOTER*****************/
+footer {
+  background-color: var(--color-primary-darker);
+  padding: 15px 0;
+  color: var(--color-white);
+}
+.Copyright {
+  font-size: 0.75rem;
+  padding: 20px 0;
+}
 
-/* Media queries para móviles (pantallas de menos de 768px) */
+.footer-link {
+  margin: 10px 20px;
+}
+
+.footer-link:hover {
+  color: #eaf6f6;
+}
+
+/*****************RESPONSIVENESS*****************/
 @media (max-width: 767px) {
   body {
     font-size: 14px; /* Ajusta el tamaño del texto */
-    padding: 0 10px; /* Espaciado lateral para móviles */
-  }
-
-  header img {
-    width: 75%; /* El logo ocupa más espacio */
   }
 
   #benefits,
   #video-demo,
-  .contact-form {
+  #contact {
     max-width: 95%; /* Reduce el ancho para pantallas pequeñas */
+    padding-bottom: 80px;
   }
 
   /* Centra el video y ajusta su tamaño */
   #video-demo video {
     width: 100%; /* Ocupa todo el ancho del contenedor */
     height: auto; /* Mantén las proporciones */
-  }
-
-  /* Ajustes para el header */
-  header img {
-    width: 70%; /* Ajusta el tamaño del logo en pantallas pequeñas */
-    max-width: 300px; /* No excede los 300px */
   }
 
   /* Beneficios: Mejora el espaciado en móviles */
