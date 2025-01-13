@@ -26,11 +26,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.highlight {
-  color: var(--color-primary);
-  font-weight: bold;
-}
-
 /* **********NAV BAR*********** */
 header {
   background-color: var(--color-white);
