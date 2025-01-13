@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>VivaSpeak</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- - **Inicio**: Presentación breve con el logo y un texto atractivo.   -->
+    <header>
+      <img src="assets/Logo transparente.png" alt="VivaSpeak Logo" />
+      <h1>Amplify Your Voice. Connect Everywhere.</h1>
+    </header>
+
+    <!-- - **Beneficios**: Una lista con íconos y texto (como "24/7 support," "Answer customer questions").   -->
+    <section id="benefits">
+      <h2>Why Choose VivaSpeak?</h2>
+      <ul>
+        <li>
+          <strong>24/7 Availability:</strong> Be there for your customers
+          anytime.
+        </li>
+        <li><strong>Multilingual Support:</strong> Break language barriers.</li>
+        <li>
+          <strong>Streamline Bookings:</strong> Save time and boost efficiency.
+        </li>
+      </ul>
+    </section>
+
+    <!-- - **Video demo**: Usa un `<video>` o incrusta un enlace de YouTube/Vimeo.   -->
+    <section id="video-demo">
+      <h2>See VivaSpeak in Action</h2>
+      <video controls>
+        <source src="assets/VivaSpeak-1080p-250110.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- - **Formulario de contacto** -->
+    <section id="contact">
+      <h2>Contact VivaSpeak</h2>
+      <p>Need assistance or have a question? Fill out the form below!</p>
+      <div class="contact-form card">
+        <form
+          action="/success"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+
+          <label for="message">Message</label>
+          <textarea name="message" id="message" required></textarea>
+
+          <div data-netlify-recaptcha="true"></div>
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

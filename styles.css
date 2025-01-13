@@ -1,0 +1,199 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #34495e;
+  background-color: #ecf0f1;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  color: #2c3e50; /* Gris oscuro para el texto */
+}
+
+header h1 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #34495e; /* Contraste con el fondo claro */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+}
+
+section {
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+/* Espaciado interno dentro de cada sección */
+section h2 {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin-top: 20px;
+}
+
+#benefits,
+#video-demo,
+#contact {
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+#video-demo video {
+  display: block; /* Centra el video */
+  margin: 0 auto; /* Centra el video horizontalmente */
+  max-width: 80%; /* Ajusta el ancho máximo del video */
+  height: auto; /* Mantiene la proporción del video */
+  border-radius: 10px; /* Opcional: para bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: añade una sombra para mejorar el diseño */
+}
+
+/* Formulario */
+.contact-form {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #ffffff; /* Fondo blanco para contraste */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  color: #34495e; /* Color de texto gris oscuro */
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%; /* Ajusta el ancho de los campos al contenedor */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #bdc3c7; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 20px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #1abc9c; /* Cambia el color del borde al enfocar */
+  outline: none; /* Elimina el borde azul predeterminado */
+  box-shadow: 0 0 5px rgba(26, 188, 156, 0.5); /* Añade un efecto de enfoque */
+}
+
+.contact-form button {
+  background-color: #1abc9c; /* Color principal */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición para un efecto suave */
+}
+
+.contact-form button:hover {
+  background-color: #16a085; /* Color más oscuro al pasar el mouse */
+}
+
+/* Media queries para tabletas (pantallas entre 768px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  header img {
+    width: 50%;
+  }
+
+  .contact-form,
+  #benefits,
+  #video-demo {
+    max-width: 80%; /* Reduce el ancho */
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+}
+
+/* Media queries para móviles (pantallas de menos de 768px) */
+@media (max-width: 767px) {
+  body {
+    font-size: 16px; /* Ajusta el tamaño del texto */
+    padding: 0 10px; /* Espaciado lateral para móviles */
+  }
+
+  /* Hacer que el formulario y las secciones se ajusten a pantallas pequeñas */
+  .contact-form,
+  #benefits,
+  #video-demo {
+    max-width: 90%; /* Reduce el ancho para pantallas pequeñas */
+    padding: 15px;
+  }
+
+  /* Centra el video y ajusta su tamaño */
+  #video-demo video {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Mantén las proporciones */
+  }
+
+  /* Ajustes para el header */
+  header img {
+    width: 70%; /* Ajusta el tamaño del logo en pantallas pequeñas */
+    max-width: 300px; /* No excede los 300px */
+  }
+
+  header h1 {
+    font-size: 20px; /* Reduce el tamaño del título */
+  }
+
+  /* Beneficios: Mejora el espaciado en móviles */
+  #benefits ul {
+    padding: 0;
+  }
+
+  #benefits ul li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  /* Botón del formulario */
+  .contact-form button {
+    font-size: 16px;
+    padding: 10px 15px; /* Más espacio en el botón */
+  }
+  header img {
+    width: 80%; /* El logo ocupa más espacio */
+  }
+
+  header h1 {
+    font-size: 18px; /* Reduce más el tamaño del texto */
+  }
+
+  ul li {
+    font-size: 14px; /* Texto más compacto */
+  }
+
+  .contact-form button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
