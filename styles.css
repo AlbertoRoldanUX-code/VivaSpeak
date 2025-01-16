@@ -28,6 +28,25 @@ html {
   scroll-behavior: smooth;
 }
 
+#home,
+#features,
+#video-demo,
+#contact {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 90px 2rem 130px;
+}
+
+/* Espaciado interno dentro de cada sección */
+section h2 {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -57,7 +76,6 @@ header {
   top: 0;
   width: 100%;
   z-index: 4;
-  text-align: center;
   color: var(--color-text);
 }
 
@@ -109,7 +127,6 @@ header {
 }
 
 nav ul {
-  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -255,7 +272,6 @@ nav ul li a.btn-primary:hover {
 .home-section {
   background-color: var(--color-light);
   padding: 100px 20px; /* Ajusta el espaciado superior/inferior */
-  text-align: center;
 }
 
 .home-container {
@@ -305,37 +321,19 @@ nav ul li a.btn-primary:hover {
   color: var(--color-white);
 }
 
-/* ********** BENEFITS SECTION *********** */
+/* ********** FEATURES SECTION *********** */
 
-ul {
-  list-style: none;
-  padding: 0;
+#features ul li {
+  margin: 20px 0;
+  font-size: 1rem;
+  color: var(--color-text);
 }
 
-#benefits ul li {
-  margin: 10px 0;
+#features ul li strong {
+  color: var(--color-primary-dark);
 }
 
-section {
-  margin: 40px auto; /* Más uniforme y centrado */
-  padding: 20px;
-  max-width: 800px; /* Asegura que las secciones no se expandan demasiado */
-}
-
-/* Espaciado interno dentro de cada sección */
-section h2 {
-  margin-bottom: 20px;
-}
-
-#home,
-#benefits,
-#video-demo,
-#contact {
-  margin: 20px auto;
-  max-width: 800px;
-  text-align: center;
-  padding: 90px 2rem 130px;
-}
+/* ********** DEMO SECTION *********** */
 
 #video-demo video {
   display: block; /* Centra el video */
@@ -346,7 +344,7 @@ section h2 {
   box-shadow: 0 4px 8px var(--color-black-20); /* Opcional: añade una sombra para mejorar el diseño */
 }
 
-/* Formulario */
+/* ********** CONTACT FORM SECTION *********** */
 .contact-form {
   margin: 20px auto;
   padding: 20px;
@@ -426,7 +424,7 @@ footer {
 /* Media queries para tabletas (pantallas entre 768px y 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .contact-form,
-  #benefits,
+  #features,
   #video-demo {
     max-width: 80%; /* Reduce el ancho */
   }
@@ -512,7 +510,7 @@ footer {
   }
 
   #home-container,
-  #benefits,
+  #features,
   #video-demo,
   #contact {
     max-width: 95%; /* Reduce el ancho para pantallas pequeñas */
@@ -526,11 +524,11 @@ footer {
   }
 
   /* Beneficios: Mejora el espaciado en móviles */
-  #benefits ul {
+  #features ul {
     padding: 0;
   }
 
-  #benefits ul li {
+  #features ul li {
     margin: 10px 0;
     font-size: 16px;
   }
