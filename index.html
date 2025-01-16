@@ -27,7 +27,7 @@
           <div class="nav-mobile">
             <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-          <ul class="nav-list" style="display: none">
+          <ul class="nav-list">
             <li>
               <a href="#benefits">Benefits</a>
             </li>
@@ -35,13 +35,28 @@
               <a href="#video-demo">Video Demo</a>
             </li>
             <li>
-              <a class="btn" href="#contact">Contact</a>
+              <a class="btn-primary" href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
-
+    <section id="home" class="home-section">
+      <div class="home-container">
+        <h1 class="home-title">
+          <span class="highlight">Amplify Your Voice.</span> Connect Everywhere.
+        </h1>
+        <p class="home-description">
+          VivaSpeak revolutionizes customer interactions by providing 24/7
+          availability, automating bookings, and delivering seamless and
+          personalized communication tailored to your business needs.
+        </p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn-primary">Contact Us</a>
+          <a href="#video-demo" class="btn-secondary">Request a Demo</a>
+        </div>
+      </div>
+    </section>
     <!-- - **Beneficios**: Una lista con íconos y texto (como "24/7 support," "Answer customer questions").   -->
     <section id="benefits">
       <h2>Why Choose VivaSpeak?</h2>
@@ -89,7 +104,7 @@
           <textarea name="message" id="message" required></textarea>
 
           <div data-netlify-recaptcha="true"></div>
-          <button type="submit" class="btn">Send</button>
+          <button type="submit" class="btn-primary btn-contact">Send</button>
         </form>
       </div>
     </section>

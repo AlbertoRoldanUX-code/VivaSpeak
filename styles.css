@@ -1,3 +1,4 @@
+/* **********GENERAL*********** */
 :root {
   --color-primary: #1abc9c; /* Turquesa principal de 'Viva' */
   --color-primary-dark: #16a085; /* Turquesa más oscuro de la onda */
@@ -11,6 +12,7 @@
   --color-black: rgba(0, 0, 0, 0.1); /* Negro con transparencia */
   --color-black-20: rgba(0, 0, 0, 0.2);
   --color-black-30: rgba(0, 0, 0, 0.3);
+  --common-shadow: 0 4px 8px var(--color-black-20);
 }
 
 body {
@@ -26,9 +28,30 @@ html {
   scroll-behavior: smooth;
 }
 
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 15px 35px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: 2px solid transparent; /* Borde invisible por defecto */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-darker);
+  border-color: var(--color-primary-dark); /* Aparece borde */
+  color: var(--color-white); /* Mantiene el color del texto en blanco */
+}
+
+.highlight {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
 /* **********NAV BAR*********** */
 header {
-  background-color: var(--color-white);
   height: 80px;
   position: fixed;
   top: 0;
@@ -36,17 +59,42 @@ header {
   z-index: 4;
   text-align: center;
   color: var(--color-text);
-  box-shadow: 0 4px 6px var(--color-black); /* Sombra sutil */
 }
 
 .header-container {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 20px auto; /* Añade un margen superior e inferior de 20px, y auto para centrar horizontalmente */
+  padding: 0 20px; /* Añade padding a los lados para evitar que el contenido toque los bordes del navegador */
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   height: 80px;
+  box-shadow: 0 4px 6px var(--color-black); /* Sombra sutil */
+  background-color: rgba(255, 255, 255, 0.9); /* Blanco con transparencia */
+  border-radius: 10px;
+}
+.nav-list {
+  display: flex;
+  align-items: center; /* Asegúrate de que esto esté activo */
+  justify-content: center; /* Centra los elementos horizontalmente si es necesario */
+  width: 100%; /* Ocupa todo el ancho disponible del contenedor padre */
+}
+
+.nav-list li {
+  display: flex;
+  align-items: center; /* Esto centrará verticalmente el contenido de cada 'li' */
+  margin: 0; /* Remueve márgenes por defecto o añadidos previamente */
+}
+
+.nav-list li a {
+  display: flex;
+  align-items: center;
+  height: 80px; /* Ajusta la altura de cada elemento de la lista */
+}
+
+.nav-list li .btn-primary {
+  height: inherit;
 }
 
 .brand {
@@ -75,7 +123,6 @@ nav ul li a {
   cursor: pointer;
   display: block;
   padding: 0 20px;
-  line-height: 80px;
   background: var(--color-white);
   color: var(--color-text);
   text-decoration: none;
@@ -83,10 +130,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a:visited:hover {
-  background-color: var(
-    --color-primary-dark
-  ); /* Color más oscuro para el hover */
-  color: var(--color-white); /* Texto en blanco para mejorar la legibilidad */
+  color: var(--color-primary-dark);
 }
 
 nav ul li a:not(:only-child):after,
@@ -96,8 +140,13 @@ nav ul li a:visited:not(:only-child):after {
 }
 
 nav ul li .btn {
-  line-height: 80px; /* Ajusta esto al mismo line-height que los otros enlaces */
-  margin: 0; /* Elimina el margen si no es necesario */
+  line-height: 80px;
+  margin: 0;
+}
+
+nav ul li a.btn-primary:hover {
+  background-color: var(--color-primary-darker);
+  color: var(--color-white);
 }
 
 .nav-mobile {
@@ -121,7 +170,7 @@ nav ul li .btn {
 #nav-toggle span:before,
 #nav-toggle span:after {
   cursor: pointer;
-  border-radius: 1px;
+  border-radius: 10px;
   height: 5px;
   width: 35px;
   background: var(--color-text); /* El color del símbolo en la navegación */
@@ -181,21 +230,82 @@ nav ul li .btn {
     padding: 20px;
     line-height: 20px;
   }
-
-  nav ul li .btn {
-    line-height: 20px;
-    margin: 0;
-    padding: 20px;
-  }
-}
-
-@media screen and (min-width: 799px) {
+  /* Ajusta este valor según tus necesidades específicas */
   .nav-list {
-    display: block !important;
+    display: flex; /* Asegúrate de que la lista esté visible */
+    align-items: center; /* Centra los elementos horizontalmente, si es necesario */
+    flex-direction: column; /* Cambia la dirección del flexbox a vertical */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+    text-align: center;
+  }
+
+  .nav-list li {
+    width: 100%; /* Hace que cada elemento de la lista ocupe todo el ancho */
+  }
+
+  .nav-list li a {
+    display: block; /* Hace que los enlaces ocupen todo el ancho del 'li' */
+    text-align: center; /* Centra el texto de los enlaces */
+    padding: 10px; /* Añade un poco de espacio alrededor de los enlaces */
   }
 }
 
-/*****************TOP-CONTAINER*****************/
+/* ********** HOME SECTION *********** */
+/* Contenedor principal */
+.home-section {
+  background-color: var(--color-light);
+  padding: 100px 20px; /* Ajusta el espaciado superior/inferior */
+  text-align: center;
+}
+
+.home-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  background: var(--color-white);
+  border-radius: 10px; /* Bordes redondeados suaves */
+  box-shadow: var(--common-shadow); /* Aplicar la sombra común */
+  margin-top: 70px;
+}
+
+.home-title {
+  font-size: 3.5rem; /* Título más grande */
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 20px;
+}
+
+.home-description {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  line-height: 1.8; /* Más espacio entre líneas */
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaciado entre los botones */
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary-dark);
+  padding: 15px 35px;
+  border: 2px solid var(--color-primary-dark);
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+/* ********** BENEFITS SECTION *********** */
 
 ul {
   list-style: none;
@@ -217,13 +327,14 @@ section h2 {
   margin-bottom: 20px;
 }
 
+#home,
 #benefits,
 #video-demo,
 #contact {
   margin: 20px auto;
   max-width: 800px;
   text-align: center;
-  padding: 70px 2rem 130px;
+  padding: 90px 2rem 130px;
 }
 
 #video-demo video {
@@ -242,7 +353,7 @@ section h2 {
   max-width: 600px;
   background-color: var(--color-white); /* Fondo blanco para contraste */
   border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px var(--color-black); /* Sombra para un efecto de elevación */
+  box-shadow: var(--common-shadow); /* Aplicar la sombra común */
 }
 
 .contact-form label {
@@ -253,13 +364,21 @@ section h2 {
 }
 
 .contact-form input,
-.contact-form textarea,
-.contact-form button {
+.contact-form textarea {
   width: 100%; /* Ajusta el ancho de los campos al contenedor */
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid var(--color-border); /* Borde del campo */
-  border-radius: 5px; /* Bordes redondeados */
+  border-radius: 10px; /* Bordes redondeados */
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.contact-form button {
+  width: 100%; /* Ajusta el ancho de los campos al contenedor */
+  margin-bottom: 15px;
+  border: 1px solid var(--color-border); /* Borde del campo */
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
@@ -285,21 +404,6 @@ section h2 {
   transition: background-color 0.3s ease; /* Transición para un efecto suave */
 }
 
-.contact-form button:hover {
-  background-color: var(
-    --color-primary-dark
-  ); /* Color más oscuro al pasar el mouse */
-}
-
-/* Media queries para tabletas (pantallas entre 768px y 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .contact-form,
-  #benefits,
-  #video-demo {
-    max-width: 80%; /* Reduce el ancho */
-  }
-}
-
 /*****************FOOTER*****************/
 footer {
   background-color: var(--color-primary-darker);
@@ -319,12 +423,95 @@ footer {
   color: #eaf6f6;
 }
 
-/*****************RESPONSIVENESS*****************/
-@media (max-width: 767px) {
-  body {
-    font-size: 14px; /* Ajusta el tamaño del texto */
+/* Media queries para tabletas (pantallas entre 768px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-form,
+  #benefits,
+  #video-demo {
+    max-width: 80%; /* Reduce el ancho */
+  }
+  .home-section {
+    padding: 80px 15px; /* Reduce el padding general */
   }
 
+  .home-container {
+    padding: 30px 20px; /* Reduce el padding interno */
+  }
+
+  .home-title {
+    font-size: 3rem; /* Reduce ligeramente el tamaño del título */
+  }
+
+  .home-description {
+    font-size: 1rem; /* Texto más pequeño para pantallas pequeñas */
+    margin-bottom: 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column; /* Coloca los botones en vertical */
+    gap: 15px; /* Espaciado entre botones */
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px; /* Reduce el padding para adaptarse al espacio */
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Ajusta el tamaño del texto */
+  }
+
+  .header-container {
+    padding: 0; /* Reduce el padding horizontal */
+    margin-top: 0;
+    border-radius: 0;
+  }
+  .home-section {
+    padding: 60px 10px; /* Reduce el padding aún más */
+  }
+
+  .home-container {
+    padding: 25px 15px;
+    margin-top: 20px; /* Añade un margen superior a la tarjeta */
+    padding-top: 30px; /* Reduce el padding superior dentro del contenedor del título */
+  }
+
+  .home-title {
+    font-size: 1.8rem; /* Reduce el tamaño del h1 */
+    margin: 10px 0;
+    line-height: 1.2; /* Compacta un poco más el texto */
+  }
+
+  .home-description {
+    font-size: 0.95rem; /* Texto más compacto */
+    line-height: 1.6; /* Reduce ligeramente el espacio entre líneas */
+  }
+
+  .cta-buttons {
+    gap: 10px; /* Menos espacio entre botones */
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px; /* Botones más compactos */
+    font-size: 1rem; /* Tamaño de texto reducido */
+  }
+
+  .nav-list li a {
+    display: block;
+    align-items: center;
+    height: inherit;
+    width: 100%;
+  }
+
+  .nav-list li .btn-primary {
+    height: inherit;
+  }
+
+  #home-container,
   #benefits,
   #video-demo,
   #contact {
