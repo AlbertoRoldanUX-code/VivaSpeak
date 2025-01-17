@@ -323,14 +323,49 @@ nav ul li a.btn-primary:hover {
 
 /* ********** FEATURES SECTION *********** */
 
-#features ul li {
+#features ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+#features li {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 250px;
+  box-shadow: var(--common-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 20px 0;
   font-size: 1rem;
   color: var(--color-text);
 }
 
-#features ul li strong {
+#features li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px var(--color-black-30);
+}
+
+#features li .icon {
+  font-size: 2.5rem; /* Tamaño del ícono */
+  margin-bottom: 15px;
+}
+
+#features li strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
   color: var(--color-primary-dark);
+}
+
+#features li p {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.5;
 }
 
 /* ********** DEMO SECTION *********** */
@@ -369,7 +404,6 @@ nav ul li a.btn-primary:hover {
   border: 1px solid var(--color-border); /* Borde del campo */
   border-radius: 10px; /* Bordes redondeados */
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
@@ -378,7 +412,6 @@ nav ul li a.btn-primary:hover {
   margin-bottom: 15px;
   border: 1px solid var(--color-border); /* Borde del campo */
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
