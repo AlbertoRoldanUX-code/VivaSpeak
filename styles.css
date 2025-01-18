@@ -132,7 +132,6 @@ nav ul {
 }
 
 nav ul li {
-  float: left;
   position: relative;
 }
 
@@ -171,7 +170,7 @@ nav ul li a.btn-primary:hover {
   position: absolute;
   top: 0;
   right: 0;
-  height: 75px;
+  height: 80px; /* Ajusta esto para coincidir con la altura del header */
   width: 75px;
 }
 
@@ -239,14 +238,10 @@ nav ul li a.btn-primary:hover {
     display: none;
   }
 
-  nav ul li {
-    float: none;
+  nav ul li a {
+    padding: 0;
   }
 
-  nav ul li a {
-    padding: 20px;
-    line-height: 20px;
-  }
   /* Ajusta este valor según tus necesidades específicas */
   .nav-list {
     display: flex; /* Asegúrate de que la lista esté visible */
@@ -261,9 +256,8 @@ nav ul li a.btn-primary:hover {
   }
 
   .nav-list li a {
-    display: block; /* Hace que los enlaces ocupen todo el ancho del 'li' */
-    text-align: center; /* Centra el texto de los enlaces */
-    padding: 10px; /* Añade un poco de espacio alrededor de los enlaces */
+    height: 80px; /* Asegura que los enlaces tengan la misma altura en vista móvil */
+    line-height: 80px; /* Alinea el texto verticalmente */
   }
 }
 
@@ -536,6 +530,7 @@ footer {
     align-items: center;
     height: inherit;
     width: 100%;
+    padding: 0;
   }
 
   .nav-list li .btn-primary {
