@@ -69,7 +69,6 @@ ul {
   font-weight: bold;
 }
 
-/* **********NAV BAR*********** */
 header {
   height: 80px;
   position: fixed;
@@ -92,6 +91,32 @@ header {
   background-color: rgba(255, 255, 255, 0.9); /* Blanco con transparencia */
   border-radius: 10px;
 }
+
+/* **********LANGUAGE SWITCHER*********** */
+.language-switcher {
+  font-weight: bold;
+}
+
+.language-switcher a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+  font-size: 0.9em; /* Un tamaño más pequeño para diferenciar del resto de los enlaces del navbar */
+}
+
+.language-switcher a:hover {
+  color: var(--color-primary-darker); /* Un turquesa más oscuro para el hover */
+}
+
+@media only screen and (max-width: 798px) {
+  .language-switcher {
+    margin-right: 80px;
+    z-index: 2;
+  }
+}
+
+/* **********NAV BAR*********** */
 .nav-list {
   display: flex;
   align-items: center; /* Asegúrate de que esto esté activo */
@@ -109,6 +134,15 @@ header {
   display: flex;
   align-items: center;
   height: 80px; /* Ajusta la altura de cada elemento de la lista */
+}
+
+.nav-list a {
+  text-transform: uppercase; /* Opcional: agrega un toque de estilo */
+  margin: 0 15px; /* Espaciado horizontal para no saturar */
+}
+
+.nav-list a:hover {
+  color: var(--color-primary); /* Cambia al color turquesa al pasar el mouse */
 }
 
 .nav-list li .btn-primary {
@@ -258,6 +292,7 @@ nav ul li a.btn-primary:hover {
   .nav-list li a {
     height: 80px; /* Asegura que los enlaces tengan la misma altura en vista móvil */
     line-height: 80px; /* Alinea el texto verticalmente */
+    margin: 0;
   }
 }
 
