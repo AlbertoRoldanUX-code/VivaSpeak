@@ -111,7 +111,6 @@ header {
 
 @media only screen and (max-width: 798px) {
   .language-switcher {
-    margin-right: 80px;
     z-index: 2;
   }
 }
@@ -119,7 +118,6 @@ header {
 /* **********NAV BAR*********** */
 .nav-list {
   display: flex;
-  align-items: center; /* Asegúrate de que esto esté activo */
   justify-content: center; /* Centra los elementos horizontalmente si es necesario */
   width: 100%; /* Ocupa todo el ancho disponible del contenedor padre */
 }
@@ -153,10 +151,7 @@ header {
   padding-left: 20px;
 }
 
-.brand img,
-.brand img:visited {
-  color: var(--color-white);
-  text-decoration: none;
+.brand img {
   height: 70px;
 }
 
@@ -199,73 +194,82 @@ nav ul li a.btn-primary:hover {
   color: var(--color-white);
 }
 
-.nav-mobile {
+.menu-toggle {
   display: none;
   position: absolute;
-  top: 0;
-  right: 0;
   height: 80px; /* Ajusta esto para coincidir con la altura del header */
   width: 75px;
 }
 
-#nav-toggle {
-  position: absolute;
-  left: 18px;
-  top: 22px;
-  cursor: pointer;
-  padding: 10px 35px 16px 0px;
+#hamburger span {
+  margin: 5px auto; /* Espacio entre líneas */
 }
 
-#nav-toggle span,
-#nav-toggle span:before,
-#nav-toggle span:after {
-  cursor: pointer;
-  border-radius: 10px;
-  height: 5px;
-  width: 35px;
-  background: var(--color-text); /* El color del símbolo en la navegación */
-  position: absolute;
-  display: block;
-  content: "";
-  transition: all 300ms ease-in-out;
-}
-
-#nav-toggle span:before {
-  top: -10px;
-}
-
-#nav-toggle span:after {
-  bottom: -10px;
-}
-
-#nav-toggle.active span {
-  background-color: transparent;
-}
-
-#nav-toggle.active span:before,
-#nav-toggle.active span:after {
-  top: 0;
-}
-
-#nav-toggle.active span:before {
-  transform: rotate(-45deg);
-}
-
-#nav-toggle.active span:after {
-  transform: rotate(45deg);
+#hamburger.active span:nth-child(2) {
+  opacity: 0;
 }
 
 @media only screen and (max-width: 798px) {
-  .nav-mobile {
+  .menu-toggle {
+    height: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 75px;
+  }
+
+  #hamburger {
+    left: 20px;
+    top: 22px;
+  }
+
+  #hamburger span,
+  #hamburger span:before,
+  #hamburger span:after {
+    border-radius: 10px;
+    height: 5px;
+    width: 35px;
+    background: var(--color-text);
+    position: absolute;
     display: block;
+    content: "";
+    transition: all 300ms ease-in-out;
+  }
+
+  #hamburger span:before {
+    top: -10px;
+  }
+
+  #hamburger span:after {
+    bottom: -10px;
+  }
+
+  #hamburger,
+  #hamburger::before,
+  #hamburger::after {
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+
+  #hamburger.active span {
+    background-color: transparent;
+  }
+
+  #hamburger.active span:before,
+  #hamburger.active span:after {
+    top: 0;
+  }
+
+  #hamburger.active span:before {
+    transform: rotate(-45deg);
+  }
+
+  #hamburger.active span:after {
+    transform: rotate(45deg);
   }
 
   .top-nav {
-    position: absolute;
-    width: 100%;
-    padding: 74px 0 15px;
-    display: block;
-    top: 0;
+    order: 2;
   }
 
   nav ul {
@@ -279,14 +283,17 @@ nav ul li a.btn-primary:hover {
   /* Ajusta este valor según tus necesidades específicas */
   .nav-list {
     display: flex; /* Asegúrate de que la lista esté visible */
-    align-items: center; /* Centra los elementos horizontalmente, si es necesario */
     flex-direction: column; /* Cambia la dirección del flexbox a vertical */
     width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
     text-align: center;
+    top: 80px;
+    position: absolute;
+    right: 0;
   }
 
   .nav-list li {
     width: 100%; /* Hace que cada elemento de la lista ocupe todo el ancho */
+    margin: -1px;
   }
 
   .nav-list li a {
@@ -562,13 +569,14 @@ footer {
 
   .nav-list li a {
     display: block;
-    align-items: center;
     height: inherit;
     width: 100%;
     padding: 0;
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .nav-list li .btn-primary {
+    background-color: var(--color-primary);
     height: inherit;
   }
 
