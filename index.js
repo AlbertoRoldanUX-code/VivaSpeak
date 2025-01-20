@@ -2,7 +2,6 @@ $(document).ready(function () {
   // Navbar elements:
   const menu = $("#hamburger");
   const dropdown = $("nav ul");
-  const links = $(".nav-list");
 
   // Ensure dropdown is hidden on mobile view on page load
   $(window)
@@ -17,18 +16,15 @@ $(document).ready(function () {
 
   // Opens dropdown when clicking the menu
   menu.click(function () {
-    if ($(window).width() <= 768) {
-      // Solo permite toggle en vistas móviles
-      dropdown.slideToggle();
-      $(this).toggleClass("active"); // Toggle the "active" class on the hamburger menu
-    }
+    dropdown.slideToggle();
+    this.classList.toggle("active");
   });
 
   // Closes dropdown when clicking on a link in mobile view only
   $(".nav-list a").click(function () {
     if ($(window).width() <= 768) {
       if (dropdown.is(":visible")) {
-        menu.removeClass("active");
+        menu[0].classList.toggle("active");
         dropdown.slideUp();
       }
     }
