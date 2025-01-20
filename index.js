@@ -5,19 +5,28 @@ $(document).ready(function () {
   const links = $(".nav-list");
 
   // Ensure dropdown is hidden on mobile view on page load
-  if ($(window).width() <= 768) {
-    dropdown.hide();
-  }
+  $(window)
+    .on("resize", function () {
+      if ($(window).width() > 768) {
+        dropdown.show(); // Asegura que el dropdown está siempre visible en desktop
+      } else {
+        dropdown.hide(); // Esconde el dropdown en vistas móviles inicialmente
+      }
+    })
+    .trigger("resize"); // Trigger the resize event on page load
 
   // Opens dropdown when clicking the menu
   menu.click(function () {
-    dropdown.slideToggle();
-    $(this).toggleClass("active"); // Ensure this toggles the "active" class correctly
+    if ($(window).width() <= 768) {
+      // Solo permite toggle en vistas móviles
+      dropdown.slideToggle();
+      $(this).toggleClass("active"); // Toggle the "active" class on the hamburger menu
+    }
   });
 
   // Closes dropdown when clicking on a link in mobile view only
   $(".nav-list a").click(function () {
-    if (window.innerWidth <= 768) {
+    if ($(window).width() <= 768) {
       if (dropdown.is(":visible")) {
         menu.removeClass("active");
         dropdown.slideUp();
