@@ -29,7 +29,8 @@ html {
 }
 
 #home,
-#features,
+#inbound,
+#outbound,
 #video-demo,
 #contact {
   margin: 20px auto;
@@ -39,7 +40,11 @@ html {
 
 /* Espaciado interno dentro de cada sección */
 section h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+section h3 {
+  margin-top: 30px;
 }
 
 ul {
@@ -331,13 +336,13 @@ nav ul li a.btn-primary:hover {
   font-size: 1.2rem;
   color: var(--color-text);
   line-height: 1.8; /* Más espacio entre líneas */
-  margin-bottom: 30px;
 }
 
 .cta-buttons {
   display: flex;
   justify-content: center;
   gap: 20px; /* Espaciado entre los botones */
+  margin-top: 30px;
 }
 
 .btn-secondary {
@@ -357,9 +362,10 @@ nav ul li a.btn-primary:hover {
   color: var(--color-white);
 }
 
-/* ********** FEATURES SECTION *********** */
+/* ********** INBOUND & OUTBOUND SECTION *********** */
 
-#features ul {
+#inbound ul,
+#outbound ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -368,7 +374,8 @@ nav ul li a.btn-primary:hover {
   list-style: none;
 }
 
-#features li {
+#inbound li,
+#outbound li {
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: 10px;
@@ -381,24 +388,28 @@ nav ul li a.btn-primary:hover {
   color: var(--color-text);
 }
 
-#features li:hover {
+#inbound li:hover,
+#outbound li:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px var(--color-black-30);
 }
 
-#features li .icon {
+#inbound li .icon,
+#outbound li .icon {
   font-size: 2.5rem; /* Tamaño del ícono */
   margin-bottom: 15px;
 }
 
-#features li strong {
+#inbound li strong,
+#outbound li strong {
   display: block;
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: var(--color-primary-dark);
 }
 
-#features li p {
+#inbound li p,
+#outbound li p {
   font-size: 1rem;
   color: var(--color-text);
   line-height: 1.5;
@@ -493,7 +504,8 @@ footer {
 /* Media queries para tabletas (pantallas entre 768px y 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .contact-form,
-  #features,
+  #inbound,
+  #outbound,
   #video-demo {
     max-width: 80%; /* Reduce el ancho */
   }
@@ -511,12 +523,12 @@ footer {
 
   .home-description {
     font-size: 1rem; /* Texto más pequeño para pantallas pequeñas */
-    margin-bottom: 20px;
   }
 
   .cta-buttons {
     flex-direction: column; /* Coloca los botones en vertical */
     gap: 15px; /* Espaciado entre botones */
+    margin-top: 20px;
   }
 
   .btn-primary,
@@ -581,7 +593,8 @@ footer {
   }
 
   #home-container,
-  #features,
+  #inbound,
+  #outbound,
   #video-demo,
   #contact {
     max-width: 95%; /* Reduce el ancho para pantallas pequeñas */
@@ -595,11 +608,13 @@ footer {
   }
 
   /* Beneficios: Mejora el espaciado en móviles */
-  #features ul {
+  #inbound ul,
+  #outbound ul {
     padding: 0;
   }
 
-  #features ul li {
+  #inbound ul li,
+  #outbound ul li {
     margin: 10px 0;
     font-size: 16px;
   }
