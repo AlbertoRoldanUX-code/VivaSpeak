@@ -114,7 +114,7 @@ header {
   color: var(--color-primary-darker); /* Un turquesa más oscuro para el hover */
 }
 
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 768px) {
   .language-switcher {
     z-index: 2;
   }
@@ -214,7 +214,7 @@ nav ul li a.btn-primary:hover {
   opacity: 0;
 }
 
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 768px) {
   .menu-toggle {
     height: 60px;
     position: relative;
@@ -434,24 +434,71 @@ nav ul li a.btn-primary:hover {
   background-color: var(--color-white); /* Fondo blanco para contraste */
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: var(--common-shadow); /* Aplicar la sombra común */
+  text-align: left;
 }
 
 .contact-form label {
   display: block;
   font-weight: bold;
   color: var(--color-dark);
-  margin-bottom: 10px;
+  margin: 2px 0 8px 2px;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%; /* Ajusta el ancho de los campos al contenedor */
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid var(--color-border); /* Borde del campo */
-  border-radius: 10px; /* Bordes redondeados */
+  border-radius: 8px; /* Bordes redondeados */
   font-size: 16px;
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: normal;
+  height: 40px;
+}
+
+.radio-group input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+/* A partir de aqui */
+.radio-group input[type="radio"] {
+  appearance: none; /* Quita el estilo predeterminado */
+  border: 2px solid var(--color-primary); /* Borde turquesa */
+  border-radius: 50%;
+  transition: background-color 0.25s ease-in-out; /* Transición suave del color de fondo */
+}
+
+.radio-group input[type="radio"]:checked {
+  background-color: var(
+    --color-primary
+  ); /* Fondo turquesa cuando está seleccionado */
+}
+
+.radio-group input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  border-radius: 50%;
+  background: var(--color-white); /* Círculo interno blanco */
+  border: 2px solid var(--color-primary-dark);
 }
 
 .contact-form button {
@@ -460,6 +507,11 @@ nav ul li a.btn-primary:hover {
   border: 1px solid var(--color-border); /* Borde del campo */
   font-size: 16px;
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .contact-form input,

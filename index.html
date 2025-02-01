@@ -84,6 +84,7 @@
     ></script>
     <script defer src="index.js" charset="utf-8"></script>
   </head>
+
   <body>
     <header>
       <div class="header-container">
@@ -229,6 +230,33 @@
 
           <label for="email">Email</label>
           <input type="email" name="email" id="email" required />
+
+          <label for="solution-type"
+            >What type of solution are you interested in?</label
+          >
+          <div class="radio-group">
+            <label>
+              <input
+                type="radio"
+                name="solution-type"
+                value="inbound"
+                required
+              />
+              Inbound (Customer support, reservations, FAQs)
+            </label>
+            <label>
+              <input type="radio" name="solution-type" value="outbound" />
+              Outbound (Sales, follow-ups, reminders)
+            </label>
+            <label>
+              <input type="radio" name="solution-type" value="both" />
+              Both
+            </label>
+            <label>
+              <input type="radio" name="solution-type" value="not-sure" />
+              I'm not sure, I want more information
+            </label>
+          </div>
 
           <label for="message">Message</label>
           <textarea name="message" id="message" required></textarea>
