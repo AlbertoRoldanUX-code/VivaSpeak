@@ -248,6 +248,30 @@
 
           <label for="email">Correo Electrónico</label>
           <input type="email" name="email" id="email" required />
+          <label for="solution-type">¿Qué tipo de solución te interesa?</label>
+          <div class="radio-group">
+            <label>
+              <input
+                type="radio"
+                name="solution-type"
+                value="inbound"
+                required
+              />
+              Entrante (Soporte al cliente, reservas, preguntas frecuentes)
+            </label>
+            <label>
+              <input type="radio" name="solution-type" value="outbound" />
+              Saliente (Ventas, seguimientos, recordatorios)
+            </label>
+            <label>
+              <input type="radio" name="solution-type" value="both" />
+              Ambos
+            </label>
+            <label>
+              <input type="radio" name="solution-type" value="not-sure" />
+              No estoy seguro, quiero más información
+            </label>
+          </div>
 
           <label for="message">Mensaje</label>
           <textarea name="message" id="message" required></textarea>

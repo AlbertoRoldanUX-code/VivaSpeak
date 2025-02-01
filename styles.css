@@ -475,6 +475,7 @@ nav ul li a.btn-primary:hover {
   margin-right: 10px;
   margin-top: auto;
   margin-bottom: auto;
+  cursor: pointer;
 }
 /* A partir de aqui */
 .radio-group input[type="radio"] {
