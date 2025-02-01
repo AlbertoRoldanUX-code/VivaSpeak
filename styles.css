@@ -426,6 +426,12 @@ nav ul li a.btn-primary:hover {
   box-shadow: 0 4px 8px var(--color-black-20); /* Opcional: añade una sombra para mejorar el diseño */
 }
 
+/* ********** CALENDAR SECTION *********** */
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 800px;
+}
+
 /* ********** CONTACT FORM SECTION *********** */
 .contact-form {
   margin: 20px auto;
@@ -477,7 +483,6 @@ nav ul li a.btn-primary:hover {
   margin-bottom: auto;
   cursor: pointer;
 }
-/* A partir de aqui */
 .radio-group input[type="radio"] {
   appearance: none; /* Quita el estilo predeterminado */
   border: 2px solid var(--color-primary); /* Borde turquesa */
