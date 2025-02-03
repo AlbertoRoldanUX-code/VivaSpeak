@@ -28,17 +28,16 @@ html {
   scroll-behavior: smooth;
 }
 
-#home,
-#inbound,
-#outbound,
-#video-demo,
-#contact {
-  margin: 20px auto;
-  max-width: 800px;
-  padding: 90px 2rem 130px;
+.container {
+  max-width: 900px; /* Controla el ancho en pantallas grandes */
+  margin: 0 auto; /* Centra el contenido */
+  padding: 0 20px; /* Espaciado lateral en móviles */
 }
 
-/* Espaciado interno dentro de cada sección */
+section {
+  padding: 110px 2rem 130px;
+}
+
 section h2 {
   margin-bottom: 25px;
 }
@@ -309,10 +308,25 @@ nav ul li a.btn-primary:hover {
 }
 
 /* ********** HOME SECTION *********** */
-/* Contenedor principal */
-.home-section {
-  background-color: var(--color-light);
-  padding: 100px 20px; /* Ajusta el espaciado superior/inferior */
+#home {
+  padding: 100px 20px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-light)
+  );
+  background: linear-gradient(
+    180deg,
+    var(--color-primary) 0%,
+    var(--color-light) 10%
+  );
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary) 0%,
+    /* Inicia con el color turquesa principal */ var(--color-primary-dark) 50%,
+    /* Transición suave hacia el turquesa más oscuro */ var(--color-light) 100%
+      /* Termina con el color gris claro del fondo */
+  );
 }
 
 .home-container {
@@ -567,7 +581,7 @@ footer {
   #video-demo {
     max-width: 80%; /* Reduce el ancho */
   }
-  .home-section {
+  #home {
     padding: 80px 15px; /* Reduce el padding general */
   }
 
@@ -605,9 +619,6 @@ footer {
     padding: 0; /* Reduce el padding horizontal */
     margin-top: 0;
     border-radius: 0;
-  }
-  .home-section {
-    padding: 60px 10px; /* Reduce el padding aún más */
   }
 
   .home-container {
@@ -650,11 +661,7 @@ footer {
     height: inherit;
   }
 
-  #home-container,
-  #inbound,
-  #outbound,
-  #video-demo,
-  #contact {
+  section {
     max-width: 95%; /* Reduce el ancho para pantallas pequeñas */
     padding-bottom: 80px;
   }

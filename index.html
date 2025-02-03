@@ -119,8 +119,8 @@
         </div>
       </div>
     </header>
-    <section id="home" class="home-section">
-      <div class="home-container">
+    <section id="home">
+      <div class="container home-container">
         <h1 class="home-title">
           <span class="highlight">Amplify Your Voice.</span> Connect Everywhere.
         </h1>
@@ -138,80 +138,88 @@
     </section>
 
     <section id="inbound">
-      <h2>Automate Inbound Calls</h2>
-      <ul>
-        <li>
-          <div class="icon">📅</div>
-          <strong>Automated Booking</strong>
-          <p>Manage reservations seamlessly without human intervention.</p>
-        </li>
-        <li>
-          <div class="icon">🤖</div>
-          <strong>Answer FAQs</strong>
-          <p>Provide instant answers to common customer inquiries.</p>
-        </li>
-        <li>
-          <div class="icon">🌍</div>
-          <strong>Multilingual Support</strong>
-          <p>Handle calls in multiple languages to serve a global audience.</p>
-        </li>
+      <div class="container">
+        <h2>Automate Inbound Calls</h2>
+        <ul>
+          <li>
+            <div class="icon">📅</div>
+            <strong>Automated Booking</strong>
+            <p>Manage reservations seamlessly without human intervention.</p>
+          </li>
+          <li>
+            <div class="icon">🤖</div>
+            <strong>Answer FAQs</strong>
+            <p>Provide instant answers to common customer inquiries.</p>
+          </li>
+          <li>
+            <div class="icon">🌍</div>
+            <strong>Multilingual Support</strong>
+            <p>
+              Handle calls in multiple languages to serve a global audience.
+            </p>
+          </li>
 
-        <li>
-          <div class="icon">📞</div>
-          <strong>24/7 Availability</strong>
-          <p>Never miss a call with VivaSpeak's round-the-clock service.</p>
-        </li>
-      </ul>
+          <li>
+            <div class="icon">📞</div>
+            <strong>24/7 Availability</strong>
+            <p>Never miss a call with VivaSpeak's round-the-clock service.</p>
+          </li>
+        </ul>
 
-      <h3>Start Automating Your Inbound Calls Today</h3>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn-primary">Contact Us</a>
+        <h3>Start Automating Your Inbound Calls Today</h3>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn-primary">Contact Us</a>
+        </div>
       </div>
     </section>
     <section id="outbound">
-      <h2>Boost Sales with AI-Powered Outbound Calls</h2>
-      <ul>
-        <li>
-          <div class="icon">📞</div>
-          <strong>Lead Follow-ups</strong>
-          <p>
-            Automatically follow up with potential customers and warm leads.
-          </p>
-        </li>
-        <li>
-          <div class="icon">🔔</div>
-          <strong>Appointment Reminders</strong>
-          <p>Reduce no-shows by sending automated reminders via calls.</p>
-        </li>
-        <li>
-          <div class="icon">🎯</div>
-          <strong>Customer Retention</strong>
-          <p>Re-engage past customers with targeted voice campaigns.</p>
-        </li>
-        <li>
-          <div class="icon">📊</div>
-          <strong>Automated Surveys & Feedback</strong>
-          <p>Collect valuable insights with automated feedback calls.</p>
-        </li>
-      </ul>
-      <h3>Boost Your Business with AI-Powered Outbound Calls</h3>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn-primary">Contact Us</a>
+      <div class="container">
+        <h2>Boost Sales with AI-Powered Outbound Calls</h2>
+        <ul>
+          <li>
+            <div class="icon">📞</div>
+            <strong>Lead Follow-ups</strong>
+            <p>
+              Automatically follow up with potential customers and warm leads.
+            </p>
+          </li>
+          <li>
+            <div class="icon">🔔</div>
+            <strong>Appointment Reminders</strong>
+            <p>Reduce no-shows by sending automated reminders via calls.</p>
+          </li>
+          <li>
+            <div class="icon">🎯</div>
+            <strong>Customer Retention</strong>
+            <p>Re-engage past customers with targeted voice campaigns.</p>
+          </li>
+          <li>
+            <div class="icon">📊</div>
+            <strong>Automated Surveys & Feedback</strong>
+            <p>Collect valuable insights with automated feedback calls.</p>
+          </li>
+        </ul>
+        <h3>Boost Your Business with AI-Powered Outbound Calls</h3>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn-primary">Contact Us</a>
+        </div>
       </div>
     </section>
 
     <!-- - **Video demo**: Usa un `<video>` o incrusta un enlace de YouTube/Vimeo.   -->
     <section id="video-demo">
-      <h2>See VivaSpeak in Action</h2>
-      <p>
-        Experience how VivaSpeak handles inbound and outbound calls for
-        businesses.
-      </p>
+      <div class="container">
+        <h2>See VivaSpeak in Action</h2>
+        <p>
+          Experience how VivaSpeak handles inbound and outbound calls for
+          businesses.
+        </p>
 
-      <video controls poster="assets/vivaspeak-thumbnail.png">
-        <source src="assets/VivaSpeak-1080p-250110.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        <video controls poster="assets/vivaspeak-thumbnail.png">
+          <source src="assets/VivaSpeak-1080p-250110.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </section>
 
     <!-- Schedule a Meeting Section -->
@@ -231,56 +239,58 @@
 
     <!-- - **Formulario de contacto** -->
     <section id="contact">
-      <h2>Contact VivaSpeak</h2>
-      <p>Need assistance or have a question? Fill out the form below!</p>
-      <div class="contact-form">
-        <form
-          action="/success"
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" required />
-
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" required />
-
-          <label for="solution-type"
-            >What type of solution are you interested in?</label
+      <div class="container">
+        <h2>Contact VivaSpeak</h2>
+        <p>Need assistance or have a question? Fill out the form below!</p>
+        <div class="contact-form">
+          <form
+            action="/success"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
           >
-          <div class="radio-group">
-            <label>
-              <input
-                type="radio"
-                name="solution-type"
-                value="inbound"
-                required
-              />
-              Inbound (Customer support, reservations, FAQs)
-            </label>
-            <label>
-              <input type="radio" name="solution-type" value="outbound" />
-              Outbound (Sales, follow-ups, reminders)
-            </label>
-            <label>
-              <input type="radio" name="solution-type" value="both" />
-              Both
-            </label>
-            <label>
-              <input type="radio" name="solution-type" value="not-sure" />
-              I'm not sure, I want more information
-            </label>
-          </div>
+            <input type="hidden" name="form-name" value="contact" />
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required />
 
-          <label for="message">Message</label>
-          <textarea name="message" id="message" required></textarea>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required />
 
-          <div data-netlify-recaptcha="true"></div>
-          <button type="submit" class="btn-primary btn-contact">Send</button>
-        </form>
+            <label for="solution-type"
+              >What type of solution are you interested in?</label
+            >
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="solution-type"
+                  value="inbound"
+                  required
+                />
+                Inbound (Customer support, reservations, FAQs)
+              </label>
+              <label>
+                <input type="radio" name="solution-type" value="outbound" />
+                Outbound (Sales, follow-ups, reminders)
+              </label>
+              <label>
+                <input type="radio" name="solution-type" value="both" />
+                Both
+              </label>
+              <label>
+                <input type="radio" name="solution-type" value="not-sure" />
+                I'm not sure, I want more information
+              </label>
+            </div>
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" required></textarea>
+
+            <div data-netlify-recaptcha="true"></div>
+            <button type="submit" class="btn-primary btn-contact">Send</button>
+          </form>
+        </div>
       </div>
     </section>
     <footer>
