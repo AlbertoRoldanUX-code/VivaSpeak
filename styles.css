@@ -68,6 +68,23 @@ ul {
   color: var(--color-white); /* Mantiene el color del texto en blanco */
 }
 
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary-dark);
+  padding: 15px 35px;
+  border: 2px solid var(--color-primary-dark);
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
 .highlight {
   color: #1abc9c;
   font-weight: bold;
@@ -357,23 +374,6 @@ nav ul li a.btn-primary:hover {
   justify-content: center;
   gap: 20px; /* Espaciado entre los botones */
   margin-top: 30px;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--color-primary-dark);
-  padding: 15px 35px;
-  border: 2px solid var(--color-primary-dark);
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--color-white);
 }
 
 /* ********** INBOUND & OUTBOUND SECTION *********** */
