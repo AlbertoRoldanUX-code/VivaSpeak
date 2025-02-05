@@ -166,6 +166,8 @@ header {
 
 .nav-list li .btn-primary {
   height: inherit;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px var(--color-black-20);
 }
 
 .brand {
@@ -203,11 +205,6 @@ nav ul li a:not(:only-child):after,
 nav ul li a:visited:not(:only-child):after {
   padding-left: 4px;
   content: " ▾";
-}
-
-nav ul li .btn {
-  line-height: 80px;
-  margin: 0;
 }
 
 nav ul li a.btn-primary:hover {
