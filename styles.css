@@ -1,5 +1,7 @@
 /* **********GENERAL*********** */
 :root {
+  --cta: #ff6600;
+  --cta-hover: #e65c00;
   --color-primary: #1abc9c; /* Turquesa principal de 'Viva' */
   --color-primary-dark: #16a085; /* Turquesa más oscuro de la onda */
   --color-primary-darker: #0e6655; /* Turquesa aún más oscuro para el hover */
@@ -8,7 +10,7 @@
   --color-text: #2c3e50; /* Color de texto más oscuro del eslogan y fondo oscuro */
   --color-light: #ecf0f1; /* Gris claro del 'Speak' en fondo oscuro */
   --color-border: #bdc3c7; /* Color del borde y del eslogan con fondo oscuro */
-  --color-white: #ffffff; /* Blanco */
+  --white: #ffffff;
   --color-black: rgba(0, 0, 0, 0.1); /* Negro con transparencia */
   --color-black-20: rgba(0, 0, 0, 0.2);
   --color-black-30: rgba(0, 0, 0, 0.3);
@@ -52,8 +54,8 @@ ul {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: var(--cta);
+  color: var(--white);
   padding: 15px 35px;
   border-radius: 5px;
   font-size: 1.1rem;
@@ -63,9 +65,9 @@ ul {
   text-decoration: none;
 }
 .btn-primary:hover {
-  background-color: var(--color-primary-darker);
+  background-color: var(--cta-hover);
   border-color: var(--color-primary-dark); /* Aparece borde */
-  color: var(--color-white); /* Mantiene el color del texto en blanco */
+  color: var(--white); /* Mantiene el color del texto en blanco */
 }
 
 .btn-secondary {
@@ -82,7 +84,7 @@ ul {
 
 .btn-secondary:hover {
   background-color: var(--color-primary-dark);
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .highlight {
@@ -208,8 +210,7 @@ nav ul li a:visited:not(:only-child):after {
 }
 
 nav ul li a.btn-primary:hover {
-  background-color: var(--color-primary-darker);
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .menu-toggle {
@@ -336,7 +337,7 @@ nav ul li a.btn-primary:hover {
   max-width: 700px;
   margin: 0 auto;
   padding: 40px 30px;
-  background: var(--color-white);
+  background: var(--white);
   border-radius: 10px; /* Bordes redondeados suaves */
   box-shadow: var(--common-shadow); /* Aplicar la sombra común */
   margin-top: 70px;
@@ -376,7 +377,7 @@ nav ul li a.btn-primary:hover {
 
 #inbound li,
 #outbound li {
-  background-color: var(--color-white);
+  background-color: var(--white);
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 20px;
@@ -437,7 +438,7 @@ nav ul li a.btn-primary:hover {
   margin: 20px auto;
   padding: 20px;
   max-width: 600px;
-  background-color: var(--color-white); /* Fondo blanco para contraste */
+  background-color: var(--white); /* Fondo blanco para contraste */
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: var(--common-shadow); /* Aplicar la sombra común */
   text-align: left;
@@ -503,7 +504,7 @@ nav ul li a.btn-primary:hover {
   height: 10px;
   margin: 4px;
   border-radius: 50%;
-  background: var(--color-white); /* Círculo interno blanco */
+  background: var(--white); /* Círculo interno blanco */
   border: 2px solid var(--color-primary-dark);
 }
 
@@ -533,8 +534,7 @@ nav ul li a.btn-primary:hover {
 }
 
 .contact-form button {
-  background-color: var(--color-primary); /* Color principal */
-  color: var(--color-white); /* Texto blanco */
+  color: var(--white); /* Texto blanco */
   border: none; /* Sin borde */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Transición para un efecto suave */
@@ -544,7 +544,7 @@ nav ul li a.btn-primary:hover {
 footer {
   background-color: var(--color-primary-darker);
   padding: 15px 0;
-  color: var(--color-white);
+  color: var(--white);
 }
 .Copyright {
   font-size: 0.75rem;
