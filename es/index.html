@@ -75,6 +75,8 @@
       href="https://vivaspeak.com/assets/favicon.ico"
       type="image/x-icon"
     />
+
+    <!-- Link to Styles -->
     <link rel="stylesheet" href="/styles.css" />
 
     <!-- JavaScript -->
@@ -107,12 +109,12 @@
           <ul class="nav-list">
             <li><a href="#inbound">Llamadas Entrantes</a></li>
             <li><a href="#outbound">Llamadas Salientes</a></li>
-            <li><a href="#video-demo">Demostración en Video</a></li>
+            <li><a href="#video-demo">Vídeo</a></li>
+            <li><a href="#pricing">Precios</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
             <li><a href="#contact">Contacto</a></li>
             <li>
-              <a class="btn-primary" href="#schedule"
-                >Solicta una Demostración</a
-              >
+              <a class="btn-primary" href="#schedule">Solicta una Demo</a>
             </li>
           </ul>
         </nav>
@@ -136,7 +138,7 @@
           y automatizar los seguimientos.
         </p>
         <div class="cta-buttons">
-          <a href="#schedule" class="btn-primary">Solicita una demostración</a>
+          <a href="#schedule" class="btn-primary">Solicita una demo</a>
         </div>
       </div>
     </section>
@@ -237,6 +239,151 @@
           Tu navegador no admite la etiqueta de video.
         </video>
       </div>
+    </section>
+    <!-- Sección de Precios -->
+    <section id="pricing">
+      <div class="container">
+        <h2>Planes de Precios</h2>
+        <p>
+          Precios flexibles que se adaptan a las necesidades de tu negocio. Paga
+          solo por lo que usas.
+        </p>
+        <div class="pricing-toggle">
+          <span>Mensual</span>
+          <label class="switch">
+            <input type="checkbox" id="togglePricing" />
+            <span class="slider round"></span>
+          </label>
+          <span>Anual <small>(Ahorra 20%)</small></span>
+        </div>
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <h3>Gratis</h3>
+            <p><strong>€0 / mes</strong></p>
+            <ul>
+              <li>60 minutos gratis (primer mes)</li>
+              <li>Respuestas potenciadas por IA</li>
+              <li>Integraciones básicas</li>
+              <li>Soporte por correo electrónico</li>
+            </ul>
+            <a href="#schedule" class="btn-primary">Comenzar</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Básico</h3>
+            <p><strong id="basic-price">€49 / mes</strong></p>
+            <ul>
+              <li>500 minutos incluidos</li>
+              <li>Automatización completa con IA</li>
+              <li>Integración con CRM</li>
+              <li>Soporte por correo electrónico y chat</li>
+            </ul>
+            <a href="#schedule" class="btn-secondary">Elegir Plan</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Plus</h3>
+            <p><strong id="plus-price">€99 / mes</strong></p>
+            <ul>
+              <li>1,500 minutos incluidos</li>
+              <li>Soporte multilingüe</li>
+              <li>Personalización avanzada de IA</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a href="#schedule" class="btn-secondary">Elegir Plan</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Premium</h3>
+            <p><strong id="premium-price">€199 / mes</strong></p>
+            <ul>
+              <li>4,000 minutos incluidos</li>
+              <li>Integración completa con CRM y ResOS</li>
+              <li>Análisis avanzados e informes</li>
+              <li>Soporte prioritario 24/7</li>
+            </ul>
+            <a href="#schedule" class="btn-secondary">Elegir Plan</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Empresarial</h3>
+            <p><strong>Precio personalizado</strong></p>
+            <ul>
+              <li>Minutos ilimitados</li>
+              <li>Integraciones personalizadas</li>
+              <li>Gestor de cuentas dedicado</li>
+              <li>Flujos de trabajo avanzados de IA</li>
+            </ul>
+            <a href="#contact" class="btn-secondary">Contáctanos</a>
+          </div>
+        </div>
+      </div>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Gratis</th>
+            <th>Básico</th>
+            <th>Plus</th>
+            <th>Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Minutos incluidos</td>
+            <td>60 (1er mes)</td>
+            <td>500</td>
+            <td>1,500</td>
+            <td>4,000</td>
+          </tr>
+          <tr>
+            <td>Integración con CRM</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Soporte 24/7</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pricing-features">
+        <ul>
+          <li>✔ 60-4000 minutos incluidos (según el plan)</li>
+          <li>✔ Integración con CRM (Básico y superior)</li>
+          <li>✔ Soporte 24/7 (Plus y superior)</li>
+        </ul>
+      </div>
+      <section id="faq">
+        <h2>Preguntas Frecuentes Sobre Precios</h2>
+        <div class="faq-item">
+          <h3>¿Cómo sé cuál es el mejor plan para mí?</h3>
+          <p>
+            Si necesitas menos de 500 minutos al mes, el plan Básico es ideal.
+            Para negocios con alto volumen de llamadas, recomendamos los planes
+            Plus o Premium.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puedo subir o bajar de categoría mi plan?</h3>
+          <p>
+            ¡Sí! Puedes cambiar tu plan en cualquier momento según las
+            necesidades de tu negocio.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Necesito firmar un contrato a largo plazo?</h3>
+          <p>
+            No, todos los planes son mes a mes. Puedes cancelar en cualquier
+            momento.
+          </p>
+        </div>
+      </section>
     </section>
 
     <!-- Sección de Programar una Reunión -->

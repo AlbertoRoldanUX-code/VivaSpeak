@@ -27,6 +27,24 @@ $(document).ready(function () {
       }
     }
   });
+
+  // Cambiar los precios
+  document
+    .getElementById("togglePricing")
+    .addEventListener("change", function () {
+      if (this.checked) {
+        document.getElementById("basic-price").innerText =
+          "€39 / month (billed annually)";
+        document.getElementById("plus-price").innerText =
+          "€79 / month (billed annually)";
+        document.getElementById("premium-price").innerText =
+          "€159 / month (billed annually)";
+      } else {
+        document.getElementById("basic-price").innerText = "€49 / month";
+        document.getElementById("plus-price").innerText = "€99 / month";
+        document.getElementById("premium-price").innerText = "€199 / month";
+      }
+    });
   // Makes year dynamic
   $("#year").text(new Date().getFullYear());
 });
