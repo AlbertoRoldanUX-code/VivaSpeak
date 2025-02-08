@@ -442,7 +442,6 @@ nav ul li a.btn-primary:hover {
 /* Toggle Pricing Style */
 #pricing {
   background-color: var(--gray-very-light);
-  padding: 80px 20px;
 }
 
 .pricing-toggle {
@@ -630,37 +629,26 @@ input:checked + .slider:before {
   padding: 90px 20px 60px;
   background-color: var(--white-2);
 }
-
-#faq h2 {
-  margin-bottom: 20px;
-  color: var(--black-2);
-  font-size: 1.5em;
-}
-
-.faq-item {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
+.faq-container details {
+  background: var(--white);
+  border: 1px solid var(--gray-light);
   border-radius: 8px;
-  box-shadow: 0 4px 8px var(--shadow-1);
-  transition: all 0.3s ease-in-out;
-}
-
-.faq-item:hover {
-  box-shadow: 0 6px 12px var(--shadow-2);
-}
-
-.faq-item h3 {
-  font-size: 1.5rem;
+  padding: 10px;
   margin-bottom: 10px;
-  color: var(--primary);
+  box-shadow: 0 2px 5px var(--shadow-1);
+  cursor: pointer;
 }
 
-.faq-item p {
-  font-size: 1rem;
-  color: var(--gray-medium);
-  line-height: 1.6;
+.faq-container summary {
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.faq-container p {
+  padding: 10px;
+  margin: 0;
 }
 
 /* ********** CALENDAR SECTION *********** */
