@@ -624,7 +624,19 @@ input:checked + .slider:before {
   }
 
   .pricing-features {
-    display: block;
+    display: flex;
+  }
+
+  .pricing-features ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pricing-features li {
+    padding: 12px;
+    font-size: 1rem;
+    text-align: left;
+    justify-content: flex-start;
   }
 }
 
