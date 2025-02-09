@@ -865,7 +865,7 @@ footer {
   }
 
   .nav-list li .btn-primary {
-    background-color: var(--primary);
+    background-color: var(--cta);
     height: inherit;
   }
 
