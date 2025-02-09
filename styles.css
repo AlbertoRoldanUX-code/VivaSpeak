@@ -426,6 +426,13 @@ nav ul li a.btn-primary:hover {
 }
 
 /* ********** DEMO SECTION *********** */
+#video-demo {
+  background: linear-gradient(
+    to bottom,
+    var(--color-light) 0%,
+    var(--gray-very-light) 100%
+  );
+}
 
 #video-demo video {
   display: block; /* Centra el video */
