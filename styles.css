@@ -372,10 +372,9 @@ nav ul li a.btn-primary:hover {
   margin-top: 30px;
 }
 
-/* ********** INBOUND & OUTBOUND SECTION *********** */
+/* ********** AUTOMATED CALLS SECTION *********** */
 
-#inbound ul,
-#outbound ul {
+#automated-calls ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -384,8 +383,7 @@ nav ul li a.btn-primary:hover {
   list-style: none;
 }
 
-#inbound li,
-#outbound li {
+#automated-calls li {
   background-color: var(--white);
   border: 1px solid var(--color-border);
   border-radius: 10px;
@@ -398,28 +396,24 @@ nav ul li a.btn-primary:hover {
   color: var(--color-text);
 }
 
-#inbound li:hover,
-#outbound li:hover {
+#automated-calls li:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px var(--shadow-3);
 }
 
-#inbound li .icon,
-#outbound li .icon {
+#automated-calls li .icon {
   font-size: 2.5rem; /* Tamaño del ícono */
   margin-bottom: 15px;
 }
 
-#inbound li strong,
-#outbound li strong {
+#automated-calls li strong {
   display: block;
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: var(--primary-dark);
 }
 
-#inbound li p,
-#outbound li p {
+#automated-calls li p {
   font-size: 1rem;
   color: var(--color-text);
   line-height: 1.5;
@@ -803,8 +797,7 @@ footer {
 /* Media queries para tabletas (pantallas entre 768px y 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .contact-form,
-  #inbound,
-  #outbound,
+  #automated-calls,
   #video-demo {
     max-width: 80%; /* Reduce el ancho */
   }
@@ -894,13 +887,11 @@ footer {
   }
 
   /* Beneficios: Mejora el espaciado en móviles */
-  #inbound ul,
-  #outbound ul {
+  #automated-calls ul {
     padding: 0;
   }
 
-  #inbound ul li,
-  #outbound ul li {
+  #automated-calls ul li {
     margin: 10px 0;
     font-size: 16px;
   }
