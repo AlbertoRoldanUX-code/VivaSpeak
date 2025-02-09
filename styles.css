@@ -179,8 +179,6 @@ header {
 .nav-list li .btn-primary {
   height: inherit;
   padding: 10px 20px;
-  box-shadow: 0 2px 5px var(--shadow-2);
-  text-transform: uppercase;
 }
 
 .brand {
