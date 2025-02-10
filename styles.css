@@ -3,6 +3,8 @@
   --black-2: #333;
   --cta: #ff6600;
   --cta-hover: #e65c00;
+  --hero-1: #1abc9c7d;
+  --hero-2: #16a0857d;
   --gray-very-light: #f8f8f8;
   --gray-light: #ddd;
   --gray-light-2: #ccc;
@@ -336,8 +338,8 @@ nav ul li a.btn-primary:hover {
   padding: 100px 20px;
   background: linear-gradient(
     to bottom,
-    var(--primary) 0%,
-    var(--primary-dark) 50%,
+    var(--hero-1) 0%,
+    var(--hero-2) 50%,
     var(--color-light) 100%
   );
 }
