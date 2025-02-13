@@ -181,6 +181,7 @@ header {
 .nav-list li .btn-primary {
   height: inherit;
   padding: 10px 20px;
+  min-width: 104px;
 }
 
 .brand {
