@@ -131,6 +131,7 @@ header {
 /* **********LANGUAGE SWITCHER*********** */
 .language-switcher {
   font-weight: bold;
+  display: flex;
 }
 
 .language-switcher a {
