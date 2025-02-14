@@ -128,6 +128,19 @@ header {
   border-radius: 10px;
 }
 
+@media (max-width: 1203px) {
+  body {
+    font-size: 16px; /* Ajusta el tamaño del texto */
+  }
+
+  .header-container {
+    padding: 0;
+    margin-top: 0;
+    border-radius: 0;
+    width: auto;
+  }
+}
+
 /* **********LANGUAGE SWITCHER*********** */
 .language-switcher {
   font-weight: bold;
@@ -145,12 +158,6 @@ header {
 
 .language-switcher a:hover {
   color: var(--primary-darker); /* Un turquesa más oscuro para el hover */
-}
-
-@media only screen and (max-width: 768px) {
-  .language-switcher {
-    z-index: 2;
-  }
 }
 
 /* **********NAV BAR*********** */
@@ -242,7 +249,7 @@ nav ul li a.btn-primary:hover {
   opacity: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1203px) {
   .menu-toggle {
     height: 60px;
     position: relative;
@@ -305,15 +312,10 @@ nav ul li a.btn-primary:hover {
     order: 2;
   }
 
-  nav ul {
-    display: none;
-  }
-
   nav ul li a {
     padding: 0;
   }
 
-  /* Ajusta este valor según tus necesidades específicas */
   .nav-list {
     display: flex; /* Asegúrate de que la lista esté visible */
     flex-direction: column; /* Cambia la dirección del flexbox a vertical */
@@ -330,9 +332,18 @@ nav ul li a.btn-primary:hover {
   }
 
   .nav-list li a {
-    height: 80px; /* Asegura que los enlaces tengan la misma altura en vista móvil */
+    height: inherit;
     line-height: 80px; /* Alinea el texto verticalmente */
     margin: 0;
+    display: block;
+    width: 100%;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .nav-list li .btn-primary {
+    background-color: var(--cta);
+    height: inherit;
   }
 }
 
@@ -884,6 +895,9 @@ footer {
 
 /* Media queries para tabletas (pantallas entre 768px y 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
+  section {
+    margin: 0 auto;
+  }
   .contact-form,
   #automated-calls,
   #video-demo {
@@ -923,13 +937,6 @@ footer {
     font-size: 16px; /* Ajusta el tamaño del texto */
   }
 
-  .header-container {
-    padding: 0;
-    margin-top: 0;
-    border-radius: 0;
-    width: auto;
-  }
-
   .home-container {
     padding: 25px 15px;
     margin-top: 20px; /* Añade un margen superior a la tarjeta */
@@ -957,22 +964,10 @@ footer {
     font-size: 1rem; /* Tamaño de texto reducido */
   }
 
-  .nav-list li a {
-    display: block;
-    height: inherit;
-    width: 100%;
-    padding: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-
-  .nav-list li .btn-primary {
-    background-color: var(--cta);
-    height: inherit;
-  }
-
   section {
     max-width: 95%; /* Reduce el ancho para pantallas pequeñas */
     padding-bottom: 80px;
+    margin: 0 auto;
   }
 
   /* Beneficios: Mejora el espaciado en móviles */
