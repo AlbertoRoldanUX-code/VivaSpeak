@@ -522,6 +522,7 @@ input:checked + .slider:before {
 
 .pricing-card {
   flex: 1;
+  min-width: 174px;
   max-width: 320px;
   background: var(--white);
   border-radius: 10px;
