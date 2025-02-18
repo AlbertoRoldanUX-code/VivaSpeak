@@ -521,10 +521,11 @@ input:checked + .slider:before {
 }
 
 .pricing-card {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   min-width: 174px;
   max-width: 320px;
-  height: 315px;
   background: var(--white);
   border-radius: 10px;
   padding: 20px;
@@ -548,6 +549,7 @@ input:checked + .slider:before {
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--primary);
+  height: 22px;
 }
 
 .pricing-card ul {
