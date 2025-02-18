@@ -34,36 +34,36 @@ $(document).ready(function () {
   document
     .getElementById("togglePricing")
     .addEventListener("change", function () {
-      const basic = document.getElementById("basic-price");
-      const plus = document.getElementById("plus-price");
+      const pro = document.getElementById("pro-price");
+      const elite = document.getElementById("elite-price");
 
       if (this.checked) {
         switch (lang) {
           case "es":
-            basic.innerText = "€39 / mes (facturado anualmente)";
-            plus.innerText = "€79 / mes (facturado anualmente)";
+            pro.innerText = "€39 / mes (facturado anualmente)";
+            elite.innerText = "€79 / mes (facturado anualmente)";
             break;
           case "de":
-            basic.innerText = "€39 / Monat (jährlich abgerechnet)";
-            plus.innerText = "€79 / Monat (jährlich abgerechnet)";
+            pro.innerText = "€39 / Monat (jährlich abgerechnet)";
+            elite.innerText = "€79 / Monat (jährlich abgerechnet)";
             break;
           default:
-            basic.innerText = "€39 / month (billed annually)";
-            plus.innerText = "€79 / month (billed annually)";
+            pro.innerText = "€39 / month (billed annually)";
+            elite.innerText = "€79 / month (billed annually)";
         }
       } else {
         switch (lang) {
           case "es":
-            basic.innerText = "€49 / mes";
-            plus.innerText = "€99 / mes";
+            pro.innerText = "€49 / mes";
+            elite.innerText = "€99 / mes";
             break;
           case "de":
-            basic.innerText = "€49 / Monat";
-            plus.innerText = "€99 / Monat";
+            pro.innerText = "€49 / Monat";
+            elite.innerText = "€99 / Monat";
             break;
           default:
-            basic.innerText = "€49 / month";
-            plus.innerText = "€99 / month";
+            pro.innerText = "€49 / month";
+            elite.innerText = "€99 / month";
         }
       }
     });
