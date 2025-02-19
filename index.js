@@ -54,16 +54,16 @@ $(document).ready(function () {
       } else {
         switch (lang) {
           case "es":
-            pro.innerText = "€49 / mes";
-            elite.innerText = "€99 / mes";
+            pro.innerText = "€59 / mes";
+            elite.innerText = "€119 / mes";
             break;
           case "de":
-            pro.innerText = "€49 / Monat";
-            elite.innerText = "€99 / Monat";
+            pro.innerText = "€59 / Monat";
+            elite.innerText = "€119 / Monat";
             break;
           default:
-            pro.innerText = "€49 / month";
-            elite.innerText = "€99 / month";
+            pro.innerText = "€59 / month";
+            elite.innerText = "€119 / month";
         }
       }
     });
