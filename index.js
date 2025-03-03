@@ -40,30 +40,30 @@ $(document).ready(function () {
       if (this.checked) {
         switch (lang) {
           case "es":
-            pro.innerText = "€39 / mes (facturado anualmente)";
-            elite.innerText = "€79 / mes (facturado anualmente)";
+            pro.innerText = "€95 / mes (facturado anualmente)";
+            elite.innerText = "€191 / mes (facturado anualmente)";
             break;
           case "de":
-            pro.innerText = "€39 / Monat (jährlich abgerechnet)";
-            elite.innerText = "€79 / Monat (jährlich abgerechnet)";
+            pro.innerText = "€95 / Monat (jährlich abgerechnet)";
+            elite.innerText = "€191 / Monat (jährlich abgerechnet)";
             break;
           default:
-            pro.innerText = "€39 / month (billed annually)";
-            elite.innerText = "€79 / month (billed annually)";
+            pro.innerText = "€95 / month (billed annually)";
+            elite.innerText = "€191 / month (billed annually)";
         }
       } else {
         switch (lang) {
           case "es":
-            pro.innerText = "€59 / mes";
-            elite.innerText = "€119 / mes";
+            pro.innerText = "€119 / mes";
+            elite.innerText = "€239 / mes";
             break;
           case "de":
-            pro.innerText = "€59 / Monat";
-            elite.innerText = "€119 / Monat";
+            pro.innerText = "€119 / Monat";
+            elite.innerText = "€239 / Monat";
             break;
           default:
-            pro.innerText = "€59 / month";
-            elite.innerText = "€119 / month";
+            pro.innerText = "€119 / month";
+            elite.innerText = "€239 / month";
         }
       }
     });
