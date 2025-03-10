@@ -506,6 +506,15 @@
             <label for="message">Nachricht</label>
             <textarea name="message" id="message" required></textarea>
 
+            <div>
+              <label class="privacy-consent" for="privacy-consent">
+                <input type="checkbox" id="privacy-consent" required />
+                Ich stimme der&nbsp;
+                <a href="privacy-policy.html" target="_blank"
+                  >Datenschutzrichtlinie</a
+                >&nbsp;zu.
+              </label>
+            </div>
             <div data-netlify-recaptcha="true"></div>
             <button type="submit" class="btn-primary btn-contact">
               Senden
@@ -515,9 +524,9 @@
       </div>
     </section>
 
-    <!-- Abschnitt für die Planung eines Meetings -->
+    <!-- Sektion für Terminplanung -->
     <section id="schedule">
-      <h2>Ein Meeting planen</h2>
+      <h2>Einen Termin vereinbaren</h2>
       <p>Wähle eine Zeit, die dir passt:</p>
       <div
         class="calendly-inline-widget"
@@ -529,10 +538,10 @@
         async
       ></script>
     </section>
-
     <footer>
       <p class="Copyright">
-        © <span id="year"></span> VivaSpeak. Alle Rechte vorbehalten.
+        © <span id="year"></span> VivaSpeak. Alle Rechte vorbehalten. |
+        <a href="privacy-policy.html" target="_blank">Datenschutzrichtlinie</a>
       </p>
     </footer>
   </body>

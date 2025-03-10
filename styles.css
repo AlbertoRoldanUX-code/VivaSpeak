@@ -1,6 +1,7 @@
 /* **********GENERAL*********** */
 :root {
   --black-2: #333;
+  --black-3: #555;
   --cta: #ff6600;
   --cta-hover: #e65c00;
   --hero-1: #1abc9c7d;
@@ -739,7 +740,7 @@ input:checked + .slider:before {
   display: block;
   font-weight: bold;
   color: var(--color-dark);
-  margin: 2px 0 8px 2px;
+  margin: 16px 0 13px 2px;
 }
 
 .contact-form input,
@@ -842,12 +843,13 @@ footer {
   padding: 20px 0;
 }
 
-.footer-link {
-  margin: 10px 20px;
+footer a {
+  color: var(--white);
+  text-decoration: none;
 }
 
-.footer-link:hover {
-  color: #eaf6f6;
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* SUCCESS PAGE STYLES */
@@ -897,6 +899,76 @@ footer {
 .success-container a:hover {
   background-color: var(--cta-hover);
   box-shadow: 0 6px 10px var(--shadow-3);
+}
+
+/* Estilos para la sección de Privacy Policy */
+.privacy-container {
+  max-width: 800px;
+  margin: 80px auto 40px;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.privacy-container h2 {
+  margin-top: 30px;
+  color: var(--black-2);
+}
+
+.privacy-container p,
+.privacy-container ul {
+  color: var(--black-3);
+}
+
+.privacy-container a {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.privacy-container a:hover {
+  text-decoration: underline;
+}
+
+label.privacy-consent {
+  display: flex;
+  align-items: center;
+}
+
+.privacy-consent a {
+  color: var(--primary-dark);
+  text-decoration: underline;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.privacy-consent a:hover {
+  color: var(--primary-darker);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  transition: background-color 0.25s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  margin: auto 10px auto 5px;
+  display: flex;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
 }
 
 /* Media queries para tabletas (pantallas entre 768px y 1024px) */

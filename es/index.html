@@ -515,6 +515,15 @@
             <label for="message">Mensaje</label>
             <textarea name="message" id="message" required></textarea>
 
+            <div>
+              <label class="privacy-consent" for="privacy-consent">
+                <input type="checkbox" id="privacy-consent" required />
+                Acepto la&nbsp;
+                <a href="privacy-policy.html" target="_blank"
+                  >Política de Privacidad</a
+                >.
+              </label>
+            </div>
             <div data-netlify-recaptcha="true"></div>
             <button type="submit" class="btn-primary btn-contact">
               Enviar
@@ -524,9 +533,9 @@
       </div>
     </section>
 
-    <!-- Sección de Programar una Reunión -->
+    <!-- Sección para Agendar una Reunión -->
     <section id="schedule">
-      <h2>Programa una Reunión</h2>
+      <h2>Agenda una Reunión</h2>
       <p>Selecciona un horario que te convenga:</p>
       <div
         class="calendly-inline-widget"
@@ -538,10 +547,10 @@
         async
       ></script>
     </section>
-
     <footer>
       <p class="Copyright">
-        © <span id="year"></span> VivaSpeak. Todos los derechos reservados.
+        © <span id="year"></span> VivaSpeak. Todos los derechos reservados. |
+        <a href="privacy-policy.html" target="_blank">Política de Privacidad</a>
       </p>
     </footer>
   </body>
