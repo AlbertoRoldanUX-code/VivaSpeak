@@ -505,16 +505,29 @@
 
             <label for="message">Nachricht</label>
             <textarea name="message" id="message" required></textarea>
-
-            <div>
-              <label class="privacy-consent" for="privacy-consent">
-                <input type="checkbox" id="privacy-consent" required />
-                Ich stimme der&nbsp;
-                <a href="privacy-policy.html" target="_blank"
-                  >Datenschutzrichtlinie</a
-                >&nbsp;zu.
+            <div class="consent-container">
+              <input
+                type="checkbox"
+                id="privacy-consent"
+                class="checkbox-style"
+                required
+              />
+              <label for="privacy-consent" class="label-style">
+                Ich stimme den
+                <a
+                  href="terms-and-conditions.html"
+                  target="_blank"
+                  class="link-style"
+                  >Allgemeinen Geschäftsbedingungen</a
+                >
+                und der
+                <a href="privacy-policy.html" target="_blank" class="link-style"
+                  >Datenschutzerklärung</a
+                >
+                zu.
               </label>
             </div>
+
             <div data-netlify-recaptcha="true"></div>
             <button type="submit" class="btn-primary btn-contact">
               Senden
@@ -523,11 +536,10 @@
         </div>
       </div>
     </section>
-
-    <!-- Sektion für Terminplanung -->
     <section id="schedule">
-      <h2>Einen Termin vereinbaren</h2>
+      <h2>Termin vereinbaren</h2>
       <p>Wähle eine Zeit, die dir passt:</p>
+
       <div
         class="calendly-inline-widget"
         data-url="https://calendly.com/vivaspeak/30min"
@@ -541,7 +553,9 @@
     <footer>
       <p class="Copyright">
         © <span id="year"></span> VivaSpeak. Alle Rechte vorbehalten. |
-        <a href="privacy-policy.html" target="_blank">Datenschutzrichtlinie</a>
+
+        <a href="terms-and-conditions.html" target="_blank">AGB</a> |
+        <a href="privacy-policy.html" target="_blank">Datenschutzrichtlinien</a>
       </p>
     </footer>
   </body>

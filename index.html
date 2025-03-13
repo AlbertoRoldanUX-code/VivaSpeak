@@ -484,12 +484,26 @@
             <label for="message">Message</label>
             <textarea name="message" id="message" required></textarea>
 
-            <div>
-              <label class="privacy-consent" for="privacy-consent">
-                <input type="checkbox" id="privacy-consent" required />
-                I agree to the&nbsp;
-                <a href="privacy-policy.html" target="_blank">Privacy Policy</a
-                >.
+            <div class="consent-container">
+              <input
+                type="checkbox"
+                id="privacy-consent"
+                class="checkbox-style"
+                required
+              />
+              <label for="privacy-consent" class="label-style">
+                I agree to the
+                <a
+                  href="terms-and-conditions.html"
+                  target="_blank"
+                  class="link-style"
+                  >Terms and Conditions</a
+                >
+                and
+                <a href="privacy-policy.html" target="_blank" class="link-style"
+                  >Privacy Policy</a
+                >
+                .
               </label>
             </div>
             <div data-netlify-recaptcha="true"></div>
@@ -516,7 +530,10 @@
     <footer>
       <p class="Copyright">
         © <span id="year"></span> VivaSpeak. All rights reserved. |
-        <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+        <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
+        <a href="terms-and-conditions.html" target="_blank"
+          >Terms & Conditions</a
+        >
       </p>
     </footer>
   </body>

@@ -31,9 +31,10 @@ $(document).ready(function () {
     }
   });
 
-  document
-    .getElementById("togglePricing")
-    .addEventListener("change", function () {
+  // Verifica si el elemento existe antes de añadir el evento
+  const togglePricing = document.getElementById("togglePricing");
+  if (togglePricing) {
+    togglePricing.addEventListener("change", function () {
       const pro = document.getElementById("pro-price");
       const elite = document.getElementById("elite-price");
 
@@ -67,6 +68,7 @@ $(document).ready(function () {
         }
       }
     });
+  }
 
   // Makes year dynamic
   $("#year").text(new Date().getFullYear());

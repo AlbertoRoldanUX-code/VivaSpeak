@@ -832,6 +832,49 @@ input:checked + .slider:before {
   transition: background-color 0.3s ease; /* Transición para un efecto suave */
 }
 
+.consent-container {
+  display: flex;
+  align-items: center;
+}
+
+.consent-container a {
+  color: var(--primary-dark);
+  text-decoration: underline;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.consent-container a:hover {
+  color: var(--primary-darker);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  transition: background-color 0.25s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  margin: auto 10px auto 5px;
+  display: flex;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
 /*****************FOOTER*****************/
 footer {
   background-color: var(--primary-darker);
@@ -926,49 +969,6 @@ footer a:hover {
 
 .privacy-container a:hover {
   text-decoration: underline;
-}
-
-label.privacy-consent {
-  display: flex;
-  align-items: center;
-}
-
-.privacy-consent a {
-  color: var(--primary-dark);
-  text-decoration: underline;
-  font-weight: normal;
-  transition: color 0.3s ease;
-}
-
-.privacy-consent a:hover {
-  color: var(--primary-darker);
-}
-
-input[type="checkbox"] {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--primary);
-  border-radius: 4px;
-  transition: background-color 0.25s ease-in-out;
-  align-items: center;
-  justify-content: center;
-  margin: auto 10px auto 5px;
-  display: flex;
-  cursor: pointer;
-}
-
-input[type="checkbox"]:checked {
-  background-color: var(--primary);
-}
-
-input[type="checkbox"]:checked::after {
-  content: "✔";
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  display: block;
-  text-align: center;
 }
 
 /* Media queries para tabletas (pantallas entre 768px y 1024px) */
