@@ -36,35 +36,35 @@ $(document).ready(function () {
   if (togglePricing) {
     togglePricing.addEventListener("change", function () {
       const pro = document.getElementById("pro-price");
-      const elite = document.getElementById("elite-price");
+      const premium = document.getElementById("premium-price");
 
       if (this.checked) {
         switch (lang) {
           case "es":
             pro.innerText = "€95 / mes (facturado anualmente)";
-            elite.innerText = "€191 / mes (facturado anualmente)";
+            premium.innerText = "€191 / mes (facturado anualmente)";
             break;
           case "de":
             pro.innerText = "€95 / Monat (jährlich abgerechnet)";
-            elite.innerText = "€191 / Monat (jährlich abgerechnet)";
+            premium.innerText = "€191 / Monat (jährlich abgerechnet)";
             break;
           default:
             pro.innerText = "€95 / month (billed annually)";
-            elite.innerText = "€191 / month (billed annually)";
+            premium.innerText = "€191 / month (billed annually)";
         }
       } else {
         switch (lang) {
           case "es":
             pro.innerText = "€119 / mes";
-            elite.innerText = "€239 / mes";
+            premium.innerText = "€239 / mes";
             break;
           case "de":
             pro.innerText = "€119 / Monat";
-            elite.innerText = "€239 / Monat";
+            premium.innerText = "€239 / Monat";
             break;
           default:
             pro.innerText = "€119 / month";
-            elite.innerText = "€239 / month";
+            premium.innerText = "€239 / month";
         }
       }
     });
