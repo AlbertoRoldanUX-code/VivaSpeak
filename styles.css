@@ -837,14 +837,14 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-.consent-container a {
+.link-style {
   color: var(--primary-dark);
   text-decoration: underline;
   font-weight: normal;
   transition: color 0.3s ease;
 }
 
-.consent-container a:hover {
+.link-style:hover {
   color: var(--primary-darker);
 }
 
