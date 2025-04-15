@@ -878,7 +878,7 @@ input[type="checkbox"]:checked::after {
 /*****************FOOTER*****************/
 footer {
   background-color: var(--primary-darker);
-  padding: 15px 0;
+  padding: 15px 0 35px;
   color: var(--white);
 }
 .Copyright {
@@ -893,6 +893,16 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+.social-media a:hover {
+  text-decoration: none;
+}
+
+.social-media a img {
+  width: 20px;
+  margin: 10px;
+  filter: brightness(0) invert(1);
 }
 
 /* SUCCESS PAGE STYLES */
