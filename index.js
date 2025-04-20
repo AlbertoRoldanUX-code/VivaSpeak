@@ -59,8 +59,8 @@ $(document).ready(function () {
         switch (lang) {
           case "es":
             essential.innerText = "59€ / mes";
-            pro.innerText = "€99 / mes";
-            premium.innerText = "€149 / mes";
+            pro.innerText = "99€ / mes";
+            premium.innerText = "149€ / mes";
             break;
           case "de":
             essential.innerText = "€59 / Monat";
