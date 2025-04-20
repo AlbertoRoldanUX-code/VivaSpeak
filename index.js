@@ -35,36 +35,42 @@ $(document).ready(function () {
   const togglePricing = document.getElementById("togglePricing");
   if (togglePricing) {
     togglePricing.addEventListener("change", function () {
+      const essential = document.getElementById("essential-price");
       const pro = document.getElementById("pro-price");
       const premium = document.getElementById("premium-price");
 
       if (this.checked) {
         switch (lang) {
           case "es":
-            pro.innerText = "€95 / mes (facturado anualmente)";
-            premium.innerText = "€191 / mes (facturado anualmente)";
+            essential.innerText = "47€ / mes (facturado anualmente)";
+            pro.innerText = "79€ / mes (facturado anualmente)";
+            premium.innerText = "119€ / mes (facturado anualmente)";
             break;
           case "de":
             pro.innerText = "€95 / Monat (jährlich abgerechnet)";
             premium.innerText = "€191 / Monat (jährlich abgerechnet)";
             break;
           default:
-            pro.innerText = "€95 / month (billed annually)";
-            premium.innerText = "€191 / month (billed annually)";
+            essential.innerText = "€47 / month (billed annually)";
+            pro.innerText = "€79 / month (billed annually)";
+            premium.innerText = "€119 / month (billed annually)";
         }
       } else {
         switch (lang) {
           case "es":
-            pro.innerText = "€119 / mes";
-            premium.innerText = "€239 / mes";
+            essential.innerText = "59€ / mes";
+            pro.innerText = "€99 / mes";
+            premium.innerText = "€149 / mes";
             break;
           case "de":
-            pro.innerText = "€119 / Monat";
-            premium.innerText = "€239 / Monat";
+            essential.innerText = "€59 / Monat";
+            pro.innerText = "€99 / Monat";
+            premium.innerText = "€149 / Monat";
             break;
           default:
-            pro.innerText = "€119 / month";
-            premium.innerText = "€239 / month";
+            essential.innerText = "59€ / month";
+            pro.innerText = "99€ / month";
+            premium.innerText = "149€ / month";
         }
       }
     });
