@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activación de VivaSpeak</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="https://www.vivaspeak.com/assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script defer src="index.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Formulario de Activación VivaSpeak</h1>
+      <div class="contact-form">
+        <form
+          name="activacion-vivaspeak"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="activacion-vivaspeak" />
+
+          <label for="email">Correo Electrónico</label>
+          <input type="email" name="email" id="email" required />
+
+          <label for="negocio">Nombre del Negocio</label>
+          <input type="text" name="negocio" id="negocio" required />
+
+          <label for="datos">¿Dónde prefieres recibir los datos?</label>
+          <select name="datos" id="datos" multiple required>
+            <option value="Google Sheets">Google Sheets</option>
+            <option value="CRM">CRM</option>
+            <option value="Email">Email</option>
+            <option value="Otro">Otro</option>
+          </select>
+
+          <label for="herramienta">¿Qué herramienta usas (CRM, etc)?</label>
+          <input type="text" name="herramienta" id="herramienta" />
+
+          <label for="horario">Horarios de Atención</label>
+          <input type="text" name="horario" id="horario" />
+
+          <label for="nombre-agente">Nombre que debe usar el Agente</label>
+          <input type="text" name="nombre-agente" id="nombre-agente" />
+
+          <label for="faqs">Preguntas Frecuentes que responde el Agente</label>
+          <textarea name="faqs" id="faqs" rows="3"></textarea>
+
+          <label for="plan">📦 Plan Elegido</label>
+          <select name="plan" id="plan">
+            <option value="Esencial (59 € / mes)">Esencial (59 € / mes)</option>
+            <option value="Profesional (99 € / mes)">
+              Profesional (99 € / mes)
+            </option>
+            <option value="Premium (149 € / mes)">Premium (149 € / mes)</option>
+          </select>
+
+          <label for="nombre-responsable">Nombre del Responsable Legal</label>
+          <input
+            type="text"
+            name="nombre-responsable"
+            id="nombre-responsable"
+            required
+          />
+
+          <label for="nif">NIF o CIF</label>
+          <input type="text" name="nif" id="nif" required />
+
+          <label for="direccion">Dirección Fiscal</label>
+          <input type="text" name="direccion" id="direccion" required />
+
+          <label for="marca">Nombre Legal o Marca Comercial</label>
+          <input type="text" name="marca" id="marca" required />
+
+          <label for="observaciones">Observaciones</label>
+          <textarea name="observaciones" id="observaciones"></textarea>
+
+          <div class="consent-container">
+            <input
+              type="checkbox"
+              id="privacy-consent"
+              class="checkbox-style"
+              name="confirmacion"
+              required
+            />
+            <label for="privacy-consent">
+              Confirmo que los datos proporcionados son correctos y pueden
+              usarse para generar el contrato y la factura.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary btn-contact">Enviar</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

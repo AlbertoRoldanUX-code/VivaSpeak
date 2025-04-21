@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VivaSpeak Activation</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="icon"
+      href="https://www.vivaspeak.com/assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script defer src="/index.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>VivaSpeak Activation Form</h1>
+      <div class="contact-form">
+        <form
+          name="vivaspeak-activation"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="vivaspeak-activation" />
+
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" required />
+
+          <label for="negocio">Business Name</label>
+          <input type="text" name="negocio" id="negocio" required />
+
+          <label for="datos">Where do you want to receive the call data?</label>
+          <select name="datos" id="datos" multiple required>
+            <option value="Google Sheets">Google Sheets</option>
+            <option value="CRM">CRM</option>
+            <option value="Email">Email</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="herramienta">What tool or CRM do you use?</label>
+          <input type="text" name="herramienta" id="herramienta" />
+
+          <label for="horario">Business Hours</label>
+          <input type="text" name="horario" id="horario" />
+
+          <label for="nombre-agente"
+            >Agent Name (as it should introduce itself)</label
+          >
+          <input type="text" name="nombre-agente" id="nombre-agente" />
+
+          <label for="faqs"
+            >Frequently Asked Questions the Agent Should Answer</label
+          >
+          <textarea name="faqs" id="faqs" rows="3"></textarea>
+
+          <label for="plan">📦 Selected Plan</label>
+          <select name="plan" id="plan">
+            <option value="Essential (59 € / month)">
+              Essential (59 € / month)
+            </option>
+            <option value="Professional (99 € / month)">
+              Professional (99 € / month)
+            </option>
+            <option value="Premium (149 € / month)">
+              Premium (149 € / month)
+            </option>
+          </select>
+
+          <label for="nombre-responsable"
+            >Legal Representative's Full Name</label
+          >
+          <input
+            type="text"
+            name="nombre-responsable"
+            id="nombre-responsable"
+            required
+          />
+
+          <label for="nif">Tax ID (NIF or CIF)</label>
+          <input type="text" name="nif" id="nif" required />
+
+          <label for="direccion">Full Fiscal Address</label>
+          <input type="text" name="direccion" id="direccion" required />
+
+          <label for="marca">Legal Name or Business Name</label>
+          <input type="text" name="marca" id="marca" required />
+
+          <label for="observaciones">Notes for the Invoice or Contract</label>
+          <textarea name="observaciones" id="observaciones"></textarea>
+
+          <div class="consent-container">
+            <input
+              type="checkbox"
+              id="privacy-consent"
+              class="checkbox-style"
+              name="confirmacion"
+              required
+            />
+            <label for="privacy-consent">
+              I confirm that the provided data is correct and may be used to
+              issue the contract and invoice.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary btn-contact">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
