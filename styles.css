@@ -428,6 +428,7 @@ nav ul li a.btn-primary:hover {
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: var(--primary-dark);
+  min-height: 44px;
 }
 
 #automated-calls li p {
