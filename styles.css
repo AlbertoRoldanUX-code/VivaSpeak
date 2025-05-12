@@ -881,6 +881,7 @@ select {
   height: auto;
   padding: 8px;
   line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 /*****************FOOTER*****************/
