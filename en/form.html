@@ -34,7 +34,15 @@
           <label for="negocio">Business Name</label>
           <input type="text" name="negocio" id="negocio" required />
 
-          <label for="datos">Where do you want to receive the call data?</label>
+          <small
+            id="aviso-datos"
+            style="display: none; color: gray; font-style: italic"
+          >
+            Available only for Professional and Premium plans.
+          </small>
+          <label for="datos" id="label-datos">
+            Where would you like to receive the data?
+          </label>
           <select name="datos" id="datos" multiple required>
             <option value="Google Sheets">Google Sheets</option>
             <option value="CRM">CRM</option>

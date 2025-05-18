@@ -92,4 +92,27 @@ $(document).ready(function () {
 
   // Makes year dynamic
   $("#year").text(new Date().getFullYear());
+
+  // Habilita o deshabilita el campo "datos" según el plan seleccionado
+  const planSelect = $("#plan");
+  const datosSelect = $("#datos");
+
+  function updateDatosFieldState() {
+    const selected = planSelect.val();
+    const enable =
+      selected.includes("Profesional") || selected.includes("Premium");
+
+    datosSelect.prop("disabled", !enable);
+    datosSelect.css("opacity", enable ? "1" : "0.5");
+    datosSelect.css("pointer-events", enable ? "auto" : "none");
+
+    // Cambiar color de la etiqueta
+    $("#label-datos").css("color", enable ? "#000" : "gray");
+
+    // Mostrar/ocultar el mensaje de aviso
+    $("#aviso-datos").toggle(!enable);
+  }
+
+  planSelect.on("change", updateDatosFieldState);
+  updateDatosFieldState(); // Ejecutar al cargar
 });

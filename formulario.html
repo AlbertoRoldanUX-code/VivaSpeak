@@ -34,7 +34,15 @@
           <label for="negocio">Nombre del Negocio</label>
           <input type="text" name="negocio" id="negocio" required />
 
-          <label for="datos">¿Dónde prefieres recibir los datos?</label>
+          <small
+            id="aviso-datos"
+            style="display: none; color: gray; font-style: italic"
+          >
+            Disponible solo para planes Profesional y Premium.
+          </small>
+          <label for="datos" id="label-datos"
+            >¿Dónde prefieres recibir los datos?</label
+          >
           <select name="datos" id="datos" multiple required>
             <option value="Google Sheets">Google Sheets</option>
             <option value="CRM">CRM</option>
