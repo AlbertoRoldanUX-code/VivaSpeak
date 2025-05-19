@@ -34,15 +34,25 @@
           <label for="negocio">Business Name</label>
           <input type="text" name="negocio" id="negocio" required />
 
-          <small
-            id="aviso-datos"
-            style="display: none; color: gray; font-style: italic"
-          >
-            Available only for Professional and Premium plans.
-          </small>
+          <label for="plan">📦 Selected Plan</label>
+          <select name="plan" id="plan">
+            <option value="Essential (59 € / month)">
+              Essential (59 € / month)
+            </option>
+            <option value="Professional (99 € / month)">
+              Professional (99 € / month)
+            </option>
+            <option value="Premium (149 € / month)">
+              Premium (149 € / month)
+            </option>
+          </select>
+
           <label for="datos" id="label-datos">
             Where would you like to receive the data?
           </label>
+          <small id="aviso-datos" class="aviso">
+            Available only for Professional and Premium plans.
+          </small>
           <select name="datos" id="datos" multiple required>
             <option value="Google Sheets">Google Sheets</option>
             <option value="CRM">CRM</option>
@@ -302,19 +312,6 @@
             id="faq15-r"
             placeholder="Yes, there’s a public parking 2 minutes away."
           />
-
-          <label for="plan">📦 Selected Plan</label>
-          <select name="plan" id="plan">
-            <option value="Essential (59 € / month)">
-              Essential (59 € / month)
-            </option>
-            <option value="Professional (99 € / month)">
-              Professional (99 € / month)
-            </option>
-            <option value="Premium (149 € / month)">
-              Premium (149 € / month)
-            </option>
-          </select>
 
           <label for="nombre-responsable"
             >Legal Representative's Full Name</label

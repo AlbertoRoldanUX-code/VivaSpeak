@@ -100,7 +100,9 @@ $(document).ready(function () {
   function updateDatosFieldState() {
     const selected = planSelect.val();
     const enable =
-      selected.includes("Profesional") || selected.includes("Premium");
+      selected.includes("Profesional") ||
+      selected.includes("Professional") ||
+      selected.includes("Premium");
 
     datosSelect.prop("disabled", !enable);
     datosSelect.css("opacity", enable ? "1" : "0.5");
