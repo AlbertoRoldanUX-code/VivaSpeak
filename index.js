@@ -31,7 +31,7 @@ $(document).ready(function () {
     }
   });
 
-  // Verifica si el elemento existe antes de añadir el evento
+  // Lógica del switch de precios
   const togglePricing = document.getElementById("togglePricing");
   if (togglePricing) {
     togglePricing.addEventListener("change", function () {
@@ -76,7 +76,7 @@ $(document).ready(function () {
     });
   }
 
-  // Selección automática del plan desde la URL (?plan=...)
+  // Preselección del plan desde la URL
   const planFromURL = new URLSearchParams(window.location.search).get("plan");
   if (planFromURL) {
     const planSelect = document.getElementById("plan");
@@ -90,10 +90,10 @@ $(document).ready(function () {
     }
   }
 
-  // Makes year dynamic
+  // Año dinámico
   $("#year").text(new Date().getFullYear());
 
-  // Habilita o deshabilita el campo "datos" según el plan seleccionado
+  // Habilitar campo "datos" según el plan
   const planSelect = $("#plan");
   const datosSelect = $("#datos");
 
@@ -116,5 +116,48 @@ $(document).ready(function () {
   }
 
   planSelect.on("change", updateDatosFieldState);
-  updateDatosFieldState(); // Ejecutar al cargar
+  updateDatosFieldState();
+
+  // Formulario multistep
+  let currentStep = 1;
+  const totalSteps = 4;
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+
+  const getText = (key) => {
+    const labels = {
+      es: { next: "Siguiente", submit: "Enviar" },
+      en: { next: "Next", submit: "Send" },
+    };
+    return labels[lang] && labels[lang][key]
+      ? labels[lang][key]
+      : labels["en"][key];
+  };
+
+  const showStep = (step) => {
+    document.querySelectorAll(".form-step").forEach((el, index) => {
+      el.style.display = index + 1 === step ? "block" : "none";
+    });
+    prevBtn.style.display = step > 1 ? "inline-block" : "none";
+    nextBtn.innerText =
+      step === totalSteps ? getText("submit") : getText("next");
+  };
+
+  nextBtn.addEventListener("click", () => {
+    if (currentStep === totalSteps) {
+      document.querySelector("form").submit();
+    } else {
+      currentStep++;
+      showStep(currentStep);
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  showStep(currentStep);
 });

@@ -26,322 +26,356 @@
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="vivaspeak-activation" />
+          <div class="form-step" id="step-1">
+            <!-- Contenido del paso 1: Correo, nombre de negocio, plan -->
+            <h3>Paso 1 de 4 - Datos iniciales</h3>
 
-          <label for="email">Correo Electrónico</label>
-          <input type="email" name="email" id="email" required />
-
-          <label for="negocio">Nombre del Negocio</label>
-          <input type="text" name="negocio" id="negocio" required />
-
-          <label for="plan">📦 Plan Elegido</label>
-          <select name="plan" id="plan">
-            <option value="Esencial (59 € / mes)">Esencial (59 € / mes)</option>
-            <option value="Profesional (99 € / mes)">
-              Profesional (99 € / mes)
-            </option>
-            <option value="Premium (149 € / mes)">Premium (149 € / mes)</option>
-          </select>
-
-          <label for="datos" id="label-datos"
-            >¿Dónde prefieres recibir los datos?</label
-          >
-          <small id="aviso-datos" class="aviso">
-            Disponible solo para planes Profesional y Premium.
-          </small>
-          <select name="datos" id="datos" multiple required>
-            <option value="Google Sheets">Google Sheets</option>
-            <option value="CRM">CRM</option>
-            <option value="Email">Email</option>
-            <option value="Otro">Otro</option>
-          </select>
-
-          <label for="herramienta">¿Qué herramienta usas (CRM, etc)?</label>
-          <input type="text" name="herramienta" id="herramienta" />
-
-          <label for="horario">Horarios de Atención</label>
-          <input type="text" name="horario" id="horario" />
-
-          <label for="nombre-agente">Nombre que debe usar el Agente</label>
-          <input type="text" name="nombre-agente" id="nombre-agente" />
-
-          <label>Preguntas Frecuentes que responde el Agente</label>
-
-          <!-- FAQ 1 -->
-          <label for="faq1-p">Pregunta 1</label>
-          <input
-            type="text"
-            name="faq1-p"
-            id="faq1-p"
-            placeholder="¿Cómo puedo pedir una cita?"
-          />
-          <label for="faq1-r">Respuesta 1</label>
-          <input
-            type="text"
-            name="faq1-r"
-            id="faq1-r"
-            placeholder="Puedes pedir una cita llamando directamente o desde nuestra web."
-          />
-
-          <!-- FAQ 2 -->
-          <label for="faq2-p">Pregunta 2</label>
-          <input
-            type="text"
-            name="faq2-p"
-            id="faq2-p"
-            placeholder="¿Qué horarios tienen?"
-          />
-          <label for="faq2-r">Respuesta 2</label>
-          <input
-            type="text"
-            name="faq2-r"
-            id="faq2-r"
-            placeholder="Atendemos de lunes a viernes de 9:00 a 19:00."
-          />
-
-          <!-- FAQ 3 -->
-          <label for="faq3-p">Pregunta 3</label>
-          <input
-            type="text"
-            name="faq3-p"
-            id="faq3-p"
-            placeholder="¿Dónde están ubicados?"
-          />
-          <label for="faq3-r">Respuesta 3</label>
-          <input
-            type="text"
-            name="faq3-r"
-            id="faq3-r"
-            placeholder="Estamos en Calle Real 45, en el centro de Málaga."
-          />
-
-          <!-- FAQ 4 -->
-          <label for="faq4-p">Pregunta 4</label>
-          <input
-            type="text"
-            name="faq4-p"
-            id="faq4-p"
-            placeholder="¿Qué tratamientos ofrecen?"
-          />
-          <label for="faq4-r">Respuesta 4</label>
-          <input
-            type="text"
-            name="faq4-r"
-            id="faq4-r"
-            placeholder="Ofrecemos tratamientos estéticos, faciales y corporales."
-          />
-
-          <!-- FAQ 5 -->
-          <label for="faq5-p">Pregunta 5</label>
-          <input
-            type="text"
-            name="faq5-p"
-            id="faq5-p"
-            placeholder="¿Puedo cancelar o cambiar una cita?"
-          />
-          <label for="faq5-r">Respuesta 5</label>
-          <input
-            type="text"
-            name="faq5-r"
-            id="faq5-r"
-            placeholder="Sí, con al menos 24 h de antelación llamando o por WhatsApp."
-          />
-
-          <!-- FAQ 6 -->
-          <label for="faq6-p">Pregunta 6</label>
-          <input
-            type="text"
-            name="faq6-p"
-            id="faq6-p"
-            placeholder="¿Atienden urgencias?"
-          />
-          <label for="faq6-r">Respuesta 6</label>
-          <input
-            type="text"
-            name="faq6-r"
-            id="faq6-r"
-            placeholder="No atendemos urgencias, pero damos cita lo antes posible."
-          />
-
-          <!-- FAQ 7 -->
-          <label for="faq7-p">Pregunta 7</label>
-          <input
-            type="text"
-            name="faq7-p"
-            id="faq7-p"
-            placeholder="¿Tienen financiación disponible?"
-          />
-          <label for="faq7-r">Respuesta 7</label>
-          <input
-            type="text"
-            name="faq7-r"
-            id="faq7-r"
-            placeholder="Sí, consulta nuestras opciones al llegar o por teléfono."
-          />
-
-          <!-- FAQ 8 -->
-          <label for="faq8-p">Pregunta 8</label>
-          <input
-            type="text"
-            name="faq8-p"
-            id="faq8-p"
-            placeholder="¿Qué precios tienen?"
-          />
-          <label for="faq8-r">Respuesta 8</label>
-          <input
-            type="text"
-            name="faq8-r"
-            id="faq8-r"
-            placeholder="Puedes ver los precios en nuestra web o pedir información por WhatsApp."
-          />
-
-          <!-- FAQ 9 -->
-          <label for="faq9-p">Pregunta 9</label>
-          <input
-            type="text"
-            name="faq9-p"
-            id="faq9-p"
-            placeholder="¿Atienden con seguro médico?"
-          />
-          <label for="faq9-r">Respuesta 9</label>
-          <input
-            type="text"
-            name="faq9-r"
-            id="faq9-r"
-            placeholder="Sí, trabajamos con algunas aseguradoras. Consulta cuál en recepción."
-          />
-
-          <!-- FAQ 10 -->
-          <label for="faq10-p">Pregunta 10</label>
-          <input
-            type="text"
-            name="faq10-p"
-            id="faq10-p"
-            placeholder="¿Cuánto dura la primera consulta?"
-          />
-          <label for="faq10-r">Respuesta 10</label>
-          <input
-            type="text"
-            name="faq10-r"
-            id="faq10-r"
-            placeholder="Dura aproximadamente 30 minutos."
-          />
-
-          <!-- FAQ 11 -->
-          <label for="faq11-p">Pregunta 11</label>
-          <input
-            type="text"
-            name="faq11-p"
-            id="faq11-p"
-            placeholder="¿Puedo ir acompañado a la cita?"
-          />
-          <label for="faq11-r">Respuesta 11</label>
-          <input
-            type="text"
-            name="faq11-r"
-            id="faq11-r"
-            placeholder="Sí, puedes venir con un acompañante."
-          />
-
-          <!-- FAQ 12 -->
-          <label for="faq12-p">Pregunta 12</label>
-          <input
-            type="text"
-            name="faq12-p"
-            id="faq12-p"
-            placeholder="¿Con cuánta antelación debo llegar?"
-          />
-          <label for="faq12-r">Respuesta 12</label>
-          <input
-            type="text"
-            name="faq12-r"
-            id="faq12-r"
-            placeholder="Recomendamos llegar 10 minutos antes de tu cita."
-          />
-
-          <!-- FAQ 13 -->
-          <label for="faq13-p">Pregunta 13</label>
-          <input
-            type="text"
-            name="faq13-p"
-            id="faq13-p"
-            placeholder="¿Hacen seguimiento después del tratamiento?"
-          />
-          <label for="faq13-r">Respuesta 13</label>
-          <input
-            type="text"
-            name="faq13-r"
-            id="faq13-r"
-            placeholder="Sí, hacemos seguimiento personalizado de cada paciente."
-          />
-
-          <!-- FAQ 14 -->
-          <label for="faq14-p">Pregunta 14</label>
-          <input
-            type="text"
-            name="faq14-p"
-            id="faq14-p"
-            placeholder="¿Cómo puedo recibir recordatorios?"
-          />
-          <label for="faq14-r">Respuesta 14</label>
-          <input
-            type="text"
-            name="faq14-r"
-            id="faq14-r"
-            placeholder="Por llamada automática o mensaje de WhatsApp, como prefieras."
-          />
-
-          <!-- FAQ 15 -->
-          <label for="faq15-p">Pregunta 15</label>
-          <input
-            type="text"
-            name="faq15-p"
-            id="faq15-p"
-            placeholder="¿Tienen aparcamiento cerca?"
-          />
-          <label for="faq15-r">Respuesta 15</label>
-          <input
-            type="text"
-            name="faq15-r"
-            id="faq15-r"
-            placeholder="Sí, hay un parking público a 2 minutos andando."
-          />
-
-          <label for="nombre-responsable">Nombre del Responsable Legal</label>
-          <input
-            type="text"
-            name="nombre-responsable"
-            id="nombre-responsable"
-            required
-          />
-
-          <label for="nif">NIF o CIF</label>
-          <input type="text" name="nif" id="nif" required />
-
-          <label for="direccion">Dirección Fiscal</label>
-          <input type="text" name="direccion" id="direccion" required />
-
-          <label for="marca">Nombre Legal o Marca Comercial</label>
-          <input type="text" name="marca" id="marca" required />
-
-          <label for="observaciones">Observaciones</label>
-          <textarea name="observaciones" id="observaciones"></textarea>
-
-          <div class="consent-container">
             <input
-              type="checkbox"
-              id="privacy-consent"
-              class="checkbox-style"
-              name="confirmacion"
-              required
+              type="hidden"
+              name="form-name"
+              value="vivaspeak-activation"
             />
-            <label for="privacy-consent">
-              Confirmo que los datos proporcionados son correctos y pueden
-              usarse para generar el contrato y la factura.
-            </label>
+
+            <label for="email">Correo Electrónico</label>
+            <input type="email" name="email" id="email" required />
+
+            <label for="negocio">Nombre del Negocio</label>
+            <input type="text" name="negocio" id="negocio" required />
+
+            <label for="plan">📦 Plan Elegido</label>
+            <select name="plan" id="plan">
+              <option value="Esencial (59 € / mes)">
+                Esencial (59 € / mes)
+              </option>
+              <option value="Profesional (99 € / mes)">
+                Profesional (99 € / mes)
+              </option>
+              <option value="Premium (149 € / mes)">
+                Premium (149 € / mes)
+              </option>
+            </select>
           </div>
 
-          <button type="submit" class="btn-primary btn-contact">Enviar</button>
+          <div class="form-step" id="step-2" style="display: none">
+            <!-- Contenido del paso 2: Datos, herramienta, horario, nombre del agente -->
+            <h3>Paso 2 de 4 - Configuración del agente</h3>
+
+            <label for="datos" id="label-datos"
+              >¿Dónde prefieres recibir los datos?</label
+            >
+            <small id="aviso-datos" class="aviso">
+              Disponible solo para planes Profesional y Premium.
+            </small>
+            <select name="datos" id="datos" multiple required>
+              <option value="Google Sheets">Google Sheets</option>
+              <option value="CRM">CRM</option>
+              <option value="Email">Email</option>
+              <option value="Otro">Otro</option>
+            </select>
+
+            <label for="herramienta">¿Qué herramienta usas (CRM, etc)?</label>
+            <input type="text" name="herramienta" id="herramienta" />
+
+            <label for="horario">Horarios de Atención</label>
+            <input type="text" name="horario" id="horario" />
+
+            <label for="nombre-agente">Nombre que debe usar el Agente</label>
+            <input type="text" name="nombre-agente" id="nombre-agente" />
+          </div>
+
+          <div class="form-step" id="step-3" style="display: none">
+            <!-- Contenido del paso 3: Preguntas frecuentes (puedes partirlas en grupos de 5 si quieres) -->
+            <h3>Paso 3 de 4 - Preguntas frecuentes</h3>
+
+            <label>Preguntas Frecuentes que responde el Agente</label>
+
+            <!-- FAQ 1 -->
+            <label for="faq1-p">Pregunta 1</label>
+            <input
+              type="text"
+              name="faq1-p"
+              id="faq1-p"
+              placeholder="¿Cómo puedo pedir una cita?"
+            />
+            <label for="faq1-r">Respuesta 1</label>
+            <input
+              type="text"
+              name="faq1-r"
+              id="faq1-r"
+              placeholder="Puedes pedir una cita llamando directamente o desde nuestra web."
+            />
+
+            <!-- FAQ 2 -->
+            <label for="faq2-p">Pregunta 2</label>
+            <input
+              type="text"
+              name="faq2-p"
+              id="faq2-p"
+              placeholder="¿Qué horarios tienen?"
+            />
+            <label for="faq2-r">Respuesta 2</label>
+            <input
+              type="text"
+              name="faq2-r"
+              id="faq2-r"
+              placeholder="Atendemos de lunes a viernes de 9:00 a 19:00."
+            />
+
+            <!-- FAQ 3 -->
+            <label for="faq3-p">Pregunta 3</label>
+            <input
+              type="text"
+              name="faq3-p"
+              id="faq3-p"
+              placeholder="¿Dónde están ubicados?"
+            />
+            <label for="faq3-r">Respuesta 3</label>
+            <input
+              type="text"
+              name="faq3-r"
+              id="faq3-r"
+              placeholder="Estamos en Calle Real 45, en el centro de Málaga."
+            />
+
+            <!-- FAQ 4 -->
+            <label for="faq4-p">Pregunta 4</label>
+            <input
+              type="text"
+              name="faq4-p"
+              id="faq4-p"
+              placeholder="¿Qué tratamientos ofrecen?"
+            />
+            <label for="faq4-r">Respuesta 4</label>
+            <input
+              type="text"
+              name="faq4-r"
+              id="faq4-r"
+              placeholder="Ofrecemos tratamientos estéticos, faciales y corporales."
+            />
+
+            <!-- FAQ 5 -->
+            <label for="faq5-p">Pregunta 5</label>
+            <input
+              type="text"
+              name="faq5-p"
+              id="faq5-p"
+              placeholder="¿Puedo cancelar o cambiar una cita?"
+            />
+            <label for="faq5-r">Respuesta 5</label>
+            <input
+              type="text"
+              name="faq5-r"
+              id="faq5-r"
+              placeholder="Sí, con al menos 24 h de antelación llamando o por WhatsApp."
+            />
+
+            <!-- FAQ 6 -->
+            <label for="faq6-p">Pregunta 6</label>
+            <input
+              type="text"
+              name="faq6-p"
+              id="faq6-p"
+              placeholder="¿Atienden urgencias?"
+            />
+            <label for="faq6-r">Respuesta 6</label>
+            <input
+              type="text"
+              name="faq6-r"
+              id="faq6-r"
+              placeholder="No atendemos urgencias, pero damos cita lo antes posible."
+            />
+
+            <!-- FAQ 7 -->
+            <label for="faq7-p">Pregunta 7</label>
+            <input
+              type="text"
+              name="faq7-p"
+              id="faq7-p"
+              placeholder="¿Tienen financiación disponible?"
+            />
+            <label for="faq7-r">Respuesta 7</label>
+            <input
+              type="text"
+              name="faq7-r"
+              id="faq7-r"
+              placeholder="Sí, consulta nuestras opciones al llegar o por teléfono."
+            />
+
+            <!-- FAQ 8 -->
+            <label for="faq8-p">Pregunta 8</label>
+            <input
+              type="text"
+              name="faq8-p"
+              id="faq8-p"
+              placeholder="¿Qué precios tienen?"
+            />
+            <label for="faq8-r">Respuesta 8</label>
+            <input
+              type="text"
+              name="faq8-r"
+              id="faq8-r"
+              placeholder="Puedes ver los precios en nuestra web o pedir información por WhatsApp."
+            />
+
+            <!-- FAQ 9 -->
+            <label for="faq9-p">Pregunta 9</label>
+            <input
+              type="text"
+              name="faq9-p"
+              id="faq9-p"
+              placeholder="¿Atienden con seguro médico?"
+            />
+            <label for="faq9-r">Respuesta 9</label>
+            <input
+              type="text"
+              name="faq9-r"
+              id="faq9-r"
+              placeholder="Sí, trabajamos con algunas aseguradoras. Consulta cuál en recepción."
+            />
+
+            <!-- FAQ 10 -->
+            <label for="faq10-p">Pregunta 10</label>
+            <input
+              type="text"
+              name="faq10-p"
+              id="faq10-p"
+              placeholder="¿Cuánto dura la primera consulta?"
+            />
+            <label for="faq10-r">Respuesta 10</label>
+            <input
+              type="text"
+              name="faq10-r"
+              id="faq10-r"
+              placeholder="Dura aproximadamente 30 minutos."
+            />
+
+            <!-- FAQ 11 -->
+            <label for="faq11-p">Pregunta 11</label>
+            <input
+              type="text"
+              name="faq11-p"
+              id="faq11-p"
+              placeholder="¿Puedo ir acompañado a la cita?"
+            />
+            <label for="faq11-r">Respuesta 11</label>
+            <input
+              type="text"
+              name="faq11-r"
+              id="faq11-r"
+              placeholder="Sí, puedes venir con un acompañante."
+            />
+
+            <!-- FAQ 12 -->
+            <label for="faq12-p">Pregunta 12</label>
+            <input
+              type="text"
+              name="faq12-p"
+              id="faq12-p"
+              placeholder="¿Con cuánta antelación debo llegar?"
+            />
+            <label for="faq12-r">Respuesta 12</label>
+            <input
+              type="text"
+              name="faq12-r"
+              id="faq12-r"
+              placeholder="Recomendamos llegar 10 minutos antes de tu cita."
+            />
+
+            <!-- FAQ 13 -->
+            <label for="faq13-p">Pregunta 13</label>
+            <input
+              type="text"
+              name="faq13-p"
+              id="faq13-p"
+              placeholder="¿Hacen seguimiento después del tratamiento?"
+            />
+            <label for="faq13-r">Respuesta 13</label>
+            <input
+              type="text"
+              name="faq13-r"
+              id="faq13-r"
+              placeholder="Sí, hacemos seguimiento personalizado de cada paciente."
+            />
+
+            <!-- FAQ 14 -->
+            <label for="faq14-p">Pregunta 14</label>
+            <input
+              type="text"
+              name="faq14-p"
+              id="faq14-p"
+              placeholder="¿Cómo puedo recibir recordatorios?"
+            />
+            <label for="faq14-r">Respuesta 14</label>
+            <input
+              type="text"
+              name="faq14-r"
+              id="faq14-r"
+              placeholder="Por llamada automática o mensaje de WhatsApp, como prefieras."
+            />
+
+            <!-- FAQ 15 -->
+            <label for="faq15-p">Pregunta 15</label>
+            <input
+              type="text"
+              name="faq15-p"
+              id="faq15-p"
+              placeholder="¿Tienen aparcamiento cerca?"
+            />
+            <label for="faq15-r">Respuesta 15</label>
+            <input
+              type="text"
+              name="faq15-r"
+              id="faq15-r"
+              placeholder="Sí, hay un parking público a 2 minutos andando."
+            />
+          </div>
+
+          <div class="form-step" id="step-4" style="display: none">
+            <!-- Contenido del paso 4: Datos fiscales, observaciones, checkbox, botón enviar -->
+            <h3>Paso 4 de 4 - Datos fiscales y confirmación</h3>
+
+            <label for="nombre-responsable">Nombre del Responsable Legal</label>
+            <input
+              type="text"
+              name="nombre-responsable"
+              id="nombre-responsable"
+              required
+            />
+
+            <label for="nif">NIF o CIF</label>
+            <input type="text" name="nif" id="nif" required />
+
+            <label for="direccion">Dirección Fiscal</label>
+            <input type="text" name="direccion" id="direccion" required />
+
+            <label for="marca">Nombre Legal o Marca Comercial</label>
+            <input type="text" name="marca" id="marca" required />
+
+            <label for="observaciones">Observaciones</label>
+            <textarea name="observaciones" id="observaciones"></textarea>
+
+            <div class="consent-container">
+              <input
+                type="checkbox"
+                id="privacy-consent"
+                class="checkbox-style"
+                name="confirmacion"
+                required
+              />
+              <label for="privacy-consent">
+                Confirmo que los datos proporcionados son correctos y pueden
+                usarse para generar el contrato y la factura.
+              </label>
+            </div>
+          </div>
+          <div class="form-navigation">
+            <button type="button" class="btn-secondary" id="prevBtn">
+              Anterior
+            </button>
+            <button type="button" class="btn-primary" id="nextBtn">
+              Siguiente
+            </button>
+          </div>
         </form>
       </div>
     </main>

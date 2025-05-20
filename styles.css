@@ -71,7 +71,6 @@ ul {
   padding: 15px 35px;
   font-size: 1.2rem;
   font-weight: bold;
-  text-transform: uppercase;
   border-radius: 8px;
   border: 2px solid transparent; /* Borde invisible por defecto */
   transition: all 0.3s ease;
@@ -737,7 +736,7 @@ input:checked + .slider:before {
   height: 800px;
 }
 
-/* ********** CONTACT FORM SECTION *********** */
+/* ********** FORM SECTION *********** */
 .contact-form {
   margin: 20px auto;
   padding: 20px;
@@ -815,7 +814,6 @@ input:checked + .slider:before {
 .contact-form button {
   width: 100%; /* Ajusta el ancho de los campos al contenedor */
   margin-bottom: 15px;
-  border: 1px solid var(--color-border); /* Borde del campo */
   font-size: 16px;
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
@@ -838,8 +836,6 @@ input:checked + .slider:before {
 }
 
 .contact-form button {
-  color: var(--white); /* Texto blanco */
-  border: none; /* Sin borde */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Transición para un efecto suave */
 }
@@ -901,6 +897,13 @@ select {
   font-style: italic;
   display: block;
   margin-bottom: 5px;
+}
+
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
 }
 
 /*****************FOOTER*****************/
