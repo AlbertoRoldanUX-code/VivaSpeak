@@ -585,6 +585,13 @@ input:checked + .slider:before {
   border-radius: 5px;
 }
 
+.leyenda {
+  font-size: 0.85em;
+  color: var(--gray-medium);
+  text-align: center;
+  margin-top: 10px;
+}
+
 /* Pricing Table */
 .pricing-table {
   width: 100%;
