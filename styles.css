@@ -571,7 +571,6 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: start;
   text-align: left;
-  flex-wrap: wrap;
 }
 
 .pricing-card li strong {
@@ -587,11 +586,23 @@ input:checked + .slider:before {
   border-radius: 5px;
 }
 
+.pricing-card ul li::before {
+  content: "✓";
+  color: var(--primary); /* o cualquier otro color que prefieras */
+  font-weight: bold;
+  margin-right: 8px;
+}
+
 .leyenda {
   font-size: 0.85em;
   color: var(--gray-medium);
   text-align: center;
   margin-top: 10px;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Pricing Table */
