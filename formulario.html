@@ -25,6 +25,7 @@
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          enctype="multipart/form-data"
         >
           <div class="form-step" id="step-1">
             <!-- Contenido del paso 1: Correo, nombre de negocio, plan -->
@@ -86,6 +87,15 @@
               name="telefono-transferencia"
               id="telefono-transferencia"
               placeholder="Ej. +34 612 345 678"
+            />
+            <label for="knowledge-base"
+              >Sube tu Base de Conocimiento (PDF, DOCX o TXT)</label
+            >
+            <input
+              type="file"
+              name="knowledge-base"
+              id="knowledge-base"
+              accept=".pdf,.doc,.docx,.txt"
             />
           </div>
 

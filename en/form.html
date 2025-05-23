@@ -25,6 +25,7 @@
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          enctype="multipart/form-data"
         >
           <div class="form-step" id="step-1">
             <h3>Step 1 of 4 – Basic Information</h3>
@@ -84,6 +85,15 @@
               name="telefono-transferencia"
               id="telefono-transferencia"
               placeholder="e.g. +34 612 345 678"
+            />
+            <label for="knowledge-base"
+              >Upload your Knowledge Base (PDF, DOCX or TXT)</label
+            >
+            <input
+              type="file"
+              name="knowledge-base"
+              id="knowledge-base"
+              accept=".pdf,.doc,.docx,.txt"
             />
           </div>
 
