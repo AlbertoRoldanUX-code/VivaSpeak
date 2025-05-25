@@ -144,6 +144,32 @@ $(document).ready(function () {
   };
 
   nextBtn.addEventListener("click", () => {
+    const currentFormStep = document.querySelector(`#step-${currentStep}`);
+    const inputs = currentFormStep.querySelectorAll("input, select, textarea");
+
+    let isValid = true;
+
+    inputs.forEach((input) => {
+      if (
+        input.hasAttribute("required") &&
+        (input.type === "checkbox" ? !input.checked : !input.value.trim())
+      ) {
+        isValid = false;
+        input.classList.add("input-error"); 
+      } else {
+        input.classList.remove("input-error");
+      }
+    });
+
+    if (!isValid) {
+      alert(
+        lang === "es"
+          ? "Por favor, completa los campos obligatorios antes de continuar."
+          : "Please complete the required fields before continuing."
+      );
+      return;
+    }
+
     if (currentStep === totalSteps) {
       document.querySelector("form").submit();
     } else {
