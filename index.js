@@ -140,7 +140,11 @@ $(document).ready(function () {
     });
     prevBtn.style.display = step > 1 ? "inline-block" : "none";
     nextBtn.innerText =
-      step === totalSteps ? getText("submit") : getText("next");
+      step === totalSteps
+        ? lang === "es"
+          ? "Ir a pagar"
+          : "Proceed to payment"
+        : getText("next");
   };
 
   nextBtn.addEventListener("click", () => {
@@ -155,7 +159,7 @@ $(document).ready(function () {
         (input.type === "checkbox" ? !input.checked : !input.value.trim())
       ) {
         isValid = false;
-        input.classList.add("input-error"); 
+        input.classList.add("input-error");
       } else {
         input.classList.remove("input-error");
       }
@@ -172,6 +176,22 @@ $(document).ready(function () {
 
     if (currentStep === totalSteps) {
       document.querySelector("form").submit();
+
+      // Redirige al link de Stripe después de enviar el formulario
+      const selectedPlan = document.getElementById("plan").value;
+
+      let stripeLink = "";
+      if (selectedPlan.includes("Esencial")) {
+        stripeLink = "https://buy.stripe.com/3cIaEXdMy0Zdg7xbU4c7u00";
+      } else if (selectedPlan.includes("Profesional")) {
+        stripeLink = "https://buy.stripe.com/4gM5kD7oa5ft1cDe2cc7u01";
+      } else if (selectedPlan.includes("Premium")) {
+        stripeLink = "https://buy.stripe.com/dRm5kD7oa6jx6wX9LWc7u02";
+      }
+
+      setTimeout(() => {
+        window.location.href = stripeLink;
+      }, 1500); // Espera 1.5s para asegurar que Netlify reciba los datos
     } else {
       currentStep++;
       showStep(currentStep);
