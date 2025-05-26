@@ -235,25 +235,27 @@
 
             <label>Frequently Asked Questions the Agent Will Answer</label>
 
-            <!-- Example -->
-            <label for="faq1-p">Question 1</label>
-            <input
-              type="text"
-              name="faq1-p"
-              id="faq1-p"
-              placeholder="How can I book an appointment?"
-            />
-            <label for="faq1-r">Answer 1</label>
-            <input
-              type="text"
-              name="faq1-r"
-              id="faq1-r"
-              placeholder="You can book an appointment by calling directly or through our website."
-            />
-
-            <!-- Repeat for questions 2 to 15 (as already done) -->
-            <!-- Just ensure each question and answer is in English -->
-            <!-- You can reuse your previous placeholders and translate accordingly -->
+            <div id="faq-container">
+              <div class="faq-pair">
+                <label for="faq1-p">Question 1</label>
+                <input
+                  type="text"
+                  name="faq1-p"
+                  id="faq1-p"
+                  placeholder="How can I book an appointment?"
+                />
+                <label for="faq1-r">Answer 1</label>
+                <input
+                  type="text"
+                  name="faq1-r"
+                  id="faq1-r"
+                  placeholder="You can book an appointment by calling us directly or through our website."
+                />
+              </div>
+            </div>
+            <button type="button" id="add-faq" class="btn-secondary">
+              ➕ Add another question
+            </button>
           </div>
 
           <div class="form-step" id="step-4" style="display: none">
