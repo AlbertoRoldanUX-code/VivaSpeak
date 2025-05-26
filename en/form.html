@@ -59,6 +59,113 @@
           <div class="form-step" id="step-2" style="display: none">
             <h3>Step 2 of 4 – Agent Configuration</h3>
 
+            <label for="nombre-agente">Name the Agent Should Use</label>
+            <input type="text" name="nombre-agente" id="nombre-agente" />
+
+            <label for="mensaje-bienvenida"
+              >Custom Welcome Message (optional)</label
+            >
+            <input
+              type="text"
+              name="mensaje-bienvenida"
+              id="mensaje-bienvenida"
+              placeholder='E.g.: "Hello, thank you for calling Clínica Salud..."'
+            />
+
+            <label for="idioma-agente">Agent's Primary Language</label>
+            <select name="idioma-agente" id="idioma-agente" required>
+              <optgroup label="🇪🇺 Europe">
+                <option value="es-ES">🇪🇸 Spanish (Spain)</option>
+                <option value="fr-FR">🇫🇷 French (France)</option>
+                <option value="de-DE">🇩🇪 German</option>
+                <option value="it-IT">🇮🇹 Italian</option>
+                <option value="pt-PT">🇵🇹 Portuguese (Portugal)</option>
+                <option value="nl-NL">🇳🇱 Dutch</option>
+                <option value="pl-PL">🇵🇱 Polish</option>
+                <option value="ro-RO">🇷🇴 Romanian</option>
+                <option value="ru-RU">🇷🇺 Russian</option>
+                <option value="sv-SE">🇸🇪 Swedish</option>
+                <option value="fi-FI">🇫🇮 Finnish</option>
+                <option value="da-DK">🇩🇰 Danish</option>
+                <option value="cs-CZ">🇨🇿 Czech</option>
+                <option value="sk-SK">🇸🇰 Slovak</option>
+                <option value="bg-BG">🇧🇬 Bulgarian</option>
+                <option value="hr-HR">🇭🇷 Croatian</option>
+                <option value="el-GR">🇬🇷 Greek</option>
+                <option value="uk-UA">🇺🇦 Ukrainian</option>
+                <option value="no-NO">🇳🇴 Norwegian</option>
+                <option value="hu-HU">🇭🇺 Hungarian</option>
+              </optgroup>
+              <optgroup label="🌎 America">
+                <option value="en-US">🇺🇸 English (USA)</option>
+                <option value="pt-BR">🇧🇷 Portuguese (Brazil)</option>
+              </optgroup>
+              <optgroup label="🌍 Asia & Middle East">
+                <option value="ar-AE">🇦🇪 Arabic (UAE)</option>
+                <option value="hi-IN">🇮🇳 Hindi</option>
+                <option value="ta-IN">🇮🇳 Tamil</option>
+                <option value="id-ID">🇮🇩 Indonesian</option>
+                <option value="ms-MY">🇲🇾 Malay</option>
+                <option value="vi-VN">🇻🇳 Vietnamese</option>
+                <option value="tr-TR">🇹🇷 Turkish</option>
+                <option value="zh-CN">🇨🇳 Chinese</option>
+                <option value="ja-JP">🇯🇵 Japanese</option>
+                <option value="ko-KR">🇰🇷 Korean</option>
+              </optgroup>
+            </select>
+
+            <label for="agente-idioma-adicional">
+              Do you want the agent to understand an additional language?
+            </label>
+            <select id="agente-idioma-adicional" name="agente-idioma-adicional">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+
+            <div id="idioma-adicional-container" style="display: none">
+              <label for="idioma-extra">Which one?</label>
+              <select name="idioma-extra" id="idioma-extra">
+                <optgroup label="🇪🇺 Europe">
+                  <option value="es-ES">🇪🇸 Spanish (Spain)</option>
+                  <option value="fr-FR">🇫🇷 French (France)</option>
+                  <option value="de-DE">🇩🇪 German</option>
+                  <option value="it-IT">🇮🇹 Italian</option>
+                  <option value="pt-PT">🇵🇹 Portuguese (Portugal)</option>
+                  <option value="nl-NL">🇳🇱 Dutch</option>
+                  <option value="pl-PL">🇵🇱 Polish</option>
+                  <option value="ro-RO">🇷🇴 Romanian</option>
+                  <option value="ru-RU">🇷🇺 Russian</option>
+                  <option value="sv-SE">🇸🇪 Swedish</option>
+                  <option value="fi-FI">🇫🇮 Finnish</option>
+                  <option value="da-DK">🇩🇰 Danish</option>
+                  <option value="cs-CZ">🇨🇿 Czech</option>
+                  <option value="sk-SK">🇸🇰 Slovak</option>
+                  <option value="bg-BG">🇧🇬 Bulgarian</option>
+                  <option value="hr-HR">🇭🇷 Croatian</option>
+                  <option value="el-GR">🇬🇷 Greek</option>
+                  <option value="uk-UA">🇺🇦 Ukrainian</option>
+                  <option value="no-NO">🇳🇴 Norwegian</option>
+                  <option value="hu-HU">🇭🇺 Hungarian</option>
+                </optgroup>
+                <optgroup label="🌎 America">
+                  <option value="en-US">🇺🇸 English (USA)</option>
+                  <option value="pt-BR">🇧🇷 Portuguese (Brazil)</option>
+                </optgroup>
+                <optgroup label="🌍 Asia & Middle East">
+                  <option value="ar-AE">🇦🇪 Arabic (UAE)</option>
+                  <option value="hi-IN">🇮🇳 Hindi</option>
+                  <option value="ta-IN">🇮🇳 Tamil</option>
+                  <option value="id-ID">🇮🇩 Indonesian</option>
+                  <option value="ms-MY">🇲🇾 Malay</option>
+                  <option value="vi-VN">🇻🇳 Vietnamese</option>
+                  <option value="tr-TR">🇹🇷 Turkish</option>
+                  <option value="zh-CN">🇨🇳 Chinese</option>
+                  <option value="ja-JP">🇯🇵 Japanese</option>
+                  <option value="ko-KR">🇰🇷 Korean</option>
+                </optgroup>
+              </select>
+            </div>
+
             <label for="datos" id="label-datos"
               >Where would you like to receive the data?</label
             >
@@ -70,23 +177,48 @@
               <option value="Email">Email</option>
               <option value="Google Calendar">Google Calendar</option>
               <option value="Google Sheets">Google Sheets</option>
-              <option value="Other">Other</option>
+              <option value="Otro">Other</option>
             </select>
 
-            <label for="herramienta">What tool do you use (CRM, etc)?</label>
+            <label for="herramienta">Which tool do you use? (CRM, etc.)</label>
             <input type="text" name="herramienta" id="herramienta" />
 
-            <label for="nombre-agente">Agent’s Name to Use</label>
-            <input type="text" name="nombre-agente" id="nombre-agente" />
-            <label for="telefono-transferencia"
-              >Phone Number for Call Transfer</label
-            >
-            <input
-              type="tel"
-              name="telefono-transferencia"
-              id="telefono-transferencia"
-              placeholder="e.g. +34 612 345 678"
-            />
+            <label for="transferencia-fallback">
+              Should the agent transfer the call if it can't resolve the issue?
+            </label>
+            <select name="transferencia-fallback" id="transferencia-fallback">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+
+            <div id="numero-fallback-container" style="display: none">
+              <label for="telefono-fallback">Phone number to transfer to</label>
+              <input
+                type="tel"
+                name="telefono-fallback"
+                id="telefono-fallback"
+                placeholder="E.g. +34 600 123 456"
+              />
+            </div>
+
+            <label for="pasos-obligatorios">
+              Are there any mandatory steps before booking or transferring?
+            </label>
+            <select name="pasos-obligatorios" id="pasos-obligatorios">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+
+            <div id="detalle-pasos-obligatorios" style="display: none">
+              <label for="detalle-pasos"
+                >Briefly describe the required steps</label
+              >
+              <textarea
+                name="detalle-pasos"
+                id="detalle-pasos"
+                placeholder="E.g.: The agent must ask for full name and reason for the appointment before transferring."
+              ></textarea>
+            </div>
             <label for="knowledge-base"
               >Upload your Knowledge Base (PDF, DOCX or TXT)</label
             >

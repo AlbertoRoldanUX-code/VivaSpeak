@@ -224,4 +224,19 @@ $(document).ready(function () {
   });
 
   showStep(currentStep);
+
+  // Mostrar/ocultar campo de idioma adicional
+  $("#agente-idioma-adicional").on("change", function () {
+    const showExtra = $(this).val() === "yes";
+    $("#idioma-adicional-container").toggle(showExtra);
+  });
+
+  // Mostrar/ocultar pasos obligatorios
+  $("#pasos-obligatorios").on("change", function () {
+    $("#detalle-pasos-obligatorios").toggle(this.value === "yes");
+  });
+
+  $("#transferencia-fallback").on("change", function () {
+    $("#numero-fallback-container").toggle(this.value === "yes");
+  });
 });
