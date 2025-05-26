@@ -96,6 +96,11 @@ $(document).ready(function () {
   // Habilitar campo "datos" según el plan
   const planSelect = $("#plan");
   const datosSelect = $("#datos");
+  const stripeLinks = {
+    esencial: "https://buy.stripe.com/3cIaEXdMy0Zdg7xbU4c7u00",
+    profesional: "https://buy.stripe.com/4gM5kD7oa5ft1cDe2cc7u01",
+    premium: "https://buy.stripe.com/dRm5kD7oa6jx6wX9LWc7u02",
+  };
 
   function updateDatosFieldState() {
     const selected = planSelect.val();
@@ -147,7 +152,7 @@ $(document).ready(function () {
         : getText("next");
   };
 
-  nextBtn.addEventListener("click", () => {
+  nextBtn.addEventListener("click", (event) => {
     const currentFormStep = document.querySelector(`#step-${currentStep}`);
     const inputs = currentFormStep.querySelectorAll("input, select, textarea");
 
@@ -175,23 +180,36 @@ $(document).ready(function () {
     }
 
     if (currentStep === totalSteps) {
-      document.querySelector("form").submit();
+      const form = document.querySelector("form");
 
-      // Redirige al link de Stripe después de enviar el formulario
-      const selectedPlan = document.getElementById("plan").value;
+      // Evita enviar de forma predeterminada
+      event.preventDefault();
 
-      let stripeLink = "";
-      if (selectedPlan.includes("Esencial")) {
-        stripeLink = "https://buy.stripe.com/3cIaEXdMy0Zdg7xbU4c7u00";
-      } else if (selectedPlan.includes("Profesional")) {
-        stripeLink = "https://buy.stripe.com/4gM5kD7oa5ft1cDe2cc7u01";
-      } else if (selectedPlan.includes("Premium")) {
-        stripeLink = "https://buy.stripe.com/dRm5kD7oa6jx6wX9LWc7u02";
-      }
+      // Enviar el formulario manualmente a Netlify
+      const formData = new FormData(form);
+      fetch("/", {
+        method: "POST",
+        body: formData,
+      })
+        .then(() => {
+          // Redirigir a Stripe según el plan elegido
+          const plan = document.getElementById("plan").value.toLowerCase();
+          if (plan.includes("esencial"))
+            window.location.href = stripeLinks.esencial;
+          else if (plan.includes("profesional"))
+            window.location.href = stripeLinks.profesional;
+          else if (plan.includes("premium"))
+            window.location.href = stripeLinks.premium;
+          else alert("Plan no reconocido.");
+        })
 
-      setTimeout(() => {
-        window.location.href = stripeLink;
-      }, 1500); // Espera 1.5s para asegurar que Netlify reciba los datos
+        .catch(() => {
+          alert(
+            lang === "es"
+              ? "Hubo un error al enviar el formulario. Intenta de nuevo."
+              : "There was an error submitting the form. Please try again."
+          );
+        });
     } else {
       currentStep++;
       showStep(currentStep);
