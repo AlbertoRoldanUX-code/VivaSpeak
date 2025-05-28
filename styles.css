@@ -347,6 +347,13 @@ nav ul li a.btn-primary:hover {
   }
 }
 
+/* ********** IMÁGENES *********** */
+.image {
+  max-width: 140px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
 /* ********** HOME SECTION *********** */
 #home {
   padding: 100px 20px;
@@ -389,7 +396,6 @@ nav ul li a.btn-primary:hover {
 }
 
 /* ********** AUTOMATED CALLS SECTION *********** */
-
 #automated-calls ul {
   display: flex;
   flex-wrap: wrap;
@@ -439,6 +445,7 @@ nav ul li a.btn-primary:hover {
 }
 
 /* ********** DEMO SECTION *********** */
+
 #video-demo {
   background: linear-gradient(
     to bottom,
@@ -448,12 +455,12 @@ nav ul li a.btn-primary:hover {
 }
 
 #video-demo video {
-  display: block; /* Centra el video */
-  margin: 0 auto; /* Centra el video horizontalmente */
-  max-width: 80%; /* Ajusta el ancho máximo del video */
-  height: auto; /* Mantiene la proporción del video */
-  border-radius: 10px; /* Opcional: para bordes redondeados */
-  box-shadow: 0 4px 8px var(--shadow-2); /* Opcional: añade una sombra para mejorar el diseño */
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-2);
 }
 
 /* ********** PRICING SECTION *********** */
