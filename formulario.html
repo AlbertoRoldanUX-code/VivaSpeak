@@ -15,6 +15,7 @@
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     ></script>
     <script defer src="index.js" charset="utf-8"></script>
+    <script defer src="formulario.js" charset="utf-8"></script>
   </head>
   <body>
     <main class="container">
@@ -187,12 +188,18 @@
             </select>
 
             <label for="herramienta">¿Qué herramienta usas (CRM, etc)?</label>
+            <small id="aviso-herramienta" class="aviso">
+              Disponible solo para planes Profesional y Premium.
+            </small>
             <input type="text" name="herramienta" id="herramienta" />
 
             <label for="transferencia-fallback">
               ¿Deseas que el agente transfiera la llamada si no puede resolver
               algo?
             </label>
+            <small id="aviso-transferencia-premium" class="aviso">
+              Solo disponible en el plan Premium.
+            </small>
             <select name="transferencia-fallback" id="transferencia-fallback">
               <option value="no">No</option>
               <option value="yes">Sí</option>
@@ -211,6 +218,9 @@
             <label for="pasos-obligatorios"
               >¿Hay pasos obligatorios antes de reservar o transferir?</label
             >
+            <small id="aviso-pasos" class="aviso">
+              Disponible solo para planes Profesional y Premium.
+            </small>
             <select name="pasos-obligatorios" id="pasos-obligatorios">
               <option value="no">No</option>
               <option value="yes">Sí</option>
@@ -230,6 +240,9 @@
             <label for="knowledge-base"
               >Sube tu Base de Conocimiento (PDF, DOCX o TXT)</label
             >
+            <small id="aviso-kb" class="aviso">
+              Disponible solo para planes Profesional y Premium.
+            </small>
             <input
               type="file"
               name="knowledge-base"
@@ -239,7 +252,6 @@
           </div>
 
           <div class="form-step" id="step-3" style="display: none">
-            <!-- Contenido del paso 3: Preguntas frecuentes (puedes partirlas en grupos de 5 si quieres) -->
             <h3>Paso 3 de 4 – Preguntas Frecuentes</h3>
 
             <label>Preguntas Frecuentes que responde el Agente</label>

@@ -15,6 +15,7 @@
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     ></script>
     <script defer src="/index.js" charset="utf-8"></script>
+    <script defer src="/formulario.js" charset="utf-8"></script>
   </head>
   <body>
     <main class="container">
@@ -174,7 +175,7 @@
               >Where would you like to receive the data?</label
             >
             <small id="aviso-datos" class="aviso">
-              Available only for Professional and Premium plans.
+              Only available on Professional and Premium plans.
             </small>
             <select name="datos" id="datos" multiple required>
               <option value="CRM">CRM</option>
@@ -185,11 +186,21 @@
             </select>
 
             <label for="herramienta">Which tool do you use? (CRM, etc.)</label>
+            <small id="aviso-herramienta" class="aviso">
+              Only available on Professional and Premium plans.
+            </small>
             <input type="text" name="herramienta" id="herramienta" />
 
             <label for="transferencia-fallback">
               Should the agent transfer the call if it can't resolve the issue?
             </label>
+            <small
+              id="aviso-transferencia-premium"
+              class="aviso"
+              style="display: none"
+              >Only available on the Premium plan.</small
+            >
+
             <select name="transferencia-fallback" id="transferencia-fallback">
               <option value="no">No</option>
               <option value="yes">Yes</option>
@@ -208,6 +219,9 @@
             <label for="pasos-obligatorios">
               Are there any mandatory steps before booking or transferring?
             </label>
+            <small id="aviso-pasos" class="aviso">
+              Only available on Professional and Premium plans.
+            </small>
             <select name="pasos-obligatorios" id="pasos-obligatorios">
               <option value="no">No</option>
               <option value="yes">Yes</option>
@@ -226,6 +240,9 @@
             <label for="knowledge-base"
               >Upload your Knowledge Base (PDF, DOCX or TXT)</label
             >
+            <small id="aviso-kb" class="aviso">
+              Only available on Professional and Premium plans.
+            </small>
             <input
               type="file"
               name="knowledge-base"
