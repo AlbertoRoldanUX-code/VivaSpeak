@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  const lang = $("html").attr("lang");
   // Habilitar campo "datos" según el plan
   const planSelect = $("#plan");
   const datosSelect = $("#datos");
