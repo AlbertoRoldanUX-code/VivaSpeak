@@ -461,6 +461,8 @@ nav ul li a.btn-primary:hover {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px var(--shadow-2);
+  max-height: 85vh;
+  cursor: pointer;
 }
 
 /* ********** PRICING SECTION *********** */
