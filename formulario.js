@@ -141,11 +141,6 @@ $(document).ready(function () {
     $("#idioma-adicional-container").toggle(showExtra);
   });
 
-  // Mostrar/ocultar pasos obligatorios
-  $("#pasos-obligatorios").on("change", function () {
-    $("#detalle-pasos-obligatorios").toggle(this.value === "yes");
-  });
-
   $("#transferencia-fallback").on("change", function () {
     $("#numero-fallback-container").toggle(this.value === "yes");
   });
@@ -384,12 +379,7 @@ $(document).ready(function () {
         label: "label[for='herramienta']",
         aviso: "#aviso-herramienta",
       },
-      {
-        selector: "#pasos-obligatorios",
-        label: "label[for='pasos-obligatorios']",
-        aviso: "#aviso-pasos",
-      },
-      { selector: "#detalle-pasos-obligatorios" },
+
       {
         selector: "#knowledge-base",
         label: "label[for='knowledge-base']",
