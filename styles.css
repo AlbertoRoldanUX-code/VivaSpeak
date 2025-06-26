@@ -363,6 +363,12 @@ nav ul li a.btn-primary:hover {
   border-radius: 12px;
 }
 
+.image-social {
+  max-width: 220px;
+  margin: 0 auto;
+  display: block;
+}
+
 /* ********** HOME SECTION *********** */
 #home {
   padding: 100px 20px;
