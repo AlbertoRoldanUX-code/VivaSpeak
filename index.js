@@ -31,51 +31,6 @@ $(document).ready(function () {
     }
   });
 
-  // Lógica del switch de precios
-  const togglePricing = document.getElementById("togglePricing");
-  if (togglePricing) {
-    togglePricing.addEventListener("change", function () {
-      const essential = document.getElementById("essential-price");
-      const pro = document.getElementById("pro-price");
-      const premium = document.getElementById("premium-price");
-
-      if (this.checked) {
-        switch (lang) {
-          case "es":
-            essential.innerText = "47€ / mes (facturado anualmente)";
-            pro.innerText = "79€ / mes (facturado anualmente)";
-            premium.innerText = "119€ / mes (facturado anualmente)";
-            break;
-          case "de":
-            pro.innerText = "€95 / Monat (jährlich abgerechnet)";
-            premium.innerText = "€191 / Monat (jährlich abgerechnet)";
-            break;
-          default:
-            essential.innerText = "€47 / month (billed annually)";
-            pro.innerText = "€79 / month (billed annually)";
-            premium.innerText = "€119 / month (billed annually)";
-        }
-      } else {
-        switch (lang) {
-          case "es":
-            essential.innerText = "59€ / mes";
-            pro.innerText = "99€ / mes";
-            premium.innerText = "149€ / mes";
-            break;
-          case "de":
-            essential.innerText = "€59 / Monat";
-            pro.innerText = "€99 / Monat";
-            premium.innerText = "€149 / Monat";
-            break;
-          default:
-            essential.innerText = "59€ / month";
-            pro.innerText = "99€ / month";
-            premium.innerText = "149€ / month";
-        }
-      }
-    });
-  }
-
   // Reproducción automática del video en escritorio
   const video = document.getElementById("testimonio-video");
 

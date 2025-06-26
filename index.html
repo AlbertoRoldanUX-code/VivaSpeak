@@ -109,7 +109,7 @@
           <ul class="nav-list">
             <li><a href="#automated-calls">Llamadas Automatizadas</a></li>
             <li><a href="#video-demo">Vídeo</a></li>
-            <li><a href="#pricing">Precios</a></li>
+            <li><a href="#agentes">Agentes</a></li>
             <!-- <li><a href="#testimonials">Testimonios</a></li> -->
             <li><a href="#faq">Preguntas Frecuentes</a></li>
             <li><a href="#contact">Contacto</a></li>
@@ -255,126 +255,117 @@
         </video>
       </div>
     </section>
-    <!-- Sección de Precios -->
-    <section id="pricing">
+    <!-- Sección de Agentes -->
+    <section id="agentes">
       <div class="container">
-        <img
-          src="assets/precios.png"
-          alt="Precios de VivaSpeak"
-          class="image"
-        />
-
-        <h2>Planes de Precios</h2>
+        <h2>Elige tu Agente de Voz IA</h2>
         <p>
-          Precios flexibles que se adaptan a las necesidades de tu negocio. Paga
-          solo por lo que usas.
+          Cada agente está entrenado para un caso de uso concreto. Escucha sus
+          voces y elige el que más se adapte a tu negocio.
         </p>
-        <div class="pricing-toggle">
-          <span>Mensual</span>
-          <label class="switch">
-            <input type="checkbox" id="togglePricing" />
-            <span class="slider round"></span>
-          </label>
-          <span>Anual <small>(Ahorra 20%)</small></span>
-        </div>
-        <div class="pricing-cards">
-          <div class="pricing-card">
-            <div>
-              <h3>Esencial</h3>
-              <p><strong id="essential-price">59€ / mes</strong></p>
-              <ul>
-                <li>1 número virtual local</li>
-                <li>Hasta <strong>5 respuestas frecuentes</strong></li>
-                <li>
-                  <div class="feature-content">
-                    <strong>150 minutos/mes</strong> de IA conversacional<br /><small
-                      >≈ 50 llamadas/mes*</small
-                    >
-                  </div>
-                </li>
-                <li>Hasta <strong>2 idiomas**</strong> (a elegir)</li>
-                <li>Base de conocimiento (hasta <strong>300 KB</strong>)</li>
-                <li>Voz IA personalizada</li>
-                <li>Activación en <strong>72h</strong></li>
-                <li>Soporte técnico por <strong>email</strong></li>
-              </ul>
-            </div>
-            <a href="/formulario.html?plan=Esencial" class="btn-secondary"
-              >Comenzar</a
+
+        <div class="agent-cards-container">
+          <!-- Clara -->
+          <div class="agent-card">
+            <img
+              src="assets/clara-avatar.png"
+              alt="Clara, agente de voz IA especializada en clínicas médicas"
+            />
+            <h3>Clara</h3>
+            <p><strong>Función:</strong> Triaje y atención médica primaria</p>
+            <p><strong>Ideal para:</strong> Clínicas y centros de salud</p>
+            <p>Respuestas empáticas, reserva de citas y derivación médica</p>
+            <p>
+              <strong>Incluye:</strong> Transferencia a médico, FAQ médicas, voz
+              empática
+            </p>
+            <audio controls>
+              <source src="assets/audio-clara.mp3" type="audio/mpeg" />
+              Tu navegador no soporta el elemento de audio.
+            </audio>
+
+            <p class="agent-price"><strong>Desde 109€/mes</strong></p>
+            <a href="/formulario.html?agente=Clara" class="btn-secondary"
+              >Solicitar este agente</a
             >
           </div>
 
-          <div class="pricing-card">
-            <div>
-              <h3>Profesional</h3>
-              <p><strong id="pro-price">99€ / mes</strong></p>
-              <ul>
-                <li>1 número virtual local</li>
-                <li>Hasta <strong>10 respuestas frecuentes</strong></li>
-                <li>
-                  <div class="feature-content">
-                    <strong>400 minutos/mes</strong> de IA conversacional<br /><small
-                      >≈ 130 llamadas/mes*</small
-                    >
-                  </div>
-                </li>
-                <li>Hasta <strong>4 idiomas**</strong> (a elegir)</li>
-                <li>Base de conocimiento (hasta <strong>10 MB</strong>)</li>
-                <li>Voz IA personalizada</li>
-                <li>Activación en <strong>48h</strong></li>
-                <li>Soporte técnico por <strong>email</strong></li>
-                <li>Integración con <strong>Google Sheets o CRM</strong></li>
-                <li>Notificaciones automáticas por email</li>
-              </ul>
-            </div>
-            <a href="/formulario.html?plan=Profesional" class="btn-secondary"
-              >Elegir Plan</a
+          <!-- Laura -->
+          <div class="agent-card">
+            <img
+              src="assets/laura-avatar.png"
+              alt="Laura, agente de voz IA especializada en inmobiliarias"
+            />
+            <h3>Laura</h3>
+            <p><strong>Función:</strong> Captación y soporte inmobiliario</p>
+            <p><strong>Ideal para:</strong> Agencias inmobiliarias</p>
+            <p>
+              Llamadas en frío, cualificación de propietarios, soporte continuo
+            </p>
+            <p>
+              <strong>Incluye:</strong> Seguimiento a propietarios, respuestas
+              automáticas, transferencia a humano
+            </p>
+            <audio controls>
+              <source src="assets/audio-laura.mp3" type="audio/mpeg" />
+              Tu navegador no soporta el elemento de audio.
+            </audio>
+
+            <p class="agent-price"><strong>Desde 99€/mes</strong></p>
+            <a href="/inmobiliaria.html" class="btn-secondary"
+              >Solicitar este agente</a
             >
           </div>
 
-          <div class="pricing-card">
-            <div>
-              <h3>Premium</h3>
-              <p><strong id="premium-price">149€ / mes</strong></p>
-              <ul>
-                <li><strong>2 números</strong> virtuales locales</li>
-                <li>Hasta <strong>20 respuestas frecuentes</strong></li>
-                <li>
-                  <div class="feature-content">
-                    <strong>850 minutos/mes</strong> de IA conversacional<br /><small
-                      >≈ 280 llamadas/mes*</small
-                    >
-                  </div>
-                </li>
-                <li>Hasta <strong>6 idiomas**</strong> (a elegir)</li>
-                <li>Base de conocimiento (hasta <strong>20 MB</strong>)</li>
-                <li>Voz IA personalizada o <strong>clonada</strong></li>
-                <li>Activación en <strong>24h</strong></li>
-                <li>Soporte técnico por <strong>email y WhatsApp</strong></li>
-                <li>Integración con <strong>Google Sheets o CRM</strong></li>
-                <li>
-                  Notificaciones automáticas por email y
-                  <strong>WhatsApp</strong>
-                </li>
-                <li>
-                  <strong>Transferencia</strong> a humano si el cliente lo
-                  solicita
-                </li>
-                <li>Acceso a <strong>panel online</strong></li>
-              </ul>
-            </div>
-            <a href="/formulario.html?plan=Premium" class="btn-primary"
-              >Elegir Plan</a
+          <!-- Santiago -->
+          <div class="agent-card">
+            <img
+              src="assets/santiago-avatar.png"
+              alt="Santiago, agente de voz IA especializado en reclutamiento y preselección"
+            />
+            <h3>Santiago</h3>
+            <p><strong>Función:</strong> Reclutamiento y preselección</p>
+            <p>
+              <strong>Ideal para:</strong> Call centers y departamentos de RRHH
+            </p>
+            <p>Filtra candidatos antes de pasar al reclutador humano</p>
+            <p>
+              <strong>Incluye:</strong> Llamadas outbound, screening automático,
+              preguntas personalizadas
+            </p>
+            <audio controls>
+              <source src="assets/audio-santiago.mp3" type="audio/mpeg" />
+              Tu navegador no soporta el elemento de audio.
+            </audio>
+
+            <p class="agent-price"><strong>Desde 119€/mes</strong></p>
+            <a href="/formulario.html?agente=Santiago" class="btn-secondary"
+              >Solicitar este agente</a
             >
           </div>
-          <div class="leyenda">
+          <!-- Card: Agente Personalizado -->
+          <div class="agent-card">
+            <img
+              src="assets/custom-agent-avatar.png"
+              alt="Agente personalizado VivaSpeak"
+            />
+            <h3>Tu agente personalizado</h3>
+            <p><strong>Función:</strong> Lo que necesites</p>
+            <p><strong>Ideal para:</strong> Cualquier sector</p>
             <p>
-              *Estimación basada en una duración media de 3 minutos por llamada.
+              ¿No ves el agente que encaja con tu negocio? Podemos entrenar uno
+              a medida con tu voz, tus respuestas y tu flujo.
             </p>
             <p>
-              **VivaSpeak soporta más de 30 idiomas. Se recomienda limitar los
-              idiomas activos por agente para mantener precisión y naturalidad.
+              <strong>Incluye:</strong> Personalización total, integración con
+              tu sistema, soporte dedicado
             </p>
+            <p class="agent-price"><strong>A medida</strong></p>
+            <a
+              href="/formulario.html?agente=Personalizado"
+              class="btn-secondary"
+              >Crear mi agente</a
+            >
           </div>
         </div>
       </div>

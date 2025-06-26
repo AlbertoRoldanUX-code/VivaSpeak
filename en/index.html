@@ -110,7 +110,7 @@
           <ul class="nav-list">
             <li><a href="#automated-calls">Automated Calls</a></li>
             <li><a href="#video-demo">Video Demo</a></li>
-            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#agentes">Agents</a></li>
             <!-- <li><a href="#testimonials">Testimonials</a></li> -->
             <li><a href="#faq">FAQs</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -238,117 +238,116 @@
       </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing">
+    <!-- Agent Section -->
+    <section id="agentes">
       <div class="container">
-        <img
-          src="/assets/precios.png"
-          alt="Precios de VivaSpeak"
-          class="image"
-        />
-        <h2>Pricing Plans</h2>
+        <h2>Choose Your AI Voice Agent</h2>
         <p>
-          Flexible pricing that adapts to your business needs. Pay only for what
-          you use.
+          Each agent is trained for a specific use case. Listen to their voices
+          and choose the one that best fits your business.
         </p>
-        <div class="pricing-toggle">
-          <span>Monthly</span>
-          <label class="switch">
-            <input type="checkbox" id="togglePricing" />
-            <span class="slider round"></span>
-          </label>
-          <span>Annual <small>(Save 20%)</small></span>
-        </div>
-        <div class="pricing-cards">
-          <div class="pricing-card">
-            <div>
-              <h3>Essential</h3>
-              <p><strong id="essential-price">€59 / month</strong></p>
-              <ul>
-                <li>1 local virtual number</li>
-                <li>Up to <strong>5 FAQs</strong></li>
-                <li>
-                  <strong>150 min/month</strong> of conversational AI<br /><small
-                    >≈ 50 calls/month</small
-                  >
-                </li>
-                <li>Up to <strong>2 languages**</strong> (of your choice)</li>
-                <li>Knowledge base (up to <strong>300 KB</strong>)</li>
-                <li>Custom AI voice</li>
-                <li>Activation within <strong>72h</strong></li>
-                <li><strong>Email</strong> support</li>
-              </ul>
-            </div>
-            <a href="/en/form.html?plan=Essential" class="btn-secondary"
-              >Get Started</a
-            >
-          </div>
 
-          <div class="pricing-card">
-            <div>
-              <h3>Professional</h3>
-              <p><strong id="pro-price">€99 / month</strong></p>
-              <ul>
-                <li>1 local virtual number</li>
-                <li>Up to <strong>10 FAQs</strong></li>
-
-                <li>
-                  <strong>400 min/month</strong> of conversational AI<br /><small
-                    >≈ 130 calls/month</small
-                  >
-                </li>
-                <li>Up to <strong>4 languages**</strong> (of your choice)</li>
-                <li>Knowledge base (up to <strong>10 MB</strong>)</li>
-                <li>Custom AI voice</li>
-                <li>Activation within <strong>48h</strong></li>
-                <li><strong>Email</strong> support</li>
-                <li><strong>Google Sheets or CRM</strong> integration</li>
-                <li>Automatic email notifications</li>
-              </ul>
-            </div>
-            <a href="/en/form.html?plan=Professional" class="btn-secondary"
-              >Choose Plan</a
-            >
-          </div>
-
-          <div class="pricing-card">
-            <div>
-              <h3>Premium</h3>
-              <p><strong id="premium-price">€149 / month</strong></p>
-              <ul>
-                <li><strong>2 local</strong> virtual numbers</li>
-                <li>Up to <strong>20 FAQs</strong></li>
-                <li>
-                  <strong>850 min/month</strong> of conversational AI<br /><small
-                    >≈ 280 calls/month</small
-                  >
-                </li>
-                <li>Up to <strong>6 languages**</strong> (of your choice)</li>
-                <li>Knowledge base (up to <strong>20 MB</strong>)</li>
-                <li>Custom or <strong>cloned</strong> AI voice</li>
-                <li>Activation within <strong>24h</strong></li>
-                <li><strong>Email and WhatsApp</strong> support</li>
-                <li><strong>Google Sheets or CRM</strong> integration</li>
-                <li>
-                  Automatic email & <strong>WhatsApp</strong> notifications
-                </li>
-                <li>
-                  <strong>Transfer</strong> to human if requested by the caller
-                </li>
-                <li>Access to <strong>online dashboard</strong></li>
-              </ul>
-            </div>
-            <a href="/en/form.html?plan=Premium" class="btn-primary"
-              >Choose Plan</a
-            >
-          </div>
-          <div class="leyenda">
-            <p>*Estimate based on an average call duration of 3 minutes.</p>
+        <div class="agent-cards-container">
+          <!-- Clara -->
+          <div class="agent-card">
+            <img
+              src="/assets/clara-avatar.png"
+              alt="Clara, AI voice agent specialized in medical clinics"
+            />
+            <h3>Clara</h3>
+            <p><strong>Role:</strong> Triage and primary medical assistance</p>
+            <p><strong>Ideal for:</strong> Clinics and health centers</p>
+            <p>Empathetic responses, appointment booking, and patient triage</p>
             <p>
-              **VivaSpeak supports over 30 languages. It is recommended to limit
-              the active languages per agent to maintain accuracy and
-              naturalness.
+              <strong>Includes:</strong> Transfer to doctor, medical FAQs,
+              empathetic voice
             </p>
+            <audio controls>
+              <source src="/assets/audio-clara-ingles.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <p class="agent-price"><strong>From €109/month</strong></p>
+            <a href="/en/form.html?agente=Clara" class="btn-secondary"
+              >Request this agent</a
+            >
+          </div>
+
+          <!-- Laura -->
+          <div class="agent-card">
+            <img
+              src="/assets/laura-avatar.png"
+              alt="Laura, AI voice agent specialized in real estate"
+            />
+            <h3>Laura</h3>
+            <p><strong>Role:</strong> Property prospecting and support</p>
+            <p><strong>Ideal for:</strong> Real estate agencies</p>
+            <p>Cold calling, lead qualification, continuous follow-up</p>
+            <p>
+              <strong>Includes:</strong> Owner follow-ups, automatic replies,
+              human transfer
+            </p>
+            <audio controls>
+              <source src="/assets/audio-laura-ingles.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <p class="agent-price"><strong>From €99/month</strong></p>
+            <a href="/inmobiliaria.html" class="btn-secondary"
+              >Request this agent</a
+            >
+          </div>
+
+          <!-- Santiago -->
+          <div class="agent-card">
+            <img
+              src="/assets/santiago-avatar.png"
+              alt="Santiago, AI voice agent specialized in recruitment and pre-screening"
+            />
+            <h3>Santiago</h3>
+            <p><strong>Role:</strong> Recruitment and candidate screening</p>
+            <p><strong>Ideal for:</strong> Call centers and HR departments</p>
+            <p>Screens candidates before passing them to a recruiter</p>
+            <p>
+              <strong>Includes:</strong> Outbound calls, automatic screening,
+              custom questions
+            </p>
+            <audio controls>
+              <source
+                src="/assets/audio-santiago-ingles.mp3"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+
+            <p class="agent-price"><strong>From €119/month</strong></p>
+            <a href="/en/form.html?agente=Santiago" class="btn-secondary"
+              >Request this agent</a
+            >
+          </div>
+          <!-- Card: Custom Agent -->
+          <div class="agent-card">
+            <img
+              src="/assets/custom-agent-avatar.png"
+              alt="Custom VivaSpeak Agent"
+            />
+            <h3>Your Custom Agent</h3>
+            <p><strong>Function:</strong> Whatever you need</p>
+            <p><strong>Ideal for:</strong> Any industry</p>
+            <p>
+              Don't see the agent that fits your business? We can train one
+              tailored to you—with your voice, your answers, and your flow.
+            </p>
+            <p>
+              <strong>Includes:</strong> Full customization, integration with
+              your system, dedicated support
+            </p>
+            <p class="agent-price"><strong>Custom pricing</strong></p>
+            <a
+              href="/formulario.html?agente=Personalizado"
+              class="btn-secondary"
+              >Build my agent</a
+            >
           </div>
         </div>
       </div>
@@ -380,109 +379,140 @@
         />
         <h2>Frequently Asked Questions (FAQs)</h2>
         <div class="faq-container">
-          <details>
-            <summary>What is VivaSpeak?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> What is VivaSpeak?
+            </summary>
+            <div class="faq-content">
               VivaSpeak is an AI-powered voice assistant that handles inbound
               and outbound calls for businesses. It automates customer
               interactions, manages reservations, answers FAQs, and more.
-            </p>
+            </div>
           </details>
 
-          <details>
-            <summary>How does VivaSpeak work?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> How does VivaSpeak work?
+            </summary>
+            <div class="faq-content">
               VivaSpeak uses AI to understand and respond to customer inquiries.
               It can handle calls in multiple languages, integrate with your
               CRM, and provide 24/7 support.
-            </p>
+            </div>
           </details>
 
-          <details>
-            <summary>What are the benefits of VivaSpeak?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> What are the benefits of
+              VivaSpeak?
+            </summary>
+            <div class="faq-content">
               VivaSpeak streamlines customer interactions, reduces wait times,
               automates bookings, and boosts sales with outbound calls. It's a
               cost-effective solution for businesses of all sizes.
-            </p>
+            </div>
           </details>
 
-          <details>
-            <summary>What industries can benefit from VivaSpeak?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> What industries can benefit from
+              VivaSpeak?
+            </summary>
+            <div class="faq-content">
               VivaSpeak is ideal for restaurants, clinics, hotels, e-commerce,
               and service-based businesses that handle a high volume of customer
               calls.
-            </p>
+            </div>
           </details>
 
-          <details>
-            <summary>Does VivaSpeak require any additional hardware?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> Does VivaSpeak require any
+              additional hardware?
+            </summary>
+            <div class="faq-content">
               No, VivaSpeak is a cloud-based solution, so it does not require
               any extra hardware. It can be integrated with your existing phone
               system and CRM.
-            </p>
+            </div>
           </details>
 
-          <details>
+          <details class="faq">
             <summary>
+              <span class="faq-arrow">▶</span>
+
               How easy is it to integrate VivaSpeak with my current systems?
             </summary>
-            <p>
+            <div class="faq-content">
               VivaSpeak offers seamless integration with popular CRMs, booking
               platforms, and business tools. Our team can assist with a smooth
               setup process.
-            </p>
+            </div>
           </details>
 
-          <details>
-            <summary>What languages does VivaSpeak support?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> What languages does VivaSpeak
+              support?
+            </summary>
+            <div class="faq-content">
               VivaSpeak supports multiple languages, including English, Spanish,
               French, German, and more. Contact us for a full list of supported
               languages.
-            </p>
+            </div>
           </details>
 
-          <details>
-            <summary>Can VivaSpeak make outbound sales calls?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> Can VivaSpeak make outbound sales
+              calls?
+            </summary>
+            <div class="faq-content">
               Yes, VivaSpeak can be used for outbound sales, appointment
               reminders, and follow-up calls to engage customers and improve
               conversion rates.
-            </p>
+            </div>
           </details>
 
-          <details>
-            <summary>Is VivaSpeak available 24/7?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> Is VivaSpeak available 24/7?
+            </summary>
+            <div class="faq-content">
               Yes, VivaSpeak operates 24/7, ensuring that your business never
               misses a customer inquiry, even outside regular business hours.
-            </p>
+            </div>
           </details>
 
-          <details>
-            <summary>How can I get started with VivaSpeak?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> How can I get started with
+              VivaSpeak?
+            </summary>
+            <div class="faq-content">
               To get started, simply book a demo or contact us. Our team will
               guide you through the process and help you select the best plan
               for your needs.
-            </p>
+            </div>
           </details>
 
-          <details>
-            <summary>Can I try VivaSpeak before committing?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> Can I try VivaSpeak before
+              committing?
+            </summary>
+            <div class="faq-content">
               Yes! We offer a free trial with limited minutes so you can test
               VivaSpeak’s features before choosing a plan.
-            </p>
+            </div>
           </details>
-          <details>
+          <details class="faq">
             <summary>
+              <span class="faq-arrow">▶</span>
+
               How can I redirect my current phone number to VivaSpeak?
             </summary>
-            <p>
+            <div class="faq-content">
               You can easily redirect your existing number to your VivaSpeak
               number using a simple code. Our team will assist you with the
               process.
@@ -495,11 +525,14 @@
               >
                 Download the step-by-step guide (PDF)
               </a>
-            </p>
+            </div>
           </details>
-          <details>
-            <summary>How do I share my calendar with VivaSpeak?</summary>
-            <p>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> How do I share my calendar with
+              VivaSpeak?
+            </summary>
+            <div class="faq-content">
               To let VivaSpeak schedule appointments automatically, you need to
               share your Google Calendar with us.
               <br /><br />
@@ -511,7 +544,7 @@
               >
                 Download the step-by-step guide (PDF)
               </a>
-            </p>
+            </div>
           </details>
         </div>
       </div>
