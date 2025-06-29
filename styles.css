@@ -864,7 +864,7 @@ select {
   gap: 10px;
 }
 
-/* ********** LANDING DE INMOBILIARIAS *********** */
+/* ********** LANDINGS *********** */
 
 #hero {
   padding: 80px 20px 50px;
@@ -877,6 +877,13 @@ select {
   padding-top: 100px;
   position: relative;
   z-index: 1;
+}
+
+.avatar-clara {
+  max-width: 160px;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 50%;
 }
 
 .hero-bg {
