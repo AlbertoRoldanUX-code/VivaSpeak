@@ -940,7 +940,7 @@ select {
   list-style: none;
   padding: 0;
   max-width: 717px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   text-align: left;
 }
 
