@@ -76,7 +76,7 @@ $(document).ready(function () {
           // else if (agente.includes("inmobiliaria"))
           //   window.location.href = links.inmobiliaria;
           // else alert("Agente no reconocido.");
-          window.location.href = "/gracias-clinica.html";
+          window.location.href = "/gracias.html";
         })
 
         .catch(() => {
