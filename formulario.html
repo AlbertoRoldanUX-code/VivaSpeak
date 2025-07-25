@@ -29,7 +29,7 @@
           enctype="multipart/form-data"
         >
           <div class="form-step" id="step-1">
-            <!-- Contenido del paso 1: Correo, nombre de negocio, plan -->
+            <!-- Contenido del paso 1: Correo y nombre de negocio -->
             <h3>Paso 1 de 4 – Datos Iniciales</h3>
 
             <input
@@ -43,23 +43,10 @@
 
             <label for="negocio">Nombre del Negocio</label>
             <input type="text" name="negocio" id="negocio" required />
-
-            <label for="plan">📦 Plan Elegido</label>
-            <select name="plan" id="plan">
-              <option value="Esencial (59 € / mes)">
-                Esencial (59 € / mes)
-              </option>
-              <option value="Profesional (99 € / mes)">
-                Profesional (99 € / mes)
-              </option>
-              <option value="Premium (149 € / mes)">
-                Premium (149 € / mes)
-              </option>
-            </select>
           </div>
 
           <div class="form-step" id="step-2" style="display: none">
-            <!-- Contenido del paso 2: Datos, herramienta, nombre del agente -->
+            <!-- Contenido del paso 2: Datos, nombre del agente -->
             <h3>Paso 2 de 4 – Configuración del Agente</h3>
 
             <label for="mensaje-bienvenida">
@@ -166,62 +153,10 @@
               </select>
             </div>
 
-            <label for="tipo-negocio">Tipo de negocio</label>
-            <select name="tipo-negocio" id="tipo-negocio" required>
-              <option value="">Selecciona una opción</option>
-              <option value="Clínica">Clínica</option>
-              <option value="Inmobiliaria">Inmobiliaria</option>
-            </select>
-
-            <label for="datos" id="label-datos"
-              >¿Dónde prefieres recibir los datos?</label
-            >
-            <small id="aviso-datos" class="aviso">
-              Disponible solo para planes Profesional y Premium.
-            </small>
-            <select name="datos" id="datos" multiple required>
-              <option value="CRM">CRM</option>
-              <option value="Email">Email</option>
-              <option value="Google Calendar">Google Calendar</option>
-              <option value="Google Sheets">Google Sheets</option>
-              <option value="Otro">Otro</option>
-            </select>
-
-            <label for="herramienta">¿Qué herramienta usas (CRM, etc)?</label>
-            <small id="aviso-herramienta" class="aviso">
-              Disponible solo para planes Profesional y Premium.
-            </small>
-            <input type="text" name="herramienta" id="herramienta" />
-
-            <label for="transferencia-fallback">
-              ¿Deseas que el agente transfiera la llamada si no puede resolver
-              algo?
-            </label>
-            <small id="aviso-transferencia-premium" class="aviso">
-              Solo disponible en el plan Premium.
-            </small>
-            <select name="transferencia-fallback" id="transferencia-fallback">
-              <option value="no">No</option>
-              <option value="yes">Sí</option>
-            </select>
-            <div id="numero-fallback-container" style="display: none">
-              <label for="telefono-fallback">
-                Número de teléfono para transferir
-              </label>
-              <input
-                type="tel"
-                name="telefono-fallback"
-                id="telefono-fallback"
-                placeholder="Ej. +34 600 123 456"
-              />
-            </div>
-
             <label for="knowledge-base"
               >Sube tu Base de Conocimiento (PDF, DOCX o TXT)</label
             >
-            <small id="aviso-kb" class="aviso">
-              Disponible solo para planes Profesional y Premium.
-            </small>
+
             <input
               type="file"
               name="knowledge-base"

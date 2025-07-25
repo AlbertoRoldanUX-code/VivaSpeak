@@ -1,37 +1,5 @@
 $(document).ready(function () {
   const lang = $("html").attr("lang");
-  // Habilitar campo "datos" según el plan
-  const planSelect = $("#plan");
-  const datosSelect = $("#datos");
-  const stripeLinks = {
-    esencial: "https://buy.stripe.com/3cIaEXdMy0Zdg7xbU4c7u00",
-    profesional: "https://buy.stripe.com/4gM5kD7oa5ft1cDe2cc7u01",
-    premium: "https://buy.stripe.com/dRm5kD7oa6jx6wX9LWc7u02",
-  };
-
-  function updateDatosFieldState() {
-    const selected = planSelect.val();
-    const enable =
-      selected.includes("Profesional") ||
-      selected.includes("Professional") ||
-      selected.includes("Premium");
-
-    datosSelect.prop("disabled", !enable);
-    datosSelect.css("opacity", enable ? "1" : "0.5");
-    datosSelect.css("pointer-events", enable ? "auto" : "none");
-
-    // Cambiar color de la etiqueta
-    $("#label-datos").css("color", enable ? "#000" : "gray");
-
-    // Mostrar/ocultar el mensaje de aviso
-    $("#aviso-datos").toggle(!enable);
-  }
-
-  planSelect.on("change", function () {
-    updateDatosFieldState();
-    updateFeatureAccessByPlan();
-  });
-  updateFeatureAccessByPlan(); // llamada inicial
 
   // Formulario multistep
   let currentStep = 1;
@@ -102,15 +70,13 @@ $(document).ready(function () {
         body: formData,
       })
         .then(() => {
-          // Redirigir a Stripe según el plan elegido
-          const plan = document.getElementById("plan").value.toLowerCase();
-          if (plan.includes("esencial"))
-            window.location.href = stripeLinks.esencial;
-          else if (plan.includes("profesional"))
-            window.location.href = stripeLinks.profesional;
-          else if (plan.includes("premium"))
-            window.location.href = stripeLinks.premium;
-          else alert("Plan no reconocido.");
+          // Redirigir según el agente elegido
+          // const agent = document.getElementById("agent").value.toLowerCase();
+          // if (agent.includes("clinica")) window.location.href = links.clinica;
+          // else if (agente.includes("inmobiliaria"))
+          //   window.location.href = links.inmobiliaria;
+          // else alert("Agente no reconocido.");
+          window.location.href = "/gracias-clinica.html";
         })
 
         .catch(() => {
@@ -148,26 +114,14 @@ $(document).ready(function () {
   // Lógica para añadir preguntas frecuentes
   const faqContainer = document.getElementById("faq-container");
   let faqCount = 1;
-  let maxFaqs = 5;
-
-  function updateMaxFaqsByPlan() {
-    const selectedPlan = document.getElementById("plan").value.toLowerCase();
-    if (selectedPlan.includes("premium")) maxFaqs = 20;
-    else if (selectedPlan.includes("profesional")) maxFaqs = 10;
-    else maxFaqs = 5;
-  }
-  updateMaxFaqsByPlan();
-
-  document.getElementById("plan").addEventListener("change", () => {
-    updateMaxFaqsByPlan();
-  });
+  let maxFaqs = 10;
 
   document.getElementById("add-faq").addEventListener("click", () => {
     if (faqCount >= maxFaqs) {
       alert(
         lang === "es"
-          ? `Solo puedes añadir hasta ${maxFaqs} preguntas frecuentes con el plan seleccionado.`
-          : `You can only add up to ${maxFaqs} FAQs with the selected plan.`
+          ? `Solo puedes añadir hasta ${maxFaqs} preguntas frecuentes. Si necesitas más, ponte en contacto con nosotros en contact@vivaspeak.com.`
+          : `You can only add up to ${maxFaqs} FAQs. If you need more, get in touch with us`
       );
       return;
     }
@@ -363,59 +317,4 @@ $(document).ready(function () {
     ],
   };
   const faqPlaceholders = placeholders[lang] || placeholders["es"];
-  function updateFeatureAccessByPlan() {
-    const plan = $("#plan").val().toLowerCase();
-    const isProOrPremium =
-      plan.includes("profesional") ||
-      plan.includes("professional") ||
-      plan.includes("premium");
-    const isPremium = plan.includes("premium");
-
-    // Campos de planes Profesional o Premium
-    const proFields = [
-      { selector: "#datos", label: "#label-datos", aviso: "#aviso-datos" },
-      {
-        selector: "#herramienta",
-        label: "label[for='herramienta']",
-        aviso: "#aviso-herramienta",
-      },
-
-      {
-        selector: "#knowledge-base",
-        label: "label[for='knowledge-base']",
-        aviso: "#aviso-kb",
-      },
-    ];
-
-    proFields.forEach(({ selector, label, aviso }) => {
-      const field = $(selector);
-      field.prop("disabled", !isProOrPremium);
-      field.css("opacity", isProOrPremium ? "1" : "0.5");
-      field.css("pointer-events", isProOrPremium ? "auto" : "none");
-
-      if (label) {
-        $(label).css("color", isProOrPremium ? "#000" : "gray");
-      }
-      if (aviso) {
-        $(aviso).toggle(!isProOrPremium);
-      }
-    });
-
-    // Campo exclusivo del plan Premium
-    const transferField = $("#transferencia-fallback");
-    const transferLabel = $("label[for='transferencia-fallback']");
-    const avisoPremium = $("#aviso-transferencia-premium");
-
-    transferField.prop("disabled", !isPremium);
-    transferField.css("opacity", isPremium ? "1" : "0.5");
-    transferField.css("pointer-events", isPremium ? "auto" : "none");
-
-    if (!isPremium) {
-      avisoPremium.show();
-      transferLabel.css("color", "gray");
-    } else {
-      avisoPremium.hide();
-      transferLabel.css("color", "#000");
-    }
-  }
 });

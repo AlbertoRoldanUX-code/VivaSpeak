@@ -44,20 +44,6 @@ $(document).ready(function () {
     });
   }
 
-  // Preselección del plan desde la URL
-  const planFromURL = new URLSearchParams(window.location.search).get("plan");
-  if (planFromURL) {
-    const planSelect = document.getElementById("plan");
-    if (planSelect) {
-      for (let option of planSelect.options) {
-        if (option.value.toLowerCase().includes(planFromURL.toLowerCase())) {
-          option.selected = true;
-          break;
-        }
-      }
-    }
-  }
-
   // Año dinámico
   $("#year").text(new Date().getFullYear());
 });

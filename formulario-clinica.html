@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VivaSpeak Activation</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <title>Formulario Clínica | VivaSpeak</title>
+    <link rel="stylesheet" href="styles.css" />
     <link
       rel="icon"
       href="https://www.vivaspeak.com/assets/favicon.ico"
@@ -14,52 +14,54 @@
       defer
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     ></script>
-    <script defer src="/index.js" charset="utf-8"></script>
-    <script defer src="/formulario.js" charset="utf-8"></script>
+    <script defer src="index.js" charset="utf-8"></script>
+    <script defer src="formulario.js" charset="utf-8"></script>
   </head>
   <body>
     <main class="container">
-      <h1>VivaSpeak Activation Form</h1>
+      <h1>Activa Clara para tu Clínica</h1>
       <div class="contact-form">
         <form
-          name="vivaspeak-activation"
+          name="vivaspeak-clinica"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           enctype="multipart/form-data"
         >
           <div class="form-step" id="step-1">
-            <h3>Step 1 of 4 – Basic Information</h3>
+            <!-- Contenido del paso 1: Correo y nombre de negocio -->
+            <h3>Paso 1 de 4 – Datos Iniciales</h3>
 
-            <input
-              type="hidden"
-              name="form-name"
-              value="vivaspeak-activation"
-            />
+            <input type="hidden" name="form-name" value="vivaspeak-clinica" />
 
-            <label for="email">Email Address</label>
+            <label for="email">Correo Electrónico para Notificaciones</label>
+            <small class="aviso">
+              Las citas se agendarán automáticamente en Google Calendar y
+              recibirás notificaciones por correo.
+            </small>
             <input type="email" name="email" id="email" required />
 
-            <label for="negocio">Business Name</label>
+            <label for="negocio">Nombre del Negocio</label>
             <input type="text" name="negocio" id="negocio" required />
           </div>
 
           <div class="form-step" id="step-2" style="display: none">
-            <h3>Step 2 of 4 – Agent Configuration</h3>
+            <!-- Contenido del paso 2: Datos, nombre del agente -->
+            <h3>Paso 2 de 4 – Configuración del Agente</h3>
 
-            <label for="mensaje-bienvenida"
-              >Custom Welcome Message (optional)</label
-            >
+            <label for="mensaje-bienvenida">
+              Mensaje de bienvenida personalizado (opcional)
+            </label>
             <input
               type="text"
               name="mensaje-bienvenida"
               id="mensaje-bienvenida"
-              placeholder='E.g.: "Hello, thank you for calling Clínica Salud..."'
+              placeholder='Ej.: "Hola, gracias por llamar a Clínica Salud..."'
             />
 
-            <label for="idioma-agente">Agent's Primary Language</label>
+            <label for="idioma-agente">Idioma principal del Agente</label>
             <select name="idioma-agente" id="idioma-agente" required>
-              <optgroup label="🇪🇺 Europe">
+              <optgroup label="🇪🇺 Europa">
                 <option value="es-ES">🇪🇸 Spanish (Spain)</option>
                 <option value="fr-FR">🇫🇷 French (France)</option>
                 <option value="de-DE">🇩🇪 German</option>
@@ -81,11 +83,11 @@
                 <option value="no-NO">🇳🇴 Norwegian</option>
                 <option value="hu-HU">🇭🇺 Hungarian</option>
               </optgroup>
-              <optgroup label="🌎 America">
+              <optgroup label="🌎 América">
                 <option value="en-US">🇺🇸 English (USA)</option>
                 <option value="pt-BR">🇧🇷 Portuguese (Brazil)</option>
               </optgroup>
-              <optgroup label="🌍 Asia & Middle East">
+              <optgroup label="🌍 Asia y Oriente Medio">
                 <option value="ar-AE">🇦🇪 Arabic (UAE)</option>
                 <option value="hi-IN">🇮🇳 Hindi</option>
                 <option value="ta-IN">🇮🇳 Tamil</option>
@@ -99,18 +101,18 @@
               </optgroup>
             </select>
 
-            <label for="agente-idioma-adicional">
-              Do you want the agent to understand an additional language?
-            </label>
+            <label for="agente-idioma-adicional"
+              >¿Deseas que el agente entienda otro idioma adicional?</label
+            >
             <select id="agente-idioma-adicional" name="agente-idioma-adicional">
               <option value="no">No</option>
-              <option value="yes">Yes</option>
+              <option value="yes">Sí</option>
             </select>
 
             <div id="idioma-adicional-container" style="display: none">
-              <label for="idioma-extra">Which one?</label>
+              <label for="idioma-extra">¿Cuál?</label>
               <select name="idioma-extra" id="idioma-extra">
-                <optgroup label="🇪🇺 Europe">
+                <optgroup label="🇪🇺 Europa">
                   <option value="es-ES">🇪🇸 Spanish (Spain)</option>
                   <option value="fr-FR">🇫🇷 French (France)</option>
                   <option value="de-DE">🇩🇪 German</option>
@@ -132,11 +134,11 @@
                   <option value="no-NO">🇳🇴 Norwegian</option>
                   <option value="hu-HU">🇭🇺 Hungarian</option>
                 </optgroup>
-                <optgroup label="🌎 America">
+                <optgroup label="🌎 América">
                   <option value="en-US">🇺🇸 English (USA)</option>
                   <option value="pt-BR">🇧🇷 Portuguese (Brazil)</option>
                 </optgroup>
-                <optgroup label="🌍 Asia & Middle East">
+                <optgroup label="🌍 Asia y Oriente Medio">
                   <option value="ar-AE">🇦🇪 Arabic (UAE)</option>
                   <option value="hi-IN">🇮🇳 Hindi</option>
                   <option value="ta-IN">🇮🇳 Tamil</option>
@@ -151,10 +153,29 @@
               </select>
             </div>
 
-            <label for="knowledge-base"
-              >Upload your Knowledge Base (PDF, DOCX or TXT)</label
-            >
+            <label for="transferencia-fallback">
+              ¿Deseas que el agente transfiera la llamada a una persona de tu
+              equipo si no puede resolver algo?
+            </label>
+            <select name="transferencia-fallback" id="transferencia-fallback">
+              <option value="no">No</option>
+              <option value="yes">Sí</option>
+            </select>
+            <div id="numero-fallback-container" style="display: none">
+              <label for="telefono-fallback">
+                Número de teléfono para transferir
+              </label>
+              <input
+                type="tel"
+                name="telefono-fallback"
+                id="telefono-fallback"
+                placeholder="Ej. +34 600 123 456"
+              />
+            </div>
 
+            <label for="knowledge-base"
+              >Sube tu Base de Conocimiento (PDF, DOCX o TXT)</label
+            >
             <input
               type="file"
               name="knowledge-base"
@@ -164,37 +185,38 @@
           </div>
 
           <div class="form-step" id="step-3" style="display: none">
-            <h3>Step 3 of 4 – FAQs</h3>
+            <h3>Paso 3 de 4 – Preguntas Frecuentes</h3>
 
-            <label>Frequently Asked Questions the Agent Will Answer</label>
+            <label>Preguntas Frecuentes que responde el Agente</label>
 
             <div id="faq-container">
               <div class="faq-pair">
-                <label for="faq1-p">Question 1</label>
+                <label for="faq1-p">Pregunta 1</label>
                 <input
                   type="text"
                   name="faq1-p"
                   id="faq1-p"
-                  placeholder="How can I book an appointment?"
+                  placeholder="¿Cómo puedo pedir una cita?"
                 />
-                <label for="faq1-r">Answer 1</label>
+                <label for="faq1-r">Respuesta 1</label>
                 <input
                   type="text"
                   name="faq1-r"
                   id="faq1-r"
-                  placeholder="You can book an appointment by calling us directly or through our website."
+                  placeholder="Puedes pedir una cita llamando directamente o desde nuestra web."
                 />
               </div>
             </div>
             <button type="button" id="add-faq" class="btn-secondary">
-              ➕ Add another question
+              ➕ Añadir otra pregunta
             </button>
           </div>
 
           <div class="form-step" id="step-4" style="display: none">
-            <h3>Step 4 of 4 – Billing Info & Confirmation</h3>
+            <!-- Contenido del paso 4: Datos fiscales, observaciones, checkbox, botón enviar -->
+            <h3>Paso 4 de 4 – Datos Fiscales y Confirmación</h3>
 
-            <label for="nombre-responsable">Legal Responsible Person</label>
+            <label for="nombre-responsable">Nombre del Responsable Legal</label>
             <input
               type="text"
               name="nombre-responsable"
@@ -202,16 +224,16 @@
               required
             />
 
-            <label for="nif">VAT ID or Company ID</label>
+            <label for="nif">NIF o CIF</label>
             <input type="text" name="nif" id="nif" required />
 
-            <label for="direccion">Billing Address</label>
+            <label for="direccion">Dirección Fiscal</label>
             <input type="text" name="direccion" id="direccion" required />
 
-            <label for="marca">Legal or Commercial Name</label>
+            <label for="marca">Nombre Legal o Marca Comercial</label>
             <input type="text" name="marca" id="marca" required />
 
-            <label for="observaciones">Additional Notes</label>
+            <label for="observaciones">Observaciones</label>
             <textarea name="observaciones" id="observaciones"></textarea>
 
             <div class="consent-container">
@@ -223,17 +245,18 @@
                 required
               />
               <label for="privacy-consent">
-                I confirm the provided information is correct and can be used to
-                generate the contract and invoice.
+                Confirmo que los datos proporcionados son correctos y pueden
+                usarse para generar el contrato y la factura.
               </label>
             </div>
           </div>
-
           <div class="form-navigation">
             <button type="button" class="btn-secondary" id="prevBtn">
-              Previous
+              Anterior
             </button>
-            <button type="button" class="btn-primary" id="nextBtn">Next</button>
+            <button type="button" class="btn-primary" id="nextBtn">
+              Siguiente
+            </button>
           </div>
         </form>
       </div>
