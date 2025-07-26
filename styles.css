@@ -522,6 +522,7 @@ nav ul li a.btn-primary:hover {
   );
 }
 
+#video-demo video,
 #video-demo iframe {
   display: block;
   margin: 0 auto 30px;
