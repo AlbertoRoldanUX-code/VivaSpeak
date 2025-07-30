@@ -917,6 +917,13 @@ select {
   font-weight: 800;
 }
 
+.agent-price-label {
+  margin-top: 35px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
 #use-case-landing {
   background-color: #ecf8f7;
 }
