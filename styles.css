@@ -250,6 +250,38 @@ nav ul li a.btn-primary:hover {
   opacity: 0;
 }
 
+.login-link {
+  display: flex;
+}
+
+.nav-item-login a {
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+.nav-item-login a:hover {
+  color: var(--primary-darker);
+}
+
+.btn-login {
+  border: 2px solid var(--primary-dark);
+  color: var(--primary-dark);
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+.nav-list .nav-item-login {
+  display: none;
+}
+
 @media only screen and (max-width: 1203px) {
   .menu-toggle {
     height: 60px;
@@ -345,6 +377,13 @@ nav ul li a.btn-primary:hover {
   .nav-list li .btn-primary {
     background-color: var(--cta);
     height: inherit;
+  }
+  .btn-login {
+    display: none;
+  }
+
+  .nav-list .nav-item-login {
+    display: block;
   }
 }
 
