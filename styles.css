@@ -522,7 +522,8 @@ nav ul li a.btn-primary:hover {
   );
 }
 
-iframe {
+#video-demo iframe,
+#testimonials iframe {
   display: block;
   margin: 0 auto 30px;
   border-radius: 10px;
@@ -1194,7 +1195,8 @@ footer a:hover {
     font-size: 14px; /* Texto más compacto */
   }
 
-  iframe {
+  #video-demo iframe,
+  #testimonials iframe {
     width: 90%;
     max-width: 600px;
     margin: 0 auto;
