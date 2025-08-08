@@ -82,6 +82,8 @@ ul {
   background-color: var(--cta-hover);
   color: var(--white);
   box-shadow: 0 6px 10px var(--shadow-3);
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
 }
 
 .btn-secondary {
@@ -140,6 +142,23 @@ header {
     border-radius: 0;
     width: auto;
   }
+}
+
+.valeria-phone {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  padding-left: 20px;
+  white-space: nowrap;
+}
+
+.valeria-phone a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.valeria-phone a:hover {
+  text-decoration: underline;
 }
 
 /* **********LANGUAGE SWITCHER*********** */
@@ -442,6 +461,14 @@ nav ul li a.btn-primary:hover {
   line-height: 1.8; /* Más espacio entre líneas */
 }
 
+.svg-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.035;
+}
+
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -721,7 +748,24 @@ nav ul li a.btn-primary:hover {
   height: 800px;
 }
 
-/* ********** FORM SECTION *********** */
+/* ********** CONTACT SECTION *********** */
+.contact-call-box {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-call-box .question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  margin-bottom: 25px;
+}
+.contact-call-box .answer {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-top: -10px;
+}
+
 .contact-form {
   margin: 20px auto;
   padding: 20px;
@@ -1040,12 +1084,13 @@ select {
 /*****************FOOTER*****************/
 footer {
   background-color: var(--primary-darker);
-  padding: 15px 0 35px;
+  padding: 15px 0 45px;
   color: var(--white);
 }
 .Copyright {
   font-size: 0.75rem;
   padding: 20px 0;
+  line-height: 1.5;
 }
 
 footer a {
@@ -1062,9 +1107,26 @@ footer a:hover {
 }
 
 .social-media a img {
-  width: 20px;
+  width: 24px;
   margin: 10px;
   filter: brightness(0) invert(1);
+  transition: transform 0.2s;
+}
+
+.social-media a:hover img {
+  transform: scale(1.1);
+}
+.footer-phone {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer-phone a {
+  font-weight: bold;
+  color: var(--white);
+}
+.footer-phone em {
+  font-size: 0.9rem;
 }
 
 /* SUCCESS PAGE STYLES */
@@ -1187,6 +1249,10 @@ footer a:hover {
     font-size: 16px; /* Ajusta el tamaño del texto */
   }
 
+  .valeria-phone {
+    display: none;
+  }
+
   .home-container {
     padding: 25px 15px;
     margin-top: 20px; /* Añade un margen superior a la tarjeta */
@@ -1258,5 +1324,15 @@ footer a:hover {
 
   .case-card {
     padding-bottom: 15px;
+  }
+
+  .social-media a img {
+    width: 30px;
+  }
+  .footer-phone a {
+    font-size: 1.1rem;
+  }
+  .footer-phone em {
+    font-size: 0.85rem;
   }
 }
