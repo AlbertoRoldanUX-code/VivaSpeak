@@ -104,7 +104,7 @@ ul {
 }
 
 .highlight {
-  color: var(--primary);
+  color: var(--primary-dark);
   font-weight: bold;
 }
 
@@ -451,7 +451,7 @@ nav ul li a.btn-primary:hover {
 .home-title {
   font-size: 3.5rem; /* Título más grande */
   font-weight: 800;
-  color: var(--primary-dark);
+  color: var(--primary);
   margin-bottom: 20px;
 }
 
