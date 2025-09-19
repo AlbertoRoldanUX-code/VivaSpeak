@@ -76,6 +76,12 @@
       type="image/x-icon"
     />
 
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- Link to Styles -->
     <link rel="stylesheet" href="styles.css" />
 
@@ -265,6 +271,69 @@
         </div>
       </div>
     </section>
+
+    <section id="whatsapp" class="whatsapp-section">
+      <div class="container whatsapp-container">
+        <div class="whatsapp-text">
+          <h2>
+            No pierdas ni un cliente en WhatsApp, responde al instante 24/7
+          </h2>
+          <p>
+            Integra WhatsApp Business API en tu panel VivaSpeak. Responde
+            automáticamente, envía plantillas aprobadas por Meta y gestiona
+            conversaciones como si fuera tu propio WhatsApp… pero con
+            superpoderes.
+          </p>
+          <ul>
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <strong>Unifica llamadas y WhatsApp</strong> en un solo panel
+            </li>
+            <li>
+              <i class="fas fa-bolt"></i>
+              <strong>Mensajes automáticos</strong> tras llamadas o fuera de
+              horario
+            </li>
+            <li>
+              <i class="fas fa-file-alt"></i>
+              <strong>Archivos y documentos</strong> enviados y recibidos
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <strong>Plantillas Meta</strong> para iniciar conversaciones
+              pasadas 24h
+            </li>
+            <li>
+              <i class="fas fa-chart-line"></i>
+              <strong>Historial y contactos</strong> siempre organizados
+            </li>
+          </ul>
+          <p class="price">💶 <strong>Desde 128€/mes</strong></p>
+          <a href="#contact" class="btn-whatsapp"
+            >Solicita integración WhatsApp</a
+          >
+          <p class="trust">
+            🔒 Integración oficial con WhatsApp Business API vía 360Dialog
+            <br />📞 Soporte 24/7
+          </p>
+        </div>
+
+        <!-- Imagen clicable -->
+        <div class="whatsapp-image">
+          <img
+            src="assets/whatsapp-mockup.png"
+            alt="Mockup VivaSpeak WhatsApp"
+            onclick="openModal(this.src)"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal (fuera de la sección) -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg" />
+    </div>
 
     <section id="video-demo">
       <div class="contact-call-box">
@@ -630,6 +699,18 @@
               >
                 Descarga la guía paso a paso (PDF)
               </a>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Puedo usar mi número actual de WhatsApp Business?
+            </summary>
+            <div class="faq-content">
+              Sí. Hacemos una copia de seguridad de tus chats, migramos tu
+              número a la API oficial de WhatsApp (a través de 360Dialog) y
+              conectamos todo al panel de VivaSpeak. Desde ese momento podrás
+              gestionar WhatsApp en nuestro dashboard.
             </div>
           </details>
         </div>

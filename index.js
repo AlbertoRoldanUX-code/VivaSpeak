@@ -21,6 +21,13 @@ $(document).ready(function () {
     this.classList.toggle("active");
   });
 
+  // Cierra el modal de la imagen en Esc
+  $(document).on("keydown", function (e) {
+    if (e.key === "Escape") {
+      $("#imageModal").css("display", "none");
+    }
+  });
+
   // Oculta el menú de navegación al hacer clic en un enlace
   $(".nav-list a").click(function () {
     if ($(window).width() <= 1203) {
@@ -47,3 +54,12 @@ $(document).ready(function () {
   // Año dinámico
   $("#year").text(new Date().getFullYear());
 });
+// Modal imagen
+function openModal(src) {
+  document.getElementById("imageModal").style.display = "flex";
+  document.getElementById("modalImg").src = src;
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
