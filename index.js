@@ -16,15 +16,16 @@ $(document).ready(function () {
     })
     .trigger("resize");
 
+  // Toggle menu en móvil
   menu.click(function () {
     dropdown.slideToggle();
     this.classList.toggle("active");
   });
 
-  // Cierra el modal de la imagen en Esc
+  // Cierra el modal de la imagen con Esc
   $(document).on("keydown", function (e) {
     if (e.key === "Escape") {
-      $("#imageModal").css("display", "none");
+      closeModal();
     }
   });
 
@@ -38,28 +39,41 @@ $(document).ready(function () {
     }
   });
 
-  // Reproducción automática del video en escritorio
-  const video = document.getElementById("testimonio-video");
+  // Modal de imagen - click en imagen clicable
+  $(".clickable-image").on("click", function () {
+    openModal($(this).attr("src"));
+  });
 
-  // Detecta si NO es móvil
-  const isDesktop = window.innerWidth > 768;
-
-  if (isDesktop && video) {
-    video.setAttribute("autoplay", "");
-    video.play().catch((e) => {
-      console.warn("Autoplay failed:", e);
-    });
-  }
+  // Modal de imagen - click en el botón cerrar
+  $(".close, #imageModal").on("click", function (e) {
+    // Si se clica en el fondo o en la X, cerrar
+    if (e.target === this) {
+      closeModal();
+    }
+  });
 
   // Año dinámico
   $("#year").text(new Date().getFullYear());
 });
-// Modal imagen
+
+// Funciones del modal (globales para que funcionen con onclick si es necesario)
 function openModal(src) {
-  document.getElementById("imageModal").style.display = "flex";
-  document.getElementById("modalImg").src = src;
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+
+  if (modal && modalImg) {
+    modal.style.display = "flex";
+    modalImg.src = src;
+    // Prevenir scroll del body cuando el modal está abierto
+    document.body.style.overflow = "hidden";
+  }
 }
 
 function closeModal() {
-  document.getElementById("imageModal").style.display = "none";
+  const modal = document.getElementById("imageModal");
+  if (modal) {
+    modal.style.display = "none";
+    // Restaurar scroll del body
+    document.body.style.overflow = "auto";
+  }
 }
