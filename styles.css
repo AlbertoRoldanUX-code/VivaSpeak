@@ -1515,23 +1515,217 @@ footer a:hover {
   margin-bottom: 25px;
   color: var(--color-dark);
 }
+/* ========== PÁGINA DE ÉXITO (exito.html) ========== */
 
-.success-container a {
-  display: inline-block;
-  padding: 12px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 6px;
-  text-decoration: none;
-  background-color: var(--cta);
-  color: var(--white);
-  box-shadow: 0 4px 6px var(--shadow-2);
-  transition: all 0.3s ease;
+/* Página completa con gradiente */
+body.success-page {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
-.success-container a:hover {
-  background-color: var(--cta-hover);
-  box-shadow: 0 6px 10px var(--shadow-3);
+/* Contenedor principal */
+body.success-page .success-container {
+  max-width: 600px;
+  padding: 60px 40px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin: 20px;
+  animation: slideUp 0.6s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icono de éxito circular */
+body.success-page .success-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 30px;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.5s ease-out 0.2s both;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* SVG del check mark animado */
+body.success-page .success-icon svg {
+  width: 60px;
+  height: 60px;
+  stroke: var(--white);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  animation: checkmark 0.8s ease-out 0.4s both;
+}
+
+@keyframes checkmark {
+  0% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Título */
+body.success-page h1 {
+  font-size: 36px;
+  color: var(--color-dark);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Párrafos */
+body.success-page p {
+  font-size: 18px;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Caja de información */
+body.success-page .info-box {
+  background: #f8fdfc;
+  border-left: 4px solid var(--primary);
+  padding: 20px;
+  margin: 30px 0;
+  text-align: left;
+  border-radius: 8px;
+}
+
+body.success-page .info-box p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+body.success-page .info-box strong {
+  color: var(--primary-dark);
+}
+
+body.success-page .info-box a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+body.success-page .info-box a:hover {
+  color: var(--primary-darker);
+  text-decoration: underline;
+}
+
+/* Botón CTA */
+body.success-page .cta-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+body.success-page .cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px var(--primary-shadow);
+}
+
+/* Información de contacto */
+body.success-page .contact-info {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #f0f0f0;
+}
+
+body.success-page .contact-info p {
+  font-size: 16px;
+  color: var(--gray-medium);
+  margin: 10px 0;
+}
+
+body.success-page .contact-info a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+body.success-page .contact-info a:hover {
+  color: var(--primary-darker);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body.success-page .success-container {
+    padding: 40px 30px;
+    margin: 15px;
+  }
+
+  body.success-page h1 {
+    font-size: 28px;
+  }
+
+  body.success-page p {
+    font-size: 16px;
+  }
+
+  body.success-page .cta-button {
+    padding: 14px 30px;
+    font-size: 16px;
+  }
+
+  body.success-page .info-box {
+    padding: 15px;
+  }
+
+  body.success-page .info-box p {
+    font-size: 15px;
+  }
 }
 
 /* Estilos para la sección de Privacy Policy */
