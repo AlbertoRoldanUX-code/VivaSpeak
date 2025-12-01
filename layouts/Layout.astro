@@ -1,5 +1,6 @@
 ---
-// layouts/Layout.astro
+import "../styles/global.css";
+
 const { 
   lang = "es",  
   title = "VivaSpeak", 
@@ -77,9 +78,9 @@ const currentUrl = canonical || Astro.url.href;
     />
     
     <!-- ✅ Styles -->
-    <link rel="stylesheet" href="/styles/global.css" />
-    {Astro.props.stylesheet && 
-      <link rel="stylesheet" href={Astro.props.stylesheet} />}
+    <!-- <link rel="stylesheet" href="/styles/global.css" /> -->
+    <!-- {Astro.props.stylesheet && 
+      <link rel="stylesheet" href={Astro.props.stylesheet} />} -->
     
 
      <!-- Calendly -->
