@@ -1,0 +1,103 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout
+  title="Agente Médico IA sin internet | VivaSpeak para Salud Pública"
+  description="Ofrece atención médica automatizada sin necesidad de internet para los pacientes. Ideal para gobiernos y centros de salud. Prueba VivaSpeak."
+  canonical="https://vivaspeak.com/salud"
+  alternateEs="https://vivaspeak.com/salud"
+  alternateEn=""
+  keywords="agente médico, inteligencia artificial salud, telemedicina por voz, agente de voz para salud, triage automático, IA sanitaria, atención médica telefónica"
+  lang="es"
+>
+  <Header />
+    <main>
+      <section id="hero">
+        <div class="container hero-content">
+          <h1 class="home-title">
+            Atención médica automatizada<br />
+            <span class="highlight">sin necesidad de internet</span> para
+            pacientes
+          </h1>
+          <p class="home-description">
+            VivaSpeak permite brindar asistencia médica primaria por teléfono,
+            sin necesidad de que los pacientes tengan internet.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="#schedule" class="btn-primary">Solicitar contacto</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="use-case-landing">
+        <div class="container">
+          <h2>¿Qué puede hacer el Agente Médico VivaSpeak?</h2>
+          <ul class="use-case-features">
+            <li>
+              <strong>📞 Recibir llamadas telefónicas tradicionales</strong> —
+              no requiere internet por parte del paciente.
+            </li>
+            <li>
+              <strong>👩‍⚕️ Derivar al doctor automáticamente</strong> según los
+              síntomas detectados.
+            </li>
+            <li>
+              <strong>🚨 Detectar emergencias</strong> y activar protocolo de
+              urgencia (ambulancia, derivación directa, etc.).
+            </li>
+            <li>
+              <strong>📍 Registrar ubicación del paciente</strong> (ej: "Estoy
+              en Lambaré, Calle X...").
+            </li>
+            <li>
+              <strong>🧾 Enviar recetas por SMS</strong> si así se requiere.
+            </li>
+            <li>
+              <strong>🌐 Multilingüe</strong> — se adapta a idiomas locales.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="video-demo">
+        <div class="container">
+          <h2>Escucha una simulación real</h2>
+          <p>
+            Este es un ejemplo de cómo el agente identifica síntomas graves y
+            transfiere a un médico:
+          </p>
+          <audio controls>
+            <source src="/assets/demo-urgencia.mp3" type="audio/mpeg" />
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+          <p style="margin-top: 15px">
+            También se puede generar una nueva grabación adaptada a tu caso.
+          </p>
+        </div>
+      </section>
+
+      <section id="schedule">
+        <div class="container">
+          <h2>Agenda una reunión con nosotros</h2>
+          <p>
+            Selecciona un horario y te mostramos cómo funciona el agente médico
+            en tiempo real.
+          </p>
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/vivaspeak/30min"
+            style="min-width: 320px; height: 630px"
+          ></div>
+          
+        </div>
+      </section>
+  
+
+     </main>
+
+  <Footer />
+</Layout>

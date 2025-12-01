@@ -1,0 +1,155 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+
+const title = "Cómo crear la base de conocimiento perfecta para un agente de voz IA";
+const description = "Guía práctica para crear una base de conocimiento clara y efectiva para un agente de voz IA: estructura, contenido, ejemplos y errores a evitar.";
+const canonical = "https://vivaspeak.com/blog/base-conocimiento-agente-voz";
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  alternateEs="https://vivaspeak.com/blog/base-conocimiento-agente-voz"
+  alternateEn="https://vivaspeak.com/en/blog/knowledge-base-ai-agent"
+  stylesheet="/styles/blog.css"
+  lang="es"
+>
+<Header />
+
+<main class="blog-container">
+  <article class="blog-article">
+
+    <h1>Cómo crear la base de conocimiento perfecta para un agente de voz IA</h1>
+
+    <p>
+      Un <strong>agente de voz IA</strong> necesita una base de conocimiento clara,
+      organizada y específica para poder responder con precisión, sin inventar datos y con
+      la misma información que daría un miembro del equipo.
+    </p>
+
+    <p>
+      En VivaSpeak hemos visto que, cuando la base de conocimiento está bien estructurada,
+      el agente responde mucho mejor: más natural, más preciso y más útil para el negocio.
+    </p>
+
+    <h2>Qué es exactamente la base de conocimiento</h2>
+
+    <p>
+      Es el conjunto de documentos, textos y fichas que el agente utiliza para responder.
+      Funciona como su “memoria oficial”. Si está bien organizada, el agente será claro y
+      fiable. Si está desordenada, dará respuestas vagas, repetidas o incoherentes.
+    </p>
+
+    <h2>Qué debe incluir</h2>
+
+    <p>Depende del sector, pero en general recomendamos incluir:</p>
+
+    <ul>
+      <li><strong>Descripción del negocio</strong> (quiénes sois, qué hacéis).</li>
+      <li><strong>Servicios o productos</strong> con precios, duraciones y características.</li>
+      <li><strong>FAQs del día a día</strong> que pregunta el 80% de los clientes.</li>
+      <li><strong>Horarios y ubicaciones</strong> con instrucciones claras.</li>
+      <li><strong>Promociones o campañas</strong> activas.</li>
+      <li><strong>Procedimientos</strong> básicos (cómo agendar, cómo cancelar, etc.).</li>
+      <li><strong>Tono de voz</strong> preferido (formal, cercano, muy comercial, neutro…).</li>
+    </ul>
+
+    <h2>Estructura recomendada (muy simple)</h2>
+
+    <p>La mejor forma de estructurar el documento es:</p>
+
+    <ol>
+      <li><strong>Descripción del negocio</strong></li>
+      <li><strong>Servicios / Productos</strong>
+        <ul>
+          <li>Nombre, precio, duración.</li>
+          <li>Qué incluye.</li>
+          <li>Variantes.</li>
+        </ul>
+      </li>
+      <li><strong>FAQs clave</strong></li>
+      <li><strong>Información práctica</strong>
+        <ul>
+          <li>Dirección, parking, transporte.</li>
+          <li>Horarios reales.</li>
+        </ul>
+      </li>
+      <li><strong>Mensajes importantes</strong></li>
+      <li><strong>Ejemplos de respuestas</strong> (opcional).</li>
+    </ol>
+
+    <h2>Ejemplos por sector</h2>
+
+    <h3>Clínicas</h3>
+    <ul>
+      <li>Preparación para cada tratamiento.</li>
+      <li>Precios y duraciones reales.</li>
+      <li>Cuándo es necesario venir en ayunas.</li>
+    </ul>
+
+    <h3>Inmobiliarias</h3>
+    <ul>
+      <li>Fichas de promociones.</li>
+      <li>Descripción del barrio.</li>
+      <li>Tipologías, precios y superficies.</li>
+    </ul>
+
+    <h3>Tiendas online</h3>
+    <ul>
+      <li>Estados del pedido.</li>
+      <li>Política de devoluciones.</li>
+      <li>Tiempos de entrega reales.</li>
+    </ul>
+
+    <h2>Errores frecuentes (y cómo evitarlos)</h2>
+
+    <h3>1. Subir documentos demasiado largos sin estructura</h3>
+    <p>Esto hace que la IA mezcle información y responda de forma vaga.</p>
+
+    <h3>2. Dar información contradictoria</h3>
+    <p>La IA no sabe qué priorizar y empezará a dudar.</p>
+
+    <h3>3. No actualizar la base de conocimiento</h3>
+    <p>
+      Si los precios, horarios o servicios cambian, el agente debe saberlo para evitar
+      confundir al cliente.
+    </p>
+
+    <h3>4. Escribir en tono robótico</h3>
+    <p>
+      Si el texto es rígido, el agente hablará rígido. Es mejor escribir como hablaría una
+      persona real.
+    </p>
+
+    <h2>Cómo saber si tu base de conocimiento es buena</h2>
+
+    <p>Checklist rápido:</p>
+
+    <ul>
+      <li>¿Está estructurada por secciones?</li>
+      <li>¿Es fácil de leer?</li>
+      <li>¿No hay información repetida?</li>
+      <li>¿Los datos importantes están claros (precio, duración, ubicación)?</li>
+      <li>¿Una persona nueva podría entender tu negocio leyendo solo este documento?</li>
+    </ul>
+
+    <h2>Conclusión</h2>
+
+    <p>
+      Una buena base de conocimiento multiplica la calidad de un agente de voz IA. Responde
+      mejor, comete menos errores y transmite exactamente lo que la empresa quiere que diga.
+    </p>
+
+    <p>
+      Si quieres que te ayudemos a crear o mejorar la base de conocimiento de tu agente,
+      <a href="/#schedule">puedes agendar una demo aquí</a>.
+    </p>
+
+  </article>
+</main>
+
+<Footer />
+</Layout>

@@ -1,0 +1,81 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import HeaderEn from "../../../components/HeaderEn.astro";
+import FooterEn from "../../../components/FooterEn.astro";
+---
+
+<Layout
+  title="Resources - VivaSpeak"
+  description="Guides, templates and tutorials to get the most out of VivaSpeak."
+  canonical="https://vivaspeak.com/en/resources"
+  alternateEs="https://vivaspeak.com/recursos"
+  alternateEn="https://vivaspeak.com/en/resources"
+  stylesheet="/styles/resources.css"
+  lang="en"
+>
+  <HeaderEn />
+
+<main>
+
+  <section class="resource-hero">
+    <div class="container">
+      <h1 class="resource-title">Resources to help you automate your business</h1>
+      <p class="resource-subtitle">
+        Guides, templates and tutorials to make the most of VivaSpeak.
+      </p>
+    </div>
+  </section>
+
+  <section class="resource-grid-section">
+    <div class="container resource-grid">
+
+      <!-- ARTICLE 1 -->
+      <article class="resource-card">
+        <h3>What an AI Voice Agent Is and How It Works</h3>
+        <p>Complete guide on technology, call flow, latency, memory and real-world cases.</p>
+        <a href="/en/blog/ai-voice-agent" class="resource-link">Read article →</a>
+      </article>
+
+      <!-- ARTICLE 2 -->
+      <article class="resource-card">
+        <h3>AI Voice Agent for Real Estate</h3>
+        <p>How to capture more owners, filter buyers and automate property visits.</p>
+        <a href="/en/blog/ai-voice-real-estate" class="resource-link">Read article →</a>
+      </article>
+
+      <!-- ARTICLE 3 (CLINICS) -->
+      <article class="resource-card">
+        <h3>AI Voice Agent for Clinics</h3>
+        <p>How to reduce missed calls and book more appointments with Nubimed integration.</p>
+        <a href="/en/blog/ai-voice-clinics" class="resource-link">Read article →</a>
+      </article>
+
+      <!-- ARTICLE 4 -->
+      <article class="resource-card">
+        <h3>How to Build the Perfect Knowledge Base</h3>
+        <p>Recommended structure, sector examples and common mistakes to avoid.</p>
+        <a href="/en/blog/knowledge-base-ai-agent" class="resource-link">Read article →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="footer-cta">
+    <div class="container footer-cta__content">
+      <div>
+        <p class="eyebrow">Ready to see it in your business?</p>
+        <h3>Activate a 24/7 agent without changing your current flow</h3>
+        <p>You can have everything automated in less than a week.</p>
+      </div>
+
+      <div class="footer-cta__actions">
+        <a href="/#contact" class="btn-primary">Talk to sales</a>
+        <a href="/#schedule" class="btn-secondary">Book a demo</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<FooterEn />
+</Layout>

@@ -1,0 +1,81 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout
+  title="Recursos - VivaSpeak"
+  description="Guías, plantillas y tutoriales para sacar el máximo partido a VivaSpeak."
+  canonical="https://vivaspeak.com/recursos"
+  alternateEs="https://vivaspeak.com/recursos"
+  alternateEn="https://vivaspeak.com/en/resources"
+  stylesheet="/styles/resources.css"
+  lang="es"
+>
+  <Header />
+
+<main>
+
+  <section class="resource-hero">
+    <div class="container">
+      <h1 class="resource-title">Recursos para ayudarte a automatizar tu negocio</h1>
+      <p class="resource-subtitle">
+        Guías, plantillas y tutoriales para sacar el máximo partido a VivaSpeak.
+      </p>
+    </div>
+  </section>
+
+  <section class="resource-grid-section">
+    <div class="container resource-grid">
+
+      <!-- ARTÍCULO 1 -->
+      <article class="resource-card">
+        <h3>Qué es un agente de voz IA y cómo funciona</h3>
+        <p>Guía completa sobre tecnología, llamadas, latencia, memoria y casos reales.</p>
+        <a href="/blog/agente-voz-ia" class="resource-link">Leer artículo →</a>
+      </article>
+
+      <!-- ARTÍCULO 2 -->
+      <article class="resource-card">
+        <h3>Agente de voz IA para inmobiliarias</h3>
+        <p>Cómo captar más propietarios, filtrar compradores y automatizar visitas.</p>
+        <a href="/blog/agente-voz-inmobiliarias" class="resource-link">Leer artículo →</a>
+      </article>
+
+      <!-- ARTÍCULO 3 (CLÍNICAS) -->
+      <article class="resource-card">
+        <h3>Agente de voz IA para clínicas</h3>
+        <p>Cómo reducir llamadas perdidas y agendar más citas con IA integrada en Nubimed.</p>
+        <a href="/blog/agente-voz-clinicas" class="resource-link">Leer artículo →</a>
+      </article>
+
+      <!-- ARTÍCULO 4 -->
+      <article class="resource-card">
+        <h3>Cómo crear la base de conocimiento perfecta</h3>
+        <p>Estructura recomendada, ejemplos por sector y errores a evitar.</p>
+        <a href="/blog/base-conocimiento-agente-voz" class="resource-link">Leer artículo →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="footer-cta">
+    <div class="container footer-cta__content">
+      <div>
+        <p class="eyebrow">¿Listo para verlo en tu negocio?</p>
+        <h3>Activa un agente 24/7 sin cambiar tu flujo actual</h3>
+        <p>En menos de una semana puedes tener todo automatizado.</p>
+      </div>
+
+      <div class="footer-cta__actions">
+        <a href="/#contact" class="btn-primary">Hablar con ventas</a>
+        <a href="/#schedule" class="btn-secondary">Reservar demo</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<Footer />
+</Layout>

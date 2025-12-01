@@ -1,0 +1,187 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import HeaderEn from "../../../components/HeaderEn.astro";
+import FooterEn from "../../../components/FooterEn.astro";
+---
+
+<Layout
+  title="Clara – AI Voice Agent for Clinics | VivaSpeak"
+  description="Clara answers calls, schedules appointments and resolves FAQs for you. Your clinic available 24/7 without missing patients. Try it free."
+  canonical="https://vivaspeak.com/en/clinic"
+  alternateEs="https://vivaspeak.com/clinica"
+  alternateEn="https://vivaspeak.com/en/clinic"
+  keywords="voice agent, medical clinic, artificial intelligence, appointment scheduling, call automation, patient care, virtual assistant"
+  ogImage="/assets/og-image-clinica.png"
+  lang="en"
+>
+  <HeaderEn />
+
+    <main>
+      <section id="hero">
+        <div class="container hero-content">
+          <h1>Automate Your Clinic with Clara – 24/7 AI Voice Agent</h1>
+          <img
+            src="/assets/clara-avatar.png"
+            alt="Clara, AI voice agent for clinics"
+            class="avatar-clara"
+            loading="lazy"
+          />
+          <p class="hero-subtitle">
+            Clara answers phone calls, resolves medical FAQs and schedules
+            appointments directly in your calendar.
+          </p>
+          <a href="https://calendly.com/vivaspeak/30min" class="btn-primary">
+            Activate Clara for your clinic
+          </a>
+          <p class="agent-price-label">€119/month + VAT (includes number)</p>
+        </div>
+      </section>
+      <section id="benefits">
+        <div class="container">
+          <h2>What Clara Does for Your Clinic</h2>
+          <ul class="use-case-features">
+            <li>
+              📞 <strong>Answers calls 24/7</strong>: Clara responds with
+              empathy anytime.
+            </li>
+            <li>
+              📅 <strong>Schedules appointments automatically</strong>:
+              Connected to your Google Calendar to avoid overlaps.
+            </li>
+            <li>
+              💬 <strong>Handles frequent questions</strong>: Opening hours,
+              pricing, specialties… without staff intervention.
+            </li>
+            <li>
+              🧑‍⚕️ <strong>Basic triage</strong>: Classifies and redirects
+              patients if needed.
+            </li>
+            <li>
+              🎧 <strong>Recordings available</strong>: Review calls in your
+              panel if desired.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="video-demo">
+        <div class="container">
+          <img
+            src="/assets/video.png"
+            alt="Video icon"
+            class="image"
+            loading="lazy"
+          />
+          <h2>Watch Clara in Action</h2>
+          <p>
+            See a real example where Clara answers a call, resolves questions
+            and books a visit in Google Calendar.
+          </p>
+          <iframe
+            width="315"
+            height="560"
+            src="https://www.youtube.com/embed/un1BHBVSBVg"
+            title="Demo Clara VivaSpeak"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+      <section id="demo">
+        <div class="container">
+          <h2>Listen to Clara</h2>
+          <audio controls>
+            <source src="/assets/audio-clara.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </section>
+      <section id="faq">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-container">
+            <details class="faq">
+              <summary>
+                <span class="faq-arrow">▶</span> Can Clara integrate with my
+                calendar?
+              </summary>
+              <div class="faq-content">
+                Yes. We can connect her to Google Calendar to schedule
+                appointments automatically.
+              </div>
+            </details>
+            <details class="faq">
+              <summary>
+                <span class="faq-arrow">▶</span> Can she handle emergencies?
+              </summary>
+              <div class="faq-content">
+                Clara does not replace medical staff, but she can detect urgent
+                words and redirect accordingly.
+              </div>
+            </details>
+            <details class="faq">
+              <summary>
+                <span class="faq-arrow">▶</span> Can I test her before paying?
+              </summary>
+              <div class="faq-content">
+                Yes, you can try her with real calls and cancel anytime.
+              </div>
+            </details>
+            <details class="faq">
+              <summary>
+                <span class="faq-arrow">▶</span> How do I redirect my current
+                number?
+              </summary>
+              <div class="faq-content">
+                You can redirect your number to Clara using a simple code.
+                <br /><br />
+                👉
+                <a
+                  href="/docs/guide-redirection.pdf"
+                  target="_blank"
+                  class="link-style"
+                >
+                  Download the step-by-step guide (PDF)
+                </a>
+              </div>
+            </details>
+            <details class="faq">
+              <summary>
+                <span class="faq-arrow">▶</span> How do I share my calendar with
+                Clara?
+              </summary>
+              <div class="faq-content">
+                To let Clara schedule appointments, just share your Google
+                Calendar with us.
+                <br /><br />
+                👉
+                <a
+                  href="/docs/guide-share-calendar.pdf"
+                  target="_blank"
+                  class="link-style"
+                >
+                  Download the guide (PDF)
+                </a>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section id="cta">
+        <div class="container">
+          <h2>Ready to save time and serve more patients?</h2>
+          <img
+            src="/assets/clara-avatar.png"
+            alt="Clara, AI voice agent"
+            class="avatar-clara"
+            loading="lazy"
+          />
+          <a href="https://calendly.com/vivaspeak/30min" class="btn-primary">
+            💡 Activate Clara Now
+          </a>
+        </div>
+      </section>
+    </main>
+
+  <FooterEn />
+</Layout>

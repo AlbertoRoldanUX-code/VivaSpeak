@@ -1,0 +1,731 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout
+  title="VivaSpeak - Agentes de IA para llamadas y WhatsApp 24/7"
+  description="Agentes de voz IA que atienden llamadas y WhatsApp 24/7. Reservas automáticas, respuestas instantáneas y chatbot inteligente desde 119€/mes. Integración con Nubimed y Google Calendar."
+  canonical="https://vivaspeak.com/"
+  alternateEs="https://vivaspeak.com/"
+  alternateEn="https://vivaspeak.com/en/"
+  ogImage="https://www.vivaspeak.com/assets/og-image.png"
+  ogType="website"
+  lang="es"
+>
+
+  <Header />
+ <section id="home">
+        <div class="container home-container">
+        <div class="hero-bg-accent hero-bg-accent-one"></div>
+        <div class="hero-bg-accent hero-bg-accent-two"></div>
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="hero-badge">
+              <span class="badge-pill">Nuevo 2025</span>
+              Integración total con WhatsApp Business y Nubimed
+            </div>
+            <h1 class="home-title">
+              Automatiza llamadas, WhatsApp y correo con IA conectada a tu
+              agenda real
+            </h1>
+            <p class="home-description">
+              Captan leads, responden al instante, reservan citas reales y
+              actualizan tu CRM automáticamente.
+            </p>
+            <div class="cta-buttons">
+              <a href="#contact" class="btn-primary">Prueba gratis ahora</a>
+              <a href="#video-demo" class="btn-secondary">
+                <i class="fa-solid fa-play"></i> Ver demo en 90s
+              </a>
+            </div>
+            <div class="hero-trust">
+              <span
+                >Elegido por clínicas, inmobiliarias y franquicias en
+                Europa</span
+              >
+              <div class="hero-stats">
+                <div class="hero-stat">
+                  <strong>+120</strong>
+                  <span>Citas automáticas/mes</span>
+                </div>
+                <div class="hero-stat">
+                  <strong>98%</strong>
+                  <span>Consultas respondidas &lt; 1 min</span>
+                </div>
+                <div class="hero-stat">
+                  <strong>72h</strong>
+                  <span>Tiempo de despliegue</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-proof-card">
+              <i class="fa-solid fa-bolt"></i>
+              <div>
+                <p class="hero-proof-card__label">Impacto inmediato</p>
+                <p class="hero-proof-card__value">
+                  Piloto completo listo en <strong>7 días</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-mockup">
+              <picture>
+                <source
+                  srcset="/assets/whatsapp-mockup.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/assets/whatsapp-mockup.webp"
+                  alt="Conversación de un agente VivaSpeak en WhatsApp"
+                  class="clickable-image"
+                />
+              </picture>
+              <div class="mockup-overlay">
+                <div class="mockup-counter">
+                  <span id="mockupCounter">+1 cita confirmada</span>
+                </div>
+                <div class="mockup-check">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                </div>
+                <div class="mockup-toast" role="status" aria-live="polite">
+                  <span class="mockup-toast__label">Nueva cita creada</span>
+                  <span class="mockup-toast__time">· 16:00</span>
+                  <span class="mockup-toast__name">Silvia Pérez</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-floating-card">
+              <i class="fa-solid fa-robot"></i>
+              <div>
+                <p class="card-label">Agente Laura</p>
+                <p class="card-value">Confirma una cita en 42s</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      id="imageModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Vista ampliada"
+    >
+      <span class="close" aria-label="Cerrar">&times;</span>
+      <img
+        class="modal-content"
+        id="modalImg"
+        alt="Visual ampliada de la conversación de un agente VivaSpeak en WhatsApp"
+      />
+    </div>
+    <section id="value-prop" class="value-summary">
+      <div class="container">
+        <p class="eyebrow">Qué hace VivaSpeak</p>
+        <h2>Mantén cada oportunidad en movimiento sin ampliar plantilla</h2>
+        <div class="value-grid">
+          <article class="value-card">
+            <h3>Captura y cualifica leads en todos los canales.</h3>
+          </article>
+          <article class="value-card">
+            <h3>Agenda citas con disponibilidad real.</h3>
+          </article>
+          <article class="value-card">
+            <h3>Envía resumen y notifica al equipo.</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="results" class="results">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">Evidencia en pocas semanas</p>
+          <h2>Resultados tras lanzar VivaSpeak</h2>
+        </div>
+        <div class="results-grid">
+          <article class="results-card">
+            <span class="results-number">+120</span>
+            <p>reservas automáticas al mes por clínica</p>
+          </article>
+          <article class="results-card">
+            <span class="results-number">98%</span>
+            <p>de consultas atendidas en menos de un minuto</p>
+          </article>
+          <article class="results-card">
+            <span class="results-number">7x</span>
+            <p>ROI medio tras el primer mes operativo</p>
+          </article>
+          <article class="results-card">
+            <span class="results-number">15+</span>
+            <p>sectores ya operan agentes VivaSpeak</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="automated-calls">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <img
+            src="/assets/llamadas-automatizadas.png"
+            alt="Iconos de funciones IA de VivaSpeak"
+            class="section-icon"
+          />
+          <p class="eyebrow">Agentes omnicanal</p>
+          <h2>Una sola inteligencia para llamadas, WhatsApp y correo</h2>
+        </div>
+        <div class="channel-grid">
+          <article class="channel-card">
+            <h3>Llamadas con IA</h3>
+            <ul>
+              <li>Responde en &lt;60s y cualifica.</li>
+              <li>Agenda visitas y transfiere a humanos.</li>
+            </ul>
+            <p class="channel-price">Desde 119€/mes + IVA</p>
+          </article>
+          <article class="channel-card">
+            <h3>WhatsApp automatizado</h3>
+            <ul>
+              <li>Chatbot contextual con plantillas oficiales.</li>
+              <li>Respuestas fuera de horario y recordatorios.</li>
+            </ul>
+            <p class="channel-price">Desde 149€/mes + IVA</p>
+          </article>
+          <article class="channel-card">
+            <h3>Correo en piloto automático</h3>
+            <ul>
+              <li>Lee, responde y agenda desde tu bandeja.</li>
+            </ul>
+            <p class="channel-price">Desde 99€/mes + IVA</p>
+          </article>
+        </div>
+        <div class="feature-grid feature-grid--condensed">
+          <article class="feature-card">
+            <span class="feature-icon">
+              <i class="fa-solid fa-comments"></i>
+            </span>
+            <h3>Conversaciones reales</h3>
+            <p>Voces naturales con memoria contextual en todos los canales.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">
+              <i class="fa-solid fa-plug-circle-check"></i>
+            </span>
+            <h3>Integraciones rápidas</h3>
+            <p>Google Calendar, Nubimed, HubSpot y CRMs propios.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">
+              <i class="fa-solid fa-bolt-lightning"></i>
+            </span>
+            <h3>Seguimiento instantáneo</h3>
+            <p>Emails, WhatsApp o SMS al terminar cada llamada.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </span>
+            <h3>Visibilidad en vivo</h3>
+            <p>Dashboard único con transcripciones, KPIs y exportaciones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="video-demo">
+      <div class="container">
+        <div class="section-header">
+          <img
+            src="/assets/video.png"
+            alt="Icono de video"
+            class="section-icon"
+          />
+          <p class="eyebrow">Demo interactiva</p>
+          <h2>Demo en menos de 90 segundos</h2>
+          <p>
+            Mira cómo automatizamos reservas, resolvemos preguntas complejas y
+            notificamos a tu equipo en cuestión de segundos.
+          </p>
+        </div>
+        <div class="demo-grid">
+          <div class="demo-video-card">
+            <iframe
+              width="315"
+              height="560"
+              src="https://www.youtube.com/embed/_MwMo-mlBGQ"
+              title="Demo Clara VivaSpeak - Agente de voz IA para clínicas"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="demo-details">
+            <ul class="checklist">
+              <li>Reserva de citas con confirmación en tiempo real.</li>
+              <li>Resúmenes automáticos enviados al email del equipo.</li>
+              <li>Transferencia a humano cuando la conversación lo exige.</li>
+              <li>Compatibilidad total con llamadas, WhatsApp y correo.</li>
+            </ul>
+            <div class="badge-grid">
+              <div class="badge-card">
+                <strong>3 canales</strong>
+                <span>automatizados</span>
+              </div>
+              <div class="badge-card">
+                <strong>Casos reales</strong>
+                <span>validados en múltiples sectores</span>
+              </div>
+            </div>
+            <div class="cta-buttons">
+              <a href="#schedule" class="btn-primary">Agendar una demo</a>
+              <a href="#contact" class="btn-secondary">Contactar ventas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Sección de Agentes -->
+    <section id="agents">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">Catálogo de voces</p>
+          <h2>Elige tu Agente de Voz IA</h2>
+          <p>
+            Cada agente está entrenado para un caso de uso concreto. Escucha sus
+            voces, revisa sus funciones y solicita el que más se adapte a tu
+            negocio.
+          </p>
+        </div>
+        <div class="agent-cards-container">
+          <div class="agent-card agent-card--compact">
+            <div class="agent-main">
+              <img
+                src="/assets/clara-avatar.png"
+                alt="Clara, agente de voz IA especializada en clínicas médicas"
+              />
+              <div class="agent-info">
+                <p class="agent-label agent-label--clinicas">Clínicas</p>
+                <h3>Clara</h3>
+                <p class="agent-role">Triaje y seguimiento médico</p>
+              </div>
+            </div>
+            <p class="agent-snippet">
+              Atiende pacientes, responde tratamientos y agenda en Nubimed
+              automáticamente.
+            </p>
+            <ul class="agent-highlights">
+              <li>FAQ médicas + seguros</li>
+              <li>Transferencia a doctor</li>
+            </ul>
+            <audio controls class="agent-audio">
+              <source src="/assets/audio-clara.mp3" type="audio/mpeg" />
+              Tu navegador no soporta el elemento de audio.
+            </audio>
+            <div class="agent-card__footer">
+              <p class="agent-price">
+                <strong>Desde 119€/mes + IVA</strong>
+              </p>
+              <a href="/clinica" class="btn-secondary"
+                >Solicitar este agente</a
+              >
+            </div>
+          </div>
+          <div class="agent-card agent-card--compact">
+            <div class="agent-main">
+              <img
+                src="/assets/laura-avatar.png"
+                alt="Laura, agente de voz IA especializada en inmobiliarias"
+              />
+              <div class="agent-info">
+                <p class="agent-label agent-label--inmobiliarias">
+                  Inmobiliarias
+                </p>
+                <h3>Laura</h3>
+                <p class="agent-role">Hotline para compradores y owners</p>
+              </div>
+            </div>
+            <p class="agent-snippet">
+              Captura leads, comparte fichas y agenda visitas sin esperas.
+            </p>
+            <ul class="agent-highlights">
+              <li>Agenda de visitas automática</li>
+              <li>Notas en CRM en tiempo real</li>
+            </ul>
+            <audio controls class="agent-audio">
+              <source src="/assets/audio-laura.mp3" type="audio/mpeg" />
+              Tu navegador no soporta el elemento de audio.
+            </audio>
+            <div class="agent-card__footer">
+              <p class="agent-price">
+                <strong>Desde 119€/mes + IVA</strong>
+              </p>
+              <a href="/inmobiliaria" class="btn-secondary"
+                >Solicitar este agente</a
+              >
+            </div>
+          </div>
+          <div class="agent-card agent-card--compact">
+            <div class="agent-main">
+              <img
+                src="/assets/santiago-avatar.png"
+                alt="Santiago, agente de voz IA especializado en reclutamiento"
+              />
+              <div class="agent-info">
+                <p class="agent-label agent-label--talent">RRHH</p>
+                <h3>Santiago</h3>
+                <p class="agent-role">Copiloto de reclutamiento</p>
+              </div>
+            </div>
+            <p class="agent-snippet">
+              Llama candidatos, aplica knockout questions y agenda entrevistas.
+            </p>
+            <ul class="agent-highlights">
+              <li>Scripts multilingües</li>
+              <li>Recordatorios para recruiters</li>
+            </ul>
+            <audio controls class="agent-audio">
+              <source src="/assets/audio-santiago.mp3" type="audio/mpeg" />
+              Tu navegador no soporta el elemento de audio.
+            </audio>
+            <div class="agent-card__footer">
+              <p class="agent-price">
+                <strong>Desde 119€/mes + IVA</strong>
+              </p>
+              <a href="#schedule" class="btn-secondary">Reserva tu demo</a>
+            </div>
+          </div>
+          <div class="agent-card agent-card--compact">
+            <div class="agent-main">
+              <img
+                src="/assets/custom-agent-avatar.png"
+                alt="Agente personalizado VivaSpeak"
+              />
+              <div class="agent-info">
+                <p class="agent-label agent-label--custom">A medida</p>
+                <h3>Tu agente personalizado</h3>
+                <p class="agent-role">Entrenado con tus flujos</p>
+              </div>
+            </div>
+            <p class="agent-snippet">
+              Entrenado con tus guiones, datos y requisitos de compliance.
+            </p>
+            <ul class="agent-highlights">
+              <li>Ingeniero dedicado</li>
+              <li>Integraciones bespoke</li>
+            </ul>
+            <div class="agent-audio-placeholder">
+              Audio personalizado disponible bajo NDA.
+            </div>
+            <div class="agent-card__footer">
+              <p class="agent-price"><strong>Precio personalizado</strong></p>
+              <a href="#contact" class="btn-secondary">Crear mi agente</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Sección de Testimonios y Estudios de Caso -->
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">Resultados reales</p>
+          <h2>Testimonios y Casos de Éxito</h2>
+          <p>
+            Empresas de sectores muy distintos ya operan con agentes de
+            VivaSpeak. Esto es lo que dicen después de implementar la
+            plataforma.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonio 1: Daniel Insa -->
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <div class="testimonial-author">
+                <h3>Daniel Insa</h3>
+                <p class="author-role">Agente inmobiliario</p>
+                <p class="author-details">
+                  +15 años de experiencia en el sector
+                </p>
+              </div>
+
+              <div class="testimonial-media">
+                <iframe
+                  width="315"
+                  height="560"
+                  src="https://www.youtube.com/embed/vmtha03C92E"
+                  title="Testimonio de Daniel Insa - Agente inmobiliario"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <blockquote class="testimonial-quote">
+                “Instalamos VivaSpeak para atender leads entrantes cuando la
+                oficina está en visitas. Ahora cada llamada queda registrada y
+                la IA confirma visitas en nuestro calendario.”
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Testimonio 2: Reinaldo Rodríguez -->
+          <div class="testimonial-item no-video">
+            <div class="testimonial-content">
+              <div class="testimonial-author">
+                <h3>Reinaldo Rodríguez</h3>
+                <p class="author-role">Director de AllGrass</p>
+                <p class="author-details">
+                  Césped artificial y jardinería · Madrid
+                </p>
+              </div>
+
+              <div class="testimonial-media">
+                <img
+                  src="/assets/allgrass-logo.webp"
+                  alt="Logo AllGrass"
+                  class="testimonial-placeholder"
+                />
+              </div>
+
+              <blockquote class="testimonial-quote">
+                "Gracias a VivaSpeak optimizamos la gestión de llamadas para
+                prestar un mejor servicio. <strong>Rebeca</strong> atiende en
+                <strong>4 idiomas</strong> y nos envía un email tras cada
+                conversación. Ha sido una inversión que se ha pagado sola."
+              </blockquote>
+
+              <div class="testimonial-tags">
+                <span class="tag">🌍 4 idiomas</span>
+                <span class="tag">⚡ Respuesta instantánea</span>
+                <span class="tag">🌱 Jardinería</span>
+                <span class="tag">📊 Panel online</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <img
+          src="/assets/faq-icon.png"
+          alt="Icono de preguntas frecuentes"
+          class="image"
+        />
+        <h2>Preguntas Frecuentes (FAQ)</h2>
+        <div class="faq-container">
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Qué es exactamente VivaSpeak?
+            </summary>
+            <div class="faq-content">
+              Agentes que responden llamadas, WhatsApp y correos con tus
+              guiones, tono y base de conocimiento. Cualifican, reservan y
+              escalan cuando hace falta un humano.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Cómo se estructura el precio?
+            </summary>
+            <div class="faq-content">
+              Voz desde 119€/mes + IVA (número incluido), WhatsApp desde
+              149€/mes + IVA y correo desde 99€/mes + IVA. Combina canales para
+              agrupar minutos y soporte.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Se integra con mis herramientas?
+            </summary>
+            <div class="faq-content">
+              Sí. Conectamos Google Calendar, Nubimed, HubSpot, CRMs propios y
+              la API oficial de WhatsApp. Incluimos guías de desvío y de
+              compartición de calendario.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Puedo probarlo antes de contratarlo?
+            </summary>
+            <div class="faq-content">
+              Cada canal incluye un piloto de una semana con tus flujos reales y
+              KPIs compartidos en el panel.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Qué idiomas y horarios cubre?
+            </summary>
+            <div class="faq-content">
+              Operamos noches, fines de semana y picos en español, inglés,
+              portugués, francés y alemán. Pregunta por otros idiomas o acentos
+              antes del lanzamiento.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+    <!-- Contacto -->
+    <section id="contact">
+      <div class="contact-call-box">
+        <p class="question">📞 ¿Prefieres hablar?</p>
+        <p class="answer">
+          Llama al
+          <strong><a href="tel:+34951798932">+34 951 798 932</a></strong>
+          y nuestra agente IA te dará los básicos mientras te conectamos con un
+          especialista.
+        </p>
+      </div>
+      <div class="container">
+        <div class="section-header section-header--center">
+          <img
+            src="/assets/contacto.png"
+            alt="Icono de contacto"
+            class="section-icon"
+          />
+          <p class="eyebrow">Contacto</p>
+          <h2>Cuéntanos qué necesitas automatizar</h2>
+          <p>Te respondemos el mismo día.</p>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-info-card">
+            <h3>¿Qué recibirás?</h3>
+            <ul class="contact-list">
+              <li>✅ Recomendación de canal y agente.</li>
+              <li>
+                🛠️ Checklist de integraciones (Nubimed, calendarios, CRM).
+              </li>
+              <li>💰 Costes claros de minutos, setup y soporte.</li>
+            </ul>
+            <div class="contact-highlight">
+              <p>Soporte: L-V 9:00-19:00 CET</p>
+              <a href="tel:+34951798932" class="link-style">+34 951 798 932</a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form
+              action="/exito"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <label for="name">Nombre</label>
+              <input type="text" name="name" id="name" required />
+
+              <label for="email">Correo electrónico</label>
+              <input type="email" name="email" id="email" required />
+
+              <label for="solution-type">¿Qué solución te interesa?</label>
+              <div class="radio-group">
+                <label>
+                  <input
+                    type="radio"
+                    name="solution-type"
+                    value="inbound"
+                    required
+                  />
+                  Entrante (soporte, reservas, FAQs)
+                </label>
+                <label>
+                  <input type="radio" name="solution-type" value="outbound" />
+                  Interacciones planificadas (recordatorios, encuestas)
+                </label>
+                <label>
+                  <input type="radio" name="solution-type" value="whatsapp" />
+                  WhatsApp con chatbot IA
+                </label>
+                <label>
+                  <input type="radio" name="solution-type" value="both" />
+                  Todos los anteriores
+                </label>
+                <label>
+                  <input type="radio" name="solution-type" value="not-sure" />
+                  No estoy seguro, necesito asesoría
+                </label>
+              </div>
+
+              <label for="message">Mensaje</label>
+              <textarea name="message" id="message" required></textarea>
+
+              <div class="consent-container">
+                <input
+                  type="checkbox"
+                  id="privacy-consent"
+                  class="checkbox-style"
+                  required
+                />
+                <label for="privacy-consent">
+                  Acepto los
+                  <a
+                    href="terminos-y-condiciones"
+                    target="_blank"
+                    class="link-style"
+                    >Términos y Condiciones</a
+                  >
+                  y la
+                  <a
+                    href="politica-de-privacidad"
+                    target="_blank"
+                    class="link-style"
+                    >Política de Privacidad</a
+                  >.
+                </label>
+              </div>
+              <div data-netlify-recaptcha="true"></div>
+              <button type="submit" class="btn-primary btn-contact">
+                Enviar
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- <section id="schedule"> -->
+        <div
+          id="schedule"
+          class="contact-calendly"
+          aria-label="Agendar una reunión"
+        >
+          <h3>¿Prefieres elegir hora?</h3>
+          <p>Reserva una demo de 30 minutos con pantalla compartida.</p>
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/vivaspeak/30min"
+          ></div>
+        </div>
+        <!-- </section> -->
+      </div>
+    </section>
+    <section class="footer-cta">
+      <div class="container footer-cta__content">
+        <div>
+          <p class="eyebrow">Último empujón</p>
+          <h3>Activa un agente 24/7 que atienda cada lead importante.</h3>
+          <p>
+            Diseñamos, entrenamos e integramos tu asistente en menos de una
+            semana para que tu equipo se concentre en cerrar ventas y no en
+            atender llamadas.
+          </p>
+        </div>
+        <div class="footer-cta__actions">
+          <a href="#contact" class="btn-primary">Quiero hablar con ventas</a>
+          <a href="#schedule" class="btn-secondary">Ver agenda disponible</a>
+        </div>
+      </div>
+    </section>
+  <Footer />
+
+</Layout>
