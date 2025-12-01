@@ -1,0 +1,121 @@
+---
+import CookieBanner from "../components/CookieBanner.astro";
+import "../../styles/global.css";
+
+const { 
+  lang = "es",  
+  title = "VivaSpeak", 
+  description = "",
+  canonical, 
+  ogImage = "https://www.vivaspeak.com/assets/og-image.png", 
+  ogType = "website", 
+  keywords = "agente de voz IA, asistente virtual, automatización llamadas, WhatsApp Business API, chatbot IA, gestión clínicas, inmobiliarias, reservas automáticas, atención cliente 24/7, integración Nubimed",
+  alternateEs = "",
+  alternateEn = ""
+} = Astro.props;
+const currentUrl = canonical || Astro.url.href;
+
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    
+    <!-- ✅ Canonical -->
+    {canonical && <link rel="canonical" href={canonical} />}
+    
+    <!-- ✅ Meta description -->
+    <meta name="description" content={description} />
+    
+    <!-- ✅ Keywords -->
+    <meta name="keywords" content={keywords} />
+    
+    <!-- ✅ Author -->
+    <meta name="author" content="VivaSpeak" />
+    
+    <!-- ✅ Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:type" content={ogType} />
+    
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- ✅ Hreflang -->
+   {alternateEs && <link rel="alternate" href={alternateEs} hreflang="es" />}
+   {alternateEn && <link rel="alternate" href={alternateEn} hreflang="en" />}
+   {alternateEn && <link rel="alternate" href={alternateEn} hreflang="x-default" />}
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <!-- ✅ FontAwesome preload -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    
+    <!-- Calendly -->
+    <script 
+      is:inline 
+      async 
+      src="https://assets.calendly.com/assets/external/widget.js"
+    ></script>
+  </head>
+  <body>
+    <slot />
+
+    <!-- Banner de cookies mostrado en todas las páginas -->
+    <CookieBanner lang={lang} />
+   <script>
+  // @ts-ignore – Google Analytics no tiene typings en Astro
+  window.loadGA = function () {
+    const gaScript = document.createElement("script");
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-LVXZ4DBRP0";
+    gaScript.async = true;
+    document.head.appendChild(gaScript);
+
+    // @ts-ignore
+    window.dataLayer = window.dataLayer || [];
+    // @ts-ignore
+    function gtag(){ window.dataLayer.push(arguments); }
+    // @ts-ignore
+    window.gtag = gtag;
+
+    gtag("js", new Date());
+    gtag("config", "G-LVXZ4DBRP0");
+  };
+
+  const getCookie = (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  };
+  
+  const consent = getCookie("cookie-consent");
+  if (consent === "accepted") {
+    window.loadGA();
+  }
+</script>
+
+
+    <!-- ✅ JavaScript que falta -->
+    <script src="/js/index.js" defer></script>
+  </body>
+</html>
