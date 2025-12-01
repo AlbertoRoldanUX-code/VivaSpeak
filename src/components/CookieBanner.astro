@@ -1,6 +1,4 @@
 ---
-const cookieValue = Astro.cookies.get("cookie-consent")?.value ?? "";
-const bannerDismissed = ["true", "accepted", "rejected"].includes(cookieValue);
 const { lang = "es" } = Astro.props;
 
 const locale = (lang || "es").toLowerCase().startsWith("en") ? "en" : "es";
@@ -30,35 +28,33 @@ const translations = {
 const text = translations[locale];
 ---
 
-{!bannerDismissed && (
-  <aside
-    id="cookie-banner"
-    class="cookie-banner"
-    role="dialog"
-    aria-live="polite"
-    aria-label={text.ariaLabel}
-    data-cookie-banner
-  >
-    <div class="cookie-copy">
-      <strong>{text.headline}</strong>
-      <p>
-        {text.description}{" "}
-        <a href={text.privacyHref} target="_blank" rel="noopener">
-          {text.privacyLabel}
-        </a>{" "}
-        {locale === "es" ? "para más detalles." : "for more details."}
-      </p>
-    </div>
-    <div class="cookie-actions">
-      <button type="button" class="btn ghost" data-cookie-reject>
-        {text.reject}
-      </button>
-      <button type="button" class="btn solid" data-cookie-accept>
-        {text.accept}
-      </button>
-    </div>
-  </aside>
-)}
+<aside
+  id="cookie-banner"
+  class="cookie-banner hidden"
+  role="dialog"
+  aria-live="polite"
+  aria-label={text.ariaLabel}
+  data-cookie-banner
+>
+  <div class="cookie-copy">
+    <strong>{text.headline}</strong>
+    <p>
+      {text.description}{" "}
+      <a href={text.privacyHref} target="_blank" rel="noopener">
+        {text.privacyLabel}
+      </a>{" "}
+      {locale === "es" ? "para más detalles." : "for more details."}
+    </p>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" class="btn ghost" data-cookie-reject>
+      {text.reject}
+    </button>
+    <button type="button" class="btn solid" data-cookie-accept>
+      {text.accept}
+    </button>
+  </div>
+</aside>
 
 <style>
   .cookie-banner {
@@ -170,23 +166,37 @@ const text = translations[locale];
     const acceptBtn = banner.querySelector("[data-cookie-accept]");
     const rejectBtn = banner.querySelector("[data-cookie-reject]");
 
+    const getCookie = (name) => {
+      const v = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+      return v ? v[2] : null;
+    };
+
+    const existing = getCookie("cookie-consent");
+
+    // Si ya han elegido → no mostramos
+    if (existing === "accepted" || existing === "rejected") {
+      banner.remove();
+      return;
+    }
+
+    // Mostrar banner
+    banner.classList.remove("hidden");
+
     const setConsent = (value) => {
-  // ✅ Solo cookies, sin localStorage
-  const oneYear = 60 * 60 * 24 * 365;
-  document.cookie = `cookie-consent=${value};path=/;max-age=${oneYear};SameSite=Lax`;
-  
-  if (value === "accepted") {
-    window.loadGA?.();
-  }
-};
+      const oneYear = 60 * 60 * 24 * 365;
+      const secure = window.location.protocol === "https:" ? ";Secure" : "";
+      document.cookie =
+        `cookie-consent=${value};path=/;max-age=${oneYear};SameSite=Lax` +
+        secure;
+
+      if (value === "accepted") window.loadGA?.();
+    };
 
     const hideBanner = () => {
       banner.classList.add("is-hiding");
-      banner.addEventListener(
-        "transitionend",
-        () => banner.remove(),
-        { once: true }
-      );
+      banner.addEventListener("transitionend", () => banner.remove(), {
+        once: true,
+      });
     };
 
     acceptBtn?.addEventListener("click", () => {
