@@ -1,0 +1,80 @@
+.inmo-landing {
+  background: linear-gradient(180deg, #ecf0f1 0%, #f7faf9 55%, #ffffff 100%);
+}
+
+.inmo-landing section {
+  padding: 60px 2rem 70px;
+}
+
+#hero {
+  padding-top: 110px;
+}
+
+.hero-proof {
+  margin: 10px auto 20px;
+  max-width: 680px;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.hero-social-proof {
+  margin: 8px auto 12px;
+  max-width: 680px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+#problema-real {
+  background: #ffffff;
+}
+
+#problema-real .use-case-features li {
+  font-weight: 600;
+}
+
+#use-case-landing .section-cta {
+  margin-top: 30px;
+}
+
+#use-cases .case-card {
+  border: 1px solid rgba(22, 160, 133, 0.18);
+  box-shadow: var(--shadow-md);
+}
+
+#video-demo .container {
+  max-width: 900px;
+}
+
+.video-frame {
+  display: block;
+  margin: 22px auto 10px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  background: #0f172a;
+}
+
+#cta-final {
+  background: #f4fffc;
+}
+
+.cta-final-copy {
+  margin: 16px auto 22px;
+  max-width: 640px;
+  font-weight: 600;
+}
+
+.cta-final-btn {
+  padding: 18px 40px;
+  font-size: 1.28rem;
+}
+
+.faq-list {
+  text-align: left;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .inmo-landing section {
+    padding: 50px 1.5rem 60px;
+  }
+}

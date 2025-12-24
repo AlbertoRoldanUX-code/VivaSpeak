@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../../styles/real-estate.css";
 ---
 
 <Layout
@@ -15,7 +16,7 @@ import Footer from "../components/Footer.astro";
   keywords="agente de voz, inmobiliaria, inteligencia artificial, captación de propiedades, automatización llamadas, atención clientes, agente virtual"
 >
   <Header />
-    <main>
+    <main class="inmo-landing">
       <section id="hero">
         <div class="hero-bg">
           <svg
@@ -34,25 +35,41 @@ import Footer from "../components/Footer.astro";
         </div>
         <div class="container hero-content">
           <h1>Agente de Voz IA para Inmobiliarias</h1>
+          <p class="hero-social-proof">
+            +12% de visitas agendadas en 30 días · caso real en Málaga
+          </p>
           <p class="hero-subtitle">
-            Laura atiende llamadas, responde consultas de compradores y coordina
-            reservas de visitas, para que tú puedas centrarte en vender.
+            + visitas sin levantar el teléfono, 24/7 y sin contratar personal.
+          </p>
+          <p class="hero-proof">
+            Solo hablas con leads listos para visitar o captar.
           </p>
           <a href="#cta-final" class="btn-primary"
-            >Activa tu agente inmobiliario</a
+            >Ver demo en directo</a
           >
+        </div>
+      </section>
+      <section id="problema-real">
+        <div class="container">
+          <h2>El problema real de las inmobiliarias</h2>
+          <ul class="use-case-features">
+            <li>Cada llamada perdida es una visita menos</li>
+            <li>Te interrumpen mientras enseñas pisos</li>
+            <li>Leads calientes que se enfrían en minutos</li>
+          </ul>
+          <p>Si esto te pasa a diario, esta página es para ti.</p>
         </div>
       </section>
       <section id="use-case-landing">
         <div class="container">
           <p>
             Con nuestra agente virtual <strong>Laura</strong>, especializada en
-            inmobiliarias, puedes automatizar la captación de propietarios y la
-            atención de llamadas sin depender de tu disponibilidad.
+            inmobiliarias, conviertes llamadas en visitas y captaciones sin
+            perder tiempo en leads fríos.
           </p>
           <p>
-            Disponible fuera del horario comercial, fines de semana o cuando no
-            puedas atender el teléfono.
+            Captas propietarios incluso fuera del horario comercial y sin cortar
+            tus visitas en curso.
           </p>
         </div>
         <img
@@ -63,26 +80,29 @@ import Footer from "../components/Footer.astro";
         <h2>¿Qué puede hacer VivaSpeak por tu inmobiliaria?</h2>
         <ul class="use-case-features">
           <li>
-            📞 <strong>Atiende llamadas 24/7</strong> con información de tu
-            catálogo actualizado.
+            📞 <strong>Atiende llamadas 24/7</strong> y no pierdes visitas por
+            falta de respuesta.
           </li>
           <li>
-            📅 <strong>Agenda visitas</strong> directamente o coordina con tu
-            equipo.
+            📅 <strong>Agenda visitas</strong> y convierte más interesados en
+            citas reales.
           </li>
           <li>
-            🔎 <strong>Filtra leads interesados</strong> y deriva solo los de
-            alta calidad.
+            🔎 <strong>Filtra leads interesados</strong> para que tu equipo
+            cierre más con menos llamadas.
           </li>
           <li>
-            📊 <strong>Consulta estadísticas</strong> en tiempo real desde tu
-            panel online.
+            📊 <strong>Consulta estadísticas</strong> y ajusta campañas para
+            captar más propietarios.
           </li>
           <li>
-            🌐 <strong>Multiidioma automático</strong> (español e inglés sin
-            configurar nada).
+            🌐 <strong>Multiidioma automático</strong> y no pierdes clientes por
+            idioma.
           </li>
         </ul>
+        <p class="section-cta">
+          <a href="#cta-final" class="btn-primary">Ver demo en directo</a>
+        </p>
       </section>
       <section id="use-cases">
         <div class="container">
@@ -91,32 +111,40 @@ import Footer from "../components/Footer.astro";
             Descubre cómo VivaSpeak ayuda a tu inmobiliaria a captar propiedades
             y mejorar la atención al cliente.
           </p>
+          <p>
+            Métrica conservadora: +12% de visitas agendadas en 30 días.
+          </p>
         </div>
         <div class="cases">
           <div class="case-card">
             <h4>📍 Atención entrante 24/7</h4>
             <p>
-              Laura responde consultas sobre pisos, precios, ubicaciones y
-              características. Agenda visitas o transfiere a tu equipo cuando
-              detecta interés real.
+              Responde consultas sobre pisos, precios y ubicaciones, y agenda
+              visitas para que solo hables con quien tiene intención real de
+              comprar o vender.
             </p>
           </div>
           <div class="case-card">
             <h4>📲 Seguimiento de leads</h4>
             <p>
-              Confirmación de interés, reactivación de oportunidades frías y
-              llamadas programadas a contactos previos. Todo desde el panel
-              online.
+              Confirma interés y reactiva oportunidades frías con llamadas
+              programadas para convertir contactos en visitas y captaciones.
             </p>
           </div>
           <div class="case-card">
             <h4>📊 Estadísticas en tiempo real</h4>
             <p>
-              Consulta desde qué ciudades llaman, horarios de mayor demanda y
-              tasa de conversión. Ideal para optimizar tus campañas en Idealista
-              o redes sociales.
+              Identifica zonas y horarios con más demanda para invertir en los
+              anuncios que generan más propietarios y cierres.
             </p>
           </div>
+        </div>
+        <div class="container">
+          <p>
+            <a href="#cta-final" class="btn-primary"
+              >Ver demo en directo</a
+            >
+          </p>
         </div>
       </section>
       <section id="video-demo">
@@ -124,9 +152,9 @@ import Footer from "../components/Footer.astro";
           <img src="/assets/video.png" alt="Icono de video" class="image" />
           <h2>Testimonio Real</h2>
           <p>
-            <strong>Daniel Insa</strong>, agente inmobiliario en Málaga, usa
-            VivaSpeak para captar propiedades sin perder tiempo.
+            <strong>Daniel Insa – Agente inmobiliario RE/MAX (uso diario en Málaga)</strong>
           </p>
+          <p>RE/MAX · Málaga</p>
           <p>
             <em
               >"Gracias a Laura, puedo atender a más clientes sin interrumpir mi
@@ -134,7 +162,12 @@ import Footer from "../components/Footer.astro";
               en mi calendario."</em
             >
           </p>
+          <p>
+            Uso real en Málaga · llamadas entrantes y salientes · captación de
+            propietarios
+          </p>
           <iframe
+            class="video-frame"
             width="315"
             height="560"
             src="https://www.youtube.com/embed/vmtha03C92E"
@@ -143,8 +176,9 @@ import Footer from "../components/Footer.astro";
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+          <p>Sistema activo actualmente captando propietarios.</p>
           <p>
-            <a href="#cta-final" class="btn-primary">Activa tu agente</a>
+            <a href="#cta-final" class="btn-primary">Ver demo en directo</a>
           </p>
         </div>
       </section>
@@ -172,30 +206,7 @@ import Footer from "../components/Footer.astro";
             <details class="faq">
               <summary>
                 <span class="faq-arrow">▶</span>
-                ¿Cómo gestiono el agente?
-              </summary>
-              <div class="faq-content">
-                Desde tu panel online puedes:
-                <ul style="text-align: left; margin-top: 10px">
-                  <li>• Ver transcripciones y grabaciones de cada llamada</li>
-                  <li>
-                    • Subir y actualizar la base de conocimiento (catálogo de
-                    propiedades)
-                  </li>
-                  <li>• Ejecutar llamadas salientes a listas de contactos</li>
-                  <li>
-                    • Consultar estadísticas (ciudades, horarios, tasa de
-                    conversión)
-                  </li>
-                  <li>• Ajustar el tono y comportamiento de Laura</li>
-                </ul>
-                Todo en tiempo real, sin necesidad de programar.
-              </div>
-            </details>
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span>
-                ¿Puedo usar mi propio número de teléfono?
+                ¿Funciona con mi número?
               </summary>
               <div class="faq-content">
                 Sí. Podemos redirigir tu número actual al agente o asignarte uno
@@ -226,6 +237,29 @@ import Footer from "../components/Footer.astro";
                 depende del uso que des a las grabaciones. Tú decides si Laura
                 incluye un aviso al inicio de la llamada. Te asesoramos según tu
                 caso.
+              </div>
+            </details>
+            <details class="faq">
+              <summary>
+                <span class="faq-arrow">▶</span>
+                ¿Cómo gestiono el agente?
+              </summary>
+              <div class="faq-content">
+                Desde tu panel online puedes:
+                <ul class="faq-list">
+                  <li>• Ver transcripciones y grabaciones de cada llamada</li>
+                  <li>
+                    • Subir y actualizar la base de conocimiento (catálogo de
+                    propiedades)
+                  </li>
+                  <li>• Ejecutar llamadas salientes a listas de contactos</li>
+                  <li>
+                    • Consultar estadísticas (ciudades, horarios, tasa de
+                    conversión)
+                  </li>
+                  <li>• Ajustar el tono y comportamiento de Laura</li>
+                </ul>
+                Todo en tiempo real, sin necesidad de programar.
               </div>
             </details>
             <details class="faq">
@@ -285,6 +319,10 @@ import Footer from "../components/Footer.astro";
             5. Ajustas el comportamiento de Laura cuando quieras desde el panel.
           </li>
         </ul>
+        <p class="cta-final-copy">
+          Empieza en días, no en semanas. Sin instalaciones ni fricción técnica.
+        </p>
+        <a href="#precios" class="btn-secondary">Ver demo en directo</a>
       </section>
       <section id="precios">
         <h2>Plan Profesional: 119€/mes + IVA</h2>
@@ -308,8 +346,15 @@ import Footer from "../components/Footer.astro";
           <li><strong>➕ Minutos extra: 0,30 €/min</strong></li>
           <li><strong>💼 Sin instalación ni integración técnica</strong></li>
         </ul>
-        <a href="https://calendly.com/vivaspeak/30min" class="btn-primary">
-          Activa tu agente
+        <p>
+          Si tu inmobiliaria recibe 10+ llamadas al día, esto se paga solo.
+        </p>
+        <p>Cancelas cuando quieras. Sin permanencia.</p>
+        <a
+          href="https://calendly.com/vivaspeak/30min"
+          class="btn-primary cta-final-btn"
+        >
+          Ver demo en directo
         </a>
       </section>
     </main>
