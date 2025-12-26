@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menu = document.getElementById("hamburger");
   // Seleccionamos "nav ul" (asumiendo que es la lista dentro de .top-nav)
   const dropdown = document.querySelector(".nav-list");
+  const header = document.querySelector("header");
   const navLinks = document.querySelectorAll(".nav-list a");
   const yearSpan = document.getElementById("year");
   const clickableImages = document.querySelectorAll(".clickable-image");
@@ -11,14 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // --- 1. Lógica de Resize (Pantallas grandes vs móviles) ---
   function handleResize() {
-    if (window.innerWidth > 1188) {
+    if (window.innerWidth > 991) {
       // En escritorio, aseguramos que el menú se vea (reseteamos display inline para que el CSS mande)
-      if (dropdown) dropdown.style.display = "";
+      if (dropdown) {
+        dropdown.classList.remove("open");
+        dropdown.style.display = "";
+      }
       if (menu) menu.classList.remove("active");
+      if (header) header.classList.remove("menu-open");
     } else {
       // En móvil, si el menú no tiene la clase active, aseguramos que esté oculto al redimensionar
       if (menu && !menu.classList.contains("active") && dropdown) {
-        dropdown.style.display = "none";
+        dropdown.classList.remove("open");
+        dropdown.style.display = "";
+      }
+      if (menu && !menu.classList.contains("active") && header) {
+        header.classList.remove("menu-open");
       }
     }
   }
@@ -32,22 +41,21 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.toggle("active");
 
       // Simulación de slideToggle con display
-      if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-      } else {
-        dropdown.style.display = "block";
-      }
+      if (dropdown.style.display) dropdown.style.display = "";
+      dropdown.classList.toggle("open");
+      if (header) header.classList.toggle("menu-open");
     });
   }
 
   // --- 3. Cerrar menú al hacer clic en un enlace ---
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      if (window.innerWidth <= 1203) {
+      if (window.innerWidth <= 991) {
         // Solo si el menú está visible
-        if (dropdown && dropdown.style.display === "block") {
+        if (dropdown && dropdown.classList.contains("open")) {
           if (menu) menu.classList.remove("active");
-          dropdown.style.display = "none";
+          dropdown.classList.remove("open");
+          if (header) header.classList.remove("menu-open");
         }
       }
     });
