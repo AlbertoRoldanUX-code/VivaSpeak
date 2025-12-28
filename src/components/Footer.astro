@@ -1,3 +1,7 @@
+---
+const { langEnHref = "/en/", langEsHref = "/" } = Astro.props;
+---
+
  <footer>
       <div class="Copyright">
         <p>
@@ -56,6 +60,6 @@
         <em>Valeria, nuestra agente de voz IA responderá tus dudas.</em>
       </div>
       <div class="footer-language">
-        <a href="/en/" lang="en">English</a> | <a href="/" lang="es">Español</a>
+        <a href={langEnHref} lang="en">English</a> | <a href={langEsHref} lang="es">Español</a>
       </div>
     </footer>

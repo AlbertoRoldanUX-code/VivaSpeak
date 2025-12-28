@@ -1,0 +1,26 @@
+---
+import "../../styles/landing-header.css";
+
+const {
+  ctaLabel = "Solicitar demo",
+  ctaHref = "#cta-final",
+  secondaryLabel = "Volver a VivaSpeak",
+  secondaryHref = "/",
+} = Astro.props;
+---
+
+<header class="landing-header">
+  <div class="landing-header__container">
+    <a class="landing-header__brand" href="/" aria-label="Ir a VivaSpeak">
+      <img
+        src="/assets/Logo transparente cropped.png"
+        alt="Logotipo de VivaSpeak"
+        loading="eager"
+      />
+    </a>
+    <div class="landing-header__actions">
+      <a class="landing-header__link" href={secondaryHref}>{secondaryLabel}</a>
+      <a class="btn-primary landing-header__cta" href={ctaHref}>{ctaLabel}</a>
+    </div>
+  </div>
+</header>

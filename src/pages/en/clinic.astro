@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import HeaderEn from "../../components/HeaderEn.astro";
+import LandingHeaderEn from "../../components/LandingHeaderEn.astro";
 import FooterEn from "../../components/FooterEn.astro";
 ---
 
@@ -14,7 +14,10 @@ import FooterEn from "../../components/FooterEn.astro";
   ogImage="/assets/og-image-clinica.png"
   lang="en"
 >
-  <HeaderEn />
+  <LandingHeaderEn
+    ctaLabel="Activate Clara"
+    ctaHref="https://calendly.com/vivaspeak/30min"
+  />
 
     <main>
       <section id="hero">
@@ -183,5 +186,5 @@ import FooterEn from "../../components/FooterEn.astro";
       </section>
     </main>
 
-  <FooterEn />
+  <FooterEn langEnHref="/en/clinic" langEsHref="/clinica" />
 </Layout>
