@@ -9,7 +9,7 @@ const {
   canonical, 
   ogImage = "https://www.vivaspeak.com/assets/og-image.png", 
   ogType = "website", 
-  keywords = "agente de voz IA, asistente virtual, automatización llamadas, WhatsApp Business API, chatbot IA, gestión clínicas, inmobiliarias, reservas automáticas, atención cliente 24/7, integración Nubimed",
+  keywords = "agente de voz IA, asistente virtual, automatización llamadas, WhatsApp Business API, chatbot IA, gestión clínicas, inmobiliarias, reservas automáticas, atención cliente 24/7, integración con agendas",
   alternateEs = "",
   alternateEn = ""
 } = Astro.props;
@@ -85,32 +85,39 @@ const currentUrl = canonical || Astro.url.href;
     <CookieBanner lang={lang} />
    <script>
   // @ts-ignore – Google Analytics no tiene typings en Astro
-  window.loadGA = function () {
+  const loadGA = () => {
     const gaScript = document.createElement("script");
     gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-LVXZ4DBRP0";
     gaScript.async = true;
     document.head.appendChild(gaScript);
 
-    // @ts-ignore
-    window.dataLayer = window.dataLayer || [];
-    // @ts-ignore
-    function gtag(){ window.dataLayer.push(arguments); }
-    // @ts-ignore
-    window.gtag = gtag;
+    const w = window as Window & {
+      dataLayer?: unknown[];
+      gtag?: (...args: unknown[]) => void;
+    };
+    w.dataLayer = w.dataLayer || [];
+    const gtag = (...args: unknown[]) => {
+      w.dataLayer?.push(args);
+    };
+    w.gtag = gtag;
 
     gtag("js", new Date());
     gtag("config", "G-LVXZ4DBRP0");
   };
 
-  const getCookie = (name) => {
+  const getCookie = (name: string): string | undefined => {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
+    if (parts.length === 2) {
+      const last = parts.pop();
+      if (!last) return undefined;
+      return last.split(";").shift();
+    }
   };
   
   const consent = getCookie("cookie-consent");
   if (consent === "accepted") {
-    window.loadGA();
+    loadGA();
   }
 </script>
 
