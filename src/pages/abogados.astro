@@ -1,0 +1,291 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import Footer from "../components/Footer.astro";
+import "../../styles/abogados.css";
+---
+
+<Layout
+  title="Agente de voz IA para abogados | VivaSpeak"
+  description="VivaSpeak atiende y filtra llamadas legales, recoge datos clave y envía resúmenes listos para decidir. Atención 24/7, multidioma y con aviso de grabación."
+  canonical="https://vivaspeak.com/abogados"
+  alternateEs="https://vivaspeak.com/abogados"
+  ogImage="/assets/og-image.png"
+  lang="es"
+  keywords="agente de voz IA, abogados, despacho legal, recepción telefónica legal, atención telefónica abogados, cualificación de casos legales"
+>
+  <LandingHeader ctaLabel="Agendar demo" ctaHref="#cta-final" />
+  <main class="law-landing">
+    <section id="hero-law" class="law-hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-badge">VivaSpeak para despachos legales</p>
+          <h1>Filtra llamadas legales y dedica tu tiempo solo a los casos que merecen la pena.</h1>
+          <p class="hero-subtitle">
+            Recoge información clave y envía un resumen listo para decidir.
+            24/7, multidioma y con aviso de grabación integrado.
+          </p>
+          <div class="hero-points">
+            <p><i class="fa-solid fa-circle-check"></i> Nombre, teléfono y email siempre capturados.</p>
+            <p><i class="fa-solid fa-circle-check"></i> Motivo, urgencia y jurisdicción en segundos.</p>
+            <p><i class="fa-solid fa-circle-check"></i> Transcripción y audio por email.</p>
+          </div>
+          <div class="cta-buttons law-cta-row">
+            <a href="#cta-final" class="btn-primary">Agendar demo</a>
+            <a href="#flow" class="btn-secondary">Cómo funciona</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="case-card">
+            <div class="case-header">
+              <span class="case-tag">Urgente</span>
+              <span class="case-time">Hace 2 min</span>
+            </div>
+            <h3>Consulta de arrendamientos</h3>
+            <p class="case-summary">
+              Solicita revisión de contrato. Necesita respuesta esta semana.
+            </p>
+            <div class="case-meta">
+              <span><i class="fa-solid fa-user"></i> Marta R.</span>
+              <span><i class="fa-solid fa-phone"></i> +34 6XX XXX XXX</span>
+              <span><i class="fa-solid fa-scale-balanced"></i> Civil</span>
+            </div>
+            <button class="case-action">Priorizar caso</button>
+          </div>
+          <div class="case-card muted">
+            <div class="case-header">
+              <span class="case-tag soft">Informativa</span>
+              <span class="case-time">Ayer</span>
+            </div>
+            <h3>Reclamación de deuda</h3>
+            <p class="case-summary">
+              Consulta inicial. Espera presupuesto y siguientes pasos.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-wave"></div>
+    </section>
+
+    <section id="compliance" class="law-compliance">
+      <div class="container compliance-card">
+        <div>
+          <h2>Aviso legal desde el primer segundo</h2>
+          <p>
+            La agente informa automáticamente de la grabación y transcripción,
+            ayudándote a cumplir RGPD y normativa española de grabación de llamadas.
+          </p>
+        </div>
+        <div class="compliance-pill">
+          <i class="fa-solid fa-shield-halved"></i>
+          Aviso legal integrado
+        </div>
+      </div>
+    </section>
+
+    <section id="pain" class="law-pain">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">El problema diario</p>
+          <h2>Llamadas constantes, urgencias mezcladas y cero tiempo</h2>
+          <p class="section-subtitle">
+            Un despacho vive del tiempo. Cuando suena el teléfono, se corta el trabajo,
+            se pierden casos y se acumula el backoffice.
+          </p>
+        </div>
+        <div class="pain-grid">
+          <article class="pain-card">
+            <h3>Interrupciones continuas</h3>
+            <p>
+              El agente atiende y registra datos para que no interrumpa tu trabajo.
+            </p>
+          </article>
+          <article class="pain-card">
+            <h3>Casos sin filtro ni prioridad</h3>
+            <p>
+              Clasifica por especialidad y urgencia para que respondas en el orden correcto.
+            </p>
+          </article>
+          <article class="pain-card">
+            <h3>Urgencias reales mezcladas con consultas sin valor</h3>
+            <p>
+              Separa lo urgente de lo accesorio para que no se te escape un plazo crítico.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" class="law-flow">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">Flujo legal</p>
+          <h2>Un filtro claro antes de que entres en la llamada</h2>
+        </div>
+        <div class="flow-grid">
+          <article class="flow-step">
+            <span class="flow-number">01</span>
+            <h3>Identifica y clasifica</h3>
+            <p>Detecta área legal, urgencia y expectativa del cliente.</p>
+          </article>
+          <article class="flow-step">
+            <span class="flow-number">02</span>
+            <h3>Pregunta lo imprescindible</h3>
+            <p>Recoge datos y hace las preguntas que tu despacho define.</p>
+          </article>
+          <article class="flow-step">
+            <span class="flow-number">03</span>
+            <h3>Te llega todo resumido</h3>
+            <p>Resumen claro por email y en el panel con historial completo.</p>
+          </article>
+        </div>
+        <p class="flow-note">Tú defines las preguntas. El agente solo ejecuta.</p>
+      </div>
+    </section>
+
+    <section id="benefits" class="law-benefits">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Lo que recibes</p>
+          <h2>Información lista para decidir en segundos</h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h3>Resumen ejecutivo</h3>
+            <p>Motivo de consulta, urgencia y prioridad marcados.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Motivo legal estructurado</h3>
+            <p>Tipo de caso, urgencia y siguiente paso definidos.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Transcripción y audio</h3>
+            <p>Todo queda registrado para revisar o delegar.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Multidioma</h3>
+            <p>Español, inglés y alemán para clientes internacionales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="use-cases" class="law-use-cases">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">Casos de uso</p>
+          <h2>Tu recepción telefónica legal, siempre activa</h2>
+        </div>
+        <div class="use-case-grid">
+          <article class="use-case-card">
+            <h3>Filtro de viabilidad</h3>
+            <p>El agente detecta si el caso entra en tu especialidad y rango.</p>
+          </article>
+          <article class="use-case-card">
+            <h3>Prioridad por urgencia</h3>
+            <p>Identifica plazos críticos para que nadie pierda una fecha.</p>
+          </article>
+          <article class="use-case-card">
+            <h3>Consultas repetitivas</h3>
+            <p>Responde dudas básicas sin ocupar a tu equipo.</p>
+          </article>
+          <article class="use-case-card">
+            <h3>Derivación inteligente</h3>
+            <p>Clasifica por área y envíalo al abogado correcto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta-final" class="law-cta">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <p class="eyebrow">Prueba VivaSpeak</p>
+            <h2>Activa tu agente legal en 24 horas</h2>
+            <p>
+              Cuéntanos tu especialidad y configuramos el flujo de llamadas.
+            </p>
+            <p>Sin permanencia. Ajustes incluidos.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="https://calendly.com/vivaspeak/30min" class="btn-primary"
+              >Agendar demo</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="law-faq">
+      <div class="container">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-grid">
+          <details class="faq-card">
+            <summary>¿Se puede personalizar por especialidad?</summary>
+            <p>
+              Sí, 100%. Definimos preguntas, criterios de descarte y orden del flujo
+              según tu especialidad.
+            </p>
+          </details>
+          <details class="faq-card">
+            <summary>¿Graba llamadas?</summary>
+            <p>
+              Sí, con aviso legal automático desde el primer segundo.
+            </p>
+          </details>
+          <details class="faq-card">
+            <summary>¿En cuánto tiempo está listo?</summary>
+            <p>
+              24 horas desde que recibimos tu contexto.
+            </p>
+          </details>
+          <details class="faq-card">
+            <summary>¿Cumple RGPD y normativa de grabación en España?</summary>
+            <p>
+              Sí. Incluye aviso legal automático al inicio de la llamada y se adapta
+              a la normativa de grabación en España.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <script is:inline>
+    const faqSection = document.querySelector(".law-faq");
+    const faqGrid = faqSection?.querySelector(".faq-grid");
+    const faqCards = faqSection?.querySelectorAll(".faq-card") || [];
+
+    const reserveFaqHeight = () => {
+      if (!faqGrid || !faqCards.length) return;
+      const originalStates = Array.from(faqCards).map((card) => card.open);
+      faqGrid.style.visibility = "hidden";
+      faqCards.forEach((card) => {
+        card.open = true;
+      });
+      const maxHeight = faqGrid.scrollHeight;
+      faqCards.forEach((card, index) => {
+        card.open = originalStates[index];
+      });
+      faqGrid.style.minHeight = `${maxHeight}px`;
+      faqGrid.style.visibility = "";
+    };
+
+    reserveFaqHeight();
+    window.addEventListener("resize", reserveFaqHeight);
+
+    faqCards.forEach((card) => {
+      const summary = card.querySelector("summary");
+      if (!summary) return;
+      summary.addEventListener("click", (event) => {
+        event.preventDefault();
+        const willOpen = !card.open;
+        faqCards.forEach((other) => {
+          other.open = false;
+        });
+        card.open = willOpen;
+      });
+    });
+  </script>
+</Layout>
