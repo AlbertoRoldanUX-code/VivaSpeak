@@ -163,7 +163,7 @@
 }
 
 #use-case-landing .use-case-features {
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   margin: 24px auto 20px;
   max-width: 980px;
 }
