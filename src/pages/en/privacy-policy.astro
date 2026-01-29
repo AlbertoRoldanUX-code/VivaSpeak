@@ -17,7 +17,7 @@ import FooterEn from "../../components/FooterEn.astro";
     <main>
     <section class="privacy-container">
       <h1>Privacy Policy</h1>
-      <p>Last Updated: March 2025</p>
+      <p>Last Updated: January 2026</p>
 
       <h2>1. Introduction</h2>
       <p>
@@ -83,34 +83,72 @@ import FooterEn from "../../components/FooterEn.astro";
       <h2>4. Use of Google data</h2>
       <p>
         When a user authenticates with <strong>Google OAuth</strong> or connects
-        their Google account to VivaSpeak via <strong>Google APIs</strong>
-        (including <strong>Google People API / Google Contacts</strong>), we
+        their Google account to VivaSpeak via <strong>Google APIs</strong>, we
         may access the following Google user data, depending on the permissions
         granted:
       </p>
+
+      <h3>4.1 Google People API / Contacts</h3>
       <ul>
         <li>Email address</li>
         <li>User name</li>
         <li>Google account identifier</li>
         <li>User contacts (name, phone, email, and company)</li>
       </ul>
-      <p>We use this data solely to:</p>
+      <p>
+        Contacts are accessed in <strong>read-only</strong> mode
+        (<strong>contacts.readonly</strong>). VivaSpeak does not modify,
+        delete, or sync contact data in the user's Google account.
+      </p>
+
+      <h3>4.2 Google Calendar API</h3>
+      <p>
+        We use the <strong>Google Calendar API</strong> with the scope
+        <strong>https://www.googleapis.com/auth/calendar.events</strong>. We access:
+      </p>
+      <ul>
+        <li>Calendar events and associated availability</li>
+      </ul>
+      <p>
+        <strong>Purpose:</strong> We use Google Calendar solely to display
+        availability, create events requested by the user, and sync appointments
+        within VivaSpeak.
+      </p>
+      <p>
+        <strong>Read and write:</strong> We read calendar events to display
+        availability and we write to the calendar when the user requests
+        creating or updating appointments (e.g. appointments booked through the
+        voice agent). We do not modify or delete events without the user's
+        request. VivaSpeak does not delete existing events or perform automatic
+        modifications without explicit user action.
+      </p>
+      <p>
+        <strong>Prohibited use — Google data (Contacts and Calendar):</strong>
+        We do not use Google data for advertising, commercial profiling,
+        training artificial intelligence models, building commercial databases,
+        or selling to third parties.
+      </p>
+      <ul>
+        <li>No advertising</li>
+        <li>No commercial profiling</li>
+        <li>No sale of data</li>
+        <li>No AI model training</li>
+      </ul>
+      <p>
+        <strong>Revocation:</strong> The user may revoke access to Google
+        Calendar (and other Google data) at any time from their
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google account</a>
+        or from their account settings in VivaSpeak.
+      </p>
+
+      <p>We use Google data (contacts and calendar) solely to:</p>
       <ul>
         <li>Enable access to the platform</li>
         <li>Identify the user within the system</li>
         <li>Import and manage their contact book inside VivaSpeak</li>
+        <li>Display availability and create and sync appointments in Google Calendar</li>
         <li>Provide the features requested by the user</li>
       </ul>
-      <p>
-        We do not use Google data for advertising, commercial profiling,
-        training artificial intelligence models, building commercial
-        databases, or selling to third parties.
-      </p>
-      <p>
-        Contacts are accessed in read-only mode
-        (<strong>contacts.readonly</strong>) and VivaSpeak does not modify,
-        delete, or sync data in the user's Google account.
-      </p>
 
       <h2>5. Legal Basis for Processing</h2>
       <p>We process your data based on:</p>
@@ -134,6 +172,11 @@ import FooterEn from "../../components/FooterEn.astro";
       <p>
         Contacts imported from Google are retained while the user keeps their
         account active or until they request deletion.
+      </p>
+      <p>
+        Google Calendar data is retained only while the user keeps the
+        integration active and is deleted or no longer processed when the user
+        revokes access.
       </p>
       <p>
         <strong>You can request data deletion at any time</strong> unless we are
