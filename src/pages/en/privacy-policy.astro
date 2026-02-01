@@ -17,7 +17,7 @@ import FooterEn from "../../components/FooterEn.astro";
     <main>
     <section class="privacy-container">
       <h1>Privacy Policy</h1>
-      <p>Last Updated: January 2026</p>
+      <p>Last Updated: February 2026</p>
 
       <h2>1. Introduction</h2>
       <p>
@@ -82,6 +82,9 @@ import FooterEn from "../../components/FooterEn.astro";
 
       <h2>4. Use of Google data</h2>
       <p>
+        VivaSpeak voice agents always act as technical intermediaries of the user and execute actions only within the limits defined by the user themselves.
+      </p>
+      <p>
         When a user authenticates with <strong>Google OAuth</strong> or connects
         their Google account to VivaSpeak via <strong>Google APIs</strong>, we
         may access the following Google user data, depending on the permissions
@@ -103,16 +106,26 @@ import FooterEn from "../../components/FooterEn.astro";
 
       <h3>4.2 Google Calendar API</h3>
       <p>
-        We use the <strong>Google Calendar API</strong> with the scope
-        <strong>https://www.googleapis.com/auth/calendar.events</strong>. We access:
+        To that end, VivaSpeak uses the following Google Calendar permissions:
       </p>
       <ul>
-        <li>Calendar events and associated availability</li>
+        <li>Reading the user's available calendars (calendar.calendarlist.readonly)</li>
+        <li>Querying availability (calendar.freebusy)</li>
+        <li>Creating and managing events explicitly requested by the user (calendar.events)</li>
       </ul>
+      <p>
+        Event creation is performed only when the user explicitly requests it, either directly from the VivaSpeak platform or through a voice agent configured by the user themselves.
+      </p>
+      <p>
+        In the case of voice agents, they act as technical representatives of the user and perform the scheduling action only when the end user gives explicit consent during the call.
+      </p>
       <p>
         <strong>Purpose:</strong> We use Google Calendar solely to display
         availability, create events requested by the user, and sync appointments
-        within VivaSpeak.
+        within VivaSpeak. This includes querying availability (free/busy) information without accessing event content when not necessary.
+      </p>
+      <p>
+        VivaSpeak does not access the detailed content of events (title, description, attendees) except when strictly necessary to create or modify an appointment explicitly requested by the user.
       </p>
       <p>
         <strong>Read and write:</strong> We read calendar events to display
@@ -123,17 +136,12 @@ import FooterEn from "../../components/FooterEn.astro";
         modifications without explicit user action.
       </p>
       <p>
-        <strong>Prohibited use — Google data (Contacts and Calendar):</strong>
-        We do not use Google data for advertising, commercial profiling,
-        training artificial intelligence models, building commercial databases,
-        or selling to third parties.
+        VivaSpeak does not create, modify, or delete calendar events automatically or proactively. All actions on events require a direct instruction from the user.
       </p>
-      <ul>
-        <li>No advertising</li>
-        <li>No commercial profiling</li>
-        <li>No sale of data</li>
-        <li>No AI model training</li>
-      </ul>
+      <p>
+        <strong>Prohibited use — Google data (Contacts and Calendar):</strong>
+        We do not use Google data for advertising, commercial profiling, sale of data, or training of artificial intelligence models.
+      </p>
       <p>
         <strong>Revocation:</strong> The user may revoke access to Google
         Calendar (and other Google data) at any time from their
