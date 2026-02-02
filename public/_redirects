@@ -18,5 +18,8 @@ http://vivaspeak.com/* https://vivaspeak.com/:splat 301!
 /clinica.html /clinica/ 301
 /en/real-estate.html /en/real-estate/ 301
 
+# Variantes /en/form
+/en/form* /en/ 301
+
 # PDFs antiguos
 /assets/docs/* /docs/:splat 301
