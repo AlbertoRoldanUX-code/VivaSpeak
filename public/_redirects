@@ -1,0 +1,12 @@
+# Forzar HTTPS y dominio único
+http://vivaspeak.com/* https://vivaspeak.com/:splat 301!
+
+# Idioma inexistente
+/es/* / 301
+
+# Formularios antiguos (no existen y no deben indexarse)
+/formulario* / 301
+/formulario-inmobiliaria.html / 301
+
+# Páginas legales antiguas en inglés
+/en/privacy-policy /politica-de-privacidad/ 301
