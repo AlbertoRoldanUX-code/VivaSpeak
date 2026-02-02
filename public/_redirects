@@ -13,5 +13,10 @@ http://vivaspeak.com/* https://vivaspeak.com/:splat 301!
 /terms-and-conditions.html /en/terms-and-conditions/ 301
 /privacy-policy /en/privacy-policy/ 301
 
+# Limpieza .html antiguos (directos, sin cadenas)
+/inmobiliaria.html /inmobiliaria/ 301
+/clinica.html /clinica/ 301
+/en/real-estate.html /en/real-estate/ 301
+
 # PDFs antiguos
 /assets/docs/* /docs/:splat 301
