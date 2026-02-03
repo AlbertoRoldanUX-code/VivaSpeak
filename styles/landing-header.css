@@ -23,6 +23,11 @@
   backdrop-filter: blur(6px);
 }
 
+.landing-header__brand {
+  padding: 0 10px;
+  flex-shrink: 0;
+}
+
 .landing-header__brand img {
   height: 56px;
   display: block;
@@ -59,6 +64,10 @@
     height: auto;
     padding: 10px 16px;
     flex-wrap: nowrap;
+  }
+
+  .landing-header__brand {
+    padding: 0;
   }
 
   .landing-header__brand img {
