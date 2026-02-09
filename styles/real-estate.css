@@ -66,6 +66,13 @@
   font-weight: 600;
 }
 
+.hero-result-line {
+  font-size: 0.9rem;
+  color: var(--inmo-muted);
+  margin: 0 auto 20px;
+  font-style: italic;
+}
+
 #problema-real {
   background: #ffffff;
   border-top: 1px solid rgba(15, 118, 110, 0.08);
@@ -78,6 +85,70 @@
   border: 1px solid rgba(15, 118, 110, 0.12);
   border-radius: 14px;
   padding: 14px 16px;
+}
+
+/* Bloques de testimonio: separación clara vídeo vs otros */
+.inmo-landing .testimonial-block {
+  margin-bottom: 0;
+}
+
+.inmo-landing .testimonial-block--video {
+  margin-bottom: 3.5rem;
+}
+
+.inmo-landing .testimonial-block--others {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(15, 118, 110, 0.14);
+}
+
+.inmo-landing .testimonial-block__title {
+  font-size: 1.15rem;
+  color: var(--inmo-accent-strong);
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+
+.inmo-landing .testimonial-block__author {
+  margin: 0 0 0.5rem;
+}
+
+.inmo-landing .testimonial-block__quote {
+  margin: 0 0 1.25rem;
+}
+
+.inmo-landing .testimonial-cta {
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+
+.inmo-landing .testimonial-quote-block {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem;
+  background: #f6fbfa;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 118, 110, 0.12);
+  text-align: left;
+}
+
+.inmo-landing .testimonial-quote-block--card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  box-shadow: 0 4px 20px rgba(15, 118, 110, 0.08);
+}
+
+.inmo-landing .testimonial-quote-block .testimonial-quote-label {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+  color: var(--inmo-accent-strong);
+}
+
+.inmo-landing .testimonial-quote-block blockquote {
+  margin: 0;
+  font-style: italic;
+  color: var(--inmo-ink);
+  line-height: 1.5;
 }
 
 .inmo-landing .use-case-features {
