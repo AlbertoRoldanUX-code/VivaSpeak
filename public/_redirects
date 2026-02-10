@@ -1,25 +1,59 @@
+# ===== Dominio: www -> sin www y HTTP -> HTTPS =====
+https://www.vivaspeak.com/*  https://vivaspeak.com/:splat  301!
+http://www.vivaspeak.com/*   https://vivaspeak.com/:splat  301!
+http://vivaspeak.com/*       https://vivaspeak.com/:splat  301!
 
-# Forzar HTTPS y dominio único
-http://vivaspeak.com/* https://vivaspeak.com/:splat 301!
+# ===== Idiomas inexistentes =====
+/de   /en/  301
+/de/  /en/  301
+/de/* /en/:splat  301
+/es/* /  301
 
-# Idioma inexistente
-/es/* / 301
+# ===== PDFs: URLs antiguas (con espacios/acentos) -> nombres actuales =====
+/assets/docs/Guide.pdf                          /docs/guide-redirection.pdf  301
+/assets/docs/Guide%20Share%20Calendar.pdf       /docs/guide-share-calendar.pdf  301
+/assets/docs/Gu%C3%ADa%20redirecci%C3%B3n.pdf   /docs/guia-redireccion.pdf  301
+/assets/docs/Gu%C3%ADa%20compartir%20calendario.pdf  /docs/guia-compartir-calendario.pdf  301
+/assets/docs/*  /docs/:splat  301
 
-# Formularios antiguos
-/formulario* / 301
-/formulario-inmobiliaria.html / 301
+# ===== Formularios antiguos =====
+/formulario*  /  301
+/formulario-inmobiliaria.html  /  301
+/en/form*  /en/  301
 
-# Legales antiguos en inglés
-/terms-and-conditions.html /en/terms-and-conditions/ 301
-/privacy-policy /en/privacy-policy/ 301
+# ===== Legales inglés (sin .html o sin barra) =====
+/terms-and-conditions.html  /en/terms-and-conditions/  301
+/privacy-policy  /en/privacy-policy/  301
+/es/terms-and-conditions  /terminos-y-condiciones/  301
 
-# Limpieza .html antiguos (directos, sin cadenas)
-/inmobiliaria.html /inmobiliaria/ 301
-/clinica.html /clinica/ 301
-/en/real-estate.html /en/real-estate/ 301
+# ===== .html legacy =====
+/inmobiliaria.html  /inmobiliaria/  301
+/clinica.html  /clinica/  301
+/en/real-estate.html  /en/real-estate/  301
+/aviso-legal.html  /aviso-legal/  301
 
-# Variantes /en/form
-/en/form* /en/ 301
-
-# PDFs antiguos
-/assets/docs/* /docs/:splat 301
+# ===== Sin barra final -> con barra (evitar 404/5xx) =====
+/inmobiliaria  /inmobiliaria/  301
+/aviso-legal  /aviso-legal/  301
+/en/real-estate  /en/real-estate/  301
+/politica-de-privacidad  /politica-de-privacidad/  301
+/terminos-y-condiciones  /terminos-y-condiciones/  301
+/servicios-operativos  /servicios-operativos/  301
+/en/privacy-policy  /en/privacy-policy/  301
+/en/terms-and-conditions  /en/terms-and-conditions/  301
+/recursos  /recursos/  301
+/en/resources  /en/resources/  301
+/clinica  /clinica/  301
+/en/clinic  /en/clinic/  301
+/salud  /salud/  301
+/exito  /exito/  301
+/en/success  /en/success/  301
+/proyectos-sociales  /proyectos-sociales/  301
+/reclutamiento  /reclutamiento/  301
+/en/recruitment  /en/recruitment/  301
+/politica-de-uso-aceptable  /politica-de-uso-aceptable/  301
+/politica-mensajeria-whatsapp  /politica-mensajeria-whatsapp/  301
+/en/acceptable-use-policy  /en/acceptable-use-policy/  301
+/en/whatsapp-messaging-policy  /en/whatsapp-messaging-policy/  301
+/en/legal-notice  /en/legal-notice/  301
+/en/operational-services  /en/operational-services/  301
