@@ -28,60 +28,83 @@ const translations = {
 const text = translations[locale];
 ---
 
-<aside
-  id="cookie-banner"
-  class="cookie-banner hidden"
-  role="dialog"
-  aria-live="polite"
-  aria-label={text.ariaLabel}
-  data-cookie-banner
->
-  <div class="cookie-copy">
-    <strong>{text.headline}</strong>
-    <p>
-      {text.description}{" "}
-      <a href={text.privacyHref} target="_blank" rel="noopener">
-        {text.privacyLabel}
-      </a>{" "}
-      {locale === "es" ? "para más detalles." : "for more details."}
-    </p>
-  </div>
-  <div class="cookie-actions">
-    <button type="button" class="btn ghost" data-cookie-reject>
-      {text.reject}
-    </button>
-    <button type="button" class="btn solid" data-cookie-accept>
-      {text.accept}
-    </button>
-  </div>
-</aside>
+<div id="cookie-banner-root" class="cookie-banner-root cookie-banner--hidden" data-cookie-banner>
+  <div class="cookie-banner-backdrop" aria-hidden="true"></div>
+  <aside
+    id="cookie-banner"
+    class="cookie-banner"
+    role="dialog"
+    aria-live="polite"
+    aria-label={text.ariaLabel}
+  >
+    <div class="cookie-copy">
+      <strong>{text.headline}</strong>
+      <p>
+        {text.description}{" "}
+        <a href={text.privacyHref} target="_blank" rel="noopener">
+          {text.privacyLabel}
+        </a>{" "}
+        {locale === "es" ? "para más detalles." : "for more details."}
+      </p>
+    </div>
+    <div class="cookie-actions">
+      <button type="button" class="btn ghost" data-cookie-reject>
+        {text.reject}
+      </button>
+      <button type="button" class="btn solid" data-cookie-accept>
+        {text.accept}
+      </button>
+    </div>
+  </aside>
+</div>
 
 <style>
+  /* Root: oculta todo el bloque inicialmente */
+  .cookie-banner-root {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 300ms ease-out;
+  }
+
+  .cookie-banner-root.cookie-banner--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .cookie-banner-root:not(.cookie-banner--hidden) {
+    pointer-events: auto;
+  }
+
+  .cookie-banner-root.cookie-banner--is-hiding {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Backdrop oscuro (solo móvil) */
+  .cookie-banner-backdrop {
+    display: none;
+  }
+
+  /* Banner base */
   .cookie-banner {
     position: fixed;
-    inset: auto 0 1.5rem;
-    margin: 0 auto;
-    width: min(92vw, 840px);
     background: #101828;
     color: #f2f4f7;
-    padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.35);
     display: flex;
     flex-wrap: wrap;
     gap: 1.25rem;
     align-items: center;
-    z-index: 9999;
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(18px);
-    transform: translateY(0);
-    transition: opacity 200ms ease, transform 200ms ease;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.35);
+    transform: translateY(100%);
+    transition: transform 300ms ease-out, opacity 300ms ease-out;
   }
 
-  .cookie-banner.is-hiding {
-    opacity: 0;
-    transform: translateY(12px);
-    pointer-events: none;
+  .cookie-banner-root:not(.cookie-banner--hidden):not(.cookie-banner--is-hiding) .cookie-banner {
+    transform: translateY(0);
   }
 
   .cookie-copy {
@@ -139,32 +162,81 @@ const text = translations[locale];
     transform: translateY(-1px);
   }
 
-  @media (max-width: 640px) {
+  /* Móvil: bottom sheet */
+  @media (max-width: 767px) {
+    .cookie-banner-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 300ms ease-out;
+    }
+
+    .cookie-banner-root:not(.cookie-banner--hidden):not(.cookie-banner--is-hiding) .cookie-banner-backdrop {
+      opacity: 1;
+    }
+
     .cookie-banner {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-height: 70vh;
+      overflow-y: auto;
+      border-radius: 16px 16px 0 0;
+      padding: 1rem;
       flex-direction: column;
+      align-items: stretch;
       text-align: left;
-      padding: 1.25rem;
+    }
+
+    .cookie-copy {
+      flex: none;
+      font-size: 0.875rem;
+    }
+
+    .cookie-copy strong {
+      font-size: 0.9375rem;
     }
 
     .cookie-actions {
+      flex-direction: column;
       width: 100%;
-      justify-content: stretch;
+      gap: 0.5rem;
     }
 
     .cookie-actions .btn {
-      flex: 1;
+      width: 100%;
       text-align: center;
+    }
+  }
+
+  /* Desktop: card flotante */
+  @media (min-width: 768px) {
+    .cookie-banner {
+      bottom: 1.5rem;
+      right: 1.5rem;
+      left: auto;
+      max-width: 28rem;
+      width: min(92vw, 28rem);
+      padding: 1.5rem;
+      border-radius: 16px;
+    }
+
+    .cookie-actions {
+      flex-direction: row;
     }
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const banner = document.querySelector("[data-cookie-banner]");
-    if (!banner) return;
+    const root = document.querySelector("[data-cookie-banner]");
+    if (!root) return;
 
-    const acceptBtn = banner.querySelector("[data-cookie-accept]");
-    const rejectBtn = banner.querySelector("[data-cookie-reject]");
+    const acceptBtn = root.querySelector("[data-cookie-accept]");
+    const rejectBtn = root.querySelector("[data-cookie-reject]");
 
     const getCookie = (name) => {
       const v = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
@@ -175,12 +247,12 @@ const text = translations[locale];
 
     // Si ya han elegido → no mostramos
     if (existing === "accepted" || existing === "rejected") {
-      banner.remove();
+      root.remove();
       return;
     }
 
-    // Mostrar banner
-    banner.classList.remove("hidden");
+    // Mostrar banner (animación desde abajo)
+    root.classList.remove("cookie-banner--hidden");
 
     const setConsent = (value) => {
       const oneYear = 60 * 60 * 24 * 365;
@@ -193,8 +265,8 @@ const text = translations[locale];
     };
 
     const hideBanner = () => {
-      banner.classList.add("is-hiding");
-      banner.addEventListener("transitionend", () => banner.remove(), {
+      root.classList.add("cookie-banner--is-hiding");
+      root.addEventListener("transitionend", () => root.remove(), {
         once: true,
       });
     };
