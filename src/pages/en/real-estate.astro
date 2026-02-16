@@ -3,16 +3,33 @@ import Layout from "../../layouts/Layout.astro";
 import LandingHeaderEn from "../../components/LandingHeaderEn.astro";
 import FooterEn from "../../components/FooterEn.astro";
 import "../../../styles/real-estate.css";
+
+const schemaFaq = [
+  { question: "What does Laura do?", answer: "Answers calls 24/7, qualifies (rental/sale, budget, profile), schedules visits, and sends you an email with transcript and summary after each call." },
+  { question: "Does it work with my number?", answer: "Yes. We redirect your number to the agent or assign you a new one. No carrier change." },
+  { question: "Can I listen to recordings?", answer: "Yes. Every call is in your dashboard with recording, transcript, and summary. Filter by date and result." },
+  { question: "Can I try it with no commitment?", answer: "Yes. Book a demo, we show the dashboard and do a test call. No contract." },
+  { question: "Do I need to install anything?", answer: "No. Everything in the cloud: dashboard access, you upload your catalog, and Laura uses your info." },
+  { question: "Does it work for high-demand rental (200+ calls)?", answer: "Yes. That's exactly what it's for. It filters, records, and shows the owner why the property hasn't been let yet." },
+];
+
+const breadcrumb = [
+  { name: "Home", url: "https://vivaspeak.com/en/" },
+  { name: "Laura for Real Estate", url: "https://vivaspeak.com/en/real-estate/" },
+];
 ---
 
 <Layout
-  title="AI Voice Agent for Real Estate | VivaSpeak with Laura"
-  description="AI voice agent for real estate: 24/7 calls, pre-qualify rental and sale, works with Idealista. Transcript and email per call. Never miss a lead."
+  title="Voice AI for Real Estate | VivaSpeak with Laura"
+  description="Voice AI for real estate: 24/7 calls, pre-qualify rental and sale, works with Idealista. Transcript and email per call. Never miss a lead."
   canonical="https://vivaspeak.com/en/real-estate/"
   alternateEs="https://vivaspeak.com/inmobiliaria/"
   alternateEn="https://vivaspeak.com/en/real-estate/"
+  ogImage="https://vivaspeak.com/assets/og-image-inmobiliaria.jpg"
   keywords="voice agent, real estate, artificial intelligence, real estate calls, visit scheduling, client service, call automation, virtual agent"
   lang="en"
+  schemaFaq={schemaFaq}
+  breadcrumb={breadcrumb}
 >
   <LandingHeaderEn ctaLabel="Activate Your Agent" ctaHref="#cta-final" />
     <main class="inmo-landing">
@@ -63,12 +80,12 @@ import "../../../styles/real-estate.css";
       <section id="use-case-landing">
         <div class="container">
           <p>
-            With <strong>Laura</strong>, your AI voice agent, every call is answered, qualified (rental/sale, solvency, profile), and you only call back those who matter. Works with your number or with Idealista/Fotocasa.
+            With <strong>Laura</strong>, your voice assistant, every call is answered, qualified (rental/sale, solvency, profile), and you only call back those who matter. Works with your number or with Idealista/Fotocasa.
           </p>
         </div>
         <img
           src="/assets/inmobiliaria.png"
-          alt="Illustration of the voice agent Laura talking with real estate clients"
+          alt="Laura, voice assistant for real estate clients"
           class="image-inmobiliaria"
         />
         <h2>In four points</h2>
@@ -78,9 +95,6 @@ import "../../../styles/real-estate.css";
           <li>📧 <strong>You get only the good ones</strong> — email per call with transcript and data so you decide who to call</li>
           <li>📊 <strong>Prove it to the owner</strong> — dashboard with history and export</li>
         </ul>
-        <p class="section-cta">
-          <a href="#cta-final" class="btn-primary">See live demo</a>
-        </p>
       </section>
       <section id="video-demo">
         <div class="container">
@@ -110,7 +124,13 @@ import "../../../styles/real-estate.css";
             <div class="testimonial-quote-block testimonial-quote-block--card">
             <p class="testimonial-quote-label">Juan Taborda – Villas y Fincas Mallorca · 20 years in the sector · Mallorca</p>
             <blockquote>
-              “The main problem we had was managing the high volume of calls, especially for rentals —in the Balearics there can be 200+ applications for a single property. We wanted a more personal service than a simple answering machine. Now we cover 24h, 7 days a week, we don't lose contacts, and we pre-qualify in a fraction of the time, even during demand peaks. It works very well, it's very polished.”
+              “The main problem we had was managing the high volume of calls, especially for rentals —in the Balearics there can be 200+ applications for a single property. We wanted a more personal service than a simple answering machine. <strong>Now we cover 24h, 7 days a week, we don't lose contacts, and we pre-qualify in a fraction of the time</strong>, even during demand peaks. It works very well, it's very polished.”
+            </blockquote>
+            </div>
+            <div class="testimonial-quote-block testimonial-quote-block--card">
+            <p class="testimonial-quote-label">Arturo Chavarría – MyCantabria Inmobiliaria · Cantabria</p>
+            <blockquote>
+              "The truth is that the trial was perfect and I liked it very much. I consider the service to be very functional and sufficient for a small or medium-sized estate agency, especially for managing contacts you cannot attend to when you are doing other tasks. <strong>Without a doubt, I would hire VivaSpeak again in the future.</strong>"
             </blockquote>
             </div>
           </div>
@@ -192,11 +212,8 @@ import "../../../styles/real-estate.css";
           <div class="section-header section-header--center">
             <p class="eyebrow">Pricing</p>
             <h2>
-              Plans from €249/month depending on volume and use. The exact plan is explained in the demo.
+              From €249/month. Final pricing defined in demo based on volume and integrations.
             </h2>
-            <div class="cta-buttons">
-              <a href="#cta-final" class="btn-primary">Request demo</a>
-            </div>
           </div>
         </div>
       </section>

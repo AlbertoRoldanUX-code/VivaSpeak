@@ -43,6 +43,8 @@ http://vivaspeak.com/*       https://vivaspeak.com/:splat  301!
 /en/terms-and-conditions  /en/terms-and-conditions/  301
 /recursos  /recursos/  301
 /en/resources  /en/resources/  301
+/blog  /blog/  301
+/en/blog  /en/blog/  301
 /clinica  /clinica/  301
 /en/clinic  /en/clinic/  301
 /salud  /salud/  301

@@ -1,0 +1,56 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import HeaderEn from "../../../components/HeaderEn.astro";
+import FooterEn from "../../../components/FooterEn.astro";
+import "../../../../styles/blog.css";
+import "../../../../styles/resources.css";
+---
+
+<Layout
+  title="Blog - VivaSpeak"
+  description="Articles on AI voice agents, call automation, clinics, real estate and HR."
+  canonical="https://vivaspeak.com/en/blog/"
+  alternateEs="https://vivaspeak.com/blog/"
+  alternateEn="https://vivaspeak.com/en/blog/"
+  lang="en"
+>
+  <HeaderEn />
+
+<main class="blog-container">
+  <section class="resource-hero">
+    <div class="container">
+      <h1 class="resource-title">Blog</h1>
+      <p class="resource-subtitle">
+        Guides and articles on AI voice agents and automation.
+      </p>
+    </div>
+  </section>
+
+  <section class="resource-grid-section">
+    <div class="container resource-grid">
+      <article class="resource-card">
+        <h3>What an AI Voice Agent Is and How It Works</h3>
+        <p>Complete guide on technology, call flow, latency, memory and real-world cases.</p>
+        <a href="/en/blog/ai-voice-agent/" class="resource-link">Read article →</a>
+      </article>
+      <article class="resource-card">
+        <h3>AI Voice Agent for Real Estate</h3>
+        <p>How to capture more owners, filter buyers and automate property visits.</p>
+        <a href="/en/blog/ai-voice-real-estate/" class="resource-link">Read article →</a>
+      </article>
+      <article class="resource-card">
+        <h3>AI Voice Agent for Clinics</h3>
+        <p>How to reduce missed calls and book more appointments with scheduling integration.</p>
+        <a href="/en/blog/ai-voice-clinics/" class="resource-link">Read article →</a>
+      </article>
+      <article class="resource-card">
+        <h3>How to Build the Perfect Knowledge Base</h3>
+        <p>Recommended structure, sector examples and common mistakes to avoid.</p>
+        <a href="/en/blog/knowledge-base-ai-agent/" class="resource-link">Read article →</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<FooterEn langEnHref="/en/blog/" langEsHref="/blog/" />
+</Layout>

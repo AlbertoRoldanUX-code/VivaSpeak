@@ -6,16 +6,24 @@ import "../../../styles/blog.css";
 
 const title = "Agente de voz IA para clínicas: cómo reduce llamadas y agenda más citas";
 const description = "Cómo un agente de voz IA atiende llamadas de pacientes, gestiona agendas, crea citas en tu software de agenda o Google Calendar y reduce la carga de recepción en clínicas médicas.";
-const canonical = "https://vivaspeak.com/blog/agente-voz-clinicas";
+const canonical = "https://vivaspeak.com/blog/agente-voz-clinicas/";
+const schemaArticle = { headline: title, description, datePublished: "2024-06-15", image: "https://vivaspeak.com/assets/og-image-clinica.png" };
+const breadcrumb = [
+  { name: "Inicio", url: "https://vivaspeak.com/" },
+  { name: "Blog", url: "https://vivaspeak.com/blog/" },
+  { name: title, url: canonical },
+];
 ---
 
 <Layout
   title={title}
   description={description}
   canonical={canonical}
-  alternateEs="https://vivaspeak.com/blog/agente-voz-clinicas"
-  alternateEn="https://vivaspeak.com/en/blog/ai-voice-clinics"
+  alternateEs="https://vivaspeak.com/blog/agente-voz-clinicas/"
+  alternateEn="https://vivaspeak.com/en/blog/ai-voice-clinics/"
   lang="es"
+  schemaArticle={schemaArticle}
+  breadcrumb={breadcrumb}
 >
 <Header />
 
@@ -142,6 +150,13 @@ const canonical = "https://vivaspeak.com/blog/agente-voz-clinicas";
       Si quieres ver cómo funcionaría en tu clínica,
       <a href="/#schedule">puedes agendar una demo aquí</a>.
     </p>
+
+    <h2>Casos de uso relacionados</h2>
+    <ul>
+      <li><a href="/clinica/">IA para Clínicas</a></li>
+      <li><a href="/inmobiliaria/">IA para Inmobiliarias</a></li>
+      <li><a href="/reclutamiento/">IA para RRHH</a></li>
+    </ul>
 
   </article>
 </main>

@@ -2,18 +2,32 @@
 import Layout from "../../layouts/Layout.astro";
 import LandingHeaderEn from "../../components/LandingHeaderEn.astro";
 import FooterEn from "../../components/FooterEn.astro";
+
+const schemaFaq = [
+  { question: "Does the agent make hiring decisions?", answer: "No. The agent standardizes the first filter and leaves final decisions to the human team." },
+  { question: "Does it work with inbound and outbound calls?", answer: "Yes. It filters candidates with inbound and outbound calls aligned to your selection criteria." },
+  { question: "Can I customize the knockout questions?", answer: "Yes. It evaluates candidates with the same knockout questions and applies rules defined by your team." },
+  { question: "What does the recruiter report include?", answer: "It sends a report with key answers, rejection reasons, and recommended next action." },
+];
+
+const breadcrumb = [
+  { name: "Home", url: "https://vivaspeak.com/en/" },
+  { name: "Recruitment with AI", url: "https://vivaspeak.com/en/recruitment/" },
+];
 import "../../../styles/recruiting.css";
 ---
 
 <Layout
   title="AI Recruiting Agent for HR | VivaSpeak"
-  description="AI voice agent to screen candidates, run knockout questions, and schedule interviews 24/7. Built for mid-sized and large companies."
-  canonical="https://vivaspeak.com/en/recruitment"
-  alternateEs="https://vivaspeak.com/reclutamiento"
-  alternateEn="https://vivaspeak.com/en/recruitment"
+  description="Voice assistant to screen candidates, run knockout questions, and schedule interviews 24/7. Built for mid-sized and large companies."
+  canonical="https://vivaspeak.com/en/recruitment/"
+  alternateEs="https://vivaspeak.com/reclutamiento/"
+  alternateEn="https://vivaspeak.com/en/recruitment/"
   ogImage="https://vivaspeak.com/assets/og-image.png"
   lang="en"
   keywords="voice agent, recruiting, HR, candidate screening, interviews, automated calls, knockout questions, scheduling"
+  schemaFaq={schemaFaq}
+  breadcrumb={breadcrumb}
 >
   <LandingHeaderEn />
   <main class="recruiting-landing">
@@ -25,7 +39,7 @@ import "../../../styles/recruiting.css";
             Automate initial candidate screening without overloading HR
           </h1>
           <p class="hero-subtitle">
-            An AI voice agent that screens candidates and schedules interviews
+            A voice assistant that screens candidates and schedules interviews
             24/7, with inbound and outbound calls aligned to your criteria.
           </p>
           <div class="hero-actions">
@@ -36,7 +50,7 @@ import "../../../styles/recruiting.css";
           </div>
           <div class="hero-note">
             Built for HR and internal operations teams that need consistent,
-            controlled processes.
+            controlled processes. Designed for companies hiring 50+ candidates per month.
           </div>
           <p class="hero-disclaimer">
             The agent does not make hiring decisions: it standardizes the first
@@ -98,7 +112,7 @@ import "../../../styles/recruiting.css";
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">VivaSpeak Solution</span>
-          <h2>An AI voice agent trained on your hiring criteria</h2>
+          <h2>A voice assistant trained on your hiring criteria</h2>
           <p class="section-subtitle">
             VivaSpeak automates the first filter, reduces operational load, and
             ensures a professional, consistent process.

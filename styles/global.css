@@ -17,11 +17,11 @@
   --primary: #1abc9c; /* Turquesa principal de 'Viva' */
   --primary-dark: #16a085; /* Turquesa más oscuro de la onda */
   --primary-darker: #0e6655; /* Turquesa aún más oscuro para el hover */
-  --shadow-xs: 0 2px 6px rgba(15, 23, 42, 0.12);
-  --shadow-sm: 0 6px 16px rgba(15, 23, 42, 0.12);
-  --shadow-md: 0 14px 32px rgba(15, 23, 42, 0.14);
-  --shadow-lg: 0 22px 48px rgba(15, 23, 42, 0.16);
-  --shadow-xl: 0 36px 80px rgba(15, 23, 42, 0.2);
+  --shadow-xs: 0 2px 6px rgba(15, 23, 42, 0.096);
+  --shadow-sm: 0 6px 16px rgba(15, 23, 42, 0.096);
+  --shadow-md: 0 14px 32px rgba(15, 23, 42, 0.112);
+  --shadow-lg: 0 22px 48px rgba(15, 23, 42, 0.128);
+  --shadow-xl: 0 36px 80px rgba(15, 23, 42, 0.16);
   --shadow-focus: 0 0 0 3px rgba(26, 188, 156, 0.35);
   --shadow-inset: inset 0 1px 2px rgba(255, 255, 255, 0.45);
   --white: #ffffff;
@@ -1261,7 +1261,7 @@ ul {
 /* Grid de testimonios */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 3rem;
   margin-top: 3rem;
 }
@@ -1280,6 +1280,39 @@ ul {
   color: white;
 }
 
+/* Card con vídeo: compacta, premium, equilibrada */
+.testimonial-item--video {
+  padding: 1.75rem;
+}
+
+.testimonial-item--video .testimonial-content {
+  gap: 1rem;
+}
+
+.testimonial-item--video .testimonial-author {
+  min-height: auto;
+  padding-bottom: 0.75rem;
+}
+
+.testimonial-item--video .testimonial-author h3 {
+  font-size: 1.25rem;
+}
+
+.testimonial-item--video .testimonial-author .author-role,
+.testimonial-item--video .testimonial-author .author-details {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.testimonial-item--video .testimonial-media {
+  margin: 0.5rem 0 0;
+}
+
+.testimonial-item--video .testimonial-media iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
 .testimonial-item:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
@@ -1291,11 +1324,12 @@ ul {
   gap: 1.5rem;
 }
 
-/* Autor */
+/* Autor - altura fija para alineación vertical entre cards */
 .testimonial-author {
   text-align: center;
   padding-bottom: 1rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  min-height: 105px;
 }
 
 .testimonial-author h3 {
@@ -1347,15 +1381,16 @@ ul {
   max-width: 100%;
 }
 
-/* Quote */
+/* Quote - estilo unificado para todas las cards */
 .testimonial-quote {
   margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
   font-style: italic;
   text-align: left;
-  border-left: 4px solid rgba(255, 255, 255, 0.6);
-  padding-left: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
 }
 
 .testimonial-quote strong {
@@ -1383,10 +1418,8 @@ ul {
   backdrop-filter: blur(10px);
 }
 
-/* Ajustes para testimonio sin vídeo */
+/* Ajustes para testimonio sin vídeo - mismo padding que con vídeo */
 .testimonial-item.no-video {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
   background: linear-gradient(
     135deg,
     var(--primary) 0%,
@@ -1407,14 +1440,7 @@ ul {
   box-shadow: var(--shadow-sm);
 }
 
-/* Reducir ligeramente la cita cuando no hay vídeo */
-.no-video .testimonial-quote {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
+/* Quote unificado - sin override adicional para no-video */
 
 /* FAQ  */
 

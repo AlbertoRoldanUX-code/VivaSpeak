@@ -6,16 +6,24 @@ import "../../../styles/blog.css";
 
 const title = "Agente de voz IA para inmobiliarias: cómo funciona y por qué aumenta captaciones y visitas";
 const description = "Explicación práctica de cómo un agente de voz IA ayuda a inmobiliarias a captar más propietarios, filtrar compradores, agendar visitas y no perder llamadas de interés.";
-const canonical = "https://vivaspeak.com/blog/agente-voz-inmobiliarias";
+const canonical = "https://vivaspeak.com/blog/agente-voz-inmobiliarias/";
+const schemaArticle = { headline: title, description, datePublished: "2024-06-20", image: "https://vivaspeak.com/assets/og-image-inmobiliaria.jpg" };
+const breadcrumb = [
+  { name: "Inicio", url: "https://vivaspeak.com/" },
+  { name: "Blog", url: "https://vivaspeak.com/blog/" },
+  { name: title, url: canonical },
+];
 ---
 
 <Layout
   title={title}
   description={description}
   canonical={canonical}
-  alternateEs="https://vivaspeak.com/blog/agente-voz-inmobiliarias"
-  alternateEn="https://vivaspeak.com/en/blog/ai-voice-real-estate"
+  alternateEs="https://vivaspeak.com/blog/agente-voz-inmobiliarias/"
+  alternateEn="https://vivaspeak.com/en/blog/ai-voice-real-estate/"
   lang="es"
+  schemaArticle={schemaArticle}
+  breadcrumb={breadcrumb}
 >
 <Header />
 
@@ -155,6 +163,13 @@ const canonical = "https://vivaspeak.com/blog/agente-voz-inmobiliarias";
       Si quieres probar un agente IA especializado en inmobiliarias,
       <a href="/#schedule">puedes agendar una demo aquí</a>.
     </p>
+
+    <h2>Casos de uso relacionados</h2>
+    <ul>
+      <li><a href="/clinica/">IA para Clínicas</a></li>
+      <li><a href="/inmobiliaria/">IA para Inmobiliarias</a></li>
+      <li><a href="/reclutamiento/">IA para RRHH</a></li>
+    </ul>
 
   </article>
 </main>

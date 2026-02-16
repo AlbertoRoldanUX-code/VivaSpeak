@@ -7,16 +7,24 @@ import "../../../../styles/blog.css";
 const title = "AI Voice Agent for Clinics: How It Reduces Calls and Books More Appointments";
 const description =
   "How an AI voice agent answers patient calls, manages schedules, creates appointments in your scheduling system or Google Calendar, and reduces reception workload in medical clinics.";
-const canonical = "https://vivaspeak.com/en/blog/ai-voice-clinics";
+const canonical = "https://vivaspeak.com/en/blog/ai-voice-clinics/";
+const schemaArticle = { headline: title, description, datePublished: "2024-06-15", image: "https://vivaspeak.com/assets/og-image-clinica.png" };
+const breadcrumb = [
+  { name: "Home", url: "https://vivaspeak.com/en/" },
+  { name: "Blog", url: "https://vivaspeak.com/en/blog/" },
+  { name: title, url: canonical },
+];
 ---
 
 <Layout
   title={title}
   description={description}
   canonical={canonical}
-  alternateEs="https://vivaspeak.com/blog/agente-voz-clinicas"
-  alternateEn="https://vivaspeak.com/en/blog/ai-voice-clinics"
+  alternateEs="https://vivaspeak.com/blog/agente-voz-clinicas/"
+  alternateEn="https://vivaspeak.com/en/blog/ai-voice-clinics/"
   lang="en"
+  schemaArticle={schemaArticle}
+  breadcrumb={breadcrumb}
 >
 <HeaderEn />
 
@@ -139,8 +147,15 @@ const canonical = "https://vivaspeak.com/en/blog/ai-voice-clinics";
 
     <p>
       If you want to see how it would work for your clinic,
-      <a href="/en#schedule">you can book a demo here</a>.
+      <a href="/en/#schedule">you can book a demo here</a>.
     </p>
+
+    <h2>Related use cases</h2>
+    <ul>
+      <li><a href="/en/clinic/">AI for Clinics</a></li>
+      <li><a href="/en/real-estate/">AI for Real Estate</a></li>
+      <li><a href="/en/recruitment/">AI for HR</a></li>
+    </ul>
 
   </article>
 </main>

@@ -2,6 +2,14 @@
 import Layout from "../../layouts/Layout.astro";
 import HeaderEn from "../../components/HeaderEn.astro";
 import FooterEn from "../../components/FooterEn.astro";
+
+const schemaFaq = [
+  { question: "What exactly is VivaSpeak?", answer: "Agents that answer calls, WhatsApp, and emails using your scripts, tone, and knowledge base. They qualify, book, and escalate when a human is needed." },
+  { question: "How is the pricing structured?", answer: "Pricing is defined per agent based on volume, sector, and integrations. You get a single operating plan with no technical breakdown." },
+  { question: "Does it integrate with my tools?", answer: "Yes. We connect Google Calendar, HubSpot, proprietary CRMs, scheduling systems with API access, and the official WhatsApp API. We include guides for call forwarding and calendar sharing." },
+  { question: "Can I try it before hiring?", answer: "Each agent includes a one-week pilot with your real workflows and shared KPIs on the dashboard." },
+  { question: "What languages and hours does it cover?", answer: "We operate nights, weekends, and peak times in Spanish, English, Portuguese, French, and German. Ask about other languages or accents before launch." },
+];
 ---
 
 <Layout
@@ -13,7 +21,8 @@ import FooterEn from "../../components/FooterEn.astro";
   ogImage="https://vivaspeak.com/assets/og-image.png"
   ogType="website"
   lang="en"
-  keywords="AI voice agent, virtual assistant, call automation, WhatsApp Business API, AI chatbot, clinic management, real estate, automated bookings, 24/7 customer service, scheduling integration"
+  keywords="voice assistant, virtual assistant, call automation, WhatsApp Business API, AI chatbot, clinic management, real estate, automated bookings, 24/7 customer service, scheduling integration"
+  schemaFaq={schemaFaq}
 >
 
   <HeaderEn />
@@ -55,19 +64,6 @@ import FooterEn from "../../components/FooterEn.astro";
                   <strong>98%</strong>
                   <span>Inquiries answered &lt; 1 min</span>
                 </div>
-                <div class="hero-stat">
-                  <strong>72h</strong>
-                  <span>Deployment time</span>
-                </div>
-              </div>
-            </div>
-            <div class="hero-proof-card">
-              <i class="fa-solid fa-bolt"></i>
-              <div>
-                <p class="hero-proof-card__label">Immediate Impact</p>
-                <p class="hero-proof-card__value">
-                  Full pilot ready in <strong>7 days</strong>.
-                </p>
               </div>
             </div>
           </div>
@@ -157,14 +153,6 @@ import FooterEn from "../../components/FooterEn.astro";
             <span class="results-number">98%</span>
             <p>of inquiries handled in seconds</p>
           </article>
-          <article class="results-card">
-            <span class="results-number">7x</span>
-            <p>average ROI after the first operational month</p>
-          </article>
-          <article class="results-card">
-            <span class="results-number">15+</span>
-            <p>sectors already operate VivaSpeak agents</p>
-          </article>
         </div>
       </div>
     </section>
@@ -238,8 +226,7 @@ import FooterEn from "../../components/FooterEn.astro";
         <div class="section-header section-header--center">
           <p class="eyebrow">Single Price Point</p>
           <h2>
-            AI agents from €249/month. Pricing depends on volume, sector, and
-            integrations.
+            From €249/month. Final pricing defined in demo based on volume and integrations.
           </h2>
           <div class="cta-buttons">
             <a href="#contact" class="btn-primary">Request demo</a>
@@ -311,7 +298,7 @@ import FooterEn from "../../components/FooterEn.astro";
             <div class="agent-main">
               <img
                 src="/assets/clara-avatar.png"
-                alt="Clara, AI voice agent specialized in medical clinics"
+                alt="Clara, voice assistant for medical clinics"
               />
               <div class="agent-info">
                 <p class="agent-label agent-label--clinicas">Clinics</p>
@@ -341,7 +328,7 @@ import FooterEn from "../../components/FooterEn.astro";
             <div class="agent-main">
               <img
                 src="/assets/laura-avatar.png"
-                alt="Laura, AI voice agent specialized in real estate"
+                alt="Laura, voice assistant for real estate"
               />
               <div class="agent-info">
                 <p class="agent-label agent-label--inmobiliarias">
@@ -373,7 +360,7 @@ import FooterEn from "../../components/FooterEn.astro";
             <div class="agent-main">
               <img
                 src="/assets/santiago-avatar.png"
-                alt="Santiago, AI voice agent specialized in recruitment"
+                alt="Santiago, voice assistant for recruitment"
               />
               <div class="agent-info">
                 <p class="agent-label agent-label--talent">HR</p>
@@ -438,7 +425,7 @@ import FooterEn from "../../components/FooterEn.astro";
         </div>
 
         <div class="testimonials-grid">
-          <div class="testimonial-item">
+          <div class="testimonial-item testimonial-item--video">
             <div class="testimonial-content">
               <div class="testimonial-author">
                 <h3>Daniel Insa</h3>
@@ -459,14 +446,10 @@ import FooterEn from "../../components/FooterEn.astro";
                   allowfullscreen
                 ></iframe>
               </div>
-              <blockquote class="testimonial-quote">
-                “We installed VivaSpeak to handle incoming leads when the office
-                is out on viewings. Now every call is registered and the AI
-                confirms viewings in our calendar.”
-              </blockquote>
             </div>
           </div>
 
+          <!-- Testimonial 2: Reinaldo Rodríguez -->
           <div class="testimonial-item no-video">
             <div class="testimonial-content">
               <div class="testimonial-author">
@@ -513,21 +496,13 @@ import FooterEn from "../../components/FooterEn.astro";
                 </p>
               </div>
 
-              <div class="testimonial-media">
-                <img
-                  src="/assets/inmobiliaria.png"
-                  alt="Villas y Fincas Mallorca logo"
-                  class="testimonial-placeholder"
-                />
-              </div>
-
               <blockquote class="testimonial-quote">
                 "The main problem we had was managing the high volume of calls,
                 especially for rentals —in the Balearics there can be 200+
                 applications for a single property. We wanted a more personal
-                service than a simple answering machine. Now we cover 24h, 7 days a week, we
+                service than a simple answering machine. <strong>Now we cover 24h, 7 days a week, we
                 don't lose contacts, and we pre-qualify in a fraction of the
-                time, even during demand peaks. It works very well, it's very
+                time</strong>, even during demand peaks. It works very well, it's very
                 polished."
               </blockquote>
 
@@ -536,6 +511,35 @@ import FooterEn from "../../components/FooterEn.astro";
                 <span class="tag">⚡ Handles peaks</span>
                 <span class="tag">📞 200+ leads/property</span>
                 <span class="tag">✅ Real filter</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4: Arturo Chavarría (same level as Juan, no illustration) -->
+          <div class="testimonial-item no-video">
+            <div class="testimonial-content">
+              <div class="testimonial-author">
+                <h3>Arturo Chavarría</h3>
+                <p class="author-role">MyCantabria Inmobiliaria</p>
+                <p class="author-details">
+                  Real Estate Agency · Cantabria
+                </p>
+              </div>
+
+              <blockquote class="testimonial-quote">
+                "The truth is that the trial was perfect and I liked it very
+                much. I consider the service to be very functional and sufficient
+                for a small or medium-sized estate agency, especially for
+                managing contacts you cannot attend to when you are doing other
+                tasks. <strong>Without a doubt, I would hire VivaSpeak again in the
+                future.</strong>"
+              </blockquote>
+
+              <div class="testimonial-tags">
+                <span class="tag">🏠 Cantabria Real Estate</span>
+                <span class="tag">📞 Contact management</span>
+                <span class="tag">⚡ Answer when you can't</span>
+                <span class="tag">✅ Would hire again</span>
               </div>
             </div>
           </div>

@@ -6,16 +6,24 @@ import "../../../styles/blog.css";
 
 const title = "Qué es un agente de voz IA y cómo funciona (explicación práctica)";
 const description = "Guía clara sobre cómo funciona un agente de voz IA: llamadas reales, memoria contextual, integración con CRMs y agendas como Google Calendar o tu software de agenda.";
-const canonical = "https://vivaspeak.com/blog/agente-voz-ia";
+const canonical = "https://vivaspeak.com/blog/agente-voz-ia/";
+const schemaArticle = { headline: title, description, datePublished: "2024-06-01", image: "https://vivaspeak.com/assets/og-image.png" };
+const breadcrumb = [
+  { name: "Inicio", url: "https://vivaspeak.com/" },
+  { name: "Blog", url: "https://vivaspeak.com/blog/" },
+  { name: title, url: canonical },
+];
 ---
 
 <Layout
   title={title}
   description={description}
   canonical={canonical}
-  alternateEs="https://vivaspeak.com/blog/agente-voz-ia"
-  alternateEn="https://vivaspeak.com/en/blog/ai-voice-agent"
+  alternateEs="https://vivaspeak.com/blog/agente-voz-ia/"
+  alternateEn="https://vivaspeak.com/en/blog/ai-voice-agent/"
   lang="es"
+  schemaArticle={schemaArticle}
+  breadcrumb={breadcrumb}
 >
 
 <Header />
@@ -132,6 +140,13 @@ const canonical = "https://vivaspeak.com/blog/agente-voz-ia";
       Si quieres ver cómo funcionaría uno en tu negocio, puedes
       <a href="/#schedule">reservar una demo en 30 segundos</a>.
     </p>
+
+    <h2>Casos de uso relacionados</h2>
+    <ul>
+      <li><a href="/clinica/">IA para Clínicas</a></li>
+      <li><a href="/inmobiliaria/">IA para Inmobiliarias</a></li>
+      <li><a href="/reclutamiento/">IA para RRHH</a></li>
+    </ul>
 
   </article>
 

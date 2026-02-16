@@ -2,17 +2,33 @@
 import Layout from "../layouts/Layout.astro";
 import LandingHeader from "../components/LandingHeader.astro";
 import Footer from "../components/Footer.astro";
+
+const schemaFaq = [
+  { question: "¿Clara puede integrarse con mi agenda clínica o Google Calendar?", answer: "Sí. Clara se integra con software de agenda compatible y con Google Calendar para sincronizar automáticamente." },
+  { question: "¿Clara puede responder mensajes de WhatsApp?", answer: "Sí. El chatbot de Clara responde automáticamente por WhatsApp, consulta disponibilidad, agenda citas, cancela reservas y envía recordatorios." },
+  { question: "¿Puede detectar depilación láser con múltiples zonas?", answer: "Sí. Clara detecta automáticamente las zonas solicitadas (axilas, ingles, piernas, etc.), calcula la duración total y reserva el tratamiento correcto en tu agenda." },
+  { question: "¿Puedo usar Clara con varias agendas de especialistas?", answer: "Sí. Clara puede gestionar múltiples agendas según especialidad médica y asignar citas automáticamente a cada profesional." },
+  { question: "¿Clara puede enviar recordatorios de citas?", answer: "Sí. Clara envía recordatorios automáticos por WhatsApp 24 horas antes de cada cita para reducir ausencias." },
+  { question: "¿Mis pacientes pueden reservar citas online sin llamar?", answer: "Sí. Creamos una landing de reservas personalizada donde tus pacientes pueden ver disponibilidad y agendar citas 24/7 sin necesidad de llamar." },
+];
+
+const breadcrumb = [
+  { name: "Inicio", url: "https://vivaspeak.com/" },
+  { name: "Clara para Clínicas", url: "https://vivaspeak.com/clinica/" },
+];
 ---
 
 <Layout
   title="Clara - Agente IA 24/7 para Clínicas | VivaSpeak"
   description="Clara responde llamadas, mensajes de WhatsApp, agenda citas automáticamente en tu software de agenda o Google Calendar y envía recordatorios. Tu clínica disponible 24/7."
-  canonical="https://vivaspeak.com/clinica"
-  alternateEs="https://vivaspeak.com/clinica"
-  alternateEn="https://vivaspeak.com/en/clinic"
+  canonical="https://vivaspeak.com/clinica/"
+  alternateEs="https://vivaspeak.com/clinica/"
+  alternateEn="https://vivaspeak.com/en/clinic/"
   keywords="agente de voz, clínica médica, inteligencia artificial, reservas automáticas, WhatsApp Business, Google Calendar, chatbot médico, atención pacientes 24/7"
   ogImage="/assets/og-image-clinica.png"
   lang="es"
+  schemaFaq={schemaFaq}
+  breadcrumb={breadcrumb}
 >
   <LandingHeader
     ctaLabel="Activar Clara"
@@ -323,8 +339,7 @@ import Footer from "../components/Footer.astro";
           <div class="section-header section-header--center">
             <p class="eyebrow">Precio único</p>
             <h2>
-              Agentes IA desde 249 €/mes. Precio según volumen, sector e
-              integraciones.
+              Desde 249 €/mes. Precio final definido en la demo según volumen e integraciones.
             </h2>
             <div class="cta-buttons">
               <a href="#cta" class="btn-primary">Solicitar demo</a>

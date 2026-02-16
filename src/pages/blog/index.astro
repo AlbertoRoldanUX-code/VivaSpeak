@@ -1,0 +1,56 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import "../../../styles/blog.css";
+import "../../../styles/resources.css";
+---
+
+<Layout
+  title="Blog - VivaSpeak"
+  description="Artículos sobre agentes de voz IA, automatización de llamadas, clínicas, inmobiliarias y RRHH."
+  canonical="https://vivaspeak.com/blog/"
+  alternateEs="https://vivaspeak.com/blog/"
+  alternateEn="https://vivaspeak.com/en/blog/"
+  lang="es"
+>
+  <Header />
+
+<main class="blog-container">
+  <section class="resource-hero">
+    <div class="container">
+      <h1 class="resource-title">Blog</h1>
+      <p class="resource-subtitle">
+        Guías y artículos sobre agentes de voz IA y automatización.
+      </p>
+    </div>
+  </section>
+
+  <section class="resource-grid-section">
+    <div class="container resource-grid">
+      <article class="resource-card">
+        <h3>Qué es un agente de voz IA y cómo funciona</h3>
+        <p>Guía completa sobre tecnología, llamadas, latencia, memoria y casos reales.</p>
+        <a href="/blog/agente-voz-ia/" class="resource-link">Leer artículo →</a>
+      </article>
+      <article class="resource-card">
+        <h3>Agente de voz IA para inmobiliarias</h3>
+        <p>Cómo captar más propietarios, filtrar compradores y automatizar visitas.</p>
+        <a href="/blog/agente-voz-inmobiliarias/" class="resource-link">Leer artículo →</a>
+      </article>
+      <article class="resource-card">
+        <h3>Agente de voz IA para clínicas</h3>
+        <p>Cómo reducir llamadas perdidas y agendar más citas con IA integrada en tu agenda.</p>
+        <a href="/blog/agente-voz-clinicas/" class="resource-link">Leer artículo →</a>
+      </article>
+      <article class="resource-card">
+        <h3>Cómo crear la base de conocimiento perfecta</h3>
+        <p>Estructura recomendada, ejemplos por sector y errores a evitar.</p>
+        <a href="/blog/base-conocimiento-agente-voz/" class="resource-link">Leer artículo →</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<Footer />
+</Layout>

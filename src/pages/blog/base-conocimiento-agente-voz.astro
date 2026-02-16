@@ -6,16 +6,24 @@ import "../../../styles/blog.css";
 
 const title = "Cómo crear la base de conocimiento perfecta para un agente de voz IA";
 const description = "Guía práctica para crear una base de conocimiento clara y efectiva para un agente de voz IA: estructura, contenido, ejemplos y errores a evitar.";
-const canonical = "https://vivaspeak.com/blog/base-conocimiento-agente-voz";
+const canonical = "https://vivaspeak.com/blog/base-conocimiento-agente-voz/";
+const schemaArticle = { headline: title, description, datePublished: "2024-07-01", image: "https://vivaspeak.com/assets/og-image.png" };
+const breadcrumb = [
+  { name: "Inicio", url: "https://vivaspeak.com/" },
+  { name: "Blog", url: "https://vivaspeak.com/blog/" },
+  { name: title, url: canonical },
+];
 ---
 
 <Layout
   title={title}
   description={description}
   canonical={canonical}
-  alternateEs="https://vivaspeak.com/blog/base-conocimiento-agente-voz"
-  alternateEn="https://vivaspeak.com/en/blog/knowledge-base-ai-agent"
+  alternateEs="https://vivaspeak.com/blog/base-conocimiento-agente-voz/"
+  alternateEn="https://vivaspeak.com/en/blog/knowledge-base-ai-agent/"
   lang="es"
+  schemaArticle={schemaArticle}
+  breadcrumb={breadcrumb}
 >
 <Header />
 
@@ -147,6 +155,13 @@ const canonical = "https://vivaspeak.com/blog/base-conocimiento-agente-voz";
       Si quieres que te ayudemos a crear o mejorar la base de conocimiento de tu agente,
       <a href="/#schedule">puedes agendar una demo aquí</a>.
     </p>
+
+    <h2>Casos de uso relacionados</h2>
+    <ul>
+      <li><a href="/clinica/">IA para Clínicas</a></li>
+      <li><a href="/inmobiliaria/">IA para Inmobiliarias</a></li>
+      <li><a href="/reclutamiento/">IA para RRHH</a></li>
+    </ul>
 
   </article>
 </main>

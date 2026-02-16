@@ -7,16 +7,24 @@ import "../../../../styles/blog.css";
 const title = "AI Voice Agent for Real Estate: How It Works and Why It Increases Leads and Property Visits";
 const description =
   "A practical explanation of how an AI voice agent helps real estate agencies capture more property owners, filter buyers, book visits and avoid losing valuable calls.";
-const canonical = "https://vivaspeak.com/en/blog/ai-voice-real-estate";
+const canonical = "https://vivaspeak.com/en/blog/ai-voice-real-estate/";
+const schemaArticle = { headline: title, description, datePublished: "2024-06-20", image: "https://vivaspeak.com/assets/og-image-inmobiliaria.jpg" };
+const breadcrumb = [
+  { name: "Home", url: "https://vivaspeak.com/en/" },
+  { name: "Blog", url: "https://vivaspeak.com/en/blog/" },
+  { name: title, url: canonical },
+];
 ---
 
 <Layout
   title={title}
   description={description}
   canonical={canonical}
-  alternateEs="https://vivaspeak.com/blog/agente-voz-inmobiliarias"
-  alternateEn="https://vivaspeak.com/en/blog/ai-voice-real-estate"
+  alternateEs="https://vivaspeak.com/blog/agente-voz-inmobiliarias/"
+  alternateEn="https://vivaspeak.com/en/blog/ai-voice-real-estate/"
   lang="en"
+  schemaArticle={schemaArticle}
+  breadcrumb={breadcrumb}
 >
 <HeaderEn />
 
@@ -147,8 +155,15 @@ const canonical = "https://vivaspeak.com/en/blog/ai-voice-real-estate";
 
     <p>
       If you want to try a real estate–specialized AI agent,
-      <a href="/#schedule">book a demo here</a>.
+      <a href="/en/#schedule">book a demo here</a>.
     </p>
+
+    <h2>Related use cases</h2>
+    <ul>
+      <li><a href="/en/clinic/">AI for Clinics</a></li>
+      <li><a href="/en/real-estate/">AI for Real Estate</a></li>
+      <li><a href="/en/recruitment/">AI for HR</a></li>
+    </ul>
 
   </article>
 </main>

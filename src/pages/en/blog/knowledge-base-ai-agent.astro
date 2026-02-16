@@ -7,16 +7,24 @@ import "../../../../styles/blog.css";
 const title = "How to Create the Perfect Knowledge Base for Your AI Voice Agent";
 const description =
   "Recommended structure, real examples for each industry, and the most common mistakes to avoid when designing an AI voice agent knowledge base.";
-const canonical = "https://vivaspeak.com/en/blog/knowledge-base-ai-agent";
+const canonical = "https://vivaspeak.com/en/blog/knowledge-base-ai-agent/";
+const schemaArticle = { headline: title, description, datePublished: "2024-07-01", image: "https://vivaspeak.com/assets/og-image.png" };
+const breadcrumb = [
+  { name: "Home", url: "https://vivaspeak.com/en/" },
+  { name: "Blog", url: "https://vivaspeak.com/en/blog/" },
+  { name: title, url: canonical },
+];
 ---
 
 <Layout
   title={title}
   description={description}
   canonical={canonical}
-  alternateEs="https://vivaspeak.com/blog/base-conocimiento-agente-voz"
-  alternateEn="https://vivaspeak.com/en/blog/knowledge-base-ai-agent"
+  alternateEs="https://vivaspeak.com/blog/base-conocimiento-agente-voz/"
+  alternateEn="https://vivaspeak.com/en/blog/knowledge-base-ai-agent/"
   lang="en"
+  schemaArticle={schemaArticle}
+  breadcrumb={breadcrumb}
 >
 <HeaderEn />
 
@@ -164,8 +172,15 @@ const canonical = "https://vivaspeak.com/en/blog/knowledge-base-ai-agent";
 
     <p>
       If you want help creating the perfect knowledge base for your AI agent,
-      <a href="/en#schedule">you can book a demo in 30 seconds</a>.
+      <a href="/en/#schedule">you can book a demo in 30 seconds</a>.
     </p>
+
+    <h2>Related use cases</h2>
+    <ul>
+      <li><a href="/en/clinic/">AI for Clinics</a></li>
+      <li><a href="/en/real-estate/">AI for Real Estate</a></li>
+      <li><a href="/en/recruitment/">AI for HR</a></li>
+    </ul>
 
   </article>
 </main>

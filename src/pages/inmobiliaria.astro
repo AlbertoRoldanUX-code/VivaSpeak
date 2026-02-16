@@ -3,6 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import LandingHeader from "../components/LandingHeader.astro";
 import Footer from "../components/Footer.astro";
 import "../../styles/real-estate.css";
+
+const schemaFaq = [
+  { question: "¿Qué hace Laura?", answer: "Atiende llamadas 24/7, cualifica (alquiler/venta, presupuesto, perfil), agenda visitas y te envía un email con transcripción y resumen tras cada llamada." },
+  { question: "¿Funciona con mi número?", answer: "Sí. Redirigimos tu número al agente o te asignamos uno nuevo. Sin cambiar de operador." },
+  { question: "¿Puedo escuchar las grabaciones?", answer: "Sí. Todas las llamadas quedan en tu panel con grabación, transcripción y resumen. Filtros por fecha y resultado." },
+  { question: "¿Puedo probarlo sin compromiso?", answer: "Sí. Agenda una demo, vemos el panel y hacemos una llamada de prueba. Sin permanencia." },
+  { question: "¿Hay que instalar algo?", answer: "No. Todo en la nube: acceso al panel, subes tu catálogo y Laura trabaja con tu información." },
+  { question: "¿Sirve para alquiler con mucha demanda (200+ llamadas)?", answer: "Sí. Precisamente para eso. Filtra, registra y demuestra al propietario por qué no se alquila antes." },
+];
+
+const breadcrumb = [
+  { name: "Inicio", url: "https://vivaspeak.com/" },
+  { name: "Laura para Inmobiliarias", url: "https://vivaspeak.com/inmobiliaria/" },
+];
 ---
 
 <Layout
@@ -11,9 +25,11 @@ import "../../styles/real-estate.css";
   canonical="https://vivaspeak.com/inmobiliaria/"
   alternateEs="https://vivaspeak.com/inmobiliaria/"
   alternateEn="https://vivaspeak.com/en/real-estate/"
-  ogImage="/assets/og-image-inmobiliaria.jpg"
+  ogImage="https://vivaspeak.com/assets/og-image-inmobiliaria.jpg"
   lang="es"
   keywords="agente de voz, inmobiliaria, inteligencia artificial, captación de propiedades, automatización llamadas, atención clientes, agente virtual"
+  schemaFaq={schemaFaq}
+  breadcrumb={breadcrumb}
 >
   <LandingHeader ctaLabel="Ver demo en directo" ctaHref="#cta-final" />
     <main class="inmo-landing">
@@ -81,9 +97,6 @@ import "../../styles/real-estate.css";
           <li>📧 <strong>Te manda solo lo bueno</strong> — email por llamada con transcripción y datos para que decidas a quién llamar</li>
           <li>📊 <strong>Demuéstralo al propietario</strong> — panel con historial y exportación</li>
         </ul>
-        <p class="section-cta">
-          <a href="#cta-final" class="btn-primary">Ver demo en directo</a>
-        </p>
       </section>
       <section id="video-demo">
         <div class="container">
@@ -113,7 +126,13 @@ import "../../styles/real-estate.css";
             <div class="testimonial-quote-block testimonial-quote-block--card">
               <p class="testimonial-quote-label">Juan Taborda – Villas y Fincas Mallorca · 20 años en el sector · Mallorca</p>
               <blockquote>
-                «El principal problema que teníamos era gestionar el alto volumen de llamadas, especialmente en alquiler —en Baleares puede haber 200+ solicitudes por una sola vivienda. Queríamos una atención más personalizada que un simple contestador. Ahora atendemos 24h los 7 días, no perdemos contactos y precualificamos en una fracción del tiempo, incluso en picos de demanda. Funciona muy bien, está muy pulido.»
+                «El principal problema que teníamos era gestionar el alto volumen de llamadas, especialmente en alquiler —en Baleares puede haber 200+ solicitudes por una sola vivienda. Queríamos una atención más personalizada que un simple contestador. <strong>Ahora atendemos 24h los 7 días, no perdemos contactos y precualificamos en una fracción del tiempo</strong>, incluso en picos de demanda. Funciona muy bien, está muy pulido.»
+              </blockquote>
+            </div>
+            <div class="testimonial-quote-block testimonial-quote-block--card">
+              <p class="testimonial-quote-label">Arturo Chavarría – MyCantabria Inmobiliaria · Cantabria</p>
+              <blockquote>
+                «La verdad es que la prueba ha sido perfecta y me ha gustado muchísimo. Considero que el servicio es muy funcional y suficiente para una inmobiliaria pequeña o mediana, especialmente para gestionar los contactos que no puedes atender cuando estás realizando otras funciones. <strong>Sin lugar a dudas, volvería a contratar con VivaSpeak en el futuro.</strong>»
               </blockquote>
             </div>
           </div>
@@ -194,11 +213,8 @@ import "../../styles/real-estate.css";
           <div class="section-header section-header--center">
             <p class="eyebrow">Precios</p>
             <h2>
-              Planes desde 249 €/mes según volumen y uso. El plan concreto se explica en la demo.
+              Desde 249 €/mes. Precio final definido en la demo según volumen e integraciones.
             </h2>
-            <div class="cta-buttons">
-              <a href="#cta-final" class="btn-primary">Solicitar demo</a>
-            </div>
           </div>
         </div>
       </section>

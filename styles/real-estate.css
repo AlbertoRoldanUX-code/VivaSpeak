@@ -138,6 +138,10 @@
   box-shadow: 0 4px 20px rgba(15, 118, 110, 0.08);
 }
 
+.inmo-landing .testimonial-quote-block--card + .testimonial-quote-block--card {
+  margin-top: 2.5rem;
+}
+
 .inmo-landing .testimonial-quote-block .testimonial-quote-label {
   margin: 0 0 0.75rem;
   font-weight: 600;

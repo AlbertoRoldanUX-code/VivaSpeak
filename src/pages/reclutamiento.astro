@@ -3,17 +3,31 @@ import Layout from "../layouts/Layout.astro";
 import LandingHeader from "../components/LandingHeader.astro";
 import Footer from "../components/Footer.astro";
 import "../../styles/recruiting.css";
+
+const schemaFaq = [
+  { question: "¿El agente decide contrataciones?", answer: "No. El agente estandariza el primer filtro y deja las decisiones finales al equipo humano." },
+  { question: "¿Funciona con llamadas entrantes y salientes?", answer: "Sí. Filtra candidatos con llamadas entrantes y salientes alineadas a tus criterios de selección." },
+  { question: "¿Puedo personalizar las preguntas de descarte?", answer: "Sí. Evalúa candidatos con las mismas preguntas de descarte y aplica reglas definidas por tu equipo." },
+  { question: "¿Qué incluye el reporte para el recruiter?", answer: "Envía un reporte con respuestas clave, motivos de descarte y próxima acción recomendada." },
+];
+
+const breadcrumb = [
+  { name: "Inicio", url: "https://vivaspeak.com/" },
+  { name: "Reclutamiento con IA", url: "https://vivaspeak.com/reclutamiento/" },
+];
 ---
 
 <Layout
   title="Agente de Reclutamiento con IA para RRHH | VivaSpeak"
   description="Agente de voz IA para filtrar candidatos, realizar knockout questions y agendar entrevistas 24/7. Enfocado en empresas medianas y grandes."
-  canonical="https://vivaspeak.com/reclutamiento"
-  alternateEs="https://vivaspeak.com/reclutamiento"
-  alternateEn="https://vivaspeak.com/en/recruitment"
+  canonical="https://vivaspeak.com/reclutamiento/"
+  alternateEs="https://vivaspeak.com/reclutamiento/"
+  alternateEn="https://vivaspeak.com/en/recruitment/"
   ogImage="https://vivaspeak.com/assets/og-image.png"
   lang="es"
   keywords="agente de voz, reclutamiento, RRHH, filtrado candidatos, entrevistas, automatización llamadas, knockout questions, agenda automática"
+  schemaFaq={schemaFaq}
+  breadcrumb={breadcrumb}
 >
   <LandingHeader ctaLabel="Solicitar demo" ctaHref="#cta-final" />
   <main class="recruiting-landing">
@@ -34,7 +48,7 @@ import "../../styles/recruiting.css";
           </div>
           <div class="hero-note">
             Pensado para RRHH y operaciones internas que necesitan procesos
-            homogéneos y controlados.
+            homogéneos y controlados. Diseñado para empresas que contratan 50+ candidatos al mes.
           </div>
           <p class="hero-disclaimer">
             El agente no decide contrataciones: estandariza el primer filtro y

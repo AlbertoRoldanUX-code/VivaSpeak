@@ -1,0 +1,125 @@
+---
+interface Props {
+  organization?: boolean;
+  product?: boolean;
+  faq?: Array<{ question: string; answer: string }>;
+  breadcrumb?: Array<{ name: string; url: string }>;
+  article?: {
+    headline: string;
+    description: string;
+    datePublished: string;
+    dateModified?: string;
+    image?: string;
+    author?: string;
+  } | null;
+}
+
+const { organization = true, product = true, faq = [], breadcrumb = [], article = null } = Astro.props;
+
+const baseUrl = "https://vivaspeak.com";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "VivaSpeak",
+  url: baseUrl,
+  logo: `${baseUrl}/assets/og-image.png`,
+  description: "AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.",
+  sameAs: [
+    "https://www.linkedin.com/company/vivaspeak",
+    "https://twitter.com/vivaspeak",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    url: `${baseUrl}/#contact`,
+    availableLanguage: ["Spanish", "English"],
+  },
+};
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "VivaSpeak",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "249",
+    priceCurrency: "EUR",
+    priceValidUntil: "2026-12-31",
+  },
+  description: "AI voice agents that answer calls, WhatsApp and emails 24/7. Automated bookings, lead qualification, and CRM integration.",
+};
+
+const faqSchema =
+  faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
+const breadcrumbSchema =
+  breadcrumb.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumb.map((item, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: item.name,
+          item: item.url,
+        })),
+      }
+    : null;
+
+const articleSchema = article
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.headline,
+      description: article.description,
+      datePublished: article.datePublished,
+      dateModified: article.dateModified || article.datePublished,
+      author: {
+        "@type": "Organization",
+        name: article.author || "VivaSpeak",
+        url: "https://vivaspeak.com",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "VivaSpeak",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://vivaspeak.com/assets/og-image.png",
+        },
+      },
+      ...(article.image && { image: article.image }),
+    }
+  : null;
+---
+
+{organization && (
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+)}
+{product && (
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+)}
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}
+{breadcrumbSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}
+{articleSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+)}

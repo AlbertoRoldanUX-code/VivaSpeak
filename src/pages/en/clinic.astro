@@ -2,17 +2,31 @@
 import Layout from "../../layouts/Layout.astro";
 import LandingHeaderEn from "../../components/LandingHeaderEn.astro";
 import FooterEn from "../../components/FooterEn.astro";
+
+const schemaFaq = [
+  { question: "Can Clara integrate with my calendar?", answer: "Yes. We can connect her to Google Calendar to schedule appointments automatically." },
+  { question: "Can she handle emergencies?", answer: "Clara does not replace medical staff, but she can detect urgent words and redirect accordingly." },
+  { question: "Can I test her before paying?", answer: "Yes, you can try her with real calls and cancel anytime." },
+  { question: "How do I redirect my current number?", answer: "You can redirect your number to Clara using a simple code. Download the step-by-step guide (PDF) from our docs." },
+];
+
+const breadcrumb = [
+  { name: "Home", url: "https://vivaspeak.com/en/" },
+  { name: "Clara for Clinics", url: "https://vivaspeak.com/en/clinic/" },
+];
 ---
 
 <Layout
-  title="Clara – AI Voice Agent for Clinics | VivaSpeak"
+  title="Clara – Voice Assistant for Clinics | VivaSpeak"
   description="Clara answers calls, schedules appointments and resolves FAQs for you. Your clinic available 24/7 without missing patients. Try it free."
-  canonical="https://vivaspeak.com/en/clinic"
-  alternateEs="https://vivaspeak.com/clinica"
-  alternateEn="https://vivaspeak.com/en/clinic"
+  canonical="https://vivaspeak.com/en/clinic/"
+  alternateEs="https://vivaspeak.com/clinica/"
+  alternateEn="https://vivaspeak.com/en/clinic/"
   keywords="voice agent, medical clinic, artificial intelligence, appointment scheduling, call automation, patient care, virtual assistant"
   ogImage="/assets/og-image-clinica.png"
   lang="en"
+  schemaFaq={schemaFaq}
+  breadcrumb={breadcrumb}
 >
   <LandingHeaderEn
     ctaLabel="Activate Clara"
@@ -22,10 +36,10 @@ import FooterEn from "../../components/FooterEn.astro";
     <main>
       <section id="hero">
         <div class="container hero-content">
-          <h1>Automate Your Clinic with Clara – 24/7 AI Voice Agent</h1>
+          <h1>Automate Your Clinic with Clara – 24/7 Voice Assistant</h1>
           <img
             src="/assets/clara-avatar.png"
-            alt="Clara, AI voice agent for clinics"
+            alt="Clara, voice assistant for clinics"
             class="avatar-clara"
             loading="lazy"
           />
@@ -174,8 +188,7 @@ import FooterEn from "../../components/FooterEn.astro";
           <div class="section-header section-header--center">
             <p class="eyebrow">Single Price Point</p>
             <h2>
-              AI agents from €249/month. Pricing depends on volume, sector, and
-              integrations.
+              From €249/month. Final pricing defined in demo based on volume and integrations.
             </h2>
             <div class="cta-buttons">
               <a href="#cta" class="btn-primary">Request demo</a>
@@ -188,7 +201,7 @@ import FooterEn from "../../components/FooterEn.astro";
           <h2>Ready to save time and serve more patients?</h2>
           <img
             src="/assets/clara-avatar.png"
-            alt="Clara, AI voice agent"
+            alt="Clara, voice assistant"
             class="avatar-clara"
             loading="lazy"
           />
