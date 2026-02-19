@@ -261,7 +261,14 @@ const text = translations[locale];
         `cookie-consent=${value};path=/;max-age=${oneYear};SameSite=Lax` +
         secure;
 
-      if (value === "accepted") window.loadGA?.();
+      if (value === "accepted" && typeof window.gtag === "function") {
+        window.gtag("consent", "update", {
+          ad_storage: "granted",
+          ad_user_data: "granted",
+          ad_personalization: "granted",
+          analytics_storage: "granted",
+        });
+      }
     };
 
     const hideBanner = () => {
