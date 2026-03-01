@@ -17,8 +17,18 @@
 .blog-article h1 {
   font-size: clamp(2rem, 5vw, 2.8rem);
   line-height: 1.2;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   color: var(--color-dark, #22303f);
+}
+
+.blog-byline {
+  font-size: 0.95rem;
+  color: var(--gray-medium, #666);
+  margin-bottom: 24px !important;
+}
+
+.blog-byline a {
+  color: var(--primary-dark, #16a085);
 }
 
 .blog-article h2 {

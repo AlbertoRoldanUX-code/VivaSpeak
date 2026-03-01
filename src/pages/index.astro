@@ -13,8 +13,8 @@ const schemaFaq = [
 ---
 
 <Layout
-  title="VivaSpeak - Agentes de IA para llamadas y WhatsApp 24/7"
-  description="Agentes de voz IA para llamadas, WhatsApp y correo 24/7. Reservas automáticas, respuestas instantáneas y chatbot inteligente. Integración con tu agenda y Google Calendar."
+  title="Agentes de IA para Llamadas y WhatsApp 24/7 | VivaSpeak"
+  description="Automatiza llamadas, WhatsApp y correo con IA. Reservas automáticas, respuestas instantáneas. Integración con Google Calendar. Solicita demo gratis."
   canonical="https://vivaspeak.com/"
   alternateEs="https://vivaspeak.com/"
   alternateEn="https://vivaspeak.com/en/"
@@ -25,6 +25,7 @@ const schemaFaq = [
 >
 
   <Header />
+  <main id="main-content">
  <section id="home">
         <div class="container home-container">
         <div class="hero-bg-accent hero-bg-accent-one"></div>
@@ -77,6 +78,8 @@ const schemaFaq = [
                   src="/assets/whatsapp-mockup.webp"
                   alt="Conversación de un agente VivaSpeak en WhatsApp"
                   class="clickable-image"
+                  fetchpriority="high"
+                  loading="eager"
                 />
               </picture>
               <div class="mockup-overlay">
@@ -768,6 +771,7 @@ const schemaFaq = [
         </div>
       </div>
     </section>
+  </main>
   <Footer />
 
 </Layout>

@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Sobre Nosotros | Plataforma de Agentes IA | VivaSpeak"
+  description="VivaSpeak: plataforma de agentes conversacionales con IA. Voz, chat web, WhatsApp, CRM y integración Salesforce. Multisede y base de conocimiento editable."
+  canonical="https://vivaspeak.com/sobre-nosotros/"
+  alternateEs="https://vivaspeak.com/sobre-nosotros/"
+  alternateEn="https://vivaspeak.com/en/about/"
+  lang="es"
+>
+  <LandingHeader ctaLabel="Solicitar demo" ctaHref="/#schedule" secondaryHref="/" />
+
+  <main id="main-content">
+    <section class="about-container" style="max-width: 720px; margin: 0 auto; padding: 80px 24px 100px; text-align: left;">
+      <h1>Sobre VivaSpeak</h1>
+      
+      <p>
+        VivaSpeak desarrolla agentes conversacionales con inteligencia artificial para empresas que necesitan automatizar llamadas, web chat y canales digitales las 24 horas del día. Nuestra plataforma permite configurar el comportamiento del agente, su prompt y su base de conocimiento, integrándolo con CRM como Salesforce, agendas y sistemas internos.
+      </p>
+
+      <p>
+        No somos solo un agente de voz. VivaSpeak es una plataforma donde cada empresa define cómo debe comportarse su asistente: qué información puede dar, cómo debe cerrar una cita y qué datos debe registrar. Todo queda centralizado en un panel con transcripciones, métricas y automatizaciones.
+      </p>
+
+      <h2>Quiénes somos</h2>
+      <p>
+        Trabajamos con clínicas, inmobiliarias y empresas de servicios en España y Latinoamérica. 
+        Somos un equipo especializado en automatización de atención al cliente y desarrollo de agentes conversacionales con IA para empresas que gestionan alto volumen de llamadas.
+      </p>
+
+      <h2>Plataforma</h2>
+      <p>
+        Desde el panel de VivaSpeak puedes:
+      </p>
+      <ul style="margin: 0 0 1rem 1.25rem; line-height: 1.8;">
+        <li>Editar la base de conocimiento del agente.</li>
+        <li>Configurar reglas de enrutamiento por sede o promoción.</li>
+        <li>Integrar Salesforce u otros CRMs vía API.</li>
+        <li>Gestionar leads en un CRM ligero integrado.</li>
+        <li>Activar agente de voz, chat web o ambos sobre el mismo conocimiento.</li>
+      </ul>
+
+      <h2>Sectores</h2>
+      <ul style="margin: 0 0 1rem 1.25rem; line-height: 1.8;">
+        <li><strong>Clínicas</strong> — Asistente virtual para clínicas: agenda citas, consulta disponibilidad y gestiona la recepción 24/7.</li>
+        <li><strong>Inmobiliarias</strong> — Centralita inteligente multisede, captación de leads, filtrado automático por promoción y registro directo en CRM.</li>
+        <li><strong>RRHH</strong> — Automatización de llamadas para reclutamiento: filtra candidatos y agenda entrevistas.</li>
+      </ul>
+
+      <h2>Integraciones</h2>
+      <p>
+        Integración con WhatsApp Business API, Google Calendar, Microsoft Bookings, Salesforce y otros CRMs mediante API. Compatible con WordPress y páginas corporativas para instalar chat web en minutos.
+      </p>
+
+      <h2>Contacto</h2>
+      <p>
+        Si quieres saber más sobre cómo un agente de voz IA puede ayudarte,
+        <a href="/#schedule">agenda una demo gratuita</a> o escríbenos a 
+        <a href="mailto:hola@vivaspeak.com">hola@vivaspeak.com</a>. También puedes llamar al 
+        <a href="tel:+34951798932">+34 951 798 932</a> — Valeria, nuestra agente de voz IA, te atenderá.
+      </p>
+      <p style="text-align: center; margin-top: 2rem;">
+        <a href="/" class="btn-primary">Volver a inicio</a>
+      </p>
+
+      <h2>Automatización inteligente para empresas</h2>
+      <p>
+        VivaSpeak combina agente de voz, chatbot web e integración CRM en una única plataforma. Automatiza llamadas entrantes, registra oportunidades en Salesforce, envía información de promociones y permite escalar atención multisede sin ampliar equipo humano.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .about-container h1 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 1.5rem; text-align: center; }
+  .about-container h2 { font-size: 1.35rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+  .about-container p { line-height: 1.7; margin-bottom: 1rem; }
+  .about-container a { color: var(--primary-dark); font-weight: 600; }
+  .about-container .btn-primary { color: var(--white); }
+</style>

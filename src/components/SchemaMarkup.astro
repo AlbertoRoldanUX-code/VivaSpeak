@@ -28,13 +28,26 @@ const organizationSchema = {
   sameAs: [
     "https://www.linkedin.com/company/vivaspeak",
     "https://twitter.com/vivaspeak",
+    "https://www.instagram.com/vivaspeakai",
+    "https://www.youtube.com/@vivaspeak_ai",
   ],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
     url: `${baseUrl}/#contact`,
     availableLanguage: ["Spanish", "English"],
+    areaServed: "ES",
   },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "VivaSpeak",
+  url: baseUrl,
+  description: "AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.",
+  publisher: { "@id": `${baseUrl}/#organization` },
+  inLanguage: ["es", "en"],
 };
 
 const productSchema = {
@@ -93,7 +106,7 @@ const articleSchema = article
       author: {
         "@type": "Organization",
         name: article.author || "VivaSpeak",
-        url: "https://vivaspeak.com",
+        url: "https://vivaspeak.com/sobre-nosotros/",
       },
       publisher: {
         "@type": "Organization",
@@ -109,7 +122,10 @@ const articleSchema = article
 ---
 
 {organization && (
-  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify({ ...organizationSchema, "@id": "https://vivaspeak.com/#organization" })} />
+)}
+{organization && (
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 )}
 {product && (
   <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
