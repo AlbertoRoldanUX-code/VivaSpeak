@@ -10,19 +10,20 @@ header {
 
 .header-container {
   margin: 20px auto; /* Añade un margen superior e inferior de 20px, y auto para centrar horizontalmente */
-  max-width: 1150px;
+  max-width: 900px;
   width: 100%;
   display: flex;
-  padding: 0 20px; /* Añade padding a los lados para evitar que el contenido toque los bordes del navegador */
+  padding: 0 16px; /* Añade padding a los lados para evitar que el contenido toque los bordes del navegador */
   align-items: center;
   gap: 35px;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   position: relative;
   height: 72px;
   box-shadow: var(--shadow-sm);
   background-color: rgba(255, 255, 255, 0.9); /* Blanco con transparencia */
   border-radius: 10px;
 }
+
 
 
 /* **********NAV BAR*********** */
@@ -70,7 +71,7 @@ header {
 }
 
 .brand {
-  padding: 0 10px;
+  padding: 0 4px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -98,7 +99,7 @@ nav ul li {
 nav ul li a {
   cursor: pointer;
   display: block;
-  padding: 0 clamp(8px, 1.5vw, 18px);
+  padding: 0 clamp(6px, 1vw, 14px);
   background-color: transparent;
   color: var(--color-text);
   text-decoration: none;
@@ -186,19 +187,13 @@ nav ul li a.btn-primary:hover {
 }
 
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
 .top-nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   min-width: 0;
   flex-wrap: nowrap;
-  /* padding-left: clamp(12px, 2vw, 32px); */
+  margin-left: 8px;
 }
 
 
@@ -495,4 +490,3 @@ nav ul li a.btn-primary:hover {
     padding: 0 20px;
   }
 }
-
