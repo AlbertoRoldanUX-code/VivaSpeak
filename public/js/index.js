@@ -9,6 +9,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const clickableImages = document.querySelectorAll(".clickable-image");
   const modal = document.getElementById("imageModal");
   const mockupCounter = document.getElementById("mockupCounter");
+  const trackedForms = document.querySelectorAll("form[data-ga-submit]");
+
+  function trackEvent(name, params = {}) {
+    if (!name || typeof window.gtag !== "function") return;
+    window.gtag("event", name, params);
+  }
+
+  function getGaParams(element) {
+    const params = {};
+    Object.entries(element.dataset).forEach(([key, value]) => {
+      if (!value) return;
+      if (!key.startsWith("ga") || key === "gaEvent" || key === "gaSubmit") return;
+      const paramKey = key.charAt(2).toLowerCase() + key.slice(3);
+      params[paramKey] = value;
+    });
+    return params;
+  }
 
   // --- 1. Lógica de Resize (Pantallas grandes vs móviles) ---
   function handleResize() {
@@ -58,6 +75,37 @@ document.addEventListener("DOMContentLoaded", function () {
           if (header) header.classList.remove("menu-open");
         }
       }
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const trackedElement = event.target.closest("[data-ga-event]");
+    if (!trackedElement) return;
+
+    trackEvent(trackedElement.dataset.gaEvent, getGaParams(trackedElement));
+  });
+
+  trackedForms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      const eventName = form.dataset.gaSubmit;
+      if (!eventName || typeof window.gtag !== "function") return;
+
+      event.preventDefault();
+      let hasSubmitted = false;
+
+      const submitForm = () => {
+        if (hasSubmitted) return;
+        hasSubmitted = true;
+        form.submit();
+      };
+
+      window.gtag("event", eventName, {
+        ...getGaParams(form),
+        event_callback: submitForm,
+        event_timeout: 1200,
+      });
+
+      window.setTimeout(submitForm, 1300);
     });
   });
 

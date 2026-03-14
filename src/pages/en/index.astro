@@ -4,17 +4,18 @@ import HeaderEn from "../../components/HeaderEn.astro";
 import FooterEn from "../../components/FooterEn.astro";
 
 const schemaFaq = [
-  { question: "What exactly is VivaSpeak?", answer: "Agents that answer calls, WhatsApp, and emails using your scripts, tone, and knowledge base. They qualify, book, and escalate when a human is needed." },
+  { question: "What exactly is VivaSpeak?", answer: "A business automation system specialised in voice and WhatsApp communication. To answer questions, we use business information that is editable from our panel. Our agents are specialised in qualifying leads." },
   { question: "How is the pricing structured?", answer: "Pricing is defined per agent based on volume, sector, and integrations. You get a single operating plan with no technical breakdown." },
   { question: "Does it integrate with my tools?", answer: "Yes. We connect Google Calendar, HubSpot, proprietary CRMs, scheduling systems with API access, and the official WhatsApp API. We include guides for call forwarding and calendar sharing." },
   { question: "Can I try it before hiring?", answer: "Each agent includes a one-week pilot with your real workflows and shared KPIs on the dashboard." },
-  { question: "What languages and hours does it cover?", answer: "We operate nights, weekends, and peak times in Spanish, English, Portuguese, French, and German. Ask about other languages or accents before launch." },
+  { question: "What languages does it support?", answer: "Agents usually work with one main language and we can add up to three more, including Spanish, English, Portuguese, French, Italian, and German. Ask about other languages or accents before launch." },
+  { question: "Can the AI voice agent transfer the call to a person?", answer: "Yes. It can be configured so that, for example, in urgent cases or after a positive filter, the call is transferred to the right person." },
 ];
 ---
 
 <Layout
   title="AI Agents for Calls and WhatsApp 24/7 | VivaSpeak"
-  description="Automate calls, WhatsApp and email with AI. Automated bookings, instant responses. Google Calendar integration. Request free demo."
+  description="Handle calls, WhatsApp, and filter leads automatically 24/7. Book appointments, qualify contacts, and manage everything from one panel."
   canonical="https://vivaspeak.com/en/"
   alternateEs="https://vivaspeak.com/"
   alternateEn="https://vivaspeak.com/en/"
@@ -33,37 +34,48 @@ const schemaFaq = [
         <div class="hero-bg-accent hero-bg-accent-two"></div>
         <div class="hero-grid">
           <div class="hero-left">
-            <div class="hero-badge">
-              <span class="badge-pill">Available now</span>
-              Total integration with WhatsApp Business and your scheduling system
-            </div>
             <h1 class="home-title">
-              Automate calls, WhatsApp, and email with AI connected to your real
-              agenda
+              Handle calls, WhatsApp, and filter leads automatically 24/7
             </h1>
             <p class="home-description">
-              They capture leads, respond instantly, book real appointments, and
-              automatically update your CRM.
+              Book appointments, qualify contacts, and use our CRM or update
+              yours without interrupting your work
+            </p>
+            <p class="home-urgency">
+              Your customers do not wait. If you do not answer in seconds, they
+              call the next option.
             </p>
             <div class="cta-buttons">
-              <a href="#contact" class="btn-primary">Request demo</a>
-              <a href="#video-demo" class="btn-secondary">
-                <i class="fa-solid fa-play"></i> Watch 90s demo
+              <a
+                href="#schedule"
+                class="btn-primary"
+                data-ga-event="hero_try_agent_click"
+                data-ga-location="hero"
+              >
+                Book meeting
+              </a>
+              <a
+                href="#video-demo"
+                class="btn-secondary"
+                data-ga-event="hero_demo_click"
+                data-ga-location="hero"
+              >
+                <i class="fa-solid fa-play"></i> See how it works
               </a>
             </div>
             <div class="hero-trust">
-              <span
-                >Chosen by clinics, real estate agencies, and franchises in
-                Europe</span
-              >
               <div class="hero-stats">
                 <div class="hero-stat">
-                  <strong>+120</strong>
-                  <span>Automated appointments/month</span>
+                  <strong>&lt; 2 s</strong>
+                  <span>average response time</span>
                 </div>
                 <div class="hero-stat">
-                  <strong>98%</strong>
-                  <span>Inquiries answered &lt; 1 min</span>
+                  <strong>24/7</strong>
+                  <span>automated coverage</span>
+                </div>
+                <div class="hero-stat">
+                  <strong>0</strong>
+                  <span>missed calls</span>
                 </div>
               </div>
             </div>
@@ -126,113 +138,120 @@ const schemaFaq = [
     </div>
     <section id="value-prop" class="value-summary">
       <div class="container">
-        <p class="eyebrow">What VivaSpeak does</p>
-        <h2>Keep every opportunity moving without increasing your staff</h2>
+        <p class="eyebrow">How VivaSpeak works</p>
+        <h2>Your AI agent answers, qualifies, and books without friction</h2>
         <div class="value-grid">
           <article class="value-card">
-            <h3>Capture and qualify leads across all channels.</h3>
+            <span class="value-step">1</span>
+            <h3>A customer calls or writes on WhatsApp</h3>
+            <p>The AI answers instantly with a natural voice.</p>
           </article>
           <article class="value-card">
-            <h3>Schedule appointments with real availability.</h3>
+            <span class="value-step">2</span>
+            <h3>The AI qualifies and answers questions</h3>
+            <p>It uses your knowledge base to resolve real questions.</p>
           </article>
           <article class="value-card">
-            <h3>Send a summary and notify the team.</h3>
+            <span class="value-step">3</span>
+            <h3>It books an appointment in your real calendar</h3>
+            <p>Connect Google Calendar, CRM, or your internal schedule.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-step">4</span>
+            <h3>Your team receives an automatic summary</h3>
+            <p>Email or WhatsApp with the conversation and the next action.</p>
+          </article>
+          <article class="value-card value-card--panel">
+            <span class="value-step">5</span>
+            <h3>See every lead in a panel that is always available</h3>
+            <p>A visual CRM where you can view, filter, and manage every contact at a glance.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-step">6</span>
+            <h3>Call or send messages from the panel without leaving the system</h3>
+            <p>Trigger follow-ups, respond to contacts, and launch calls or messages from one place.</p>
           </article>
         </div>
       </div>
     </section>
-    <section id="results" class="results">
+    <section id="use-cases" class="results">
       <div class="container">
         <div class="section-header section-header--center">
-          <p class="eyebrow">Evidence in a few weeks</p>
-          <h2>Results after launching VivaSpeak</h2>
+          <p class="eyebrow">What problems VivaSpeak solves</p>
+          <h2>Where calls, appointments, and leads usually slip through</h2>
         </div>
         <div class="results-grid">
           <article class="results-card">
-            <span class="results-number">+120</span>
-            <p>automated bookings per month per clinic</p>
+            <h3>You cannot answer calls while you work</h3>
+            <p>The agent answers, filters, and books for you without interrupting operations.</p>
           </article>
           <article class="results-card">
-            <span class="results-number">98%</span>
-            <p>of inquiries handled in seconds</p>
+            <h3>People write outside business hours</h3>
+            <p>WhatsApp answers automatically and keeps the conversation moving.</p>
+          </article>
+          <article class="results-card">
+            <h3>You lose form leads</h3>
+            <p>The AI calls or replies instantly before the lead goes cold.</p>
+          </article>
+          <article class="results-card">
+            <h3>You get too many repetitive questions</h3>
+            <p>The AI handles common questions and escalates only what matters.</p>
           </article>
         </div>
       </div>
     </section>
-    <section id="automated-calls">
+    <section id="audience" class="value-summary">
       <div class="container">
         <div class="section-header section-header--center">
-          <img
-            src="/assets/llamadas-automatizadas.png"
-            alt="VivaSpeak AI Functions Icons"
-            class="section-icon"
-          />
-          <p class="eyebrow">Omnichannel Agents</p>
-          <h2>A single intelligence to solve critical conversations</h2>
+          <p class="eyebrow">What VivaSpeak can do</p>
+          <h2>For businesses that receive more enquiries than they can handle</h2>
+          <p>
+            If a missed call or WhatsApp means one less appointment or a customer calling a competitor, VivaSpeak is built for your business.
+          </p>
         </div>
-        <div class="channel-grid">
-          <article class="channel-card">
-            <h3>AI Calls</h3>
-            <ul>
-              <li>Respond in &lt;60s and qualify.</li>
-              <li>Schedule visits and transfer to humans.</li>
-            </ul>
+        <div class="value-grid audience-grid">
+          <article class="value-card">
+            <h3>Answer questions</h3>
+            <p>Answer questions about your business instantly so your team does not have to repeat the same information all day.</p>
           </article>
-          <article class="channel-card">
-            <h3>Automated WhatsApp</h3>
-            <ul>
-              <li>Contextual chatbot with official templates.</li>
-              <li>After-hours responses and reminders.</li>
-            </ul>
+          <article class="value-card">
+            <h3>Book appointments</h3>
+            <p>Book visits automatically and refresh your database so you can see which contact has real potential.</p>
           </article>
-          <article class="channel-card">
-            <h3>Post-conversation follow-up</h3>
-            <ul>
-              <li>Reads, responds, and schedules from your inbox.</li>
-            </ul>
+          <article class="value-card">
+            <h3>Filter leads</h3>
+            <p>Qualify each lead and stop wasting time on interactions that are not going anywhere.</p>
           </article>
-        </div>
-        <div class="feature-grid feature-grid--condensed">
-          <article class="feature-card">
-            <span class="feature-icon">
-              <i class="fa-solid fa-comments"></i>
-            </span>
-            <h3>Real Conversations</h3>
-            <p>Natural voices with contextual memory across all channels.</p>
+          <article class="value-card">
+            <h3>Capture leads</h3>
+            <p>Contact leads instantly by phone before they go cold and find out whether they can bring real value.</p>
           </article>
-          <article class="feature-card">
-            <span class="feature-icon">
-              <i class="fa-solid fa-plug-circle-check"></i>
-            </span>
-            <h3>Fast Integrations</h3>
-            <p>Google Calendar, HubSpot, and proprietary CRMs.</p>
+          <article class="value-card">
+            <h3>Send reminders</h3>
+            <p>Send messages before the appointment so customers remember and can confirm.</p>
           </article>
-          <article class="feature-card">
-            <span class="feature-icon">
-              <i class="fa-solid fa-bolt-lightning"></i>
-            </span>
-            <h3>Instant Follow-up</h3>
-            <p>Emails, WhatsApp, or SMS after every call.</p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-icon">
-              <i class="fa-solid fa-chart-line"></i>
-            </span>
-            <h3>Live Visibility</h3>
-            <p>Unique dashboard with transcriptions, KPIs, and exports.</p>
+          <article class="value-card">
+            <h3>Ask for reviews</h3>
+            <p>Request a Google review after the interaction so happy customers help you grow trust.</p>
           </article>
         </div>
       </div>
     </section>
-    <section class="pricing-anchor">
+    <section id="price" class="pricing-anchor">
       <div class="container">
         <div class="section-header section-header--center">
-          <p class="eyebrow">Single Price Point</p>
-          <h2>
-            From €249/month. Final pricing defined in demo based on volume and integrations.
-          </h2>
+          <p class="eyebrow">Automate your business from the first month</p>
+          <h2>Pricing depends on call volume and integrations.</h2>
+          <p>Most customers start between €150 and €400 per month.</p>
           <div class="cta-buttons">
-            <a href="#contact" class="btn-primary">Request demo</a>
+            <a
+              href="#contact"
+              class="btn-primary"
+              data-ga-event="pricing_try_agent_click"
+              data-ga-location="pricing"
+            >
+              Request a quote
+            </a>
           </div>
         </div>
       </div>
@@ -242,10 +261,9 @@ const schemaFaq = [
         <div class="section-header">
           <img src="/assets/video.png" alt="Video Icon" class="section-icon" />
           <p class="eyebrow">Interactive Demo</p>
-          <h2>Demo in under 90 seconds</h2>
+          <h2>See how it works in 90 seconds</h2>
           <p>
-            See how we automate bookings, solve complex questions, and notify
-            your team in a matter of seconds.
+            In the following video you can see an integration with medical software where we automate bookings. The patient gets complex questions answered and the team is notified in seconds.
           </p>
         </div>
         <div class="demo-grid">
@@ -262,160 +280,20 @@ const schemaFaq = [
           </div>
           <div class="demo-details">
             <ul class="checklist">
-              <li>Appointment booking with real-time confirmation.</li>
-              <li>Automatic summaries sent to the team's email.</li>
-              <li>Transfer to a human when the conversation requires it.</li>
-              <li>Total compatibility with calls, WhatsApp, and email.</li>
+              <li>Book appointments with real-time confirmation.</li>
+              <li>Your team receives an automatic summary by email.</li>
+              <li>It can transfer the call to a person when the conversation requires it.</li>
             </ul>
-            <div class="badge-grid">
-              <div class="badge-card">
-                <strong>3 channels</strong>
-                <span>automated</span>
-              </div>
-              <div class="badge-card">
-                <strong>Real cases </strong>
-                <span>validated across multiple sectors</span>
-              </div>
-            </div>
             <div class="cta-buttons">
-              <a href="#schedule" class="btn-primary">Schedule a demo</a>
-              <a href="#contact" class="btn-secondary">Contact sales</a>
+              <a href="#contact" class="btn-primary">Ask us a question</a>
+              <a href="#schedule" class="btn-secondary">Book a meeting</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="agents">
-      <div class="container">
-        <div class="section-header section-header--center">
-          <p class="eyebrow">Voice Catalog</p>
-          <h2>Choose Your AI Voice Agent</h2>
-          <p>
-            Each agent is trained for a specific use case. Listen to their
-            voices, review their functions, and request the one that best suits
-            your business.
-          </p>
-        </div>
-        <div class="agent-cards-container">
-          <div class="agent-card agent-card--compact">
-            <div class="agent-main">
-              <img
-                src="/assets/clara-avatar.png"
-                alt="Clara, voice assistant for medical clinics"
-              />
-              <div class="agent-info">
-                <p class="agent-label agent-label--clinicas">Clinics</p>
-                <h3>Clara</h3>
-                <p class="agent-role">Triage and medical follow-up</p>
-              </div>
-            </div>
-            <p class="agent-snippet">
-              Handles patients, answers about treatments, and schedules
-              automatically in your scheduling system.
-            </p>
-            <ul class="agent-highlights">
-              <li>Medical FAQ + insurance</li>
-              <li>Transfer to doctor</li>
-            </ul>
-            <audio controls class="agent-audio">
-              <source src="/assets/audio-clara-ingles.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <div class="agent-card__footer">
-              <a href="/en/clinic" class="btn-secondary"
-                >Request this agent</a
-              >
-            </div>
-          </div>
-          <div class="agent-card agent-card--compact">
-            <div class="agent-main">
-              <img
-                src="/assets/laura-avatar.png"
-                alt="Laura, voice assistant for real estate"
-              />
-              <div class="agent-info">
-                <p class="agent-label agent-label--inmobiliarias">
-                  Real Estate
-                </p>
-                <h3>Laura</h3>
-                <p class="agent-role">Hotline for buyers and owners</p>
-              </div>
-            </div>
-            <p class="agent-snippet">
-              Captures leads, shares property details, and schedules visits
-              without delays.
-            </p>
-            <ul class="agent-highlights">
-              <li>Automatic visit scheduling</li>
-              <li>Real-time notes in CRM</li>
-            </ul>
-            <audio controls class="agent-audio">
-              <source src="/assets/audio-laura-ingles.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <div class="agent-card__footer">
-              <a href="/en/real-estate" class="btn-secondary"
-                >Request this agent</a
-              >
-            </div>
-          </div>
-          <div class="agent-card agent-card--compact">
-            <div class="agent-main">
-              <img
-                src="/assets/santiago-avatar.png"
-                alt="Santiago, voice assistant for recruitment"
-              />
-              <div class="agent-info">
-                <p class="agent-label agent-label--talent">HR</p>
-                <h3>Santiago</h3>
-                <p class="agent-role">Recruitment Co-pilot</p>
-              </div>
-            </div>
-            <p class="agent-snippet">
-              Calls candidates, applies knockout questions, and schedules
-              interviews.
-            </p>
-            <ul class="agent-highlights">
-              <li>Multilingual scripts</li>
-              <li>Reminders for recruiters</li>
-            </ul>
-            <audio controls class="agent-audio">
-              <source src="/assets/audio-santiago-ingles.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <div class="agent-card__footer">
-              <a href="#schedule" class="btn-secondary">Book your demo</a>
-            </div>
-          </div>
-          <div class="agent-card agent-card--compact">
-            <div class="agent-main">
-              <img
-                src="/assets/custom-agent-avatar.png"
-                alt="VivaSpeak custom agent"
-              />
-              <div class="agent-info">
-                <p class="agent-label agent-label--custom">Custom</p>
-                <h3>Your Personalized Agent</h3>
-                <p class="agent-role">Trained with your workflows</p>
-              </div>
-            </div>
-            <p class="agent-snippet">
-              Trained with your scripts, data, and compliance requirements.
-            </p>
-            <ul class="agent-highlights">
-              <li>Dedicated engineer</li>
-              <li>Bespoke integrations</li>
-            </ul>
-            <div class="agent-audio-placeholder">
-              Custom audio available under NDA.
-            </div>
-            <div class="agent-card__footer">
-              <a href="#contact" class="btn-secondary">Create my agent</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
+    
     <section id="testimonials">
       <div class="container">
         <div class="section-header section-header--center">
@@ -565,9 +443,7 @@ const schemaFaq = [
               What exactly is VivaSpeak?
             </summary>
             <div class="faq-content">
-              Agents that answer calls, WhatsApp, and emails using your scripts,
-              tone, and knowledge base. They qualify, book, and escalate when a
-              human is needed.
+              A business automation system specialised in voice and WhatsApp communication. To answer questions, we use business information that is editable from our panel. Our agents are specialised in qualifying leads.
             </div>
           </details>
 
@@ -609,12 +485,20 @@ const schemaFaq = [
           <details class="faq">
             <summary>
               <span class="faq-arrow">▶</span>
-              What languages and hours does it cover?
+              What languages does it support?
             </summary>
             <div class="faq-content">
-              We operate nights, weekends, and peak times in Spanish, English,
-              Portuguese, French, and German. Ask about other languages or
-              accents before launch.
+              Agents usually work with one main language and we can add up to three more, including Spanish, English, Portuguese, French, Italian, and German. Ask about other languages or accents before launch.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              Can the AI voice agent transfer the call to a person?
+            </summary>
+            <div class="faq-content">
+              Yes. It can be configured so that, for example, in urgent cases or after a positive filter, the call is transferred to the right person.
             </div>
           </details>
         </div>
@@ -661,6 +545,8 @@ const schemaFaq = [
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              data-ga-submit="form_submit"
+              data-ga-location="contact_form"
             >
               <input type="hidden" name="form-name" value="contact" />
               <label for="name">Name</label>
@@ -751,15 +637,19 @@ const schemaFaq = [
       <div class="container footer-cta__content">
         <div>
           <p class="eyebrow">Final push</p>
-          <h3>Activate a 24/7 agent that handles every important lead.</h3>
-          <p>
-            We design, train, and integrate your assistant in under a week so
-            your team can focus on closing sales instead of answering calls.
-          </p>
+          <h3>In 7 days you can have an AI agent handling calls and WhatsApp automatically.</h3>
+          <p>We configure the agent around your business so you stop losing opportunities because nobody replied in time.</p>
         </div>
         <div class="footer-cta__actions">
-          <a href="#contact" class="btn-primary">I want to speak with sales</a>
-          <a href="#schedule" class="btn-secondary">See available schedule</a>
+          <a
+            href="#contact"
+            class="btn-primary"
+            data-ga-event="footer_try_agent_click"
+            data-ga-location="footer"
+          >
+            Send a question
+          </a>
+          <a href="#schedule" class="btn-secondary">Book a time to talk</a>
         </div>
       </div>
     </section>
