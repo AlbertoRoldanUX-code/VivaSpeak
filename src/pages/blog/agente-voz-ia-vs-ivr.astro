@@ -44,113 +44,120 @@ const breadcrumb = [
 
       <p>
         Los sistemas IVR (Interactive Voice Response) llevan décadas gestionando llamadas con menús
+        de opciones ("pulse 1 para ventas, pulse 2 para soporte"). Los agentes de voz con IA
+        representan una evolución que permite conversaciones naturales. Pero no siempre uno es mejor
+        que el otro: depende del caso de uso, el volumen y el presupuesto.
       </p>
+
+      <h2>Qué es un IVR tradicional</h2>
+      <p>
+        Un IVR es un sistema automatizado que guía al llamante a través de menús predefinidos usando
+        tonos DTMF (las teclas del teléfono) o reconocimiento de voz básico. Es una tecnología
+        madura, estable y económica.
+      </p>
+      <ul>
+        <li>Funciona con árboles de decisión fijos.</li>
+        <li>No entiende lenguaje natural: solo palabras clave o números.</li>
+        <li>Ideal para enrutar llamadas a departamentos.</li>
+        <li>Coste bajo de implementación y mantenimiento.</li>
+      </ul>
+
+      <h2>Qué es un agente de voz IA</h2>
+      <p>
+        Un agente de voz con IA utiliza modelos de lenguaje y síntesis de voz para mantener
+        conversaciones abiertas. Puede entender intenciones, recordar contexto dentro de la llamada
+        y ejecutar acciones como agendar citas o consultar bases de datos.
+      </p>
+      <ul>
+        <li>Entiende lenguaje natural y frases complejas.</li>
+        <li>Puede acceder a sistemas externos (CRM, calendarios, bases de datos).</li>
+        <li>Responde de forma conversacional, no con menús.</li>
+        <li>Requiere configuración inicial más detallada.</li>
+      </ul>
+
+      <h2>Comparativa directa</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>IVR tradicional</th>
+            <th>Agente de voz IA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            ><td>Tipo de interacción</td><td>Menús con teclas o palabras clave</td><td
+              >Conversación natural</td
+            ></tr
+          >
+          <tr><td>Comprensión del lenguaje</td><td>Limitada</td><td>Alta (NLU avanzado)</td></tr>
+          <tr><td>Personalización</td><td>Baja</td><td>Alta (accede a datos del cliente)</td></tr>
+          <tr><td>Coste inicial</td><td>Bajo</td><td>Medio-alto</td></tr>
+          <tr><td>Coste por llamada</td><td>Muy bajo</td><td>Bajo-medio</td></tr>
+          <tr><td>Tiempo de implementación</td><td>Horas/días</td><td>Días/semanas</td></tr>
+          <tr><td>Escalabilidad</td><td>Alta</td><td>Alta</td></tr>
+          <tr><td>Satisfacción del usuario</td><td>Baja-media</td><td>Alta</td></tr>
+          <tr
+            ><td>Capacidad de ejecutar acciones</td><td>No (solo enruta)</td><td
+              >Sí (agenda, consulta, registra)</td
+            ></tr
+          >
+          <tr
+            ><td>Mantenimiento</td><td>Bajo</td><td>Medio (actualizar base de conocimiento)</td></tr
+          >
+        </tbody>
+      </table>
+
+      <h2>Cuándo tiene sentido un IVR</h2>
+      <ul>
+        <li>Volumen muy alto de llamadas con necesidades simples de enrutamiento.</li>
+        <li>Presupuesto limitado y flujos predecibles.</li>
+        <li>Entornos donde el llamante ya sabe qué departamento necesita.</li>
+        <li>Complemento a un agente IA para el primer filtro.</li>
+      </ul>
+
+      <h2>Cuándo tiene sentido un agente de voz IA</h2>
+      <ul>
+        <li>
+          Llamadas que requieren respuestas personalizadas (precios, disponibilidad, datos del
+          cliente).
+        </li>
+        <li>Negocios donde las llamadas perdidas significan ingresos perdidos.</li>
+        <li>Atención fuera de horario sin personal humano.</li>
+        <li>Procesos que incluyen agendar, cualificar o registrar información.</li>
+      </ul>
+
+      <h2>¿Se pueden combinar?</h2>
+      <p>
+        Sí. Muchas empresas usan un IVR como primer filtro (idioma, departamento) y después
+        transfieren a un agente de voz IA para la conversación real. Esta combinación reduce costes
+        y mejora la experiencia.
+      </p>
+
+      <h2>Conclusión</h2>
+      <p>
+        El IVR sigue siendo útil para enrutamiento simple y alto volumen. El agente de voz IA es
+        mejor cuando la llamada requiere comprensión, contexto y acción. La mejor estrategia suele
+        ser combinar ambos según el flujo de cada negocio.
+      </p>
+
+      <h2>Artículos relacionados</h2>
+      <ul>
+        <li><a href="/blog/agente-voz-ia/">Qué es un agente de voz IA y cómo funciona</a></li>
+        <li>
+          <a href="/blog/agente-voz-ia-vs-call-center/"
+            >Agente de voz IA vs call center externalizado</a
+          >
+        </li>
+        <li>
+          <a href="/blog/como-elegir-agente-voz-ia/"
+            >Cómo elegir un agente de voz IA para tu negocio</a
+          >
+        </li>
+      </ul>
     </article>
-  </main></Layout
->
-de opciones ("pulse 1 para ventas, pulse 2 para soporte"). Los agentes de voz con IA representan una evolución
-que permite conversaciones naturales. Pero no siempre uno es mejor que el otro: depende del caso de uso,
-el volumen y el presupuesto.
+  </main>
 
-<h2>Qué es un IVR tradicional</h2>
-<p>
-  Un IVR es un sistema automatizado que guía al llamante a través de menús predefinidos usando tonos
-  DTMF (las teclas del teléfono) o reconocimiento de voz básico. Es una tecnología madura, estable y
-  económica.
-</p>
-<ul>
-  <li>Funciona con árboles de decisión fijos.</li>
-  <li>No entiende lenguaje natural: solo palabras clave o números.</li>
-  <li>Ideal para enrutar llamadas a departamentos.</li>
-  <li>Coste bajo de implementación y mantenimiento.</li>
-</ul>
-
-<h2>Qué es un agente de voz IA</h2>
-<p>
-  Un agente de voz con IA utiliza modelos de lenguaje y síntesis de voz para mantener conversaciones
-  abiertas. Puede entender intenciones, recordar contexto dentro de la llamada y ejecutar acciones
-  como agendar citas o consultar bases de datos.
-</p>
-<ul>
-  <li>Entiende lenguaje natural y frases complejas.</li>
-  <li>Puede acceder a sistemas externos (CRM, calendarios, bases de datos).</li>
-  <li>Responde de forma conversacional, no con menús.</li>
-  <li>Requiere configuración inicial más detallada.</li>
-</ul>
-
-<h2>Comparativa directa</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Criterio</th>
-      <th>IVR tradicional</th>
-      <th>Agente de voz IA</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      ><td>Tipo de interacción</td><td>Menús con teclas o palabras clave</td><td
-        >Conversación natural</td
-      ></tr
-    >
-    <tr><td>Comprensión del lenguaje</td><td>Limitada</td><td>Alta (NLU avanzado)</td></tr>
-    <tr><td>Personalización</td><td>Baja</td><td>Alta (accede a datos del cliente)</td></tr>
-    <tr><td>Coste inicial</td><td>Bajo</td><td>Medio-alto</td></tr>
-    <tr><td>Coste por llamada</td><td>Muy bajo</td><td>Bajo-medio</td></tr>
-    <tr><td>Tiempo de implementación</td><td>Horas/días</td><td>Días/semanas</td></tr>
-    <tr><td>Escalabilidad</td><td>Alta</td><td>Alta</td></tr>
-    <tr><td>Satisfacción del usuario</td><td>Baja-media</td><td>Alta</td></tr>
-    <tr
-      ><td>Capacidad de ejecutar acciones</td><td>No (solo enruta)</td><td
-        >Sí (agenda, consulta, registra)</td
-      ></tr
-    >
-    <tr><td>Mantenimiento</td><td>Bajo</td><td>Medio (actualizar base de conocimiento)</td></tr>
-  </tbody>
-</table>
-
-<h2>Cuándo tiene sentido un IVR</h2>
-<ul>
-  <li>Volumen muy alto de llamadas con necesidades simples de enrutamiento.</li>
-  <li>Presupuesto limitado y flujos predecibles.</li>
-  <li>Entornos donde el llamante ya sabe qué departamento necesita.</li>
-  <li>Complemento a un agente IA para el primer filtro.</li>
-</ul>
-
-<h2>Cuándo tiene sentido un agente de voz IA</h2>
-<ul>
-  <li>
-    Llamadas que requieren respuestas personalizadas (precios, disponibilidad, datos del cliente).
-  </li>
-  <li>Negocios donde las llamadas perdidas significan ingresos perdidos.</li>
-  <li>Atención fuera de horario sin personal humano.</li>
-  <li>Procesos que incluyen agendar, cualificar o registrar información.</li>
-</ul>
-
-<h2>¿Se pueden combinar?</h2>
-<p>
-  Sí. Muchas empresas usan un IVR como primer filtro (idioma, departamento) y después transfieren a
-  un agente de voz IA para la conversación real. Esta combinación reduce costes y mejora la
-  experiencia.
-</p>
-
-<h2>Conclusión</h2>
-<p>
-  El IVR sigue siendo útil para enrutamiento simple y alto volumen. El agente de voz IA es mejor
-  cuando la llamada requiere comprensión, contexto y acción. La mejor estrategia suele ser combinar
-  ambos según el flujo de cada negocio.
-</p>
-
-<h2>Artículos relacionados</h2>
-<ul>
-  <li><a href="/blog/agente-voz-ia/">Qué es un agente de voz IA y cómo funciona</a></li>
-  <li>
-    <a href="/blog/agente-voz-ia-vs-call-center/">Agente de voz IA vs call center externalizado</a>
-  </li>
-  <li>
-    <a href="/blog/como-elegir-agente-voz-ia/">Cómo elegir un agente de voz IA para tu negocio</a>
-  </li>
-</ul>
-
-<Footer />
+  <Footer />
+</Layout>
