@@ -12,12 +12,21 @@ const schemaArticle = {
   headline: title,
   description,
   datePublished: '2024-06-01',
+  dateModified: '2026-03-20',
   image: 'https://vivaspeak.com/assets/og-image.png',
 };
 const breadcrumb = [
   { name: 'Inicio', url: 'https://vivaspeak.com/' },
   { name: 'Blog', url: 'https://vivaspeak.com/blog/' },
   { name: title, url: canonical },
+];
+
+const schemaDefinedTerms = [
+  {
+    name: 'Agente de voz IA',
+    description:
+      'Sistema que responde llamadas como un humano, entiende la conversación, accede a información real y ejecuta acciones como reservar citas o transferir llamadas.',
+  },
 ];
 
 const schemaHowTo = {
@@ -60,6 +69,7 @@ const schemaHowTo = {
   alternateEn="https://vivaspeak.com/en/blog/ai-voice-agent/"
   lang="es"
   schemaArticle={schemaArticle}
+  schemaDefinedTerms={schemaDefinedTerms}
   breadcrumb={breadcrumb}
   schemaHowTo={schemaHowTo}
   speakable={['.blog-article > p:first-of-type', '.blog-article h2', '.blog-article h2 + p']}

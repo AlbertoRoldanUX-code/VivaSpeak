@@ -35,6 +35,11 @@ interface Props {
     rating: number;
   }>;
   lang?: string;
+  definedTerms?: Array<{
+    name: string;
+    description: string;
+  }>;
+  aboutPage?: boolean;
 }
 
 const {
@@ -50,6 +55,8 @@ const {
   videos = [],
   reviews = [],
   lang = 'es',
+  definedTerms = [],
+  aboutPage = false,
 } = Astro.props;
 
 const baseUrl = 'https://vivaspeak.com';
@@ -230,6 +237,40 @@ const aggregateRatingSchema =
 if (aggregateRatingSchema && product) {
   (productSchema as Record<string, unknown>).aggregateRating = aggregateRatingSchema;
 }
+
+const definedTermSchemas = definedTerms.map((dt) => ({
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: dt.name,
+  description: dt.description,
+}));
+
+const aboutPageSchema = aboutPage
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: pageName,
+      url: pageUrl,
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'VivaSpeak',
+        url: baseUrl,
+        description: orgDescription,
+        areaServed: ['ES', 'LATAM'],
+        knowsLanguage: ['es', 'en', 'pt', 'fr', 'de', 'it'],
+        slogan:
+          lang === 'es'
+            ? 'Agentes de voz IA que atienden, cualifican y agendan 24/7.'
+            : 'AI voice agents that answer, qualify and book 24/7.',
+      },
+      ...(speakable.length > 0 && {
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: speakable,
+        },
+      }),
+    }
+  : null;
 ---
 
 {
@@ -260,3 +301,13 @@ if (aggregateRatingSchema && product) {
 {howToSchema && <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />}
 {videoSchemas.map((vs) => <script type="application/ld+json" set:html={JSON.stringify(vs)} />)}
 {reviewSchemas.map((rs) => <script type="application/ld+json" set:html={JSON.stringify(rs)} />)}
+{
+  definedTermSchemas.map((dt) => (
+    <script type="application/ld+json" set:html={JSON.stringify(dt)} />
+  ))
+}
+{
+  aboutPageSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
+  )
+}

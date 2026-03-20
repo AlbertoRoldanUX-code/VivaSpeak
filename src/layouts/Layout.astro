@@ -20,6 +20,8 @@ const {
   schemaHowTo = null,
   schemaVideos = [],
   schemaReviews = [],
+  schemaDefinedTerms = [],
+  schemaAboutPage = false,
 } = Astro.props;
 const currentUrl = canonical || Astro.url.href;
 const fullOgImage = ogImage.startsWith('http')
@@ -154,6 +156,8 @@ const fullOgImage = ogImage.startsWith('http')
       videos={schemaVideos}
       reviews={schemaReviews}
       lang={lang}
+      definedTerms={schemaDefinedTerms}
+      aboutPage={schemaAboutPage}
     />
     <!-- Calendly -->
     <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>
