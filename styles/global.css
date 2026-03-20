@@ -49,7 +49,7 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   color: var(--color-dark);
@@ -317,11 +317,8 @@ ul {
 #home {
   position: relative;
   padding: 138px 20px 190px;
-  background: radial-gradient(
-      circle at 15% 20%,
-      rgba(26, 188, 156, 0.45),
-      transparent 55%
-    ),
+  background:
+    radial-gradient(circle at 15% 20%, rgba(26, 188, 156, 0.45), transparent 55%),
     radial-gradient(circle at 85% 30%, rgba(255, 102, 0, 0.3), transparent 50%),
     linear-gradient(180deg, #f7fffc 0%, #e5f2ff 100%);
   overflow: hidden;
@@ -329,15 +326,11 @@ ul {
 
 #home::before,
 #home::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 420px;
   height: 420px;
-  background: radial-gradient(
-    circle,
-    rgba(26, 188, 156, 0.35),
-    rgba(26, 188, 156, 0)
-  );
+  background: radial-gradient(circle, rgba(26, 188, 156, 0.35), rgba(26, 188, 156, 0));
   filter: blur(10px);
   z-index: 0;
   animation: heroPulse 12s infinite alternate;
@@ -351,11 +344,7 @@ ul {
 #home::after {
   bottom: -160px;
   right: -60px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 102, 0, 0.35),
-    rgba(255, 102, 0, 0)
-  );
+  background: radial-gradient(circle, rgba(255, 102, 0, 0.35), rgba(255, 102, 0, 0));
   animation-delay: 3s;
 }
 
@@ -552,7 +541,9 @@ ul {
   border-radius: 28px;
   padding: 25px;
   border: 1px solid rgba(26, 188, 156, 0.1);
-  box-shadow: var(--shadow-xl), 0 0 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow:
+    var(--shadow-xl),
+    0 0 0 1px rgba(255, 255, 255, 0.4);
   overflow: hidden;
 }
 
@@ -563,15 +554,11 @@ ul {
 }
 
 .hero-mockup::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 28px;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 188, 156, 0.2),
-    rgba(255, 102, 0, 0.1)
-  );
+  background: linear-gradient(135deg, rgba(26, 188, 156, 0.2), rgba(255, 102, 0, 0.1));
   opacity: 0.6;
   mix-blend-mode: soft-light;
   pointer-events: none;
@@ -687,11 +674,7 @@ ul {
   margin-top: 26px;
   padding: 16px 22px;
   border-radius: 18px;
-  background: linear-gradient(
-    120deg,
-    rgba(26, 188, 156, 0.12),
-    rgba(255, 102, 0, 0.12)
-  );
+  background: linear-gradient(120deg, rgba(26, 188, 156, 0.12), rgba(255, 102, 0, 0.12));
   border: 1px solid rgba(26, 188, 156, 0.2);
   box-shadow: var(--shadow-lg);
 }
@@ -778,12 +761,8 @@ ul {
 
 /* ********** AUTOMATED CALLS SECTION *********** */
 #automated-calls {
-  background: radial-gradient(
-      circle at 10% 10%,
-      rgba(26, 188, 156, 0.08),
-      transparent 35%
-    ),
-    #f8fbfb;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(26, 188, 156, 0.08), transparent 35%), #f8fbfb;
 }
 
 .channel-grid {
@@ -848,14 +827,12 @@ ul {
   position: relative;
   padding: 28px;
   border-radius: 24px;
-  background: radial-gradient(
-    circle at top,
-    rgba(26, 188, 156, 0.1),
-    rgba(255, 255, 255, 1)
-  );
+  background: radial-gradient(circle at top, rgba(26, 188, 156, 0.1), rgba(255, 255, 255, 1));
   border: 1px solid rgba(26, 188, 156, 0.15);
   box-shadow: var(--shadow-lg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   overflow: hidden;
 }
 
@@ -980,11 +957,7 @@ ul {
 /* ********** DEMO SECTION *********** */
 
 #video-demo {
-  background: linear-gradient(
-    to bottom,
-    var(--color-light) 0%,
-    var(--gray-very-light) 100%
-  );
+  background: linear-gradient(to bottom, var(--color-light) 0%, var(--gray-very-light) 100%);
 }
 
 #video-demo .section-header {
@@ -1059,14 +1032,12 @@ ul {
 }
 
 .checklist li::before {
-  content: "✔";
+  content: '✔';
   position: absolute;
   left: 0;
   color: var(--primary-dark);
   font-weight: 700;
 }
-
-
 
 .contact-calendly {
   margin-top: 60px;
@@ -1093,8 +1064,6 @@ ul {
 
 /* Estilos para la sección de Agentes */
 
-
-
 .agent-features {
   list-style: none;
   padding: 0;
@@ -1112,27 +1081,12 @@ ul {
   font-size: 1.1rem;
 }
 
-
-
-
-
-
-
-
-
-
 .agent-snippet {
   margin: 0;
   text-align: left;
   color: var(--color-text);
   min-height: 80px;
 }
-
-
-
-
-
-
 
 .text-muted {
   color: var(--gray-medium);
@@ -1141,11 +1095,7 @@ ul {
 /* Estilos para la sección de Testimonios */ /* Testimonios mejorados */ /* ========== TESTIMONIOS ========== */
 #testimonials {
   padding: 100px 2rem;
-  background: linear-gradient(
-    to bottom,
-    var(--gray-very-light) 0%,
-    var(--white-2) 100%
-  );
+  background: linear-gradient(to bottom, var(--gray-very-light) 0%, var(--white-2) 100%);
 }
 
 #testimonials .container {
@@ -1170,15 +1120,13 @@ ul {
 
 /* Componente testimonio */
 .testimonial-item {
-  background: linear-gradient(
-    135deg,
-    var(--primary) 0%,
-    var(--primary-dark) 100%
-  );
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   border-radius: 20px;
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   color: white;
 }
 
@@ -1322,11 +1270,7 @@ ul {
 
 /* Ajustes para testimonio sin vídeo - mismo padding que con vídeo */
 .testimonial-item.no-video {
-  background: linear-gradient(
-    135deg,
-    var(--primary) 0%,
-    var(--primary-dark) 100%
-  );
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
 }
 
 /* Imagen centrada como sustituto del vídeo */
@@ -1398,7 +1342,10 @@ ul {
 
   overflow: hidden;
   padding: 0 1.25rem;
-  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    padding 0.3s ease;
 }
 
 .faq[open] .faq-content {
@@ -1514,7 +1461,7 @@ ul {
   height: 40px;
 }
 
-.radio-group input[type="radio"] {
+.radio-group input[type='radio'] {
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -1522,21 +1469,19 @@ ul {
   margin-bottom: auto;
   cursor: pointer;
 }
-.radio-group input[type="radio"] {
+.radio-group input[type='radio'] {
   appearance: none; /* Quita el estilo predeterminado */
   border: 2px solid var(--primary); /* Borde turquesa */
   border-radius: 50%;
   transition: background-color 0.25s ease-in-out; /* Transición suave del color de fondo */
 }
 
-.radio-group input[type="radio"]:checked {
-  background-color: var(
-    --primary
-  ); /* Fondo turquesa cuando está seleccionado */
+.radio-group input[type='radio']:checked {
+  background-color: var(--primary); /* Fondo turquesa cuando está seleccionado */
 }
 
-.radio-group input[type="radio"]:checked::after {
-  content: "";
+.radio-group input[type='radio']:checked::after {
+  content: '';
   display: block;
   width: 10px;
   height: 10px;
@@ -1591,7 +1536,7 @@ ul {
   color: var(--primary-darker);
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   appearance: none;
   width: 20px;
   height: 20px;
@@ -1605,12 +1550,12 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-input[type="checkbox"]:checked {
+input[type='checkbox']:checked {
   background-color: var(--primary);
 }
 
-input[type="checkbox"]:checked::after {
-  content: "✔";
+input[type='checkbox']:checked::after {
+  content: '✔';
   color: white;
   font-size: 14px;
   font-weight: bold;
@@ -1779,7 +1724,9 @@ select {
 }
 
 #cta-final .btn-primary {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 #cta-final .btn-primary:hover {
@@ -1923,7 +1870,9 @@ footer a:hover {
   padding: 2rem;
   text-align: center;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .solution-card p {
@@ -1955,15 +1904,13 @@ footer a:hover {
 }
 
 .integration-card {
-  background: linear-gradient(
-    135deg,
-    var(--primary) 0%,
-    var(--primary-dark) 100%
-  );
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
   border-radius: 12px;
   padding: 2rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   box-shadow: var(--shadow-sm);
 }
 
@@ -2009,11 +1956,7 @@ footer a:hover {
 }
 
 .footer-cta {
-  background: linear-gradient(
-    120deg,
-    rgba(26, 188, 156, 0.18),
-    rgba(255, 102, 0, 0.18)
-  );
+  background: linear-gradient(120deg, rgba(26, 188, 156, 0.18), rgba(255, 102, 0, 0.18));
   padding: 70px 0;
 }
 
@@ -2260,7 +2203,6 @@ footer a:hover {
     min-height: auto;
   }
 
-  
   #testimonials {
     padding: 80px 1.5rem;
   }
@@ -2308,4 +2250,3 @@ footer a:hover {
     align-items: flex-start;
   }
 }
-

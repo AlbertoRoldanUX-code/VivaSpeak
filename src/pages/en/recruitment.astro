@@ -1,20 +1,35 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import LandingHeaderEn from "../../components/LandingHeaderEn.astro";
-import FooterEn from "../../components/FooterEn.astro";
+import Layout from '../../layouts/Layout.astro';
+import LandingHeaderEn from '../../components/LandingHeaderEn.astro';
+import FooterEn from '../../components/FooterEn.astro';
 
 const schemaFaq = [
-  { question: "Does the agent make hiring decisions?", answer: "No. The agent standardizes the first filter and leaves final decisions to the human team." },
-  { question: "Does it work with inbound and outbound calls?", answer: "Yes. It filters candidates with inbound and outbound calls aligned to your selection criteria." },
-  { question: "Can I customize the knockout questions?", answer: "Yes. It evaluates candidates with the same knockout questions and applies rules defined by your team." },
-  { question: "What does the recruiter report include?", answer: "It sends a report with key answers, rejection reasons, and recommended next action." },
+  {
+    question: 'Does the agent make hiring decisions?',
+    answer:
+      'No. The agent standardizes the first filter and leaves final decisions to the human team.',
+  },
+  {
+    question: 'Does it work with inbound and outbound calls?',
+    answer:
+      'Yes. It filters candidates with inbound and outbound calls aligned to your selection criteria.',
+  },
+  {
+    question: 'Can I customize the knockout questions?',
+    answer:
+      'Yes. It evaluates candidates with the same knockout questions and applies rules defined by your team.',
+  },
+  {
+    question: 'What does the recruiter report include?',
+    answer: 'It sends a report with key answers, rejection reasons, and recommended next action.',
+  },
 ];
 
 const breadcrumb = [
-  { name: "Home", url: "https://vivaspeak.com/en/" },
-  { name: "Recruitment with AI", url: "https://vivaspeak.com/en/recruitment/" },
+  { name: 'Home', url: 'https://vivaspeak.com/en/' },
+  { name: 'Recruitment with AI', url: 'https://vivaspeak.com/en/recruitment/' },
 ];
-import "../../../styles/recruiting.css";
+import '../../../styles/recruiting.css';
 ---
 
 <Layout
@@ -28,7 +43,7 @@ import "../../../styles/recruiting.css";
   keywords="voice agent, recruiting, HR, candidate screening, interviews, automated calls, knockout questions, scheduling"
   schemaFaq={schemaFaq}
   breadcrumb={breadcrumb}
-  speakable={[".hero-title", ".faq-content"]}
+  speakable={['.hero-title', '.faq-content']}
 >
   <LandingHeaderEn />
   <main id="main-content" class="recruiting-landing">
@@ -36,48 +51,41 @@ import "../../../styles/recruiting.css";
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">AI Recruiting Agent</span>
-          <h1 class="hero-title">
-            Automate initial candidate screening without overloading HR
-          </h1>
+          <h1 class="hero-title">Automate initial candidate screening without overloading HR</h1>
           <p class="hero-subtitle">
-            A voice assistant that screens candidates and schedules interviews
-            24/7, with inbound and outbound calls aligned to your criteria.
+            A voice assistant that screens candidates and schedules interviews 24/7, with inbound
+            and outbound calls aligned to your criteria.
           </p>
           <div class="hero-actions">
             <a href="#cta-final" class="btn-primary">Request a demo</a>
-            <a href="#solucion" class="btn-secondary"
-              >See the selection flow</a
-            >
+            <a href="#solucion" class="btn-secondary">See the selection flow</a>
           </div>
           <div class="hero-note">
-            Built for HR and internal operations teams that need consistent,
-            controlled processes. Designed for companies hiring 50+ candidates per month.
+            Built for HR and internal operations teams that need consistent, controlled processes.
+            Designed for companies hiring 50+ candidates per month.
           </div>
           <p class="hero-disclaimer">
-            The agent does not make hiring decisions: it standardizes the first
-            filter and leaves final decisions to your team.
+            The agent does not make hiring decisions: it standardizes the first filter and leaves
+            final decisions to your team.
           </p>
         </div>
         <div class="hero-panel">
           <div class="panel-card">
             <h3>Consistent early screening</h3>
             <p>
-              Evaluates candidates with the same knockout questions and rules
-              defined by your team.
+              Evaluates candidates with the same knockout questions and rules defined by your team.
             </p>
           </div>
           <div class="panel-card">
             <h3>Scheduling with qualified profiles</h3>
             <p>
-              Only advances candidates who meet language, availability, and
-              basic fit requirements.
+              Only advances candidates who meet language, availability, and basic fit requirements.
             </p>
           </div>
           <div class="panel-card">
             <h3>Recruiter-ready summary</h3>
             <p>
-              Sends a report with key answers, disqualification reasons, and
-              recommended next steps.
+              Sends a report with key answers, disqualification reasons, and recommended next steps.
             </p>
           </div>
         </div>
@@ -90,21 +98,16 @@ import "../../../styles/recruiting.css";
           <span class="eyebrow">Problem</span>
           <h2>Slow recruiting in high-volume stages</h2>
           <p class="section-subtitle">
-            Pressure to fill roles increases when processes rely on manual
-            calls and inconsistent criteria.
+            Pressure to fill roles increases when processes rely on manual calls and inconsistent
+            criteria.
           </p>
         </div>
         <ul class="problem-list">
           <li>
-            <strong>High candidate volume</strong> that demands fast response
-            and clear prioritization.
+            <strong>High candidate volume</strong> that demands fast response and clear prioritization.
           </li>
-          <li>
-            Recruiters lose hours on repetitive calls and initial screening.
-          </li>
-          <li>
-            Slow, inconsistent processes across teams, sites, or campaigns.
-          </li>
+          <li>Recruiters lose hours on repetitive calls and initial screening.</li>
+          <li>Slow, inconsistent processes across teams, sites, or campaigns.</li>
         </ul>
       </div>
     </section>
@@ -115,37 +118,34 @@ import "../../../styles/recruiting.css";
           <span class="eyebrow">VivaSpeak Solution</span>
           <h2>A voice assistant trained on your hiring criteria</h2>
           <p class="section-subtitle">
-            VivaSpeak automates the first filter, reduces operational load, and
-            ensures a professional, consistent process.
+            VivaSpeak automates the first filter, reduces operational load, and ensures a
+            professional, consistent process.
           </p>
         </div>
         <div class="solution-grid">
           <div class="solution-card">
             <h3>Tailored training</h3>
             <p>
-              The agent is configured with client criteria, role requirements,
-              and specific screening questions.
+              The agent is configured with client criteria, role requirements, and specific
+              screening questions.
             </p>
           </div>
           <div class="solution-card">
             <h3>Knockout questions</h3>
             <p>
-              Validates experience, availability, licenses, or certifications
-              before handing off to HR.
+              Validates experience, availability, licenses, or certifications before handing off to
+              HR.
             </p>
           </div>
           <div class="solution-card">
             <h3>Schedules only qualified profiles</h3>
             <p>
-              Coordinates interviews with candidates who meet essential
-              requirements to advance.
+              Coordinates interviews with candidates who meet essential requirements to advance.
             </p>
           </div>
           <div class="solution-card">
             <h3>Automatic summary</h3>
-            <p>
-              Delivers a clear report with key responses and candidate status.
-            </p>
+            <p>Delivers a clear report with key responses and candidate status.</p>
           </div>
         </div>
       </div>
@@ -157,8 +157,7 @@ import "../../../styles/recruiting.css";
           <span class="eyebrow">What the agent does</span>
           <h2>Clear actions, no friction for the team</h2>
           <p class="section-subtitle">
-            Built for early screening with control and traceability in every
-            interaction.
+            Built for early screening with control and traceability in every interaction.
           </p>
         </div>
         <ul class="agent-bullets">
@@ -187,31 +186,24 @@ import "../../../styles/recruiting.css";
           <span class="eyebrow">Use cases</span>
           <h2>Typical scenarios in mid-sized and large companies</h2>
           <p class="section-subtitle">
-            Ideal for internal operations with distributed processes and high
-            operational load.
+            Ideal for internal operations with distributed processes and high operational load.
           </p>
         </div>
         <div class="use-case-grid">
           <div class="use-case-card">
             <h3>Large workforces</h3>
-            <p>
-              Early screening for roles with ongoing hiring needs or high
-              volume.
-            </p>
+            <p>Early screening for roles with ongoing hiring needs or high volume.</p>
           </div>
           <div class="use-case-card">
             <h3>Multi-service companies</h3>
             <p>
-              Standardized processes across sites, business units, or internal
-              clients with different criteria.
+              Standardized processes across sites, business units, or internal clients with
+              different criteria.
             </p>
           </div>
           <div class="use-case-card">
             <h3>Internal operations</h3>
-            <p>
-              Recruiting for support, logistics, back office, and shared
-              services teams.
-            </p>
+            <p>Recruiting for support, logistics, back office, and shared services teams.</p>
           </div>
         </div>
       </div>
@@ -223,8 +215,8 @@ import "../../../styles/recruiting.css";
           <span class="eyebrow">How it integrates</span>
           <h2>Connects with your HR stack without friction</h2>
           <p class="section-subtitle">
-            Enterprise-grade integrations for traceability and coordination with
-            your recruiting team.
+            Enterprise-grade integrations for traceability and coordination with your recruiting
+            team.
           </p>
         </div>
         <div class="integration-grid">
@@ -234,17 +226,11 @@ import "../../../styles/recruiting.css";
           </div>
           <div class="integration-card">
             <h3>ATS or CRM via API</h3>
-            <p>
-              Sends statuses, disqualification reasons, and key data to your
-              current system.
-            </p>
+            <p>Sends statuses, disqualification reasons, and key data to your current system.</p>
           </div>
           <div class="integration-card">
             <h3>Operations panel</h3>
-            <p>
-              Access to audio, transcripts, and outcomes per candidate for
-              internal control.
-            </p>
+            <p>Access to audio, transcripts, and outcomes per candidate for internal control.</p>
           </div>
         </div>
       </div>
@@ -255,15 +241,11 @@ import "../../../styles/recruiting.css";
         <div class="cta-card">
           <h2>Align your pilot with a specialist</h2>
           <p class="section-subtitle">
-            We review your hiring criteria and design a call flow aligned to
-            internal requirements.
+            We review your hiring criteria and design a call flow aligned to internal requirements.
           </p>
-          <a href="https://calendly.com/vivaspeak/30min" class="btn-primary"
-            >Talk to a specialist</a
+          <a href="https://calendly.com/vivaspeak/30min" class="btn-primary">Talk to a specialist</a
           >
-          <p class="cta-note">
-            Compatible with internal compliance and data protection processes.
-          </p>
+          <p class="cta-note">Compatible with internal compliance and data protection processes.</p>
         </div>
       </div>
     </section>

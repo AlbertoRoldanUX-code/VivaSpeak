@@ -1,26 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // --- Selectores ---
-  const menu = document.getElementById("hamburger");
+  const menu = document.getElementById('hamburger');
   // Seleccionamos "nav ul" (asumiendo que es la lista dentro de .top-nav)
-  const dropdown = document.querySelector(".nav-list");
-  const header = document.querySelector("header");
-  const navLinks = document.querySelectorAll(".nav-list a");
-  const yearSpan = document.getElementById("year");
-  const clickableImages = document.querySelectorAll(".clickable-image");
-  const modal = document.getElementById("imageModal");
-  const mockupCounter = document.getElementById("mockupCounter");
-  const trackedForms = document.querySelectorAll("form[data-ga-submit]");
+  const dropdown = document.querySelector('.nav-list');
+  const header = document.querySelector('header');
+  const navLinks = document.querySelectorAll('.nav-list a');
+  const yearSpan = document.getElementById('year');
+  const clickableImages = document.querySelectorAll('.clickable-image');
+  const modal = document.getElementById('imageModal');
+  const mockupCounter = document.getElementById('mockupCounter');
+  const trackedForms = document.querySelectorAll('form[data-ga-submit]');
 
   function trackEvent(name, params = {}) {
-    if (!name || typeof window.gtag !== "function") return;
-    window.gtag("event", name, params);
+    if (!name || typeof window.gtag !== 'function') return;
+    window.gtag('event', name, params);
   }
 
   function getGaParams(element) {
     const params = {};
     Object.entries(element.dataset).forEach(([key, value]) => {
       if (!value) return;
-      if (!key.startsWith("ga") || key === "gaEvent" || key === "gaSubmit") return;
+      if (!key.startsWith('ga') || key === 'gaEvent' || key === 'gaSubmit') return;
       const paramKey = key.charAt(2).toLowerCase() + key.slice(3);
       params[paramKey] = value;
     });
@@ -32,63 +32,63 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth > 991) {
       // En escritorio, aseguramos que el menú se vea (reseteamos display inline para que el CSS mande)
       if (dropdown) {
-        dropdown.classList.remove("open");
-        dropdown.style.display = "";
+        dropdown.classList.remove('open');
+        dropdown.style.display = '';
       }
-      if (menu) menu.classList.remove("active");
-      if (header) header.classList.remove("menu-open");
+      if (menu) menu.classList.remove('active');
+      if (header) header.classList.remove('menu-open');
     } else {
       // En móvil, si el menú no tiene la clase active, aseguramos que esté oculto al redimensionar
-      if (menu && !menu.classList.contains("active") && dropdown) {
-        dropdown.classList.remove("open");
-        dropdown.style.display = "";
+      if (menu && !menu.classList.contains('active') && dropdown) {
+        dropdown.classList.remove('open');
+        dropdown.style.display = '';
       }
-      if (menu && !menu.classList.contains("active") && header) {
-        header.classList.remove("menu-open");
+      if (menu && !menu.classList.contains('active') && header) {
+        header.classList.remove('menu-open');
       }
     }
   }
 
-  window.addEventListener("resize", handleResize);
+  window.addEventListener('resize', handleResize);
   handleResize(); // Ejecutar una vez al cargar
 
   // --- 2. Toggle Menú Móvil (Reemplazo de slideToggle) ---
   if (menu && dropdown) {
-    menu.addEventListener("click", function () {
-      this.classList.toggle("active");
+    menu.addEventListener('click', function () {
+      this.classList.toggle('active');
 
       // Simulación de slideToggle con display
-      if (dropdown.style.display) dropdown.style.display = "";
-      dropdown.classList.toggle("open");
-      if (header) header.classList.toggle("menu-open");
+      if (dropdown.style.display) dropdown.style.display = '';
+      dropdown.classList.toggle('open');
+      if (header) header.classList.toggle('menu-open');
     });
   }
 
   // --- 3. Cerrar menú al hacer clic en un enlace ---
   navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener('click', () => {
       if (window.innerWidth <= 991) {
         // Solo si el menú está visible
-        if (dropdown && dropdown.classList.contains("open")) {
-          if (menu) menu.classList.remove("active");
-          dropdown.classList.remove("open");
-          if (header) header.classList.remove("menu-open");
+        if (dropdown && dropdown.classList.contains('open')) {
+          if (menu) menu.classList.remove('active');
+          dropdown.classList.remove('open');
+          if (header) header.classList.remove('menu-open');
         }
       }
     });
   });
 
-  document.addEventListener("click", (event) => {
-    const trackedElement = event.target.closest("[data-ga-event]");
+  document.addEventListener('click', (event) => {
+    const trackedElement = event.target.closest('[data-ga-event]');
     if (!trackedElement) return;
 
     trackEvent(trackedElement.dataset.gaEvent, getGaParams(trackedElement));
   });
 
   trackedForms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener('submit', (event) => {
       const eventName = form.dataset.gaSubmit;
-      if (!eventName || typeof window.gtag !== "function") return;
+      if (!eventName || typeof window.gtag !== 'function') return;
 
       event.preventDefault();
       let hasSubmitted = false;
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         form.submit();
       };
 
-      window.gtag("event", eventName, {
+      window.gtag('event', eventName, {
         ...getGaParams(form),
         event_callback: submitForm,
         event_timeout: 1200,
@@ -113,23 +113,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Abrir modal al hacer click en imágenes
   clickableImages.forEach((img) => {
-    img.addEventListener("click", function () {
-      openModal(this.getAttribute("src"));
+    img.addEventListener('click', function () {
+      openModal(this.getAttribute('src'));
     });
   });
 
   // Cerrar modal con la tecla Escape
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
       closeModal();
     }
   });
 
   // Cerrar modal al hacer click en la X o en el fondo
   if (modal) {
-    modal.addEventListener("click", function (e) {
+    modal.addEventListener('click', function (e) {
       // Si se pulsa en el fondo (modal) o en el botón cerrar
-      if (e.target === modal || e.target.closest(".close")) {
+      if (e.target === modal || e.target.closest('.close')) {
         closeModal();
       }
     });
@@ -143,18 +143,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- 6. Intersection Observer (Animaciones fade) ---
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
-      if (e.isIntersecting) e.target.classList.add("visible");
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
   });
 
-  document.querySelectorAll(".fade").forEach((el) => observer.observe(el));
+  document.querySelectorAll('.fade').forEach((el) => observer.observe(el));
 
   // --- 7. Contador dinámico en el mockup ---
-  const counterMessages = [
-    "+1 cita confirmada",
-    "+2 leads cualificados",
-    "+1 WhatsApp resuelto",
-  ];
+  const counterMessages = ['+1 cita confirmada', '+2 leads cualificados', '+1 WhatsApp resuelto'];
   let counterIndex = 0;
   if (mockupCounter) {
     setInterval(() => {
@@ -166,24 +162,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // --- Funciones Globales del Modal ---
 function openModal(src) {
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImg");
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
 
   // Nota: Como el HTML del modal no estaba en tu código original,
   // asegúrate de que existan estos IDs en tu HTML.
   if (modal && modalImg) {
-    modal.style.display = "flex";
+    modal.style.display = 'flex';
     modalImg.src = src;
-    document.body.style.overflow = "hidden"; // Bloquear scroll
+    document.body.style.overflow = 'hidden'; // Bloquear scroll
   } else {
-    console.warn("No se encontró el modal #imageModal o la imagen #modalImg");
+    console.warn('No se encontró el modal #imageModal o la imagen #modalImg');
   }
 }
 
 function closeModal() {
-  const modal = document.getElementById("imageModal");
+  const modal = document.getElementById('imageModal');
   if (modal) {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; // Restaurar scroll
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restaurar scroll
   }
 }

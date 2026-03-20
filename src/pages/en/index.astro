@@ -1,69 +1,68 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import HeaderEn from "../../components/HeaderEn.astro";
-import FooterEn from "../../components/FooterEn.astro";
+import Layout from '../../layouts/Layout.astro';
+import HeaderEn from '../../components/HeaderEn.astro';
+import FooterEn from '../../components/FooterEn.astro';
 
 const schemaFaq = [
   {
-    question: "What exactly is VivaSpeak?",
+    question: 'What exactly is VivaSpeak?',
     answer:
-      "A business automation system specialised in voice and WhatsApp communication. To answer questions, we use business information that is editable from our panel. Our agents are specialised in qualifying leads.",
+      'A business automation system specialised in voice and WhatsApp communication. To answer questions, we use business information that is editable from our panel. Our agents are specialised in qualifying leads.',
   },
   {
-    question: "How is the pricing structured?",
+    question: 'How is the pricing structured?',
     answer:
-      "Pricing is defined per agent based on volume, sector, and integrations. You get a single operating plan with no technical breakdown.",
+      'Pricing is defined per agent based on volume, sector, and integrations. You get a single operating plan with no technical breakdown.',
   },
   {
-    question: "Does it integrate with my tools?",
+    question: 'Does it integrate with my tools?',
     answer:
-      "Yes. We connect Google Calendar, HubSpot, proprietary CRMs, scheduling systems with API access, and the official WhatsApp API. We include guides for call forwarding and calendar sharing.",
+      'Yes. We connect Google Calendar, HubSpot, proprietary CRMs, scheduling systems with API access, and the official WhatsApp API. We include guides for call forwarding and calendar sharing.',
   },
   {
-    question: "Can I try it before hiring?",
+    question: 'Can I try it before hiring?',
     answer:
-      "Each agent includes a one-week pilot with your real workflows and shared KPIs on the dashboard.",
+      'Each agent includes a one-week pilot with your real workflows and shared KPIs on the dashboard.',
   },
   {
-    question: "What languages does it support?",
+    question: 'What languages does it support?',
     answer:
-      "Agents usually work with one main language and we can add up to three more, including Spanish, English, Portuguese, French, Italian, and German. Ask about other languages or accents before launch.",
+      'Agents usually work with one main language and we can add up to three more, including Spanish, English, Portuguese, French, Italian, and German. Ask about other languages or accents before launch.',
   },
   {
-    question: "Can the AI voice agent transfer the call to a person?",
+    question: 'Can the AI voice agent transfer the call to a person?',
     answer:
-      "Yes. It can be configured so that, for example, in urgent cases or after a positive filter, the call is transferred to the right person.",
+      'Yes. It can be configured so that, for example, in urgent cases or after a positive filter, the call is transferred to the right person.',
   },
 ];
 
 const schemaHowTo = {
-  name: "How VivaSpeak works",
-  description:
-    "Your AI agent answers, qualifies, and books without friction in 6 steps.",
+  name: 'How VivaSpeak works',
+  description: 'Your AI agent answers, qualifies, and books without friction in 6 steps.',
   step: [
     {
-      name: "A customer calls or writes on WhatsApp",
-      text: "The AI answers instantly with a natural voice.",
+      name: 'A customer calls or writes on WhatsApp',
+      text: 'The AI answers instantly with a natural voice.',
     },
     {
-      name: "The AI qualifies and answers questions",
-      text: "It uses your knowledge base to resolve real questions.",
+      name: 'The AI qualifies and answers questions',
+      text: 'It uses your knowledge base to resolve real questions.',
     },
     {
-      name: "It books an appointment in your real calendar",
-      text: "Connect Google Calendar, CRM, or your internal schedule.",
+      name: 'It books an appointment in your real calendar',
+      text: 'Connect Google Calendar, CRM, or your internal schedule.',
     },
     {
-      name: "Your team receives an automatic summary",
-      text: "Email or WhatsApp with the conversation and the next action.",
+      name: 'Your team receives an automatic summary',
+      text: 'Email or WhatsApp with the conversation and the next action.',
     },
     {
-      name: "See every lead in a panel that is always available",
-      text: "A visual CRM where you can view, filter, and manage every contact at a glance.",
+      name: 'See every lead in a panel that is always available',
+      text: 'A visual CRM where you can view, filter, and manage every contact at a glance.',
     },
     {
-      name: "Call or send messages from the panel without leaving the system",
-      text: "Trigger follow-ups, respond to contacts, and launch calls or messages from one place.",
+      name: 'Call or send messages from the panel without leaving the system',
+      text: 'Trigger follow-ups, respond to contacts, and launch calls or messages from one place.',
     },
   ],
 };
@@ -82,11 +81,11 @@ const schemaHowTo = {
   schemaFaq={schemaFaq}
   schemaHowTo={schemaHowTo}
   speakable={[
-    ".home-title",
-    ".home-description",
-    ".faq-content",
-    ".value-card p",
-    ".results-card p",
+    '.home-title',
+    '.home-description',
+    '.faq-content',
+    '.value-card p',
+    '.results-card p',
   ]}
 >
   <HeaderEn />
@@ -97,16 +96,14 @@ const schemaHowTo = {
         <div class="hero-bg-accent hero-bg-accent-two"></div>
         <div class="hero-grid">
           <div class="hero-left">
-            <h1 class="home-title">
-              Handle calls, WhatsApp, and filter leads automatically 24/7
-            </h1>
+            <h1 class="home-title">Handle calls, WhatsApp, and filter leads automatically 24/7</h1>
             <p class="home-description">
-              Book appointments, qualify contacts, and use our CRM or update
-              yours without interrupting your work
+              Book appointments, qualify contacts, and use our CRM or update yours without
+              interrupting your work
             </p>
             <p class="home-urgency">
-              Your customers do not wait. If you do not answer in seconds, they
-              call the next option.
+              Your customers do not wait. If you do not answer in seconds, they call the next
+              option.
             </p>
             <div class="cta-buttons">
               <a
@@ -146,10 +143,7 @@ const schemaHowTo = {
           <div class="hero-right">
             <div class="hero-mockup">
               <picture>
-                <source
-                  srcset="/assets/whatsapp-mockup.webp"
-                  type="image/webp"
-                />
+                <source srcset="/assets/whatsapp-mockup.webp" type="image/webp" />
                 <img
                   src="/assets/whatsapp-mockup.webp"
                   alt="A VivaSpeak agent conversation on WhatsApp"
@@ -166,9 +160,7 @@ const schemaHowTo = {
                   <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                 </div>
                 <div class="mockup-toast" role="status" aria-live="polite">
-                  <span class="mockup-toast__label"
-                    >New appointment created</span
-                  >
+                  <span class="mockup-toast__label">New appointment created</span>
                   <span class="mockup-toast__time">· 16:00</span>
                   <span class="mockup-toast__name">Silvia Pérez</span>
                 </div>
@@ -185,13 +177,7 @@ const schemaHowTo = {
         </div>
       </div>
     </section>
-    <div
-      id="imageModal"
-      class="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Enlarged view"
-    >
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Enlarged view">
       <span class="close" aria-label="Close">&times;</span>
       <img
         class="modal-content"
@@ -227,19 +213,13 @@ const schemaHowTo = {
           <article class="value-card value-card--panel">
             <span class="value-step">5</span>
             <h3>See every lead in a panel that is always available</h3>
-            <p>
-              A visual CRM where you can view, filter, and manage every contact
-              at a glance.
-            </p>
+            <p>A visual CRM where you can view, filter, and manage every contact at a glance.</p>
           </article>
           <article class="value-card">
             <span class="value-step">6</span>
-            <h3>
-              Call or send messages from the panel without leaving the system
-            </h3>
+            <h3>Call or send messages from the panel without leaving the system</h3>
             <p>
-              Trigger follow-ups, respond to contacts, and launch calls or
-              messages from one place.
+              Trigger follow-ups, respond to contacts, and launch calls or messages from one place.
             </p>
           </article>
         </div>
@@ -254,16 +234,11 @@ const schemaHowTo = {
         <div class="results-grid">
           <article class="results-card">
             <h3>You cannot answer calls while you work</h3>
-            <p>
-              The agent answers, filters, and books for you without interrupting
-              operations.
-            </p>
+            <p>The agent answers, filters, and books for you without interrupting operations.</p>
           </article>
           <article class="results-card">
             <h3>People write outside business hours</h3>
-            <p>
-              WhatsApp answers automatically and keeps the conversation moving.
-            </p>
+            <p>WhatsApp answers automatically and keeps the conversation moving.</p>
           </article>
           <article class="results-card">
             <h3>You lose form leads</h3>
@@ -271,9 +246,7 @@ const schemaHowTo = {
           </article>
           <article class="results-card">
             <h3>You get too many repetitive questions</h3>
-            <p>
-              The AI handles common questions and escalates only what matters.
-            </p>
+            <p>The AI handles common questions and escalates only what matters.</p>
           </article>
         </div>
       </div>
@@ -282,55 +255,48 @@ const schemaHowTo = {
       <div class="container">
         <div class="section-header section-header--center">
           <p class="eyebrow">What VivaSpeak can do</p>
-          <h2>
-            For businesses that receive more enquiries than they can handle
-          </h2>
+          <h2>For businesses that receive more enquiries than they can handle</h2>
           <p>
-            If a missed call or WhatsApp means one less appointment or a
-            customer calling a competitor, VivaSpeak is built for your business.
+            If a missed call or WhatsApp means one less appointment or a customer calling a
+            competitor, VivaSpeak is built for your business.
           </p>
         </div>
         <div class="value-grid audience-grid">
           <article class="value-card">
             <h3>Answer questions</h3>
             <p>
-              Answer questions about your business instantly so your team does
-              not have to repeat the same information all day.
+              Answer questions about your business instantly so your team does not have to repeat
+              the same information all day.
             </p>
           </article>
           <article class="value-card">
             <h3>Book appointments</h3>
             <p>
-              Book visits automatically and refresh your database so you can see
-              which contact has real potential.
+              Book visits automatically and refresh your database so you can see which contact has
+              real potential.
             </p>
           </article>
           <article class="value-card">
             <h3>Filter leads</h3>
             <p>
-              Qualify each lead and stop wasting time on interactions that are
-              not going anywhere.
+              Qualify each lead and stop wasting time on interactions that are not going anywhere.
             </p>
           </article>
           <article class="value-card">
             <h3>Capture leads</h3>
             <p>
-              Contact leads instantly by phone before they go cold and find out
-              whether they can bring real value.
+              Contact leads instantly by phone before they go cold and find out whether they can
+              bring real value.
             </p>
           </article>
           <article class="value-card">
             <h3>Send reminders</h3>
-            <p>
-              Send messages before the appointment so customers remember and can
-              confirm.
-            </p>
+            <p>Send messages before the appointment so customers remember and can confirm.</p>
           </article>
           <article class="value-card">
             <h3>Ask for reviews</h3>
             <p>
-              Request a Google review after the interaction so happy customers
-              help you grow trust.
+              Request a Google review after the interaction so happy customers help you grow trust.
             </p>
           </article>
         </div>
@@ -362,9 +328,9 @@ const schemaHowTo = {
           <p class="eyebrow">Interactive Demo</p>
           <h2>See how it works in 90 seconds</h2>
           <p>
-            In the following video you can see an integration with medical
-            software where we automate bookings. The patient gets complex
-            questions answered and the team is notified in seconds.
+            In the following video you can see an integration with medical software where we
+            automate bookings. The patient gets complex questions answered and the team is notified
+            in seconds.
           </p>
         </div>
         <div class="demo-grid">
@@ -382,10 +348,7 @@ const schemaHowTo = {
             <ul class="checklist">
               <li>Book appointments with real-time confirmation.</li>
               <li>Your team receives an automatic summary by email.</li>
-              <li>
-                It can transfer the call to a person when the conversation
-                requires it.
-              </li>
+              <li>It can transfer the call to a person when the conversation requires it.</li>
             </ul>
             <div class="cta-buttons">
               <a href="#contact" class="btn-primary">Ask us a question</a>
@@ -402,8 +365,8 @@ const schemaHowTo = {
           <p class="eyebrow">Real Results</p>
           <h2>Testimonials and Success Stories</h2>
           <p>
-            Companies from very different sectors already operate with VivaSpeak
-            agents. This is what they say after implementing the platform.
+            Companies from very different sectors already operate with VivaSpeak agents. This is
+            what they say after implementing the platform.
           </p>
         </div>
 
@@ -413,9 +376,7 @@ const schemaHowTo = {
               <div class="testimonial-author">
                 <h3>Daniel Insa</h3>
                 <p class="author-role">Real Estate Agent</p>
-                <p class="author-details">
-                  +15 years of experience in the sector
-                </p>
+                <p class="author-details">+15 years of experience in the sector</p>
               </div>
 
               <div class="testimonial-media">
@@ -437,9 +398,7 @@ const schemaHowTo = {
               <div class="testimonial-author">
                 <h3>Reinaldo Rodríguez</h3>
                 <p class="author-role">Director of AllGrass</p>
-                <p class="author-details">
-                  Artificial turf and gardening · Madrid
-                </p>
+                <p class="author-details">Artificial turf and gardening · Madrid</p>
               </div>
 
               <div class="testimonial-media">
@@ -451,10 +410,11 @@ const schemaHowTo = {
               </div>
 
               <blockquote class="testimonial-quote">
-                "Thanks to VivaSpeak, we optimized call management to provide
-                better service. <strong>Rebeca</strong> handles calls in
-                <strong>4 languages</strong> and sends us an email after each conversation.
-                It has been an investment that has paid for itself."
+                "Thanks to VivaSpeak, we optimized call management to provide better service. <strong
+                  >Rebeca</strong
+                > handles calls in
+                <strong>4 languages</strong> and sends us an email after each conversation. It has been
+                an investment that has paid for itself."
               </blockquote>
 
               <div class="testimonial-tags">
@@ -478,14 +438,12 @@ const schemaHowTo = {
               </div>
 
               <blockquote class="testimonial-quote">
-                "The main problem we had was managing the high volume of calls,
-                especially for rentals —in the Balearics there can be 200+
-                applications for a single property. We wanted a more personal
-                service than a simple answering machine. <strong
-                  >Now we cover 24h, 7 days a week, we don't lose contacts, and
-                  we pre-qualify in a fraction of the time</strong
-                >, even during demand peaks. It works very well, it's very
-                polished."
+                "The main problem we had was managing the high volume of calls, especially for
+                rentals —in the Balearics there can be 200+ applications for a single property. We
+                wanted a more personal service than a simple answering machine. <strong
+                  >Now we cover 24h, 7 days a week, we don't lose contacts, and we pre-qualify in a
+                  fraction of the time</strong
+                >, even during demand peaks. It works very well, it's very polished."
               </blockquote>
 
               <div class="testimonial-tags">
@@ -507,10 +465,9 @@ const schemaHowTo = {
               </div>
 
               <blockquote class="testimonial-quote">
-                "The truth is that the trial was perfect and I liked it very
-                much. I consider the service to be very functional and
-                sufficient for a small or medium-sized estate agency, especially
-                for managing contacts you cannot attend to when you are doing
+                "The truth is that the trial was perfect and I liked it very much. I consider the
+                service to be very functional and sufficient for a small or medium-sized estate
+                agency, especially for managing contacts you cannot attend to when you are doing
                 other tasks. <strong
                   >Without a doubt, I would hire VivaSpeak again in the future.</strong
                 >"
@@ -530,11 +487,7 @@ const schemaHowTo = {
 
     <section id="faq">
       <div class="container">
-        <img
-          src="/assets/faq-icon.png"
-          alt="Frequently Asked Questions Icon"
-          class="image"
-        />
+        <img src="/assets/faq-icon.png" alt="Frequently Asked Questions Icon" class="image" />
         <h2>Frequently Asked Questions (FAQ)</h2>
         <div class="faq-container">
           <details class="faq">
@@ -543,10 +496,9 @@ const schemaHowTo = {
               What exactly is VivaSpeak?
             </summary>
             <div class="faq-content">
-              A business automation system specialised in voice and WhatsApp
-              communication. To answer questions, we use business information
-              that is editable from our panel. Our agents are specialised in
-              qualifying leads.
+              A business automation system specialised in voice and WhatsApp communication. To
+              answer questions, we use business information that is editable from our panel. Our
+              agents are specialised in qualifying leads.
             </div>
           </details>
 
@@ -556,9 +508,8 @@ const schemaHowTo = {
               How is the pricing structured?
             </summary>
             <div class="faq-content">
-              Pricing is defined per agent based on volume, sector, and
-              integrations. You get a single operating plan with no technical
-              breakdown.
+              Pricing is defined per agent based on volume, sector, and integrations. You get a
+              single operating plan with no technical breakdown.
             </div>
           </details>
 
@@ -568,9 +519,9 @@ const schemaHowTo = {
               Does it integrate with my tools?
             </summary>
             <div class="faq-content">
-              Yes. We connect Google Calendar, HubSpot, proprietary CRMs,
-              scheduling systems with API access, and the official WhatsApp API.
-              We include guides for call forwarding and calendar sharing.
+              Yes. We connect Google Calendar, HubSpot, proprietary CRMs, scheduling systems with
+              API access, and the official WhatsApp API. We include guides for call forwarding and
+              calendar sharing.
             </div>
           </details>
 
@@ -580,8 +531,8 @@ const schemaHowTo = {
               Can I try it before hiring?
             </summary>
             <div class="faq-content">
-              Each agent includes a one-week pilot with your real workflows and
-              shared KPIs on the dashboard.
+              Each agent includes a one-week pilot with your real workflows and shared KPIs on the
+              dashboard.
             </div>
           </details>
 
@@ -591,10 +542,9 @@ const schemaHowTo = {
               What languages does it support?
             </summary>
             <div class="faq-content">
-              Agents usually work with one main language and we can add up to
-              three more, including Spanish, English, Portuguese, French,
-              Italian, and German. Ask about other languages or accents before
-              launch.
+              Agents usually work with one main language and we can add up to three more, including
+              Spanish, English, Portuguese, French, Italian, and German. Ask about other languages
+              or accents before launch.
             </div>
           </details>
 
@@ -604,9 +554,8 @@ const schemaHowTo = {
               Can the AI voice agent transfer the call to a person?
             </summary>
             <div class="faq-content">
-              Yes. It can be configured so that, for example, in urgent cases or
-              after a positive filter, the call is transferred to the right
-              person.
+              Yes. It can be configured so that, for example, in urgent cases or after a positive
+              filter, the call is transferred to the right person.
             </div>
           </details>
         </div>
@@ -623,11 +572,7 @@ const schemaHowTo = {
       </div>
       <div class="container">
         <div class="section-header section-header--center">
-          <img
-            src="/assets/contacto.png"
-            alt="Contact Icon"
-            class="section-icon"
-          />
+          <img src="/assets/contacto.png" alt="Contact Icon" class="section-icon" />
           <p class="eyebrow">Contact</p>
           <h2>Tell us what you need to automate</h2>
           <p>We respond the same day.</p>
@@ -665,12 +610,7 @@ const schemaHowTo = {
               <label for="solution-type">What do you need to automate?</label>
               <div class="radio-group">
                 <label>
-                  <input
-                    type="radio"
-                    name="solution-type"
-                    value="leads-sales"
-                    required
-                  />
+                  <input type="radio" name="solution-type" value="leads-sales" required />
                   Lead capture / sales
                 </label>
                 <label>
@@ -695,44 +635,25 @@ const schemaHowTo = {
               <textarea name="message" id="message" required></textarea>
 
               <div class="consent-container">
-                <input
-                  type="checkbox"
-                  id="privacy-consent"
-                  class="checkbox-style"
-                  required
-                />
+                <input type="checkbox" id="privacy-consent" class="checkbox-style" required />
                 <label for="privacy-consent">
                   I accept the
-                  <a
-                    href="terms-and-conditions"
-                    target="_blank"
-                    class="link-style">Terms and Conditions</a
+                  <a href="terms-and-conditions" target="_blank" class="link-style"
+                    >Terms and Conditions</a
                   >
                   and the
-                  <a href="privacy-policy" target="_blank" class="link-style"
-                    >Privacy Policy</a
-                  >.
+                  <a href="privacy-policy" target="_blank" class="link-style">Privacy Policy</a>.
                 </label>
               </div>
               <div data-netlify-recaptcha="true"></div>
-              <button type="submit" class="btn-primary btn-contact">
-                Send
-              </button>
+              <button type="submit" class="btn-primary btn-contact"> Send </button>
             </form>
           </div>
         </div>
-        <div
-          id="schedule"
-          class="contact-calendly"
-          aria-label="Schedule a meeting"
-        >
+        <div id="schedule" class="contact-calendly" aria-label="Schedule a meeting">
           <h3>Prefer to choose a time?</h3>
           <p>Book a demo with screen sharing.</p>
-          <div
-            class="calendly-inline-widget"
-            data-url="https://calendly.com/vivaspeak/30min"
-          >
-          </div>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/vivaspeak/30min"></div>
         </div>
       </div>
     </section>
@@ -740,13 +661,10 @@ const schemaHowTo = {
       <div class="container footer-cta__content">
         <div>
           <p class="eyebrow">Final push</p>
-          <h3>
-            In 7 days you can have an AI agent handling calls and WhatsApp
-            automatically.
-          </h3>
+          <h3>In 7 days you can have an AI agent handling calls and WhatsApp automatically.</h3>
           <p>
-            We configure the agent around your business so you stop losing
-            opportunities because nobody replied in time.
+            We configure the agent around your business so you stop losing opportunities because
+            nobody replied in time.
           </p>
         </div>
         <div class="footer-cta__actions">

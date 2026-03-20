@@ -1,69 +1,68 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const schemaFaq = [
   {
-    question: "¿Qué es exactamente VivaSpeak?",
+    question: '¿Qué es exactamente VivaSpeak?',
     answer:
-      "Un sistema de automatización de negocios, que se especializa en la comunicación por voz y WhatsApp. Para responder dudas usamos la información del negocio que es editable desde nuestro panel. Nuestros agentes se especializan en cualificar leads.",
+      'Un sistema de automatización de negocios, que se especializa en la comunicación por voz y WhatsApp. Para responder dudas usamos la información del negocio que es editable desde nuestro panel. Nuestros agentes se especializan en cualificar leads.',
   },
   {
-    question: "¿Cómo se estructura el precio?",
+    question: '¿Cómo se estructura el precio?',
     answer:
-      "El precio se define por agente según volumen, sector e integraciones. Te damos un único plan operativo sin desglose técnico.",
+      'El precio se define por agente según volumen, sector e integraciones. Te damos un único plan operativo sin desglose técnico.',
   },
   {
-    question: "¿Se integra con mis herramientas?",
+    question: '¿Se integra con mis herramientas?',
     answer:
-      "Sí. Conectamos Google Calendar, HubSpot, CRMs propios y agendas con API, además de la API oficial de WhatsApp. Incluimos guías de desvío y de compartición de calendario.",
+      'Sí. Conectamos Google Calendar, HubSpot, CRMs propios y agendas con API, además de la API oficial de WhatsApp. Incluimos guías de desvío y de compartición de calendario.',
   },
   {
-    question: "¿Puedo probarlo antes de contratarlo?",
+    question: '¿Puedo probarlo antes de contratarlo?',
     answer:
-      "Cada agente incluye un piloto de una semana con tus flujos reales y KPIs compartidos en el panel.",
+      'Cada agente incluye un piloto de una semana con tus flujos reales y KPIs compartidos en el panel.',
   },
   {
-    question: "¿Qué idiomas cubre?",
+    question: '¿Qué idiomas cubre?',
     answer:
-      "Los agentes suelen usar un idioma principal y le podemos añadir hasta 3 adicionales, entre ellos se encuentran español, inglés, portugués, francés, italiano y alemán. Pregunta por otros idiomas o acentos antes del lanzamiento.",
+      'Los agentes suelen usar un idioma principal y le podemos añadir hasta 3 adicionales, entre ellos se encuentran español, inglés, portugués, francés, italiano y alemán. Pregunta por otros idiomas o acentos antes del lanzamiento.',
   },
   {
-    question: "¿Puede el agente de voz IA transferir la llamada a una persona?",
+    question: '¿Puede el agente de voz IA transferir la llamada a una persona?',
     answer:
-      "Sí, se puede programar que por ejemplo en caso de urgencia o filtrado positivo se transfiera la llamada a la persona adecuada.",
+      'Sí, se puede programar que por ejemplo en caso de urgencia o filtrado positivo se transfiera la llamada a la persona adecuada.',
   },
 ];
 
 const schemaHowTo = {
-  name: "Cómo funciona VivaSpeak",
-  description:
-    "Tu agente IA atiende, cualifica y agenda sin fricción en 6 pasos.",
+  name: 'Cómo funciona VivaSpeak',
+  description: 'Tu agente IA atiende, cualifica y agenda sin fricción en 6 pasos.',
   step: [
     {
-      name: "Un cliente llama o escribe por WhatsApp",
-      text: "La IA responde al instante con voz natural.",
+      name: 'Un cliente llama o escribe por WhatsApp',
+      text: 'La IA responde al instante con voz natural.',
     },
     {
-      name: "La IA cualifica y responde preguntas",
-      text: "Accede a tu base de conocimiento para resolver dudas reales.",
+      name: 'La IA cualifica y responde preguntas',
+      text: 'Accede a tu base de conocimiento para resolver dudas reales.',
     },
     {
-      name: "Agenda una cita en tu calendario real",
-      text: "Conecta con Google Calendar, CRM o agenda interna.",
+      name: 'Agenda una cita en tu calendario real',
+      text: 'Conecta con Google Calendar, CRM o agenda interna.',
     },
     {
-      name: "Tu equipo recibe un resumen automático",
-      text: "Email o WhatsApp con la conversación y la siguiente acción.",
+      name: 'Tu equipo recibe un resumen automático',
+      text: 'Email o WhatsApp con la conversación y la siguiente acción.',
     },
     {
-      name: "Consulta todos los leads en un panel siempre disponible",
-      text: "Un CRM visual donde puedes ver, filtrar y gestionar todos los contactos de un vistazo.",
+      name: 'Consulta todos los leads en un panel siempre disponible',
+      text: 'Un CRM visual donde puedes ver, filtrar y gestionar todos los contactos de un vistazo.',
     },
     {
-      name: "Llama o envía mensajes desde el panel sin salir del sistema",
-      text: "Activa seguimientos, responde contactos y lanza llamadas o mensajes sin salir del panel.",
+      name: 'Llama o envía mensajes desde el panel sin salir del sistema',
+      text: 'Activa seguimientos, responde contactos y lanza llamadas o mensajes sin salir del panel.',
     },
   ],
 };
@@ -81,11 +80,11 @@ const schemaHowTo = {
   schemaFaq={schemaFaq}
   schemaHowTo={schemaHowTo}
   speakable={[
-    ".home-title",
-    ".home-description",
-    ".faq-content",
-    ".value-card p",
-    ".results-card p",
+    '.home-title',
+    '.home-description',
+    '.faq-content',
+    '.value-card p',
+    '.results-card p',
   ]}
 >
   <Header />
@@ -100,12 +99,11 @@ const schemaHowTo = {
               Atiende llamadas, WhatsApp y filtra leads automáticamente 24/7
             </h1>
             <p class="home-description">
-              Agenda citas, cualifica contactos y usa nuestro CRM o actualiza el
-              tuyo sin interrumpir tu trabajo
+              Agenda citas, cualifica contactos y usa nuestro CRM o actualiza el tuyo sin
+              interrumpir tu trabajo
             </p>
             <p class="home-urgency">
-              Tus clientes no esperan. Si no respondes en segundos, llaman al
-              siguiente.
+              Tus clientes no esperan. Si no respondes en segundos, llaman al siguiente.
             </p>
             <div class="cta-buttons">
               <a
@@ -145,10 +143,7 @@ const schemaHowTo = {
           <div class="hero-right">
             <div class="hero-mockup">
               <picture>
-                <source
-                  srcset="/assets/whatsapp-mockup.webp"
-                  type="image/webp"
-                />
+                <source srcset="/assets/whatsapp-mockup.webp" type="image/webp" />
                 <img
                   src="/assets/whatsapp-mockup.webp"
                   alt="Conversación de un agente VivaSpeak en WhatsApp"
@@ -182,13 +177,7 @@ const schemaHowTo = {
         </div>
       </div>
     </section>
-    <div
-      id="imageModal"
-      class="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Vista ampliada"
-    >
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Vista ampliada">
       <span class="close" aria-label="Cerrar">&times;</span>
       <img
         class="modal-content"
@@ -225,16 +214,15 @@ const schemaHowTo = {
             <span class="value-step">5</span>
             <h3>Consulta todos los leads en un panel siempre disponible</h3>
             <p>
-              Un CRM visual donde puedes ver, filtrar y gestionar todos los
-              contactos de un vistazo.
+              Un CRM visual donde puedes ver, filtrar y gestionar todos los contactos de un vistazo.
             </p>
           </article>
           <article class="value-card">
             <span class="value-step">6</span>
             <h3>Llama o envía mensajes desde el panel sin salir del sistema</h3>
             <p>
-              Activa seguimientos, responde contactos y lanza llamadas o
-              mensajes sin salir del panel.
+              Activa seguimientos, responde contactos y lanza llamadas o mensajes sin salir del
+              panel.
             </p>
           </article>
         </div>
@@ -249,28 +237,19 @@ const schemaHowTo = {
         <div class="results-grid">
           <article class="results-card">
             <h3>No puedes atender llamadas mientras trabajas</h3>
-            <p>
-              El agente atiende, filtra y agenda por ti sin cortar tu operación.
-            </p>
+            <p>El agente atiende, filtra y agenda por ti sin cortar tu operación.</p>
           </article>
           <article class="results-card">
             <h3>Te escriben fuera de horario</h3>
-            <p>
-              Responde WhatsApp automáticamente y deja la conversación
-              encarrilada.
-            </p>
+            <p>Responde WhatsApp automáticamente y deja la conversación encarrilada.</p>
           </article>
           <article class="results-card">
             <h3>Pierdes leads de formularios</h3>
-            <p>
-              La IA llama o responde al instante antes de que el lead se enfríe.
-            </p>
+            <p>La IA llama o responde al instante antes de que el lead se enfríe.</p>
           </article>
           <article class="results-card">
             <h3>Recibes demasiadas consultas repetidas</h3>
-            <p>
-              La IA contesta preguntas frecuentes y solo escala lo importante.
-            </p>
+            <p>La IA contesta preguntas frecuentes y solo escala lo importante.</p>
           </article>
         </div>
       </div>
@@ -280,57 +259,53 @@ const schemaHowTo = {
         <div class="section-header section-header--center">
           <p class="eyebrow">Qué puede hacer VivaSpeak</p>
           <h2>
-            Especialmente útil para negocios que reciben más consultas de las
-            que pueden atender
+            Especialmente útil para negocios que reciben más consultas de las que pueden atender
           </h2>
           <p>
-            Si una llamada o WhatsApp perdido significa una cita menos o un
-            cliente que llama a la competencia, VivaSpeak está pensado para tu
-            negocio.
+            Si una llamada o WhatsApp perdido significa una cita menos o un cliente que llama a la
+            competencia, VivaSpeak está pensado para tu negocio.
           </p>
         </div>
         <div class="value-grid audience-grid">
           <article class="value-card">
             <h3>Respuestas a preguntas</h3>
             <p>
-              Responde instantáneamente a cualquier pregunta que le hagan sobre
-              tu negocio para que no tengas que repetir continuamente la misma
-              información.
+              Responde instantáneamente a cualquier pregunta que le hagan sobre tu negocio para que
+              no tengas que repetir continuamente la misma información.
             </p>
           </article>
           <article class="value-card">
             <h3>Agendamiento de citas</h3>
             <p>
-              Agenda visitas automáticamente. Refresca tu base de datos para ver
-              qué contacto tiene potencial.
+              Agenda visitas automáticamente. Refresca tu base de datos para ver qué contacto tiene
+              potencial.
             </p>
           </article>
           <article class="value-card">
             <h3>Filtrado de leads</h3>
             <p>
-              Cualifica al lead y no pierdas tiempo con interacciones que no
-              llevan a ningún lado.
+              Cualifica al lead y no pierdas tiempo con interacciones que no llevan a ningún lado.
             </p>
           </article>
           <article class="value-card">
             <h3>Captación de leads</h3>
             <p>
-              Contacta leads al instante por teléfono antes de que se enfríen
-              para ver si realmente pueden traer algún valor.
+              Contacta leads al instante por teléfono antes de que se enfríen para ver si realmente
+              pueden traer algún valor.
             </p>
           </article>
           <article class="value-card">
             <h3>Envío de recordatorios</h3>
             <p>
-              Envía mensajes antes de la cita para que tus clientes no se
-              olviden y puedan confirmar.
+              Envía mensajes antes de la cita para que tus clientes no se olviden y puedan
+              confirmar.
             </p>
           </article>
           <article class="value-card">
             <h3>Envío de petición de reseñas</h3>
             <p>
-              Pide a tus clientes que escriban unas palabras en Google sobre la
-              experiencia con tu servicio.
+              Pide a tus clientes que escriban unas palabras en Google sobre la experiencia con tu
+              servicio.
             </p>
           </article>
         </div>
@@ -359,17 +334,13 @@ const schemaHowTo = {
     <section id="video-demo">
       <div class="container">
         <div class="section-header">
-          <img
-            src="/assets/video.png"
-            alt="Icono de video"
-            class="section-icon"
-          />
+          <img src="/assets/video.png" alt="Icono de video" class="section-icon" />
           <p class="eyebrow">Demo interactiva</p>
           <h2>Mira cómo funciona en 90 segundos</h2>
           <p>
-            En el siguiente vídeo puedes ver una integración con un software
-            médico donde automatizamos reservas. Al paciente le resolvemos
-            preguntas complejas y notificamos al equipo en cuestión de segundos.
+            En el siguiente vídeo puedes ver una integración con un software médico donde
+            automatizamos reservas. Al paciente le resolvemos preguntas complejas y notificamos al
+            equipo en cuestión de segundos.
           </p>
         </div>
         <div class="demo-grid">
@@ -387,10 +358,7 @@ const schemaHowTo = {
             <ul class="checklist">
               <li>Reserva citas con confirmación en tiempo real.</li>
               <li>Tu equipo recibe un resumen automático por email.</li>
-              <li>
-                Puede transferir la llamada a una persona cuando la conversación
-                lo exige.
-              </li>
+              <li>Puede transferir la llamada a una persona cuando la conversación lo exige.</li>
             </ul>
 
             <div class="cta-buttons">
@@ -408,9 +376,8 @@ const schemaHowTo = {
           <p class="eyebrow">Resultados reales</p>
           <h2>Testimonios y casos de éxito</h2>
           <p>
-            Empresas de sectores muy distintos ya operan con agentes de
-            VivaSpeak. Esto es lo que dicen después de implementar la
-            plataforma.
+            Empresas de sectores muy distintos ya operan con agentes de VivaSpeak. Esto es lo que
+            dicen después de implementar la plataforma.
           </p>
         </div>
 
@@ -421,9 +388,7 @@ const schemaHowTo = {
               <div class="testimonial-author">
                 <h3>Daniel Insa</h3>
                 <p class="author-role">Agente inmobiliario</p>
-                <p class="author-details">
-                  +15 años de experiencia en el sector
-                </p>
+                <p class="author-details">+15 años de experiencia en el sector</p>
               </div>
 
               <div class="testimonial-media">
@@ -445,9 +410,7 @@ const schemaHowTo = {
               <div class="testimonial-author">
                 <h3>Reinaldo Rodríguez</h3>
                 <p class="author-role">Director de AllGrass</p>
-                <p class="author-details">
-                  Césped artificial y jardinería · Madrid
-                </p>
+                <p class="author-details">Césped artificial y jardinería · Madrid</p>
               </div>
 
               <div class="testimonial-media">
@@ -459,10 +422,10 @@ const schemaHowTo = {
               </div>
 
               <blockquote class="testimonial-quote">
-                "Gracias a VivaSpeak optimizamos la gestión de llamadas para
-                prestar un mejor servicio. <strong>Rebeca</strong> atiende en
-                <strong>4 idiomas</strong> y nos envía un email tras cada conversación.
-                Ha sido una inversión que se ha pagado sola."
+                "Gracias a VivaSpeak optimizamos la gestión de llamadas para prestar un mejor
+                servicio. <strong>Rebeca</strong> atiende en
+                <strong>4 idiomas</strong> y nos envía un email tras cada conversación. Ha sido una inversión
+                que se ha pagado sola."
               </blockquote>
 
               <div class="testimonial-tags">
@@ -480,20 +443,16 @@ const schemaHowTo = {
               <div class="testimonial-author">
                 <h3>Juan Taborda</h3>
                 <p class="author-role">Villas y Fincas Mallorca</p>
-                <p class="author-details">
-                  20 años en el sector · Alquiler en Baleares
-                </p>
+                <p class="author-details">20 años en el sector · Alquiler en Baleares</p>
               </div>
 
               <blockquote class="testimonial-quote">
-                "El principal problema que teníamos era gestionar el alto
-                volumen de llamadas, especialmente en alquiler —en Baleares
-                puede haber 200+ solicitudes por una sola vivienda. Queríamos
-                una atención más personalizada que un simple contestador. <strong
-                  >Ahora atendemos 24h los 7 días, no perdemos contactos y
-                  precualificamos en una fracción del tiempo</strong
-                >, incluso en picos de demanda. Funciona muy bien, está muy
-                pulido."
+                "El principal problema que teníamos era gestionar el alto volumen de llamadas,
+                especialmente en alquiler —en Baleares puede haber 200+ solicitudes por una sola
+                vivienda. Queríamos una atención más personalizada que un simple contestador. <strong
+                  >Ahora atendemos 24h los 7 días, no perdemos contactos y precualificamos en una
+                  fracción del tiempo</strong
+                >, incluso en picos de demanda. Funciona muy bien, está muy pulido."
               </blockquote>
 
               <div class="testimonial-tags">
@@ -515,13 +474,11 @@ const schemaHowTo = {
               </div>
 
               <blockquote class="testimonial-quote">
-                "La verdad es que la prueba ha sido perfecta y me ha gustado
-                muchísimo. Considero que el servicio es muy funcional y
-                suficiente para una inmobiliaria pequeña o mediana,
-                especialmente para gestionar los contactos que no puedes atender
-                cuando estás realizando otras funciones. <strong
-                  >Sin lugar a dudas, volvería a contratar con VivaSpeak en el
-                  futuro.</strong
+                "La verdad es que la prueba ha sido perfecta y me ha gustado muchísimo. Considero
+                que el servicio es muy funcional y suficiente para una inmobiliaria pequeña o
+                mediana, especialmente para gestionar los contactos que no puedes atender cuando
+                estás realizando otras funciones. <strong
+                  >Sin lugar a dudas, volvería a contratar con VivaSpeak en el futuro.</strong
                 >"
               </blockquote>
 
@@ -540,11 +497,7 @@ const schemaHowTo = {
     <!-- FAQ -->
     <section id="faq">
       <div class="container">
-        <img
-          src="/assets/faq-icon.png"
-          alt="Icono de preguntas frecuentes"
-          class="image"
-        />
+        <img src="/assets/faq-icon.png" alt="Icono de preguntas frecuentes" class="image" />
         <h2>Preguntas Frecuentes (FAQ)</h2>
         <div class="faq-container">
           <details class="faq">
@@ -553,10 +506,9 @@ const schemaHowTo = {
               ¿Qué es exactamente VivaSpeak?
             </summary>
             <div class="faq-content">
-              Un sistema de automatización de negocios, que se especializa en la
-              comunicación por voz y WhatsApp. Para responder dudas usamos la
-              información del negocio que es editable desde nuestro panel.
-              Nuestros agentes se especializan en cualificar leads.
+              Un sistema de automatización de negocios, que se especializa en la comunicación por
+              voz y WhatsApp. Para responder dudas usamos la información del negocio que es editable
+              desde nuestro panel. Nuestros agentes se especializan en cualificar leads.
             </div>
           </details>
 
@@ -566,9 +518,8 @@ const schemaHowTo = {
               ¿Cómo se estructura el precio?
             </summary>
             <div class="faq-content">
-              El precio se define por agente según volumen, sector e
-              integraciones. Te damos un único plan operativo sin desglose
-              técnico.
+              El precio se define por agente según volumen, sector e integraciones. Te damos un
+              único plan operativo sin desglose técnico.
             </div>
           </details>
 
@@ -578,9 +529,8 @@ const schemaHowTo = {
               ¿Se integra con mis herramientas?
             </summary>
             <div class="faq-content">
-              Sí. Conectamos Google Calendar, HubSpot, CRMs propios y agendas
-              con API, además de la API oficial de WhatsApp. Incluimos guías de
-              desvío y de compartición de calendario.
+              Sí. Conectamos Google Calendar, HubSpot, CRMs propios y agendas con API, además de la
+              API oficial de WhatsApp. Incluimos guías de desvío y de compartición de calendario.
             </div>
           </details>
 
@@ -590,8 +540,8 @@ const schemaHowTo = {
               ¿Puedo probarlo antes de contratarlo?
             </summary>
             <div class="faq-content">
-              Cada agente incluye un piloto de una semana con tus flujos reales
-              y KPIs compartidos en el panel.
+              Cada agente incluye un piloto de una semana con tus flujos reales y KPIs compartidos
+              en el panel.
             </div>
           </details>
 
@@ -601,10 +551,9 @@ const schemaHowTo = {
               ¿Qué idiomas cubre?
             </summary>
             <div class="faq-content">
-              Los agentes suelen usar un idioma principal y le podemos añadir
-              hasta 3 adicionales, entre ellos se encuentran español, inglés,
-              portugués, francés, italiano y alemán. Pregunta por otros idiomas
-              o acentos antes del lanzamiento.
+              Los agentes suelen usar un idioma principal y le podemos añadir hasta 3 adicionales,
+              entre ellos se encuentran español, inglés, portugués, francés, italiano y alemán.
+              Pregunta por otros idiomas o acentos antes del lanzamiento.
             </div>
           </details>
 
@@ -614,8 +563,8 @@ const schemaHowTo = {
               ¿Puede el agente de voz IA transferir la llamada a una persona?
             </summary>
             <div class="faq-content">
-              Sí, se puede programar que por ejemplo en caso de urgencia o
-              filtrado positivo se transfiera la llamada a la persona adecuada.
+              Sí, se puede programar que por ejemplo en caso de urgencia o filtrado positivo se
+              transfiera la llamada a la persona adecuada.
             </div>
           </details>
         </div>
@@ -633,11 +582,7 @@ const schemaHowTo = {
       </div>
       <div class="container">
         <div class="section-header section-header--center">
-          <img
-            src="/assets/contacto.png"
-            alt="Icono de contacto"
-            class="section-icon"
-          />
+          <img src="/assets/contacto.png" alt="Icono de contacto" class="section-icon" />
           <p class="eyebrow">Contacto</p>
           <h2>Cuéntanos qué necesitas automatizar</h2>
           <p>Te respondemos el mismo día.</p>
@@ -675,12 +620,7 @@ const schemaHowTo = {
               <label for="solution-type">¿Qué necesitas automatizar?</label>
               <div class="radio-group">
                 <label>
-                  <input
-                    type="radio"
-                    name="solution-type"
-                    value="leads-sales"
-                    required
-                  />
+                  <input type="radio" name="solution-type" value="leads-sales" required />
                   Captación de leads / ventas
                 </label>
                 <label>
@@ -705,47 +645,28 @@ const schemaHowTo = {
               <textarea name="message" id="message" required></textarea>
 
               <div class="consent-container">
-                <input
-                  type="checkbox"
-                  id="privacy-consent"
-                  class="checkbox-style"
-                  required
-                />
+                <input type="checkbox" id="privacy-consent" class="checkbox-style" required />
                 <label for="privacy-consent">
                   Acepto los
-                  <a
-                    href="terminos-y-condiciones"
-                    target="_blank"
-                    class="link-style">Términos y Condiciones</a
+                  <a href="terminos-y-condiciones" target="_blank" class="link-style"
+                    >Términos y Condiciones</a
                   >
                   y la
-                  <a
-                    href="politica-de-privacidad"
-                    target="_blank"
-                    class="link-style">Política de Privacidad</a
+                  <a href="politica-de-privacidad" target="_blank" class="link-style"
+                    >Política de Privacidad</a
                   >.
                 </label>
               </div>
               <div data-netlify-recaptcha="true"></div>
-              <button type="submit" class="btn-primary btn-contact">
-                Enviar
-              </button>
+              <button type="submit" class="btn-primary btn-contact"> Enviar </button>
             </form>
           </div>
         </div>
         <!-- <section id="schedule"> -->
-        <div
-          id="schedule"
-          class="contact-calendly"
-          aria-label="Agendar una reunión"
-        >
+        <div id="schedule" class="contact-calendly" aria-label="Agendar una reunión">
           <h3>¿Prefieres elegir hora?</h3>
           <p>Reserva una demo con pantalla compartida.</p>
-          <div
-            class="calendly-inline-widget"
-            data-url="https://calendly.com/vivaspeak/30min"
-          >
-          </div>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/vivaspeak/30min"></div>
         </div>
         <!-- </section> -->
       </div>
@@ -755,12 +676,11 @@ const schemaHowTo = {
         <div>
           <p class="eyebrow">Último empujón</p>
           <h3>
-            En 7 días puedes tener un agente IA atendiendo llamadas y WhatsApp
-            automáticamente.
+            En 7 días puedes tener un agente IA atendiendo llamadas y WhatsApp automáticamente.
           </h3>
           <p>
-            Configuramos el agente a medida para que no vuelvas a perder
-            oportunidades por no contestar a tiempo.
+            Configuramos el agente a medida para que no vuelvas a perder oportunidades por no
+            contestar a tiempo.
           </p>
         </div>
         <div class="footer-cta__actions">
@@ -772,9 +692,7 @@ const schemaHowTo = {
           >
             Envía una pregunta
           </a>
-          <a href="#schedule" class="btn-secondary"
-            >Reservar un hueco para hablar</a
-          >
+          <a href="#schedule" class="btn-secondary">Reservar un hueco para hablar</a>
         </div>
       </div>
     </section>

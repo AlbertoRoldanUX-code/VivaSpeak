@@ -1,54 +1,52 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import HeaderEn from "../../../components/HeaderEn.astro";
-import FooterEn from "../../../components/FooterEn.astro";
-import "../../../../styles/blog.css";
+import Layout from '../../../layouts/Layout.astro';
+import HeaderEn from '../../../components/HeaderEn.astro';
+import FooterEn from '../../../components/FooterEn.astro';
+import '../../../../styles/blog.css';
 
-const title =
-  "What an AI Voice Agent Is and How It Works (Practical Explanation)";
+const title = 'What an AI Voice Agent Is and How It Works (Practical Explanation)';
 const description =
-  "Clear guide to how an AI voice agent works: real calls, contextual memory, CRM integration, and scheduling with Google Calendar or your scheduling system.";
-const canonical = "https://vivaspeak.com/en/blog/ai-voice-agent/";
+  'Clear guide to how an AI voice agent works: real calls, contextual memory, CRM integration, and scheduling with Google Calendar or your scheduling system.';
+const canonical = 'https://vivaspeak.com/en/blog/ai-voice-agent/';
 const schemaArticle = {
   headline: title,
   description,
-  datePublished: "2024-06-01",
-  image: "https://vivaspeak.com/assets/og-image.png",
+  datePublished: '2024-06-01',
+  image: 'https://vivaspeak.com/assets/og-image.png',
 };
 const breadcrumb = [
-  { name: "Home", url: "https://vivaspeak.com/en/" },
-  { name: "Blog", url: "https://vivaspeak.com/en/blog/" },
+  { name: 'Home', url: 'https://vivaspeak.com/en/' },
+  { name: 'Blog', url: 'https://vivaspeak.com/en/blog/' },
   { name: title, url: canonical },
 ];
 
 const schemaHowTo = {
-  name: "How an AI voice agent works step by step",
-  description:
-    "Full process from when a customer calls to when your team receives the summary.",
+  name: 'How an AI voice agent works step by step',
+  description: 'Full process from when a customer calls to when your team receives the summary.',
   step: [
     {
-      name: "The customer calls your number",
+      name: 'The customer calls your number',
       text: "The call is automatically routed to the agent's number without changing your existing business number.",
     },
     {
-      name: "The agent listens and understands in real time",
-      text: "It interprets the intent: booking, cancelling, asking for prices, schedules, or information.",
+      name: 'The agent listens and understands in real time',
+      text: 'It interprets the intent: booking, cancelling, asking for prices, schedules, or information.',
     },
     {
-      name: "It checks your real data",
-      text: "Accesses your scheduling system, Google Calendar, or CRM depending on your business type.",
+      name: 'It checks your real data',
+      text: 'Accesses your scheduling system, Google Calendar, or CRM depending on your business type.',
     },
     {
-      name: "It responds with a natural voice",
-      text: "The voices are almost indistinguishable from a real human. They adjust tone, pauses, rhythm and empathy.",
+      name: 'It responds with a natural voice',
+      text: 'The voices are almost indistinguishable from a real human. They adjust tone, pauses, rhythm and empathy.',
     },
     {
-      name: "It performs actions",
-      text: "Creates appointments, transfers calls, or sends information via WhatsApp based on the conversation.",
+      name: 'It performs actions',
+      text: 'Creates appointments, transfers calls, or sends information via WhatsApp based on the conversation.',
     },
     {
-      name: "It sends a summary to your team",
-      text: "Automatic email or WhatsApp with transcription, detected intent, outcome, and next steps.",
+      name: 'It sends a summary to your team',
+      text: 'Automatic email or WhatsApp with transcription, detected intent, outcome, and next steps.',
     },
   ],
 };
@@ -64,33 +62,26 @@ const schemaHowTo = {
   schemaArticle={schemaArticle}
   breadcrumb={breadcrumb}
   schemaHowTo={schemaHowTo}
-  speakable={[
-    ".blog-article > p:first-of-type",
-    ".blog-article h2",
-    ".blog-article h2 + p",
-  ]}
+  speakable={['.blog-article > p:first-of-type', '.blog-article h2', '.blog-article h2 + p']}
 >
   <HeaderEn />
 
   <main id="main-content" class="blog-container">
     <article class="blog-article">
-      <h1>
-        What an AI Voice Agent Is and How It Works (Practical Explanation)
-      </h1>
+      <h1>What an AI Voice Agent Is and How It Works (Practical Explanation)</h1>
       <p class="blog-byline">
         By the VivaSpeak team · <a href="/en/about/">About us</a>
       </p>
 
       <p>
-        An <strong>AI voice agent</strong> is a system that answers calls like a human,
-        understands natural conversation, accesses your real data (calendar, CRM,
-        business hours) and performs actions such as booking appointments, sending
-        emails, opening tickets, or transferring the call to a human.
+        An <strong>AI voice agent</strong> is a system that answers calls like a human, understands natural
+        conversation, accesses your real data (calendar, CRM, business hours) and performs actions such
+        as booking appointments, sending emails, opening tickets, or transferring the call to a human.
       </p>
 
       <p>
-        Unlike a voicemail or an IVR (“press 1, press 2”), an AI voice agent
-        responds naturally, remembers context, and can handle complex dialogues.
+        Unlike a voicemail or an IVR (“press 1, press 2”), an AI voice agent responds naturally,
+        remembers context, and can handle complex dialogues.
       </p>
 
       <h2>What it can do exactly</h2>
@@ -99,8 +90,7 @@ const schemaHowTo = {
         <li>Answer calls in under one second.</li>
         <li>Speak multiple languages with natural, human-like voice.</li>
         <li>
-          Check availability in your real calendar: Google Calendar or your
-          scheduling system.
+          Check availability in your real calendar: Google Calendar or your scheduling system.
         </li>
         <li>Create, move, or cancel appointments.</li>
         <li>Send automatic summaries via email or WhatsApp.</li>
@@ -109,23 +99,22 @@ const schemaHowTo = {
       </ul>
 
       <p>
-        At VivaSpeak we use them in clinics, real estate agencies, online stores
-        and any business that receives many calls or messages outside business
-        hours.
+        At VivaSpeak we use them in clinics, real estate agencies, online stores and any business
+        that receives many calls or messages outside business hours.
       </p>
 
       <h2>How an AI voice agent works step by step</h2>
 
       <h3>1. The customer calls your number (landline or mobile)</h3>
       <p>
-        The call is automatically routed to the <strong>agent’s number</strong> without
-        changing your existing business number.
+        The call is automatically routed to the <strong>agent’s number</strong> without changing your
+        existing business number.
       </p>
 
       <h3>2. The agent listens and understands in real time</h3>
       <p>
-        It interprets the intent: booking, cancelling, asking for prices,
-        schedules, availability, or information about a property.
+        It interprets the intent: booking, cancelling, asking for prices, schedules, availability,
+        or information about a property.
       </p>
 
       <h3>3. It checks your real data</h3>
@@ -140,26 +129,20 @@ const schemaHowTo = {
 
       <h3>4. It responds with a natural voice</h3>
       <p>
-        The voices are almost indistinguishable from a real human. They adjust
-        tone, pauses, rhythm and empathy.
+        The voices are almost indistinguishable from a real human. They adjust tone, pauses, rhythm
+        and empathy.
       </p>
 
       <h3>5. It performs actions</h3>
       <p>For example:</p>
       <ul>
-        <li>
-          “I can offer you an appointment on Tuesday at 4:00 pm. Does that work
-          for you?”
-        </li>
+        <li>“I can offer you an appointment on Tuesday at 4:00 pm. Does that work for you?”</li>
         <li>“Let me transfer you to a colleague now.”</li>
         <li>“I'll send you the property brochure on WhatsApp.”</li>
       </ul>
 
       <h3>6. It sends a summary to your team</h3>
-      <p>
-        When the call ends, the agent automatically sends an email or WhatsApp
-        message with:
-      </p>
+      <p>When the call ends, the agent automatically sends an email or WhatsApp message with:</p>
       <ul>
         <li>the full transcription,</li>
         <li>the detected intent,</li>
@@ -183,9 +166,9 @@ const schemaHowTo = {
 
       <h2>Conclusion</h2>
       <p>
-        An AI voice agent is not a rigid robot or an old IVR. It is a
-        conversational assistant capable of handling real calls like a person:
-        scheduling, confirming, answering, and transferring when needed.
+        An AI voice agent is not a rigid robot or an old IVR. It is a conversational assistant
+        capable of handling real calls like a person: scheduling, confirming, answering, and
+        transferring when needed.
       </p>
 
       <p>

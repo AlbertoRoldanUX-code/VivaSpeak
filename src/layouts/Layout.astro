@@ -1,28 +1,28 @@
 ---
-import CookieBanner from "../components/CookieBanner.astro";
-import SchemaMarkup from "../components/SchemaMarkup.astro";
-import "../../styles/global.css";
+import CookieBanner from '../components/CookieBanner.astro';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+import '../../styles/global.css';
 
 const {
-  lang = "es",
-  title = "VivaSpeak",
-  description = "",
+  lang = 'es',
+  title = 'VivaSpeak',
+  description = '',
   canonical,
-  ogImage = "https://vivaspeak.com/assets/og-image.png",
-  ogType = "website",
-  alternateEs = "",
-  alternateEn = "",
+  ogImage = 'https://vivaspeak.com/assets/og-image.png',
+  ogType = 'website',
+  alternateEs = '',
+  alternateEn = '',
   schemaFaq = [],
-  robots = "index, follow",
+  robots = 'index, follow',
   breadcrumb = [],
   schemaArticle = null,
   speakable = [],
   schemaHowTo = null,
 } = Astro.props;
 const currentUrl = canonical || Astro.url.href;
-const fullOgImage = ogImage.startsWith("http")
+const fullOgImage = ogImage.startsWith('http')
   ? ogImage
-  : `https://vivaspeak.com${ogImage.startsWith("/") ? "" : "/"}${ogImage}`;
+  : `https://vivaspeak.com${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
 ---
 
 <!doctype html>
@@ -32,14 +32,14 @@ const fullOgImage = ogImage.startsWith("http")
     <script is:inline>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
+          dl = l != 'dataLayer' ? '&l=' + l : '';
         j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-P6GFB3DZ");
+      })(window, document, 'script', 'dataLayer', 'GTM-P6GFB3DZ');
     </script>
     <!-- End Google Tag Manager -->
 
@@ -69,17 +69,9 @@ const fullOgImage = ogImage.startsWith("http")
     <meta property="og:url" content={currentUrl} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="VivaSpeak" />
-    <meta property="og:locale" content={lang === "es" ? "es_ES" : "en_US"} />
-    {
-      lang === "es" && alternateEn && (
-        <meta property="og:locale:alternate" content="en_US" />
-      )
-    }
-    {
-      lang === "en" && alternateEs && (
-        <meta property="og:locale:alternate" content="es_ES" />
-      )
-    }
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    {lang === 'es' && alternateEn && <meta property="og:locale:alternate" content="en_US" />}
+    {lang === 'en' && alternateEs && <meta property="og:locale:alternate" content="es_ES" />}
 
     <!-- ✅ Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -90,11 +82,7 @@ const fullOgImage = ogImage.startsWith("http")
     <!-- ✅ Hreflang -->
     {alternateEs && <link rel="alternate" href={alternateEs} hreflang="es" />}
     {alternateEn && <link rel="alternate" href={alternateEn} hreflang="en" />}
-    {
-      alternateEs && (
-        <link rel="alternate" href={alternateEs} hreflang="x-default" />
-      )
-    }
+    {alternateEs && <link rel="alternate" href={alternateEs} hreflang="x-default" />}
     <!-- ✅ Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
@@ -110,33 +98,30 @@ const fullOgImage = ogImage.startsWith("http")
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("consent", "default", {
-        ad_storage: "denied",
-        ad_user_data: "denied",
-        ad_personalization: "denied",
-        analytics_storage: "denied",
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
       });
     </script>
-    <script
-      is:inline
-      src="https://www.googletagmanager.com/gtag/js?id=GT-K4ZBTHP2"
-      async></script>
+    <script is:inline src="https://www.googletagmanager.com/gtag/js?id=GT-K4ZBTHP2" async></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", "GT-K4ZBTHP2");
-      gtag("config", "G-LVXZ4DBRP0");
+      gtag('js', new Date());
+      gtag('config', 'GT-K4ZBTHP2');
+      gtag('config', 'G-LVXZ4DBRP0');
       (function () {
         var m = document.cookie.match(/(?:^|; )cookie-consent=([^;]*)/);
-        if (m && m[1] === "accepted") {
-          gtag("consent", "update", {
-            ad_storage: "granted",
-            ad_user_data: "granted",
-            ad_personalization: "granted",
-            analytics_storage: "granted",
+        if (m && m[1] === 'accepted') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted',
           });
         }
       })();
@@ -166,10 +151,7 @@ const fullOgImage = ogImage.startsWith("http")
       howTo={schemaHowTo}
     />
     <!-- Calendly -->
-    <script
-      is:inline
-      async
-      src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -182,9 +164,7 @@ const fullOgImage = ogImage.startsWith("http")
     >
     <!-- End Google Tag Manager (noscript) -->
     <a href="#main-content" class="skip-link"
-      >{
-        lang === "es" ? "Saltar al contenido principal" : "Skip to main content"
-      }</a
+      >{lang === 'es' ? 'Saltar al contenido principal' : 'Skip to main content'}</a
     >
     <slot />
 
