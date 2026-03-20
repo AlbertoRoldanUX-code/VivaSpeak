@@ -53,6 +53,14 @@ const schemaVideos = [
   },
 ];
 
+const mainEntityService = {
+  name: 'Laura - Agente de voz IA para inmobiliarias',
+  description:
+    'Agente de voz IA que atiende llamadas 24/7, precualifica leads inmobiliarios y agenda visitas automáticamente.',
+  areaServed: 'ES',
+  availableLanguage: ['es', 'en'],
+};
+
 const schemaReviews = [
   {
     author: 'Daniel Insa',
@@ -89,6 +97,7 @@ const schemaReviews = [
   schemaReviews={schemaReviews}
   breadcrumb={breadcrumb}
   speakable={['.hero-subtitle', '.hero-proof', '.faq-content', '.use-case-features li']}
+  schemaMainEntityService={mainEntityService}
 >
   <LandingHeader ctaLabel="Ver demo en directo" ctaHref="#cta-final" />
   <main id="main-content" class="inmo-landing">

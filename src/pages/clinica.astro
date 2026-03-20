@@ -41,6 +41,14 @@ const breadcrumb = [
   { name: 'Clara para Clínicas', url: 'https://vivaspeak.com/clinica/' },
 ];
 
+const mainEntityService = {
+  name: 'Clara - Agente de voz IA para clínicas',
+  description:
+    'Agente de voz IA que agenda citas, responde WhatsApp y reduce llamadas perdidas en clínicas.',
+  areaServed: 'ES',
+  availableLanguage: ['es', 'en'],
+};
+
 const schemaVideos = [
   {
     name: 'Demo Clara VivaSpeak - Agente de voz IA para clínicas',
@@ -67,6 +75,7 @@ const schemaVideos = [
   schemaVideos={schemaVideos}
   breadcrumb={breadcrumb}
   speakable={['.hero-subtitle', '.faq-content', '.solution-card p']}
+  schemaMainEntityService={mainEntityService}
 >
   <LandingHeader ctaLabel="Activar Clara" ctaHref="https://calendly.com/vivaspeak/30min" />
   <main id="main-content">

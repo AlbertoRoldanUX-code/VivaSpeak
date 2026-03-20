@@ -25,6 +25,14 @@ const schemaFaq = [
       'Sí. Podemos integrar el agente con sistemas de historia clínica, agendas médicas y plataformas de gestión hospitalaria mediante API.',
   },
 ];
+
+const mainEntityService = {
+  name: 'Agente médico IA para salud pública',
+  description:
+    'Agente de voz IA que ofrece atención médica automatizada por teléfono, sin necesidad de internet para los pacientes.',
+  areaServed: 'ES',
+  availableLanguage: ['es', 'en'],
+};
 ---
 
 <Layout
@@ -37,6 +45,7 @@ const schemaFaq = [
   lang="es"
   schemaFaq={schemaFaq}
   speakable={['.home-title', '.home-description', '.use-case-features li', '.faq-content']}
+  schemaMainEntityService={mainEntityService}
 >
   <LandingHeader ctaLabel="Solicitar contacto" ctaHref="#schedule" />
   <main id="main-content">

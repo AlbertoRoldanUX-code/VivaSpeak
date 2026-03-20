@@ -22,6 +22,7 @@ const {
   schemaReviews = [],
   schemaDefinedTerms = [],
   schemaAboutPage = false,
+  schemaMainEntityService = null,
 } = Astro.props;
 const currentUrl = canonical || Astro.url.href;
 const fullOgImage = ogImage.startsWith('http')
@@ -158,6 +159,7 @@ const fullOgImage = ogImage.startsWith('http')
       lang={lang}
       definedTerms={schemaDefinedTerms}
       aboutPage={schemaAboutPage}
+      mainEntityService={schemaMainEntityService}
     />
     <!-- Calendly -->
     <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>

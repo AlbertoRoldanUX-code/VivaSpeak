@@ -24,6 +24,14 @@ const schemaFaq = [
       'Sí. Incluye aviso legal automático al inicio de la llamada y se adapta a la normativa de grabación en España.',
   },
 ];
+
+const mainEntityService = {
+  name: 'Agente de voz IA para abogados',
+  description:
+    'Agente de voz IA que filtra llamadas legales, recoge datos clave y envía resúmenes estructurados a despachos de abogados.',
+  areaServed: 'ES',
+  availableLanguage: ['es', 'en', 'de'],
+};
 ---
 
 <Layout
@@ -36,6 +44,7 @@ const schemaFaq = [
   keywords="agente de voz IA, abogados, despacho legal, recepción telefónica legal, atención telefónica abogados, cualificación de casos legales"
   schemaFaq={schemaFaq}
   speakable={['.hero-copy h1', '.hero-subtitle', '.faq-card p', '.pain-card p', '.flow-step p']}
+  schemaMainEntityService={mainEntityService}
 >
   <LandingHeader ctaLabel="Agendar demo" ctaHref="#cta-final" />
   <main id="main-content" class="law-landing">
