@@ -34,6 +34,7 @@ interface Props {
     body: string;
     rating: number;
   }>;
+  lang?: string;
 }
 
 const {
@@ -48,9 +49,15 @@ const {
   howTo = null,
   videos = [],
   reviews = [],
+  lang = 'es',
 } = Astro.props;
 
 const baseUrl = 'https://vivaspeak.com';
+
+const orgDescription =
+  lang === 'es'
+    ? 'Agentes de voz IA para llamadas, WhatsApp y email. Atención automatizada 24/7.'
+    : 'AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -58,7 +65,7 @@ const organizationSchema = {
   name: 'VivaSpeak',
   url: baseUrl,
   logo: `${baseUrl}/assets/og-image.png`,
-  description: 'AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.',
+  description: orgDescription,
   sameAs: [
     'https://www.linkedin.com/company/vivaspeak',
     'https://twitter.com/vivaspeak',
@@ -79,7 +86,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'VivaSpeak',
   url: baseUrl,
-  description: 'AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.',
+  description: orgDescription,
   publisher: { '@id': `${baseUrl}/#organization` },
   inLanguage: ['es', 'en'],
 };
