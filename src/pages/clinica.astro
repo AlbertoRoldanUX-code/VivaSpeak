@@ -1,20 +1,44 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import LandingHeader from "../components/LandingHeader.astro";
-import Footer from "../components/Footer.astro";
+import Layout from '../layouts/Layout.astro';
+import LandingHeader from '../components/LandingHeader.astro';
+import Footer from '../components/Footer.astro';
 
 const schemaFaq = [
-  { question: "¿Clara puede integrarse con mi agenda clínica o Google Calendar?", answer: "Sí. Clara se integra con software de agenda compatible y con Google Calendar para sincronizar automáticamente." },
-  { question: "¿Clara puede responder mensajes de WhatsApp?", answer: "Sí. El chatbot de Clara responde automáticamente por WhatsApp, consulta disponibilidad, agenda citas, cancela reservas y envía recordatorios." },
-  { question: "¿Puede detectar depilación láser con múltiples zonas?", answer: "Sí. Clara detecta automáticamente las zonas solicitadas (axilas, ingles, piernas, etc.), calcula la duración total y reserva el tratamiento correcto en tu agenda." },
-  { question: "¿Puedo usar Clara con varias agendas de especialistas?", answer: "Sí. Clara puede gestionar múltiples agendas según especialidad médica y asignar citas automáticamente a cada profesional." },
-  { question: "¿Clara puede enviar recordatorios de citas?", answer: "Sí. Clara envía recordatorios automáticos por WhatsApp 24 horas antes de cada cita para reducir ausencias." },
-  { question: "¿Mis pacientes pueden reservar citas online sin llamar?", answer: "Sí. Creamos una landing de reservas personalizada donde tus pacientes pueden ver disponibilidad y agendar citas 24/7 sin necesidad de llamar." },
+  {
+    question: '¿Clara puede integrarse con mi agenda clínica o Google Calendar?',
+    answer:
+      'Sí. Clara se integra con software de agenda compatible y con Google Calendar para sincronizar automáticamente.',
+  },
+  {
+    question: '¿Clara puede responder mensajes de WhatsApp?',
+    answer:
+      'Sí. El chatbot de Clara responde automáticamente por WhatsApp, consulta disponibilidad, agenda citas, cancela reservas y envía recordatorios.',
+  },
+  {
+    question: '¿Puede detectar depilación láser con múltiples zonas?',
+    answer:
+      'Sí. Clara detecta automáticamente las zonas solicitadas (axilas, ingles, piernas, etc.), calcula la duración total y reserva el tratamiento correcto en tu agenda.',
+  },
+  {
+    question: '¿Puedo usar Clara con varias agendas de especialistas?',
+    answer:
+      'Sí. Clara puede gestionar múltiples agendas según especialidad médica y asignar citas automáticamente a cada profesional.',
+  },
+  {
+    question: '¿Clara puede enviar recordatorios de citas?',
+    answer:
+      'Sí. Clara envía recordatorios automáticos por WhatsApp 24 horas antes de cada cita para reducir ausencias.',
+  },
+  {
+    question: '¿Mis pacientes pueden reservar citas online sin llamar?',
+    answer:
+      'Sí. Creamos una landing de reservas personalizada donde tus pacientes pueden ver disponibilidad y agendar citas 24/7 sin necesidad de llamar.',
+  },
 ];
 
 const breadcrumb = [
-  { name: "Inicio", url: "https://vivaspeak.com/" },
-  { name: "Clara para Clínicas", url: "https://vivaspeak.com/clinica/" },
+  { name: 'Inicio', url: 'https://vivaspeak.com/' },
+  { name: 'Clara para Clínicas', url: 'https://vivaspeak.com/clinica/' },
 ];
 ---
 
@@ -29,345 +53,305 @@ const breadcrumb = [
   lang="es"
   schemaFaq={schemaFaq}
   breadcrumb={breadcrumb}
-  speakable={[".hero-subtitle", ".faq-content", ".solution-card p"]}
+  speakable={['.hero-subtitle', '.faq-content', '.solution-card p']}
 >
-  <LandingHeader
-    ctaLabel="Activar Clara"
-    ctaHref="https://calendly.com/vivaspeak/30min"
-  />
-    <main id="main-content">
-      <!-- 🎯 HERO -->
-      <section id="hero">
-        <div class="container hero-content">
-          <h1>Automatiza tu Clínica con Clara – IA Multicanal 24/7</h1>
-          <img
-            src="/assets/clara-avatar.png"
-            alt="Clara, agente de voz IA para clínicas"
-            class="avatar-clara"
-            loading="lazy"
-          />
-          <p class="hero-subtitle">
-            Clara responde <strong>llamadas</strong>,
-            <strong>mensajes de WhatsApp</strong>, agenda citas automáticamente
-            en <strong>tu software de agenda o Google Calendar</strong> y envía recordatorios
-            a tus pacientes.
-          </p>
-          <a href="https://calendly.com/vivaspeak/30min" class="btn-primary"
-            >Activar Clara para tu clínica</a
-          >
-        </div>
-      </section>
+  <LandingHeader ctaLabel="Activar Clara" ctaHref="https://calendly.com/vivaspeak/30min" />
+  <main id="main-content">
+    <!-- 🎯 HERO -->
+    <section id="hero">
+      <div class="container hero-content">
+        <h1>Automatiza tu Clínica con Clara – IA Multicanal 24/7</h1>
+        <img
+          src="/assets/clara-avatar.png"
+          alt="Clara, agente de voz IA para clínicas"
+          class="avatar-clara"
+          loading="lazy"
+        />
+        <p class="hero-subtitle">
+          Clara responde <strong>llamadas</strong>,
+          <strong>mensajes de WhatsApp</strong>, agenda citas automáticamente en <strong
+            >tu software de agenda o Google Calendar</strong
+          > y envía recordatorios a tus pacientes.
+        </p>
+        <a href="https://calendly.com/vivaspeak/30min" class="btn-primary"
+          >Activar Clara para tu clínica</a
+        >
+      </div>
+    </section>
 
-      <!-- 📡 SOLUCIONES -->
-      <section id="soluciones">
-        <div class="container">
-          <h2>¿Qué hace Clara por tu clínica?</h2>
-          <div class="solutions-grid">
-            <!-- 📞 Llamadas -->
-            <div class="solution-card">
-              <div class="solution-icon">📞</div>
-              <h3>Llamadas de Voz IA</h3>
-              <p>
-                Atiende llamadas 24/7 con voz natural, agenda citas y resuelve
-                dudas frecuentes.
-              </p>
-            </div>
+    <!-- 📡 SOLUCIONES -->
+    <section id="soluciones">
+      <div class="container">
+        <h2>¿Qué hace Clara por tu clínica?</h2>
+        <div class="solutions-grid">
+          <!-- 📞 Llamadas -->
+          <div class="solution-card">
+            <div class="solution-icon">📞</div>
+            <h3>Llamadas de Voz IA</h3>
+            <p>Atiende llamadas 24/7 con voz natural, agenda citas y resuelve dudas frecuentes.</p>
+          </div>
 
-            <!-- 💬 WhatsApp -->
-            <div class="solution-card">
-              <div class="solution-icon">💬</div>
-              <h3>Chatbot de WhatsApp</h3>
-              <p>
-                Responde mensajes automáticamente, consulta disponibilidad,
-                agenda citas y cancela reservas.
-              </p>
-            </div>
+          <!-- 💬 WhatsApp -->
+          <div class="solution-card">
+            <div class="solution-icon">💬</div>
+            <h3>Chatbot de WhatsApp</h3>
+            <p>
+              Responde mensajes automáticamente, consulta disponibilidad, agenda citas y cancela
+              reservas.
+            </p>
+          </div>
 
-            <!-- 📅 Agendamiento -->
-            <div class="solution-card">
-              <div class="solution-icon">📅</div>
-              <h3>Agendamiento Inteligente</h3>
-              <p>
-                Se integra con <strong>tu software de agenda</strong> o
-                <strong>Google Calendar</strong> para optimizar tu agenda.
-              </p>
-            </div>
+          <!-- 📅 Agendamiento -->
+          <div class="solution-card">
+            <div class="solution-icon">📅</div>
+            <h3>Agendamiento Inteligente</h3>
+            <p>
+              Se integra con <strong>tu software de agenda</strong> o
+              <strong>Google Calendar</strong> para optimizar tu agenda.
+            </p>
+          </div>
 
-            <!-- 🔔 Notificaciones -->
-            <div class="solution-card">
-              <div class="solution-icon">🔔</div>
-              <h3>Recordatorios Automáticos</h3>
-              <p>
-                Envía recordatorios por WhatsApp antes de cada cita para reducir
-                ausencias.
-              </p>
-            </div>
+          <!-- 🔔 Notificaciones -->
+          <div class="solution-card">
+            <div class="solution-icon">🔔</div>
+            <h3>Recordatorios Automáticos</h3>
+            <p>Envía recordatorios por WhatsApp antes de cada cita para reducir ausencias.</p>
+          </div>
 
-            <!-- 📧 Emails -->
-            <div class="solution-card">
-              <div class="solution-icon">📧</div>
-              <h3>Emails Personalizados</h3>
-              <p>
-                Envía emails de bienvenida a nuevos pacientes y notificaciones
-                cuando recibes llamadas.
-              </p>
-            </div>
+          <!-- 📧 Emails -->
+          <div class="solution-card">
+            <div class="solution-icon">📧</div>
+            <h3>Emails Personalizados</h3>
+            <p>
+              Envía emails de bienvenida a nuevos pacientes y notificaciones cuando recibes
+              llamadas.
+            </p>
+          </div>
 
-            <!-- 🌐 Landing de Reservas -->
-            <div class="solution-card">
-              <div class="solution-icon">🌐</div>
-              <h3>Landing de Reservas Online</h3>
-              <p>
-                Tus pacientes pueden ver disponibilidad y reservar citas 24/7
-                desde una página web personalizada.
-              </p>
-            </div>
+          <!-- 🌐 Landing de Reservas -->
+          <div class="solution-card">
+            <div class="solution-icon">🌐</div>
+            <h3>Landing de Reservas Online</h3>
+            <p>
+              Tus pacientes pueden ver disponibilidad y reservar citas 24/7 desde una página web
+              personalizada.
+            </p>
           </div>
         </div>
-      </section>
-      <!-- 🎬 DEMO EN VIDEO -->
-      <section id="video-demo">
-        <div class="container">
-          <img
-            src="/assets/video.png"
-            alt="Icono de video"
-            class="image"
-            loading="lazy"
-          />
-          <h2>Mira cómo funciona Clara</h2>
-          <p>
-            Observa un ejemplo real donde Clara atiende una llamada, resuelve
-            dudas sobre tratamientos y agenda una cita automáticamente.
-          </p>
-          <iframe
-            width="315"
-            height="560"
-            src="https://www.youtube.com/embed/un1BHBVSBVg"
-            title="Demo Clara VivaSpeak"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+      </div>
+    </section>
+    <!-- 🎬 DEMO EN VIDEO -->
+    <section id="video-demo">
+      <div class="container">
+        <img src="/assets/video.png" alt="Icono de video" class="image" loading="lazy" />
+        <h2>Mira cómo funciona Clara</h2>
+        <p>
+          Observa un ejemplo real donde Clara atiende una llamada, resuelve dudas sobre tratamientos
+          y agenda una cita automáticamente.
+        </p>
+        <iframe
+          width="315"
+          height="560"
+          src="https://www.youtube.com/embed/un1BHBVSBVg"
+          title="Demo Clara VivaSpeak"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
 
-          <h3>Escúchala en acción</h3>
-          <audio controls>
-            <source src="/assets/audio-clara.mp3" type="audio/mpeg" />
-            Tu navegador no soporta audio.
-          </audio>
-        </div>
-      </section>
+        <h3>Escúchala en acción</h3>
+        <audio controls>
+          <source src="/assets/audio-clara.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio.
+        </audio>
+      </div>
+    </section>
 
-      <!-- 🔗 INTEGRACIONES -->
-      <section id="integraciones">
-        <div class="container">
-          <h2>Integraciones disponibles</h2>
-          <div class="integrations-grid">
-            <div class="integration-card">
-              <h3>📅 Google Calendar</h3>
-              <p>
-                Sincroniza automáticamente las citas agendadas por Clara con tu
-                calendario de Google para evitar conflictos.
-              </p>
-            </div>
-            <div class="integration-card">
-              <h3>🏥 Software de agenda</h3>
-              <p>
-                Integración con software de agenda compatible: agendamiento,
-                cancelaciones y notificaciones automáticas.
-              </p>
-            </div>
-            <div class="integration-card">
-              <h3>💬 WhatsApp Business</h3>
-              <p>
-                Clara responde mensajes de WhatsApp, agenda citas, consulta
-                disponibilidad y envía recordatorios vía 360Dialog.
-              </p>
-            </div>
-            <div class="integration-card">
-              <h3>📊 Panel de Control</h3>
-              <p>
-                Gestiona todo desde un dashboard online: llamadas, mensajes,
-                agendas, base de conocimiento y configuración.
-              </p>
-            </div>
+    <!-- 🔗 INTEGRACIONES -->
+    <section id="integraciones">
+      <div class="container">
+        <h2>Integraciones disponibles</h2>
+        <div class="integrations-grid">
+          <div class="integration-card">
+            <h3>📅 Google Calendar</h3>
+            <p>
+              Sincroniza automáticamente las citas agendadas por Clara con tu calendario de Google
+              para evitar conflictos.
+            </p>
+          </div>
+          <div class="integration-card">
+            <h3>🏥 Software de agenda</h3>
+            <p>
+              Integración con software de agenda compatible: agendamiento, cancelaciones y
+              notificaciones automáticas.
+            </p>
+          </div>
+          <div class="integration-card">
+            <h3>💬 WhatsApp Business</h3>
+            <p>
+              Clara responde mensajes de WhatsApp, agenda citas, consulta disponibilidad y envía
+              recordatorios vía 360Dialog.
+            </p>
+          </div>
+          <div class="integration-card">
+            <h3>📊 Panel de Control</h3>
+            <p>
+              Gestiona todo desde un dashboard online: llamadas, mensajes, agendas, base de
+              conocimiento y configuración.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ❓ FAQ -->
-      <section id="faq">
-        <div class="container">
-          <h2>Preguntas Frecuentes</h2>
-          <div class="faq-container">
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Clara puede integrarse con mi
-                agenda clínica o Google Calendar?
-              </summary>
-              <div class="faq-content">
-                Sí. Clara se integra con software de agenda compatible y con
-                <strong>Google Calendar</strong> para sincronizar
-                automáticamente.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Clara puede responder mensajes
-                de WhatsApp?
-              </summary>
-              <div class="faq-content">
-                Sí. El chatbot de Clara responde automáticamente por WhatsApp,
-                consulta disponibilidad, agenda citas, cancela reservas y envía
-                recordatorios.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Puede detectar depilación
-                láser con múltiples zonas?
-              </summary>
-              <div class="faq-content">
-                Sí. Clara detecta automáticamente las zonas solicitadas (axilas,
-                ingles, piernas, etc.), calcula la duración total y reserva el
-                tratamiento correcto en tu agenda.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Puedo usar Clara con varias
-                agendas de especialistas?
-              </summary>
-              <div class="faq-content">
-                Sí. Clara puede gestionar múltiples agendas según especialidad
-                médica y asignar citas automáticamente a cada profesional.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Clara puede enviar
-                recordatorios de citas?
-              </summary>
-              <div class="faq-content">
-                Sí. Clara envía recordatorios automáticos por WhatsApp 24 horas
-                antes de cada cita para reducir ausencias.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Puede enviar emails de
-                bienvenida a nuevos pacientes?
-              </summary>
-              <div class="faq-content">
-                Sí. Clara envía automáticamente emails personalizados de
-                bienvenida cuando se registra un nuevo paciente en tu sistema.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Cómo redirijo mi número actual
-                a Clara?
-              </summary>
-              <div class="faq-content">
-                Puedes redirigir tu número actual a Clara con un simple código.
-                <br /><br />
-                👉
-                <a
-                  href="/docs/guia-redireccion.pdf"
-                  target="_blank"
-                  class="link-style"
-                >
-                  Descarga la guía paso a paso (PDF)
-                </a>
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Cómo comparto mi calendario
-                con Clara?
-              </summary>
-              <div class="faq-content">
-                Para que Clara pueda agendar citas automáticamente, debes
-                compartir tu calendario de Google o configurar la integración
-                con tu software de agenda.
-                <br /><br />
-                👉
-                <a
-                  href="/docs/guia-compartir-calendario.pdf"
-                  target="_blank"
-                  class="link-style"
-                >
-                  Descarga la guía de Google Calendar (PDF)
-                </a>
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Mis pacientes pueden reservar
-                citas online sin llamar?
-              </summary>
-              <div class="faq-content">
-                Sí. Creamos una landing de reservas personalizada donde tus
-                pacientes pueden ver disponibilidad y agendar citas 24/7 sin
-                necesidad de llamar.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span> ¿Puedo gestionar todo desde un
-                panel online?
-              </summary>
-              <div class="faq-content">
-                Sí. Tienes acceso a un dashboard completo donde puedes ver el
-                historial de llamadas, mensajes de WhatsApp, citas agendadas,
-                subir tu base de conocimiento y configurar integraciones.
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section class="pricing-anchor">
-        <div class="container">
-          <div class="section-header section-header--center">
-            <p class="eyebrow">Precio único</p>
-            <h2>
-              Desde 249 €/mes. Precio final definido en la demo según volumen e integraciones.
-            </h2>
-            <div class="cta-buttons">
-              <a href="#cta" class="btn-primary">Solicitar demo</a>
+    <!-- ❓ FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container">
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Clara puede integrarse con mi agenda clínica o Google
+              Calendar?
+            </summary>
+            <div class="faq-content">
+              Sí. Clara se integra con software de agenda compatible y con
+              <strong>Google Calendar</strong> para sincronizar automáticamente.
             </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Clara puede responder mensajes de WhatsApp?
+            </summary>
+            <div class="faq-content">
+              Sí. El chatbot de Clara responde automáticamente por WhatsApp, consulta
+              disponibilidad, agenda citas, cancela reservas y envía recordatorios.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Puede detectar depilación láser con múltiples zonas?
+            </summary>
+            <div class="faq-content">
+              Sí. Clara detecta automáticamente las zonas solicitadas (axilas, ingles, piernas,
+              etc.), calcula la duración total y reserva el tratamiento correcto en tu agenda.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Puedo usar Clara con varias agendas de especialistas?
+            </summary>
+            <div class="faq-content">
+              Sí. Clara puede gestionar múltiples agendas según especialidad médica y asignar citas
+              automáticamente a cada profesional.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Clara puede enviar recordatorios de citas?
+            </summary>
+            <div class="faq-content">
+              Sí. Clara envía recordatorios automáticos por WhatsApp 24 horas antes de cada cita
+              para reducir ausencias.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Puede enviar emails de bienvenida a nuevos pacientes?
+            </summary>
+            <div class="faq-content">
+              Sí. Clara envía automáticamente emails personalizados de bienvenida cuando se registra
+              un nuevo paciente en tu sistema.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Cómo redirijo mi número actual a Clara?
+            </summary>
+            <div class="faq-content">
+              Puedes redirigir tu número actual a Clara con un simple código.
+              <br /><br />
+              👉
+              <a href="/docs/guia-redireccion.pdf" target="_blank" class="link-style">
+                Descarga la guía paso a paso (PDF)
+              </a>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Cómo comparto mi calendario con Clara?
+            </summary>
+            <div class="faq-content">
+              Para que Clara pueda agendar citas automáticamente, debes compartir tu calendario de
+              Google o configurar la integración con tu software de agenda.
+              <br /><br />
+              👉
+              <a href="/docs/guia-compartir-calendario.pdf" target="_blank" class="link-style">
+                Descarga la guía de Google Calendar (PDF)
+              </a>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Mis pacientes pueden reservar citas online sin llamar?
+            </summary>
+            <div class="faq-content">
+              Sí. Creamos una landing de reservas personalizada donde tus pacientes pueden ver
+              disponibilidad y agendar citas 24/7 sin necesidad de llamar.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span> ¿Puedo gestionar todo desde un panel online?
+            </summary>
+            <div class="faq-content">
+              Sí. Tienes acceso a un dashboard completo donde puedes ver el historial de llamadas,
+              mensajes de WhatsApp, citas agendadas, subir tu base de conocimiento y configurar
+              integraciones.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-anchor">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">Precio único</p>
+          <h2>Desde 249 €/mes. Precio final definido en la demo según volumen e integraciones.</h2>
+          <div class="cta-buttons">
+            <a href="#cta" class="btn-primary">Solicitar demo</a>
           </div>
         </div>
-      </section>
-      <!-- 🚀 CTA FINAL -->
-      <section id="cta">
-        <div class="container">
-          <h2>¿Lista para liberar tiempo y cuidar más pacientes?</h2>
-          <img
-            src="/assets/clara-avatar.png"
-            alt="Clara, asistente de voz IA"
-            class="avatar-clara"
-            loading="lazy"
-          />
-          <p class="hero-subtitle">
-            <strong>Automatización completa:</strong> Llamadas + WhatsApp +
-            Agenda + Emails + Panel de control
-          </p>
-          <a href="https://calendly.com/vivaspeak/30min" class="btn-primary">
-            💡 Activar Clara ahora
-          </a>
-        </div>
-      </section>
-     </main>
+      </div>
+    </section>
+    <!-- 🚀 CTA FINAL -->
+    <section id="cta">
+      <div class="container">
+        <h2>¿Lista para liberar tiempo y cuidar más pacientes?</h2>
+        <img
+          src="/assets/clara-avatar.png"
+          alt="Clara, asistente de voz IA"
+          class="avatar-clara"
+          loading="lazy"
+        />
+        <p class="hero-subtitle">
+          <strong>Automatización completa:</strong> Llamadas + WhatsApp + Agenda + Emails + Panel de control
+        </p>
+        <a href="https://calendly.com/vivaspeak/30min" class="btn-primary">
+          💡 Activar Clara ahora
+        </a>
+      </div>
+    </section>
+  </main>
 
   <Footer langEnHref="/en/clinic" langEsHref="/clinica" />
 </Layout>

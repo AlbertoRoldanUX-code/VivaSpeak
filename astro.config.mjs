@@ -1,9 +1,9 @@
 // @ts-check
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
+import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: "https://vivaspeak.com",
-  trailingSlash: "always",
+  site: 'https://vivaspeak.com',
+  trailingSlash: 'always',
   integrations: [sitemap()],
 });

@@ -1,56 +1,65 @@
 ---
-import CookieBanner from "../components/CookieBanner.astro";
-import SchemaMarkup from "../components/SchemaMarkup.astro";
-import "../../styles/global.css";
+import CookieBanner from '../components/CookieBanner.astro';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+import '../../styles/global.css';
 
-const { 
-  lang = "es",  
-  title = "VivaSpeak", 
-  description = "",
-  canonical, 
-  ogImage = "https://vivaspeak.com/assets/og-image.png", 
-  ogType = "website", 
-  alternateEs = "",
-  alternateEn = "",
+const {
+  lang = 'es',
+  title = 'VivaSpeak',
+  description = '',
+  canonical,
+  ogImage = 'https://vivaspeak.com/assets/og-image.png',
+  ogType = 'website',
+  alternateEs = '',
+  alternateEn = '',
   schemaFaq = [],
-  robots = "index, follow",
+  robots = 'index, follow',
   breadcrumb = [],
   schemaArticle = null,
-  speakable = []
+  speakable = [],
+  schemaHowTo = null,
 } = Astro.props;
 const currentUrl = canonical || Astro.url.href;
-const fullOgImage = ogImage.startsWith("http") ? ogImage : `https://vivaspeak.com${ogImage.startsWith("/") ? "" : "/"}${ogImage}`;
-
+const fullOgImage = ogImage.startsWith('http')
+  ? ogImage
+  : `https://vivaspeak.com${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang={lang}>
   <head>
-
     <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P6GFB3DZ');</script>
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-P6GFB3DZ');
+    </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#16a085" />
     <title>{title}</title>
-    
+
     <!-- ✅ Robots -->
     <meta name="robots" content={robots} />
-    
+
     <!-- ✅ Canonical -->
     {canonical && <link rel="canonical" href={canonical} />}
-    
+
     <!-- ✅ Meta description -->
     <meta name="description" content={description} />
-    
+
     <!-- ✅ Author -->
     <meta name="author" content="VivaSpeak" />
-    
+
     <!-- ✅ Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -60,60 +69,64 @@ const fullOgImage = ogImage.startsWith("http") ? ogImage : `https://vivaspeak.co
     <meta property="og:url" content={currentUrl} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="VivaSpeak" />
-    <meta property="og:locale" content={lang === "es" ? "es_ES" : "en_US"} />
-    {lang === "es" && alternateEn && <meta property="og:locale:alternate" content="en_US" />}
-    {lang === "en" && alternateEs && <meta property="og:locale:alternate" content="es_ES" />}
-    
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    {lang === 'es' && alternateEn && <meta property="og:locale:alternate" content="en_US" />}
+    {lang === 'en' && alternateEs && <meta property="og:locale:alternate" content="es_ES" />}
+
     <!-- ✅ Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullOgImage} />
-    
+
     <!-- ✅ Hreflang -->
-   {alternateEs && <link rel="alternate" href={alternateEs} hreflang="es" />}
-   {alternateEn && <link rel="alternate" href={alternateEn} hreflang="en" />}
-   {alternateEs && <link rel="alternate" href={alternateEs} hreflang="x-default" />}
+    {alternateEs && <link rel="alternate" href={alternateEs} hreflang="es" />}
+    {alternateEn && <link rel="alternate" href={alternateEn} hreflang="en" />}
+    {alternateEs && <link rel="alternate" href={alternateEs} hreflang="x-default" />}
     <!-- ✅ Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    
+
     <!-- ✅ Preconnect para recursos externos -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://assets.calendly.com" />
-    
+
     <!-- Google Tag con Consent Mode v2 - debe cargar en <head> para que Google detecte la etiqueta -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied'
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
       });
     </script>
     <script is:inline src="https://www.googletagmanager.com/gtag/js?id=GT-K4ZBTHP2" async></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
       gtag('config', 'GT-K4ZBTHP2');
       gtag('config', 'G-LVXZ4DBRP0');
-      (function() {
+      (function () {
         var m = document.cookie.match(/(?:^|; )cookie-consent=([^;]*)/);
         if (m && m[1] === 'accepted') {
           gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted',
           });
         }
       })();
     </script>
-    
+
     <!-- ✅ FontAwesome preload -->
     <link
       rel="preload"
@@ -126,22 +139,33 @@ const fullOgImage = ogImage.startsWith("http") ? ogImage : `https://vivaspeak.co
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       crossorigin="anonymous"
     />
-    
+
     <!-- Schema.org markup -->
-    <SchemaMarkup faq={schemaFaq} breadcrumb={breadcrumb} article={schemaArticle} speakable={speakable} pageUrl={currentUrl} pageName={title} />
+    <SchemaMarkup
+      faq={schemaFaq}
+      breadcrumb={breadcrumb}
+      article={schemaArticle}
+      speakable={speakable}
+      pageUrl={currentUrl}
+      pageName={title}
+      howTo={schemaHowTo}
+    />
     <!-- Calendly -->
-    <script 
-      is:inline 
-      async 
-      src="https://assets.calendly.com/assets/external/widget.js"
-    ></script>
+    <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6GFB3DZ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P6GFB3DZ"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
     <!-- End Google Tag Manager (noscript) -->
-    <a href="#main-content" class="skip-link">{lang === "es" ? "Saltar al contenido principal" : "Skip to main content"}</a>
+    <a href="#main-content" class="skip-link"
+      >{lang === 'es' ? 'Saltar al contenido principal' : 'Skip to main content'}</a
+    >
     <slot />
 
     <!-- Banner de cookies mostrado en todas las páginas -->

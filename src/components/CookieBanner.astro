@@ -1,27 +1,27 @@
 ---
-const { lang = "es" } = Astro.props;
+const { lang = 'es' } = Astro.props;
 
-const locale = (lang || "es").toLowerCase().startsWith("en") ? "en" : "es";
+const locale = (lang || 'es').toLowerCase().startsWith('en') ? 'en' : 'es';
 const translations = {
   es: {
-    ariaLabel: "Preferencias de cookies",
-    headline: "Tu privacidad primero.",
+    ariaLabel: 'Preferencias de cookies',
+    headline: 'Tu privacidad primero.',
     description:
-      "Usamos cookies para medir el uso del sitio y mejorar VivaSpeak. Puedes aceptarlas todas o quedarte solo con las necesarias.",
-    privacyLabel: "política de privacidad",
-    privacyHref: "/politica-de-privacidad",
-    reject: "Solo necesarias",
-    accept: "Permitir todas",
+      'Usamos cookies para medir el uso del sitio y mejorar VivaSpeak. Puedes aceptarlas todas o quedarte solo con las necesarias.',
+    privacyLabel: 'política de privacidad',
+    privacyHref: '/politica-de-privacidad',
+    reject: 'Solo necesarias',
+    accept: 'Permitir todas',
   },
   en: {
-    ariaLabel: "Cookie preferences",
-    headline: "We respect your privacy.",
+    ariaLabel: 'Cookie preferences',
+    headline: 'We respect your privacy.',
     description:
-      "We use cookies to understand site usage and keep improving VivaSpeak. You can allow all cookies or keep only the essential ones.",
-    privacyLabel: "privacy policy",
-    privacyHref: "/en/privacy-policy",
-    reject: "Essential only",
-    accept: "Allow all",
+      'We use cookies to understand site usage and keep improving VivaSpeak. You can allow all cookies or keep only the essential ones.',
+    privacyLabel: 'privacy policy',
+    privacyHref: '/en/privacy-policy',
+    reject: 'Essential only',
+    accept: 'Allow all',
   },
 };
 
@@ -40,11 +40,11 @@ const text = translations[locale];
     <div class="cookie-copy">
       <strong>{text.headline}</strong>
       <p>
-        {text.description}{" "}
+        {text.description}{' '}
         <a href={text.privacyHref} target="_blank" rel="noopener">
           {text.privacyLabel}
-        </a>{" "}
-        {locale === "es" ? "para más detalles." : "for more details."}
+        </a>{' '}
+        {locale === 'es' ? 'para más detalles.' : 'for more details.'}
       </p>
     </div>
     <div class="cookie-actions">
@@ -100,7 +100,9 @@ const text = translations[locale];
     backdrop-filter: blur(18px);
     box-shadow: 0 20px 45px rgba(15, 23, 42, 0.35);
     transform: translateY(100%);
-    transition: transform 300ms ease-out, opacity 300ms ease-out;
+    transition:
+      transform 300ms ease-out,
+      opacity 300ms ease-out;
     pointer-events: auto;
   }
 
@@ -139,7 +141,9 @@ const text = translations[locale];
     border: 1px solid transparent;
     cursor: pointer;
     font-size: 0.95rem;
-    transition: transform 150ms ease, box-shadow 150ms ease;
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
   }
 
   .btn:focus-visible {
@@ -176,7 +180,8 @@ const text = translations[locale];
       pointer-events: none;
     }
 
-    .cookie-banner-root:not(.cookie-banner--hidden):not(.cookie-banner--is-hiding) .cookie-banner-backdrop {
+    .cookie-banner-root:not(.cookie-banner--hidden):not(.cookie-banner--is-hiding)
+      .cookie-banner-backdrop {
       opacity: 1;
     }
 
@@ -233,60 +238,58 @@ const text = translations[locale];
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const root = document.querySelector("[data-cookie-banner]");
+  document.addEventListener('DOMContentLoaded', () => {
+    const root = document.querySelector('[data-cookie-banner]');
     if (!root) return;
 
-    const acceptBtn = root.querySelector("[data-cookie-accept]");
-    const rejectBtn = root.querySelector("[data-cookie-reject]");
+    const acceptBtn = root.querySelector('[data-cookie-accept]');
+    const rejectBtn = root.querySelector('[data-cookie-reject]');
 
     const getCookie = (name) => {
-      const v = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+      const v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
       return v ? v[2] : null;
     };
 
-    const existing = getCookie("cookie-consent");
+    const existing = getCookie('cookie-consent');
 
     // Si ya han elegido → no mostramos
-    if (existing === "accepted" || existing === "rejected") {
+    if (existing === 'accepted' || existing === 'rejected') {
       root.remove();
       return;
     }
 
     // Mostrar banner (animación desde abajo)
-    root.classList.remove("cookie-banner--hidden");
+    root.classList.remove('cookie-banner--hidden');
 
     const setConsent = (value) => {
       const oneYear = 60 * 60 * 24 * 365;
-      const secure = window.location.protocol === "https:" ? ";Secure" : "";
-      document.cookie =
-        `cookie-consent=${value};path=/;max-age=${oneYear};SameSite=Lax` +
-        secure;
+      const secure = window.location.protocol === 'https:' ? ';Secure' : '';
+      document.cookie = `cookie-consent=${value};path=/;max-age=${oneYear};SameSite=Lax` + secure;
 
-      if (value === "accepted" && typeof window.gtag === "function") {
-        window.gtag("consent", "update", {
-          ad_storage: "granted",
-          ad_user_data: "granted",
-          ad_personalization: "granted",
-          analytics_storage: "granted",
+      if (value === 'accepted' && typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted',
         });
       }
     };
 
     const hideBanner = () => {
-      root.classList.add("cookie-banner--is-hiding");
-      root.addEventListener("transitionend", () => root.remove(), {
+      root.classList.add('cookie-banner--is-hiding');
+      root.addEventListener('transitionend', () => root.remove(), {
         once: true,
       });
     };
 
-    acceptBtn?.addEventListener("click", () => {
-      setConsent("accepted");
+    acceptBtn?.addEventListener('click', () => {
+      setConsent('accepted');
       hideBanner();
     });
 
-    rejectBtn?.addEventListener("click", () => {
-      setConsent("rejected");
+    rejectBtn?.addEventListener('click', () => {
+      setConsent('rejected');
       hideBanner();
     });
   });

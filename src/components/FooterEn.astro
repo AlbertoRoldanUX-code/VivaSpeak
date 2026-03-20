@@ -1,79 +1,54 @@
 ---
-const { langEnHref = "/en/", langEsHref = "/" } = Astro.props;
+const { langEnHref = '/en/', langEsHref = '/' } = Astro.props;
 ---
 
-    <footer>
-      <div class="Copyright">
-        <p>
-          © <span id="year"></span> VivaSpeak. All rights reserved. |
-          <a href="/en/privacy-policy" target="_blank">Privacy Policy</a>
-          |
-          <a href="/en/terms-and-conditions" target="_blank"
-            >Terms and Conditions</a
-          >
-          |
-          <a href="/en/acceptable-use-policy" target="_blank"
-            >Acceptable Use Policy</a
-          >
-          |
-          <a href="/en/whatsapp-messaging-policy" target="_blank"
-            >WhatsApp Messaging Policy</a
-          >
-          |
-          <a href="/en/legal-notice" target="_blank">Legal Notice</a>
-          |
-          <a href="/en/about/" target="_blank">About us</a>
-        </p>
-        <p>
-          VivaSpeak is designed to handle interactions with customers and
-          contacts who have given prior consent. It is not used for unsolicited
-          telemarketing campaigns.
-        </p>
-        <p>
-          Calls may be recorded and transcribed by AI systems for service and
-          quality purposes.
-        </p>
-      </div>
+<footer>
+  <div class="Copyright">
+    <p>
+      © <span id="year"></span> VivaSpeak. All rights reserved. |
+      <a href="/en/privacy-policy" target="_blank">Privacy Policy</a>
+      |
+      <a href="/en/terms-and-conditions" target="_blank">Terms and Conditions</a>
+      |
+      <a href="/en/acceptable-use-policy" target="_blank">Acceptable Use Policy</a>
+      |
+      <a href="/en/whatsapp-messaging-policy" target="_blank">WhatsApp Messaging Policy</a>
+      |
+      <a href="/en/legal-notice" target="_blank">Legal Notice</a>
+      |
+      <a href="/en/about/" target="_blank">About us</a>
+    </p>
+    <p>
+      VivaSpeak is designed to handle interactions with customers and contacts who have given prior
+      consent. It is not used for unsolicited telemarketing campaigns.
+    </p>
+    <p>Calls may be recorded and transcribed by AI systems for service and quality purposes.</p>
+  </div>
 
-      <div class="social-media">
-        <a
-          href="https://www.instagram.com/vivaspeakai"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg"
-            alt="Instagram"
-          />
-        </a>
-        <a
-          href="https://www.linkedin.com/company/vivaspeak"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-            alt="LinkedIn"
-          />
-        </a>
-        <a
-          href="https://www.youtube.com/@vivaspeak_ai"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/youtube.svg"
-            alt="YouTube"
-          />
-        </a>
-      </div>
+  <div class="social-media">
+    <a href="https://www.instagram.com/vivaspeakai" target="_blank" rel="noopener noreferrer">
+      <img
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg"
+        alt="Instagram"
+      />
+    </a>
+    <a href="https://www.linkedin.com/company/vivaspeak" target="_blank" rel="noopener noreferrer">
+      <img
+        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+        alt="LinkedIn"
+      />
+    </a>
+    <a href="https://www.youtube.com/@vivaspeak_ai" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/youtube.svg" alt="YouTube" />
+    </a>
+  </div>
 
-      <div class="footer-phone">
-        <a href="tel:+34951798932">+34 951 798 932</a>
-        <br />
-        <em>Valeria, our AI voice agent, will answer your questions.</em>
-      </div>
-      <div class="footer-language">
-        <a href={langEnHref} lang="en">English</a> | <a href={langEsHref} lang="es">Español</a>
-      </div>
-    </footer>
+  <div class="footer-phone">
+    <a href="tel:+34951798932">+34 951 798 932</a>
+    <br />
+    <em>Valeria, our AI voice agent, will answer your questions.</em>
+  </div>
+  <div class="footer-language">
+    <a href={langEnHref} lang="en">English</a> | <a href={langEsHref} lang="es">Español</a>
+  </div>
+</footer>

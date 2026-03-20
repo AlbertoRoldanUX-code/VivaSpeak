@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import LandingHeader from "../components/LandingHeader.astro";
-import Footer from "../components/Footer.astro";
+import Layout from '../layouts/Layout.astro';
+import LandingHeader from '../components/LandingHeader.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout
@@ -13,254 +13,228 @@ import Footer from "../components/Footer.astro";
   lang="es"
   keywords="agente de voz, fundación, inteligencia artificial, captación de donaciones, automatización llamadas, atención social, agente virtual"
 >
-  <LandingHeader
-    ctaLabel="Empieza con Luz"
-    ctaHref="https://calendly.com/vivaspeak/30min"
-  />
-    <main id="main-content">
+  <LandingHeader ctaLabel="Empieza con Luz" ctaHref="https://calendly.com/vivaspeak/30min" />
+  <main id="main-content">
+    <section id="hero">
+      <div class="hero-bg">
+        <svg
+          width="100%"
+          height="180"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          class="svg-bg"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#16a085"
+            d="M0,160L80,186.7C160,213,320,267,480,250.7C640,235,800,149,960,106.7C1120,64,1280,64,1360,64L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="container hero-content">
+        <h1>Luz, tu agente de voz IA para fundaciones y proyectos sociales</h1>
+        <p class="hero-subtitle">
+          Atiende llamadas, informa con empatía y ayuda a captar donaciones o voluntarios. Siempre
+          disponible, incluso cuando tú no puedes.
+        </p>
 
-      <section id="hero">
-        <div class="hero-bg">
-          <svg
-            width="100%"
-            height="180"
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="none"
-            class="svg-bg"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="#16a085"
-              d="M0,160L80,186.7C160,213,320,267,480,250.7C640,235,800,149,960,106.7C1120,64,1280,64,1360,64L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-            ></path>
-          </svg>
-        </div>
-        <div class="container hero-content">
-          <h1>
-            Luz, tu agente de voz IA para fundaciones y proyectos sociales
-          </h1>
-          <p class="hero-subtitle">
-            Atiende llamadas, informa con empatía y ayuda a captar donaciones o
-            voluntarios. Siempre disponible, incluso cuando tú no puedes.
-          </p>
+        <a
+          href="https://calendly.com/vivaspeak/30min"
+          class="btn-primary"
+          aria-label="Activa tu agente para fundaciones"
+        >
+          🌱 Empieza gratis con Luz
+        </a>
+      </div>
+    </section>
 
-          <a
-            href="https://calendly.com/vivaspeak/30min"
-            class="btn-primary"
-            aria-label="Activa tu agente para fundaciones"
-          >
-            🌱 Empieza gratis con Luz
-          </a>
-        </div>
-      </section>
+    <section id="use-case-landing">
+      <div class="container">
+        <p>
+          Con nuestra agente virtual <strong>Luz</strong>, especializada en atención social, puedes
+          automatizar la comunicación con beneficiarios, donantes o voluntarios.
+        </p>
+        <p>
+          Disponible fuera del horario de atención, fines de semana o cuando no puedas atender el
+          teléfono.
+        </p>
+      </div>
 
-      <section id="use-case-landing">
-        <div class="container">
+      <img
+        src="/assets/luz-avatar.png"
+        alt="Luz, agente de voz IA para fundaciones y proyectos sociales"
+        class="image-social"
+      />
+
+      <h2>¿Qué puede hacer Luz por tu fundación?</h2>
+      <ul class="use-case-features">
+        <li>
+          📞 <strong>Atiende llamadas solidarias:</strong> Informa con empatía sobre la misión de la fundación.
+        </li>
+        <li>
+          🤝 <strong>Capta donantes automáticamente:</strong> Deriva a un agente humano o registra interés.
+        </li>
+        <li>
+          🕓 <strong>Disponible 24/7:</strong> Responde incluso fuera del horario habitual.
+        </li>
+        <li>
+          🎧 <strong>Voz humana y cercana:</strong> Con tono amable, adaptado al perfil del interlocutor.
+        </li>
+        <li>
+          📈 <strong>Informes de impacto:</strong> Escucha grabaciones y consulta resultados.
+        </li>
+      </ul>
+    </section>
+
+    <section id="use-cases">
+      <div class="container">
+        <h2>Casos de Uso</h2>
+        <p>
+          Descubre cómo Luz puede apoyar a tu fundación, ONG o asociación a atender mejor y
+          movilizar más apoyo.
+        </p>
+      </div>
+      <div class="cases">
+        <div class="case-card">
+          <h4>📞 Información continua</h4>
           <p>
-            Con nuestra agente virtual <strong>Luz</strong>, especializada en
-            atención social, puedes automatizar la comunicación con
-            beneficiarios, donantes o voluntarios.
+            Luz atiende llamadas sobre programas, horarios, requisitos y cómo colaborar con la
+            fundación.
           </p>
+        </div>
+        <div class="case-card">
+          <h4>📲 Seguimiento de leads</h4>
+          <p>Confirmación de interés y reactivación de oportunidades frías.</p>
+        </div>
+        <div class="case-card">
+          <h4>🤝 Captación de donantes</h4>
           <p>
-            Disponible fuera del horario de atención, fines de semana o cuando
-            no puedas atender el teléfono.
+            Recoge interés y redirige llamadas a personal si la persona quiere hacer una donación o
+            colaborar.
           </p>
         </div>
-
-        <img
-          src="/assets/luz-avatar.png"
-          alt="Luz, agente de voz IA para fundaciones y proyectos sociales"
-          class="image-social"
-        />
-
-        <h2>¿Qué puede hacer Luz por tu fundación?</h2>
-        <ul class="use-case-features">
-          <li>
-            📞 <strong>Atiende llamadas solidarias:</strong> Informa con empatía
-            sobre la misión de la fundación.
-          </li>
-          <li>
-            🤝 <strong>Capta donantes automáticamente:</strong> Deriva a un
-            agente humano o registra interés.
-          </li>
-          <li>
-            🕓 <strong>Disponible 24/7:</strong> Responde incluso fuera del
-            horario habitual.
-          </li>
-          <li>
-            🎧 <strong>Voz humana y cercana:</strong> Con tono amable, adaptado
-            al perfil del interlocutor.
-          </li>
-          <li>
-            📈 <strong>Informes de impacto:</strong> Escucha grabaciones y
-            consulta resultados.
-          </li>
-        </ul>
-      </section>
-
-      <section id="use-cases">
-        <div class="container">
-          <h2>Casos de Uso</h2>
+        <div class="case-card">
+          <h4>📅 Coordinación de citas</h4>
           <p>
-            Descubre cómo Luz puede apoyar a tu fundación, ONG o asociación a
-            atender mejor y movilizar más apoyo.
+            Agenda reuniones o llamadas con responsables de programas, voluntariado u orientación.
           </p>
         </div>
-        <div class="cases">
-          <div class="case-card">
-            <h4>📞 Información continua</h4>
-            <p>
-              Luz atiende llamadas sobre programas, horarios, requisitos y cómo
-              colaborar con la fundación.
-            </p>
-          </div>
-          <div class="case-card">
-            <h4>📲 Seguimiento de leads</h4>
-            <p>
-              Confirmación de interés y reactivación de oportunidades frías.
-            </p>
-          </div>
-          <div class="case-card">
-            <h4>🤝 Captación de donantes</h4>
-            <p>
-              Recoge interés y redirige llamadas a personal si la persona quiere
-              hacer una donación o colaborar.
-            </p>
-          </div>
-          <div class="case-card">
-            <h4>📅 Coordinación de citas</h4>
-            <p>
-              Agenda reuniones o llamadas con responsables de programas,
-              voluntariado u orientación.
-            </p>
-          </div>
+      </div>
+    </section>
+    <section id="video-demo">
+      <div class="container">
+        <img src="/assets/icono-corazon.png" alt="Icono de ayuda" class="image" />
+        <h2>Una Voz que Genera Confianza</h2>
+        <p>
+          Las personas confían más cuando hay alguien al otro lado. Luz ofrece una experiencia
+          humana que informa, emociona y moviliza.
+        </p>
+        <p>
+          🗣️ Ya sea para resolver dudas, transmitir el impacto de la fundación o guiar hacia la
+          donación, Luz está siempre disponible.
+        </p>
+      </div>
+    </section>
+    <section id="faq">
+      <div class="container">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container">
+          <p class="faq-intro">Haz clic en cada pregunta para ver la respuesta:</p>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Qué hace exactamente la agente Luz?
+            </summary>
+            <div class="faq-content">
+              Luz atiende llamadas de personas interesadas en colaborar, recibir ayuda o saber más
+              sobre tu causa. También puede hacer llamadas salientes para informar o recordar
+              eventos, siempre con empatía.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Puedo usar mi propio número de teléfono?
+            </summary>
+            <div class="faq-content">
+              Podemos redirigir tu número actual o asignarte uno nuevo local para la agente. Tú
+              eliges.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Puedo escuchar las grabaciones?
+            </summary>
+            <div class="faq-content">
+              Sí, todas las llamadas quedan registradas en un panel seguro con grabaciones y
+              estadísticas.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Tengo que informar de que las llamadas están siendo grabadas?
+            </summary>
+            <div class="faq-content">
+              No es obligatorio en llamadas comerciales salientes en España si no se almacenan datos
+              sensibles. Tú decides si deseas incluir el aviso.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿En qué idiomas puede hablar?
+            </summary>
+            <div class="faq-content">
+              En español, inglés u otros si lo necesitas. Por defecto usamos un tono profesional y
+              cercano en español neutral.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Puedo probarlo sin compromiso?
+            </summary>
+            <div class="faq-content">
+              Sí. Puedes activar tu agente, probarlo con llamadas reales y cancelar cuando quieras
+              si no te convence.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>
+              <span class="faq-arrow">▶</span>
+              ¿Tengo que instalar algo?
+            </summary>
+            <div class="faq-content">
+              No, Luz funciona en la nube. Solo necesitas rellenar el formulario y nosotros la
+              activamos por ti.
+            </div>
+          </details>
         </div>
-      </section>
-      <section id="video-demo">
-        <div class="container">
-          <img
-            src="/assets/icono-corazon.png"
-            alt="Icono de ayuda"
-            class="image"
-          />
-          <h2>Una Voz que Genera Confianza</h2>
-          <p>
-            Las personas confían más cuando hay alguien al otro lado. Luz ofrece
-            una experiencia humana que informa, emociona y moviliza.
-          </p>
-          <p>
-            🗣️ Ya sea para resolver dudas, transmitir el impacto de la fundación
-            o guiar hacia la donación, Luz está siempre disponible.
-          </p>
-        </div>
-      </section>
-      <section id="faq">
-        <div class="container">
-          <h2>Preguntas Frecuentes</h2>
-          <div class="faq-container">
-            <p class="faq-intro">
-              Haz clic en cada pregunta para ver la respuesta:
-            </p>
+      </div>
+    </section>
 
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span>
-                ¿Qué hace exactamente la agente Luz?
-              </summary>
-              <div class="faq-content">
-                Luz atiende llamadas de personas interesadas en colaborar,
-                recibir ayuda o saber más sobre tu causa. También puede hacer
-                llamadas salientes para informar o recordar eventos, siempre con
-                empatía.
-              </div>
-            </details>
+    <section id="cta-final">
+      <div class="container">
+        <h2>¿Lista tu fundación para dar un paso con inteligencia artificial?</h2>
+        <a
+          href="https://calendly.com/vivaspeak/30min"
+          class="btn-primary"
+          aria-label="Activa tu agente para fundaciones"
+        >
+          🌱 Empieza gratis con Luz
+        </a>
+      </div>
+    </section>
+  </main>
 
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span>
-                ¿Puedo usar mi propio número de teléfono?
-              </summary>
-              <div class="faq-content">
-                Podemos redirigir tu número actual o asignarte uno nuevo local
-                para la agente. Tú eliges.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span>
-                ¿Puedo escuchar las grabaciones?
-              </summary>
-              <div class="faq-content">
-                Sí, todas las llamadas quedan registradas en un panel seguro con
-                grabaciones y estadísticas.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span>
-                ¿Tengo que informar de que las llamadas están siendo grabadas?
-              </summary>
-              <div class="faq-content">
-                No es obligatorio en llamadas comerciales salientes en España si
-                no se almacenan datos sensibles. Tú decides si deseas incluir el
-                aviso.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span>
-                ¿En qué idiomas puede hablar?
-              </summary>
-              <div class="faq-content">
-                En español, inglés u otros si lo necesitas. Por defecto usamos
-                un tono profesional y cercano en español neutral.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span>
-                ¿Puedo probarlo sin compromiso?
-              </summary>
-              <div class="faq-content">
-                Sí. Puedes activar tu agente, probarlo con llamadas reales y
-                cancelar cuando quieras si no te convence.
-              </div>
-            </details>
-
-            <details class="faq">
-              <summary>
-                <span class="faq-arrow">▶</span>
-                ¿Tengo que instalar algo?
-              </summary>
-              <div class="faq-content">
-                No, Luz funciona en la nube. Solo necesitas rellenar el
-                formulario y nosotros la activamos por ti.
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section id="cta-final">
-        <div class="container">
-          <h2>
-            ¿Lista tu fundación para dar un paso con inteligencia artificial?
-          </h2>
-          <a
-            href="https://calendly.com/vivaspeak/30min"
-            class="btn-primary"
-            aria-label="Activa tu agente para fundaciones"
-          >
-            🌱 Empieza gratis con Luz
-          </a>
-        </div>
-      </section>
-  
-    </main>
-    
   <Footer />
 </Layout>

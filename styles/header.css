@@ -24,8 +24,6 @@ header {
   border-radius: 10px;
 }
 
-
-
 /* **********NAV BAR*********** */
 .nav-list {
   display: flex;
@@ -144,7 +142,9 @@ nav ul li a.btn-primary:hover {
   width: 30px;
   background: var(--color-text);
   display: block;
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition:
+    transform 300ms ease,
+    opacity 300ms ease;
 }
 
 #hamburger.active span:nth-child(2) {
@@ -186,7 +186,6 @@ nav ul li a.btn-primary:hover {
   transition: transform 0.2s ease-in-out;
 }
 
-
 .top-nav {
   display: flex;
   align-items: center;
@@ -195,9 +194,6 @@ nav ul li a.btn-primary:hover {
   flex-wrap: nowrap;
   margin-left: 8px;
 }
-
-
-
 
 .btn-login {
   padding: 8px 16px;
@@ -239,7 +235,10 @@ nav ul li a.btn-primary:hover {
   margin-top: 0.5rem;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
   list-style: none;
   top: 100%;
   left: 50%;
@@ -264,7 +263,9 @@ nav ul li a.btn-primary:hover {
   margin: 0;
   display: block;
   color: var(--color-text);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
   border-radius: 0;
   text-decoration: none;
   height: auto;
@@ -296,8 +297,6 @@ nav ul li a.btn-primary:hover {
   .header-container {
     gap: 18px;
   }
-
-  
 
   nav ul li a {
     padding: 0 clamp(6px, 0.9vw, 12px);
@@ -440,8 +439,6 @@ nav ul li a.btn-primary:hover {
     padding: 0;
     font-size: 0.95rem;
   }
-
- 
 
   .nav-list li.dropdown {
     display: contents;

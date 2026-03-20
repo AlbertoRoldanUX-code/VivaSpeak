@@ -167,9 +167,9 @@ Todos los artículos tienen `datePublished` de mediados de 2024 pero ninguno tie
 const schemaArticle = {
   headline: title,
   description,
-  datePublished: "2024-06-01",
-  dateModified: "2026-03-15", // ← añadir esto
-  image: "https://vivaspeak.com/assets/og-image.png",
+  datePublished: '2024-06-01',
+  dateModified: '2026-03-15', // ← añadir esto
+  image: 'https://vivaspeak.com/assets/og-image.png',
 };
 ```
 
