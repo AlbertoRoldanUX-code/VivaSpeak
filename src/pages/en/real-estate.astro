@@ -39,6 +39,18 @@ const breadcrumb = [
   { name: 'Home', url: 'https://vivaspeak.com/en/' },
   { name: 'Laura for Real Estate', url: 'https://vivaspeak.com/en/real-estate/' },
 ];
+
+const schemaVideos = [
+  {
+    name: 'Testimonial by Daniel Insa - Real Estate Agent',
+    description:
+      'Daniel Insa, RE/MAX real estate agent in Malaga, explains how VivaSpeak helps him serve more clients without interrupting his work.',
+    thumbnailUrl: 'https://img.youtube.com/vi/vmtha03C92E/maxresdefault.jpg',
+    uploadDate: '2024-06-01',
+    contentUrl: 'https://www.youtube.com/watch?v=vmtha03C92E',
+    embedUrl: 'https://www.youtube.com/embed/vmtha03C92E',
+  },
+];
 ---
 
 <Layout
@@ -51,6 +63,7 @@ const breadcrumb = [
   keywords="voice agent, real estate, artificial intelligence, real estate calls, visit scheduling, client service, call automation, virtual agent"
   lang="en"
   schemaFaq={schemaFaq}
+  schemaVideos={schemaVideos}
   breadcrumb={breadcrumb}
   speakable={['.hero-subtitle', '.hero-proof', '.faq-content', '.use-case-features li']}
 >

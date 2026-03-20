@@ -66,6 +66,27 @@ const schemaHowTo = {
     },
   ],
 };
+
+const schemaVideos = [
+  {
+    name: 'Clara VivaSpeak Demo - AI Voice Agent for clinics',
+    description:
+      'Real example where Clara answers a call, resolves questions about treatments and books an appointment automatically.',
+    thumbnailUrl: 'https://img.youtube.com/vi/_MwMo-mlBGQ/maxresdefault.jpg',
+    uploadDate: '2024-06-01',
+    contentUrl: 'https://www.youtube.com/watch?v=_MwMo-mlBGQ',
+    embedUrl: 'https://www.youtube.com/embed/_MwMo-mlBGQ',
+  },
+  {
+    name: 'Testimonial by Daniel Insa - Real Estate Agent',
+    description:
+      'Daniel Insa, RE/MAX real estate agent in Malaga, explains how VivaSpeak helps him serve more clients without interrupting his work.',
+    thumbnailUrl: 'https://img.youtube.com/vi/vmtha03C92E/maxresdefault.jpg',
+    uploadDate: '2024-06-01',
+    contentUrl: 'https://www.youtube.com/watch?v=vmtha03C92E',
+    embedUrl: 'https://www.youtube.com/embed/vmtha03C92E',
+  },
+];
 ---
 
 <Layout
@@ -80,6 +101,7 @@ const schemaHowTo = {
   keywords="voice assistant, virtual assistant, call automation, WhatsApp Business API, AI chatbot, clinic management, real estate, automated bookings, 24/7 customer service, scheduling integration"
   schemaFaq={schemaFaq}
   schemaHowTo={schemaHowTo}
+  schemaVideos={schemaVideos}
   speakable={[
     '.home-title',
     '.home-description',

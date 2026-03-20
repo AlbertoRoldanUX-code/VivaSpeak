@@ -40,6 +40,18 @@ const breadcrumb = [
   { name: 'Inicio', url: 'https://vivaspeak.com/' },
   { name: 'Laura para Inmobiliarias', url: 'https://vivaspeak.com/inmobiliaria/' },
 ];
+
+const schemaVideos = [
+  {
+    name: 'Testimonio de Daniel Insa - Agente inmobiliario',
+    description:
+      'Daniel Insa, agente inmobiliario RE/MAX en Málaga, explica cómo VivaSpeak le ayuda a atender más clientes sin interrumpir su trabajo.',
+    thumbnailUrl: 'https://img.youtube.com/vi/vmtha03C92E/maxresdefault.jpg',
+    uploadDate: '2024-06-01',
+    contentUrl: 'https://www.youtube.com/watch?v=vmtha03C92E',
+    embedUrl: 'https://www.youtube.com/embed/vmtha03C92E',
+  },
+];
 ---
 
 <Layout
@@ -52,6 +64,7 @@ const breadcrumb = [
   lang="es"
   keywords="agente de voz, inmobiliaria, inteligencia artificial, captación de propiedades, automatización llamadas, atención clientes, agente virtual"
   schemaFaq={schemaFaq}
+  schemaVideos={schemaVideos}
   breadcrumb={breadcrumb}
   speakable={['.hero-subtitle', '.hero-proof', '.faq-content', '.use-case-features li']}
 >

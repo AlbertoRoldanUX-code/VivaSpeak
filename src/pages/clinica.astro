@@ -40,6 +40,18 @@ const breadcrumb = [
   { name: 'Inicio', url: 'https://vivaspeak.com/' },
   { name: 'Clara para Clínicas', url: 'https://vivaspeak.com/clinica/' },
 ];
+
+const schemaVideos = [
+  {
+    name: 'Demo Clara VivaSpeak - Agente de voz IA para clínicas',
+    description:
+      'Ejemplo real donde Clara atiende una llamada, resuelve dudas sobre tratamientos y agenda una cita automáticamente.',
+    thumbnailUrl: 'https://img.youtube.com/vi/un1BHBVSBVg/maxresdefault.jpg',
+    uploadDate: '2024-06-01',
+    contentUrl: 'https://www.youtube.com/watch?v=un1BHBVSBVg',
+    embedUrl: 'https://www.youtube.com/embed/un1BHBVSBVg',
+  },
+];
 ---
 
 <Layout
@@ -52,6 +64,7 @@ const breadcrumb = [
   ogImage="/assets/og-image-clinica.png"
   lang="es"
   schemaFaq={schemaFaq}
+  schemaVideos={schemaVideos}
   breadcrumb={breadcrumb}
   speakable={['.hero-subtitle', '.faq-content', '.solution-card p']}
 >
