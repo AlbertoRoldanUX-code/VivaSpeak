@@ -12,9 +12,12 @@ interface Props {
     image?: string;
     author?: string;
   } | null;
+  speakable?: string[];
+  pageUrl?: string;
+  pageName?: string;
 }
 
-const { organization = true, product = true, faq = [], breadcrumb = [], article = null } = Astro.props;
+const { organization = true, product = true, faq = [], breadcrumb = [], article = null, speakable = [], pageUrl = "", pageName = "" } = Astro.props;
 
 const baseUrl = "https://vivaspeak.com";
 
@@ -117,8 +120,28 @@ const articleSchema = article
         },
       },
       ...(article.image && { image: article.image }),
+      ...(speakable.length > 0 && {
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: speakable,
+        },
+      }),
     }
   : null;
+
+const speakableSchema =
+  speakable.length > 0 && !article
+    ? {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: pageName,
+        url: pageUrl,
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: speakable,
+        },
+      }
+    : null;
 ---
 
 {organization && (
@@ -138,4 +161,7 @@ const articleSchema = article
 )}
 {articleSchema && (
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+)}
+{speakableSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />
 )}

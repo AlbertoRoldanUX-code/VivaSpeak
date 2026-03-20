@@ -15,7 +15,8 @@ const {
   schemaFaq = [],
   robots = "index, follow",
   breadcrumb = [],
-  schemaArticle = null
+  schemaArticle = null,
+  speakable = []
 } = Astro.props;
 const currentUrl = canonical || Astro.url.href;
 const fullOgImage = ogImage.startsWith("http") ? ogImage : `https://vivaspeak.com${ogImage.startsWith("/") ? "" : "/"}${ogImage}`;
@@ -127,7 +128,7 @@ const fullOgImage = ogImage.startsWith("http") ? ogImage : `https://vivaspeak.co
     />
     
     <!-- Schema.org markup -->
-    <SchemaMarkup faq={schemaFaq} breadcrumb={breadcrumb} article={schemaArticle} />
+    <SchemaMarkup faq={schemaFaq} breadcrumb={breadcrumb} article={schemaArticle} speakable={speakable} pageUrl={currentUrl} pageName={title} />
     <!-- Calendly -->
     <script 
       is:inline 
