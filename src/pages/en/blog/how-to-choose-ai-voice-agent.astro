@@ -1,0 +1,170 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import HeaderEn from '../../../components/HeaderEn.astro';
+import FooterEn from '../../../components/FooterEn.astro';
+import '../../../../styles/blog.css';
+
+const title = 'How to Choose an AI Voice Agent for Your Business | Buyer Guide';
+const description =
+  'Objective criteria for choosing an AI voice agent: integrations, languages, latency, pricing and support. Neutral guide to make the best decision.';
+const canonical = 'https://vivaspeak.com/en/blog/how-to-choose-ai-voice-agent/';
+const schemaArticle = {
+  headline: title,
+  description,
+  datePublished: '2026-03-20',
+  dateModified: '2026-03-20',
+  image: 'https://vivaspeak.com/assets/og-image.png',
+};
+const breadcrumb = [
+  { name: 'Home', url: 'https://vivaspeak.com/en/' },
+  { name: 'Blog', url: 'https://vivaspeak.com/en/blog/' },
+  { name: title, url: canonical },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  alternateEs="https://vivaspeak.com/blog/como-elegir-agente-voz-ia/"
+  alternateEn="https://vivaspeak.com/en/blog/how-to-choose-ai-voice-agent/"
+  lang="en"
+  schemaArticle={schemaArticle}
+  breadcrumb={breadcrumb}
+  speakable={['.blog-article > p:first-of-type', '.blog-article h2', '.blog-article h2 + p']}
+>
+  <HeaderEn />
+
+  <main id="main-content" class="blog-container">
+    <article class="blog-article">
+      <h1>How to choose an AI voice agent for your business</h1>
+      <p class="blog-byline">By the VivaSpeak team · <a href="/en/about/">About us</a></p>
+
+      <p>
+        The AI voice agent market has grown rapidly. There are dozens of providers with different
+      </p>
+    </article>
+  </main></Layout
+>
+propositions. This guide helps you evaluate options with objective criteria, without recommending any
+specific provider.
+
+<h2>1. Define what you need to automate</h2>
+<p>Before comparing providers, identify exactly which calls you want the agent to handle:</p>
+<ul>
+  <li>Just answer and take messages?</li>
+  <li>Book appointments in a real calendar?</li>
+  <li>Qualify leads with specific questions?</li>
+  <li>Answer FAQs with up-to-date information?</li>
+  <li>Transfer to a human in certain cases?</li>
+</ul>
+<p>
+  The clearer your scope, the easier it will be to compare solutions and avoid paying for features
+  you do not need.
+</p>
+
+<h2>2. Integrations</h2>
+<p>
+  A voice agent that does not connect with your tools is an expensive answering machine. Check that
+  the provider supports:
+</p>
+<ul>
+  <li>Your calendar (Google Calendar, Calendly, proprietary scheduling software).</li>
+  <li>Your CRM (HubSpot, Salesforce, Pipedrive or generic API).</li>
+  <li>WhatsApp Business API if you need a messaging channel.</li>
+  <li>Webhooks or API to connect with internal systems.</li>
+</ul>
+
+<h2>3. Voice quality and latency</h2>
+<p>The caller experience depends on two key technical factors:</p>
+<ul>
+  <li>
+    <strong>Voice quality:</strong> does it sound natural or robotic? Ask for a demo with your real use
+    case, not just a sample recording.
+  </li>
+  <li>
+    <strong>Latency:</strong> how long does it take to respond? More than 1.5 seconds of silence between
+    turns causes frustration. Under 800 ms is ideal.
+  </li>
+</ul>
+
+<h2>4. Languages</h2>
+<p>If your business serves clients in multiple languages, check:</p>
+<ul>
+  <li>Which languages the agent supports.</li>
+  <li>Whether it can detect the language automatically.</li>
+  <li>Whether language switching has an additional cost.</li>
+  <li>Voice quality in each language (not all languages sound equally good).</li>
+</ul>
+
+<h2>5. Pricing transparency</h2>
+<p>Always ask about:</p>
+<ul>
+  <li>Fixed monthly fee.</li>
+  <li>Cost per minute or per call.</li>
+  <li>Setup or initial integration cost.</li>
+  <li>Whether there is a lock-in or minimum commitment.</li>
+  <li>What support includes (adjustments, updates, training).</li>
+</ul>
+
+<h2>6. Control panel and metrics</h2>
+<p>A good provider gives you access to a panel where you can see:</p>
+<ul>
+  <li>Call history with recording and transcription.</li>
+  <li>Performance metrics (calls answered, average duration, resolution rate).</li>
+  <li>Editable knowledge base without depending on the provider.</li>
+  <li>Data export.</li>
+</ul>
+
+<h2>7. Human transfer capability</h2>
+<p>
+  No AI voice agent resolves 100% of calls. Check that the system can transfer to a human when
+  needed, and that you can define the rules for when to do so.
+</p>
+
+<h2>8. Support and implementation time</h2>
+<ul>
+  <li>How long until it is operational? (days vs weeks).</li>
+  <li>Who configures the agent: you or the provider?</li>
+  <li>Is technical support included? During what hours?</li>
+  <li>Can you make changes yourself or do you depend on the provider?</li>
+</ul>
+
+<h2>9. Test before you buy</h2>
+<p>Be wary of providers that do not offer a real trial. Ideally:</p>
+<ul>
+  <li>A demo with your real use case (not generic).</li>
+  <li>A trial period with real calls.</li>
+  <li>Access to the panel during the trial.</li>
+</ul>
+
+<h2>Quick checklist</h2>
+<ul>
+  <li>☐ Does it integrate with my calendar and CRM?</li>
+  <li>☐ Is latency under 1.5 seconds?</li>
+  <li>☐ Does it support the languages I need?</li>
+  <li>☐ Is pricing transparent with no lock-in?</li>
+  <li>☐ Does it have a panel with transcriptions and metrics?</li>
+  <li>☐ Can it transfer to a human?</li>
+  <li>☐ Does it offer a real trial before committing?</li>
+  <li>☐ Can I edit the knowledge base myself?</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>
+  Choosing an AI voice agent is a decision that directly affects your customer experience.
+  Prioritise real integrations, voice quality, pricing transparency and the ability to test before
+  committing. The right provider is the one that solves your specific case, not the one with the
+  most features.
+</p>
+
+<h2>Related articles</h2>
+<ul>
+  <li><a href="/en/blog/ai-voice-agent/">What an AI voice agent is and how it works</a></li>
+  <li>
+    <a href="/en/blog/cost-automating-calls-ai/">Real cost of automating calls with AI in 2026</a>
+  </li>
+  <li><a href="/en/blog/knowledge-base-ai-agent/">How to build the perfect knowledge base</a></li>
+</ul>
+
+<FooterEn />
