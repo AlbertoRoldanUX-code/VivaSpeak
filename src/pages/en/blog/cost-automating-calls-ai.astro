@@ -1,0 +1,171 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import HeaderEn from '../../../components/HeaderEn.astro';
+import FooterEn from '../../../components/FooterEn.astro';
+import '../../../../styles/blog.css';
+
+const title = 'Real Cost of Automating Calls with AI in 2026';
+const description =
+  'Cost breakdown for automating calls with AI voice agents: licences, telephony, integration and maintenance. Comparison with alternatives.';
+const canonical = 'https://vivaspeak.com/en/blog/cost-automating-calls-ai/';
+const schemaArticle = {
+  headline: title,
+  description,
+  datePublished: '2026-03-20',
+  dateModified: '2026-03-20',
+  image: 'https://vivaspeak.com/assets/og-image.png',
+};
+const breadcrumb = [
+  { name: 'Home', url: 'https://vivaspeak.com/en/' },
+  { name: 'Blog', url: 'https://vivaspeak.com/en/blog/' },
+  { name: title, url: canonical },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  alternateEs="https://vivaspeak.com/blog/coste-automatizar-llamadas-ia/"
+  alternateEn="https://vivaspeak.com/en/blog/cost-automating-calls-ai/"
+  lang="en"
+  schemaArticle={schemaArticle}
+  breadcrumb={breadcrumb}
+  speakable={['.blog-article > p:first-of-type', '.blog-article h2', '.blog-article h2 + p']}
+>
+  <HeaderEn />
+
+  <main id="main-content" class="blog-container">
+    <article class="blog-article">
+      <h1>Real cost of automating calls with AI in 2026</h1>
+      <p class="blog-byline">By the VivaSpeak team · <a href="/en/about/">About us</a></p>
+
+      <p>
+        One of the most common questions before implementing an AI voice agent is: how much does it
+        actually cost? The answer depends on several factors. This article breaks down the typical
+        cost components in 2026 and compares them with traditional alternatives.
+      </p>
+
+      <h2>Cost components</h2>
+      <p>The total cost of an AI voice agent is made up of:</p>
+
+      <h3>1. Platform licence or subscription</h3>
+      <p>
+        Most providers charge a monthly fee that includes access to the agent, control panel,
+        transcriptions and configuration. Typical ranges in 2026:
+      </p>
+      <ul>
+        <li>Basic plans: €100–300/month.</li>
+        <li>Plans with integrations and customisation: €250–600/month.</li>
+        <li>Custom enterprise solutions: from €1,000/month.</li>
+      </ul>
+
+      <h3>2. Telephony cost</h3>
+      <p>
+        Calls have a per-minute cost that varies by country and telephony provider. In Europe, the
+        typical range is €0.01–0.05/minute for inbound calls. Some providers include a minutes
+        package in the subscription.
+      </p>
+
+      <h3>3. AI cost (tokens/processing)</h3>
+      <p>
+        Each conversation consumes language processing resources. Depending on the model used
+        (GPT-4, Claude, open source models), the cost per conversation ranges from €0.02 to €0.15.
+        The more complex the conversation, the higher the consumption.
+      </p>
+
+      <h3>4. Initial integration</h3>
+      <p>
+        Connecting the agent with your CRM, calendar or management software may require technical
+        work. Some providers include it, others charge a setup fee between €200 and €2,000 depending
+        on complexity.
+      </p>
+
+      <h3>5. Maintenance and updates</h3>
+      <p>
+        Updating the knowledge base, adjusting flows and reviewing metrics. Can be self-service
+        (included) or managed by the provider (€50–200/month additional).
+      </p>
+
+      <h2>Typical monthly cost example</h2>
+      <p>For a clinic or real estate agency with 300–500 calls/month:</p>
+      <ul>
+        <li>Platform: €250/month.</li>
+        <li>Telephony: €30–50/month.</li>
+        <li>AI (tokens): €15–40/month.</li>
+        <li>Estimated total: €295–340/month.</li>
+      </ul>
+
+      <h2>Comparison with alternatives</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Solution</th>
+            <th>Estimated monthly cost</th>
+            <th>Availability</th>
+            <th>Scalability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            ><td>Full-time receptionist</td><td>€1,800–2,500</td><td>Business hours</td><td>Low</td
+            ></tr
+          >
+          <tr><td>Outsourced call center</td><td>€800–3,000</td><td>Variable</td><td>Medium</td></tr
+          >
+          <tr><td>AI voice agent</td><td>€250–500</td><td>24/7</td><td>High</td></tr>
+          <tr><td>Traditional IVR</td><td>€50–150</td><td>24/7</td><td>High (routing only)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Factors that increase cost</h2>
+      <ul>
+        <li>Complex integrations with legacy systems.</li>
+        <li>Very high call volume (over 2,000/month).</li>
+        <li>Multiple languages with custom voices.</li>
+        <li>Specific regulatory compliance requirements.</li>
+      </ul>
+
+      <h2>Factors that reduce cost</h2>
+      <ul>
+        <li>Using standard integrations (Google Calendar, REST APIs).</li>
+        <li>Well-structured knowledge base from the start.</li>
+        <li>Simple, well-defined flows.</li>
+        <li>Self-service panel management.</li>
+      </ul>
+
+      <h2>ROI: when the investment pays off</h2>
+      <p>
+        The return depends on the value of each answered call. In sectors like real estate (where a
+        lead can be worth hundreds of euros) or clinics (where a missed appointment is €50–150 in
+        revenue), ROI is usually positive from the first month if the agent prevents more than 10–15
+        missed calls.
+      </p>
+
+      <h2>Conclusion</h2>
+      <p>
+        Automating calls with AI in 2026 costs between €250 and €500/month for most SMEs. It is
+        significantly cheaper than a call center or a dedicated employee, with the advantage of
+        working 24/7. The exact cost depends on volume, integrations and the level of customisation.
+      </p>
+
+      <h2>Related articles</h2>
+      <ul>
+        <li>
+          <a href="/en/blog/ai-voice-agent-vs-call-center/"
+            >AI voice agent vs outsourced call center</a
+          >
+        </li>
+        <li><a href="/en/blog/ai-voice-agent-vs-ivr/">AI voice agent vs traditional IVR</a></li>
+        <li>
+          <a href="/en/blog/how-to-choose-ai-voice-agent/"
+            >How to choose an AI voice agent for your business</a
+          >
+        </li>
+      </ul>
+    </article>
+  </main>
+
+  <FooterEn />
+</Layout>

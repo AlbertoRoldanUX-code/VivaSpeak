@@ -66,6 +66,54 @@ const schemaHowTo = {
     },
   ],
 };
+
+const schemaVideos = [
+  {
+    name: 'Clara VivaSpeak Demo - AI Voice Agent for clinics',
+    description:
+      'Real example where Clara answers a call, resolves questions about treatments and books an appointment automatically.',
+    thumbnailUrl: 'https://img.youtube.com/vi/_MwMo-mlBGQ/maxresdefault.jpg',
+    uploadDate: '2024-06-01',
+    contentUrl: 'https://www.youtube.com/watch?v=_MwMo-mlBGQ',
+    embedUrl: 'https://www.youtube.com/embed/_MwMo-mlBGQ',
+  },
+  {
+    name: 'Testimonial by Daniel Insa - Real Estate Agent',
+    description:
+      'Daniel Insa, RE/MAX real estate agent in Malaga, explains how VivaSpeak helps him serve more clients without interrupting his work.',
+    thumbnailUrl: 'https://img.youtube.com/vi/vmtha03C92E/maxresdefault.jpg',
+    uploadDate: '2024-06-01',
+    contentUrl: 'https://www.youtube.com/watch?v=vmtha03C92E',
+    embedUrl: 'https://www.youtube.com/embed/vmtha03C92E',
+  },
+];
+
+const schemaReviews = [
+  {
+    author: 'Daniel Insa',
+    role: 'Real Estate Agent, RE/MAX · Malaga',
+    body: 'Thanks to Laura, I can serve more clients without interrupting my work. She answers calls, filters enquiries and schedules viewings in my calendar.',
+    rating: 5,
+  },
+  {
+    author: 'Reinaldo Rodríguez',
+    role: 'Director of AllGrass · Madrid',
+    body: 'Thanks to VivaSpeak we optimised call management to deliver a better service. Rebeca handles 4 languages and sends us an email after every conversation. It has been an investment that paid for itself.',
+    rating: 5,
+  },
+  {
+    author: 'Juan Taborda',
+    role: 'Villas y Fincas Mallorca · 20 years in the sector',
+    body: "Now we answer 24/7, we don't lose contacts and we pre-qualify in a fraction of the time, even during demand peaks. It works really well, very polished.",
+    rating: 5,
+  },
+  {
+    author: 'Arturo Chavarría',
+    role: 'MyCantabria Real Estate · Cantabria',
+    body: "The service is very functional and sufficient for a small or medium real estate agency, especially for managing contacts you can't attend while doing other tasks. Without a doubt, I would hire VivaSpeak again in the future.",
+    rating: 5,
+  },
+];
 ---
 
 <Layout
@@ -80,6 +128,8 @@ const schemaHowTo = {
   keywords="voice assistant, virtual assistant, call automation, WhatsApp Business API, AI chatbot, clinic management, real estate, automated bookings, 24/7 customer service, scheduling integration"
   schemaFaq={schemaFaq}
   schemaHowTo={schemaHowTo}
+  schemaVideos={schemaVideos}
+  schemaReviews={schemaReviews}
   speakable={[
     '.home-title',
     '.home-description',

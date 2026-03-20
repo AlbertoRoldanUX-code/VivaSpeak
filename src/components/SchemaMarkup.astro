@@ -20,6 +20,32 @@ interface Props {
     description?: string;
     step: Array<{ name: string; text: string }>;
   } | null;
+  videos?: Array<{
+    name: string;
+    description: string;
+    thumbnailUrl: string;
+    uploadDate: string;
+    contentUrl: string;
+    embedUrl: string;
+  }>;
+  reviews?: Array<{
+    author: string;
+    role: string;
+    body: string;
+    rating: number;
+  }>;
+  lang?: string;
+  definedTerms?: Array<{
+    name: string;
+    description: string;
+  }>;
+  aboutPage?: boolean;
+  mainEntityService?: {
+    name: string;
+    description: string;
+    areaServed?: string;
+    availableLanguage?: string[];
+  } | null;
 }
 
 const {
@@ -32,9 +58,20 @@ const {
   pageUrl = '',
   pageName = '',
   howTo = null,
+  videos = [],
+  reviews = [],
+  lang = 'es',
+  definedTerms = [],
+  aboutPage = false,
+  mainEntityService = null,
 } = Astro.props;
 
 const baseUrl = 'https://vivaspeak.com';
+
+const orgDescription =
+  lang === 'es'
+    ? 'Agentes de voz IA para llamadas, WhatsApp y email. Atención automatizada 24/7.'
+    : 'AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -42,10 +79,9 @@ const organizationSchema = {
   name: 'VivaSpeak',
   url: baseUrl,
   logo: `${baseUrl}/assets/og-image.png`,
-  description: 'AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.',
+  description: orgDescription,
   sameAs: [
     'https://www.linkedin.com/company/vivaspeak',
-    'https://twitter.com/vivaspeak',
     'https://www.instagram.com/vivaspeakai',
     'https://www.youtube.com/@vivaspeak_ai',
   ],
@@ -63,7 +99,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'VivaSpeak',
   url: baseUrl,
-  description: 'AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.',
+  description: orgDescription,
   publisher: { '@id': `${baseUrl}/#organization` },
   inLanguage: ['es', 'en'],
 };
@@ -173,6 +209,86 @@ const howToSchema = howTo
       })),
     }
   : null;
+
+const videoSchemas = videos.map((v) => ({
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: v.name,
+  description: v.description,
+  thumbnailUrl: v.thumbnailUrl,
+  uploadDate: v.uploadDate,
+  contentUrl: v.contentUrl,
+  embedUrl: v.embedUrl,
+}));
+
+const reviewSchemas = reviews.map((r) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  author: { '@type': 'Person', name: r.author, jobTitle: r.role },
+  reviewBody: r.body,
+  reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },
+  itemReviewed: { '@type': 'SoftwareApplication', name: 'VivaSpeak' },
+}));
+
+const aggregateRatingSchema =
+  reviews.length > 0
+    ? {
+        '@type': 'AggregateRating',
+        ratingValue: (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1),
+        reviewCount: reviews.length,
+        bestRating: 5,
+      }
+    : null;
+
+if (aggregateRatingSchema && product) {
+  (productSchema as Record<string, unknown>).aggregateRating = aggregateRatingSchema;
+}
+
+const definedTermSchemas = definedTerms.map((dt) => ({
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: dt.name,
+  description: dt.description,
+}));
+
+const mainEntityServiceSchema = mainEntityService
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: mainEntityService.name,
+      description: mainEntityService.description,
+      provider: { '@id': `${baseUrl}/#organization` },
+      areaServed: mainEntityService.areaServed || 'ES',
+      availableLanguage: mainEntityService.availableLanguage || ['es', 'en'],
+    }
+  : null;
+
+const aboutPageSchema = aboutPage
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: pageName,
+      url: pageUrl,
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'VivaSpeak',
+        url: baseUrl,
+        description: orgDescription,
+        areaServed: ['ES', 'LATAM'],
+        knowsLanguage: ['es', 'en', 'pt', 'fr', 'de', 'it'],
+        slogan:
+          lang === 'es'
+            ? 'Agentes de voz IA que atienden, cualifican y agendan 24/7.'
+            : 'AI voice agents that answer, qualify and book 24/7.',
+      },
+      ...(speakable.length > 0 && {
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: speakable,
+        },
+      }),
+    }
+  : null;
 ---
 
 {
@@ -201,3 +317,20 @@ const howToSchema = howTo
   )
 }
 {howToSchema && <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />}
+{videoSchemas.map((vs) => <script type="application/ld+json" set:html={JSON.stringify(vs)} />)}
+{reviewSchemas.map((rs) => <script type="application/ld+json" set:html={JSON.stringify(rs)} />)}
+{
+  definedTermSchemas.map((dt) => (
+    <script type="application/ld+json" set:html={JSON.stringify(dt)} />
+  ))
+}
+{
+  aboutPageSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
+  )
+}
+{
+  mainEntityServiceSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(mainEntityServiceSchema)} />
+  )
+}

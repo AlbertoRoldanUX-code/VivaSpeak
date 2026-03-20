@@ -2,6 +2,37 @@
 import Layout from '../layouts/Layout.astro';
 import LandingHeader from '../components/LandingHeader.astro';
 import Footer from '../components/Footer.astro';
+
+const schemaFaq = [
+  {
+    question: '¿Funciona sin internet para el paciente?',
+    answer:
+      'Sí. El paciente solo necesita un teléfono con línea activa. La llamada se procesa en nuestros servidores, sin requerir conexión a internet por parte del paciente.',
+  },
+  {
+    question: '¿Qué idiomas soporta?',
+    answer:
+      'El agente es multilingüe y se adapta a los idiomas locales de cada región. Actualmente soporta español, inglés y otros bajo demanda.',
+  },
+  {
+    question: '¿Cómo se activa el agente médico?',
+    answer:
+      'Agendamos una reunión, definimos el flujo clínico y en 48 horas el agente está operativo con tu número de teléfono.',
+  },
+  {
+    question: '¿Se integra con sistemas de salud existentes?',
+    answer:
+      'Sí. Podemos integrar el agente con sistemas de historia clínica, agendas médicas y plataformas de gestión hospitalaria mediante API.',
+  },
+];
+
+const mainEntityService = {
+  name: 'Agente médico IA para salud pública',
+  description:
+    'Agente de voz IA que ofrece atención médica automatizada por teléfono, sin necesidad de internet para los pacientes.',
+  areaServed: 'ES',
+  availableLanguage: ['es', 'en'],
+};
 ---
 
 <Layout
@@ -12,7 +43,9 @@ import Footer from '../components/Footer.astro';
   alternateEn=""
   keywords="agente médico, inteligencia artificial salud, telemedicina por voz, agente de voz para salud, triage automático, IA sanitaria, atención médica telefónica"
   lang="es"
-  speakable={['.home-title', '.home-description', '.use-case-features li']}
+  schemaFaq={schemaFaq}
+  speakable={['.home-title', '.home-description', '.use-case-features li', '.faq-content']}
+  schemaMainEntityService={mainEntityService}
 >
   <LandingHeader ctaLabel="Solicitar contacto" ctaHref="#schedule" />
   <main id="main-content">
@@ -86,6 +119,42 @@ import Footer from '../components/Footer.astro';
           data-url="https://calendly.com/vivaspeak/30min"
           style="min-width: 320px; height: 630px"
         >
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="law-faq">
+      <div class="container">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-grid">
+          <details class="faq-card">
+            <summary>¿Funciona sin internet para el paciente?</summary>
+            <p class="faq-content">
+              Sí. El paciente solo necesita un teléfono con línea activa. La llamada se procesa en
+              nuestros servidores, sin requerir conexión a internet por parte del paciente.
+            </p>
+          </details>
+          <details class="faq-card">
+            <summary>¿Qué idiomas soporta?</summary>
+            <p class="faq-content">
+              El agente es multilingüe y se adapta a los idiomas locales de cada región. Actualmente
+              soporta español, inglés y otros bajo demanda.
+            </p>
+          </details>
+          <details class="faq-card">
+            <summary>¿Cómo se activa el agente médico?</summary>
+            <p class="faq-content">
+              Agendamos una reunión, definimos el flujo clínico y en 48 horas el agente está
+              operativo con tu número de teléfono.
+            </p>
+          </details>
+          <details class="faq-card">
+            <summary>¿Se integra con sistemas de salud existentes?</summary>
+            <p class="faq-content">
+              Sí. Podemos integrar el agente con sistemas de historia clínica, agendas médicas y
+              plataformas de gestión hospitalaria mediante API.
+            </p>
+          </details>
         </div>
       </div>
     </section>

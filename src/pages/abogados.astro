@@ -3,6 +3,35 @@ import Layout from '../layouts/Layout.astro';
 import LandingHeader from '../components/LandingHeader.astro';
 import Footer from '../components/Footer.astro';
 import '../../styles/abogados.css';
+
+const schemaFaq = [
+  {
+    question: '¿Se puede personalizar por especialidad?',
+    answer:
+      'Sí, 100%. Definimos preguntas, criterios de descarte y orden del flujo según tu especialidad.',
+  },
+  {
+    question: '¿Graba llamadas?',
+    answer: 'Sí, con aviso legal automático desde el primer segundo.',
+  },
+  {
+    question: '¿En cuánto tiempo está listo?',
+    answer: '24 horas desde que recibimos tu contexto.',
+  },
+  {
+    question: '¿Cumple RGPD y normativa de grabación en España?',
+    answer:
+      'Sí. Incluye aviso legal automático al inicio de la llamada y se adapta a la normativa de grabación en España.',
+  },
+];
+
+const mainEntityService = {
+  name: 'Agente de voz IA para abogados',
+  description:
+    'Agente de voz IA que filtra llamadas legales, recoge datos clave y envía resúmenes estructurados a despachos de abogados.',
+  areaServed: 'ES',
+  availableLanguage: ['es', 'en', 'de'],
+};
 ---
 
 <Layout
@@ -13,7 +42,9 @@ import '../../styles/abogados.css';
   ogImage="/assets/og-image.png"
   lang="es"
   keywords="agente de voz IA, abogados, despacho legal, recepción telefónica legal, atención telefónica abogados, cualificación de casos legales"
+  schemaFaq={schemaFaq}
   speakable={['.hero-copy h1', '.hero-subtitle', '.faq-card p', '.pain-card p', '.flow-step p']}
+  schemaMainEntityService={mainEntityService}
 >
   <LandingHeader ctaLabel="Agendar demo" ctaHref="#cta-final" />
   <main id="main-content" class="law-landing">
