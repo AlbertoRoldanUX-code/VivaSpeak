@@ -15,9 +15,24 @@ interface Props {
   speakable?: string[];
   pageUrl?: string;
   pageName?: string;
+  howTo?: {
+    name: string;
+    description?: string;
+    step: Array<{ name: string; text: string }>;
+  } | null;
 }
 
-const { organization = true, product = true, faq = [], breadcrumb = [], article = null, speakable = [], pageUrl = "", pageName = "" } = Astro.props;
+const {
+  organization = true,
+  product = true,
+  faq = [],
+  breadcrumb = [],
+  article = null,
+  speakable = [],
+  pageUrl = "",
+  pageName = "",
+  howTo = null,
+} = Astro.props;
 
 const baseUrl = "https://vivaspeak.com";
 
@@ -27,7 +42,8 @@ const organizationSchema = {
   name: "VivaSpeak",
   url: baseUrl,
   logo: `${baseUrl}/assets/og-image.png`,
-  description: "AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.",
+  description:
+    "AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.",
   sameAs: [
     "https://www.linkedin.com/company/vivaspeak",
     "https://twitter.com/vivaspeak",
@@ -48,7 +64,8 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "VivaSpeak",
   url: baseUrl,
-  description: "AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.",
+  description:
+    "AI voice agents for calls, WhatsApp and email. 24/7 automated customer service.",
   publisher: { "@id": `${baseUrl}/#organization` },
   inLanguage: ["es", "en"],
 };
@@ -65,7 +82,8 @@ const productSchema = {
     priceCurrency: "EUR",
     priceValidUntil: "2026-12-31",
   },
-  description: "AI voice agents that answer calls, WhatsApp and emails 24/7. Automated bookings, lead qualification, and CRM integration.",
+  description:
+    "AI voice agents that answer calls, WhatsApp and emails 24/7. Automated bookings, lead qualification, and CRM integration.",
 };
 
 const faqSchema =
@@ -142,26 +160,81 @@ const speakableSchema =
         },
       }
     : null;
+
+const howToSchema = howTo
+  ? {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: howTo.name,
+      ...(howTo.description && { description: howTo.description }),
+      step: howTo.step.map((s, i) => ({
+        "@type": "HowToStep",
+        position: i + 1,
+        name: s.name,
+        text: s.text,
+      })),
+    }
+  : null;
 ---
 
-{organization && (
-  <script type="application/ld+json" set:html={JSON.stringify({ ...organizationSchema, "@id": "https://vivaspeak.com/#organization" })} />
-)}
-{organization && (
-  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-)}
-{product && (
-  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
-)}
-{faqSchema && (
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-)}
-{breadcrumbSchema && (
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-)}
-{articleSchema && (
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-)}
-{speakableSchema && (
-  <script type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />
-)}
+{
+  organization && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        ...organizationSchema,
+        "@id": "https://vivaspeak.com/#organization",
+      })}
+    />
+  )
+}
+{
+  organization && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(websiteSchema)}
+    />
+  )
+}
+{
+  product && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(productSchema)}
+    />
+  )
+}
+{
+  faqSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  )
+}
+{
+  breadcrumbSchema && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbSchema)}
+    />
+  )
+}
+{
+  articleSchema && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(articleSchema)}
+    />
+  )
+}
+{
+  speakableSchema && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(speakableSchema)}
+    />
+  )
+}
+{
+  howToSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+  )
+}

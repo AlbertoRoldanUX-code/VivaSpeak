@@ -35,6 +35,38 @@ const schemaFaq = [
       "Yes. It can be configured so that, for example, in urgent cases or after a positive filter, the call is transferred to the right person.",
   },
 ];
+
+const schemaHowTo = {
+  name: "How VivaSpeak works",
+  description:
+    "Your AI agent answers, qualifies, and books without friction in 6 steps.",
+  step: [
+    {
+      name: "A customer calls or writes on WhatsApp",
+      text: "The AI answers instantly with a natural voice.",
+    },
+    {
+      name: "The AI qualifies and answers questions",
+      text: "It uses your knowledge base to resolve real questions.",
+    },
+    {
+      name: "It books an appointment in your real calendar",
+      text: "Connect Google Calendar, CRM, or your internal schedule.",
+    },
+    {
+      name: "Your team receives an automatic summary",
+      text: "Email or WhatsApp with the conversation and the next action.",
+    },
+    {
+      name: "See every lead in a panel that is always available",
+      text: "A visual CRM where you can view, filter, and manage every contact at a glance.",
+    },
+    {
+      name: "Call or send messages from the panel without leaving the system",
+      text: "Trigger follow-ups, respond to contacts, and launch calls or messages from one place.",
+    },
+  ],
+};
 ---
 
 <Layout
@@ -48,6 +80,7 @@ const schemaFaq = [
   lang="en"
   keywords="voice assistant, virtual assistant, call automation, WhatsApp Business API, AI chatbot, clinic management, real estate, automated bookings, 24/7 customer service, scheduling integration"
   schemaFaq={schemaFaq}
+  schemaHowTo={schemaHowTo}
   speakable={[
     ".home-title",
     ".home-description",

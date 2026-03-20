@@ -4,15 +4,54 @@ import HeaderEn from "../../../components/HeaderEn.astro";
 import FooterEn from "../../../components/FooterEn.astro";
 import "../../../../styles/blog.css";
 
-const title = "What an AI Voice Agent Is and How It Works (Practical Explanation)";
-const description = "Clear guide to how an AI voice agent works: real calls, contextual memory, CRM integration, and scheduling with Google Calendar or your scheduling system.";
+const title =
+  "What an AI Voice Agent Is and How It Works (Practical Explanation)";
+const description =
+  "Clear guide to how an AI voice agent works: real calls, contextual memory, CRM integration, and scheduling with Google Calendar or your scheduling system.";
 const canonical = "https://vivaspeak.com/en/blog/ai-voice-agent/";
-const schemaArticle = { headline: title, description, datePublished: "2024-06-01", image: "https://vivaspeak.com/assets/og-image.png" };
+const schemaArticle = {
+  headline: title,
+  description,
+  datePublished: "2024-06-01",
+  image: "https://vivaspeak.com/assets/og-image.png",
+};
 const breadcrumb = [
   { name: "Home", url: "https://vivaspeak.com/en/" },
   { name: "Blog", url: "https://vivaspeak.com/en/blog/" },
   { name: title, url: canonical },
 ];
+
+const schemaHowTo = {
+  name: "How an AI voice agent works step by step",
+  description:
+    "Full process from when a customer calls to when your team receives the summary.",
+  step: [
+    {
+      name: "The customer calls your number",
+      text: "The call is automatically routed to the agent's number without changing your existing business number.",
+    },
+    {
+      name: "The agent listens and understands in real time",
+      text: "It interprets the intent: booking, cancelling, asking for prices, schedules, or information.",
+    },
+    {
+      name: "It checks your real data",
+      text: "Accesses your scheduling system, Google Calendar, or CRM depending on your business type.",
+    },
+    {
+      name: "It responds with a natural voice",
+      text: "The voices are almost indistinguishable from a real human. They adjust tone, pauses, rhythm and empathy.",
+    },
+    {
+      name: "It performs actions",
+      text: "Creates appointments, transfers calls, or sends information via WhatsApp based on the conversation.",
+    },
+    {
+      name: "It sends a summary to your team",
+      text: "Automatic email or WhatsApp with transcription, detected intent, outcome, and next steps.",
+    },
+  ],
+};
 ---
 
 <Layout
@@ -24,133 +63,144 @@ const breadcrumb = [
   lang="en"
   schemaArticle={schemaArticle}
   breadcrumb={breadcrumb}
-  speakable={[".blog-article > p:first-of-type", ".blog-article h2", ".blog-article h2 + p"]}
+  schemaHowTo={schemaHowTo}
+  speakable={[
+    ".blog-article > p:first-of-type",
+    ".blog-article h2",
+    ".blog-article h2 + p",
+  ]}
 >
+  <HeaderEn />
 
-<HeaderEn />
+  <main id="main-content" class="blog-container">
+    <article class="blog-article">
+      <h1>
+        What an AI Voice Agent Is and How It Works (Practical Explanation)
+      </h1>
+      <p class="blog-byline">
+        By the VivaSpeak team · <a href="/en/about/">About us</a>
+      </p>
 
-<main id="main-content" class="blog-container">
+      <p>
+        An <strong>AI voice agent</strong> is a system that answers calls like a human,
+        understands natural conversation, accesses your real data (calendar, CRM,
+        business hours) and performs actions such as booking appointments, sending
+        emails, opening tickets, or transferring the call to a human.
+      </p>
 
-  <article class="blog-article">
+      <p>
+        Unlike a voicemail or an IVR (“press 1, press 2”), an AI voice agent
+        responds naturally, remembers context, and can handle complex dialogues.
+      </p>
 
-    <h1>What an AI Voice Agent Is and How It Works (Practical Explanation)</h1>
-    <p class="blog-byline">By the VivaSpeak team · <a href="/en/about/">About us</a></p>
+      <h2>What it can do exactly</h2>
 
-    <p>
-      An <strong>AI voice agent</strong> is a system that answers calls like a human,
-      understands natural conversation, accesses your real data (calendar, CRM, business
-      hours) and performs actions such as booking appointments, sending emails,
-      opening tickets, or transferring the call to a human.
-    </p>
+      <ul>
+        <li>Answer calls in under one second.</li>
+        <li>Speak multiple languages with natural, human-like voice.</li>
+        <li>
+          Check availability in your real calendar: Google Calendar or your
+          scheduling system.
+        </li>
+        <li>Create, move, or cancel appointments.</li>
+        <li>Send automatic summaries via email or WhatsApp.</li>
+        <li>Detect when it should transfer to a human.</li>
+        <li>Record and transcribe every call.</li>
+      </ul>
 
-    <p>
-      Unlike a voicemail or an IVR (“press 1, press 2”), an AI voice agent responds naturally,
-      remembers context, and can handle complex dialogues.
-    </p>
+      <p>
+        At VivaSpeak we use them in clinics, real estate agencies, online stores
+        and any business that receives many calls or messages outside business
+        hours.
+      </p>
 
-    <h2>What it can do exactly</h2>
+      <h2>How an AI voice agent works step by step</h2>
 
-    <ul>
-      <li>Answer calls in under one second.</li>
-      <li>Speak multiple languages with natural, human-like voice.</li>
-      <li>Check availability in your real calendar: Google Calendar or your scheduling system.</li>
-      <li>Create, move, or cancel appointments.</li>
-      <li>Send automatic summaries via email or WhatsApp.</li>
-      <li>Detect when it should transfer to a human.</li>
-      <li>Record and transcribe every call.</li>
-    </ul>
+      <h3>1. The customer calls your number (landline or mobile)</h3>
+      <p>
+        The call is automatically routed to the <strong>agent’s number</strong> without
+        changing your existing business number.
+      </p>
 
-    <p>
-      At VivaSpeak we use them in clinics, real estate agencies, online stores and any
-      business that receives many calls or messages outside business hours.
-    </p>
+      <h3>2. The agent listens and understands in real time</h3>
+      <p>
+        It interprets the intent: booking, cancelling, asking for prices,
+        schedules, availability, or information about a property.
+      </p>
 
-    <h2>How an AI voice agent works step by step</h2>
+      <h3>3. It checks your real data</h3>
+      <p>Depending on your business:</p>
+      <ul>
+        <li>
+          <strong>Clinics:</strong> scheduling system (schedules, services, durations).
+        </li>
+        <li><strong>General businesses:</strong> Google Calendar.</li>
+        <li><strong>Real estate:</strong> CRM or available listings.</li>
+      </ul>
 
-    <h3>1. The customer calls your number (landline or mobile)</h3>
-    <p>
-      The call is automatically routed to the <strong>agent’s number</strong> without changing
-      your existing business number.
-    </p>
+      <h3>4. It responds with a natural voice</h3>
+      <p>
+        The voices are almost indistinguishable from a real human. They adjust
+        tone, pauses, rhythm and empathy.
+      </p>
 
-    <h3>2. The agent listens and understands in real time</h3>
-    <p>
-      It interprets the intent: booking, cancelling, asking for prices, schedules,
-      availability, or information about a property.
-    </p>
+      <h3>5. It performs actions</h3>
+      <p>For example:</p>
+      <ul>
+        <li>
+          “I can offer you an appointment on Tuesday at 4:00 pm. Does that work
+          for you?”
+        </li>
+        <li>“Let me transfer you to a colleague now.”</li>
+        <li>“I'll send you the property brochure on WhatsApp.”</li>
+      </ul>
 
-    <h3>3. It checks your real data</h3>
-    <p>Depending on your business:</p>
-    <ul>
-      <li><strong>Clinics:</strong> scheduling system (schedules, services, durations).</li>
-      <li><strong>General businesses:</strong> Google Calendar.</li>
-      <li><strong>Real estate:</strong> CRM or available listings.</li>
-    </ul>
+      <h3>6. It sends a summary to your team</h3>
+      <p>
+        When the call ends, the agent automatically sends an email or WhatsApp
+        message with:
+      </p>
+      <ul>
+        <li>the full transcription,</li>
+        <li>the detected intent,</li>
+        <li>the outcome,</li>
+        <li>the selected option,</li>
+        <li>the recording,</li>
+        <li>next steps.</li>
+      </ul>
 
-    <h3>4. It responds with a natural voice</h3>
-    <p>
-      The voices are almost indistinguishable from a real human. They adjust tone,
-      pauses, rhythm and empathy.
-    </p>
+      <h2>Why businesses are adopting them</h2>
 
-    <h3>5. It performs actions</h3>
-    <p>For example:</p>
-    <ul>
-      <li>“I can offer you an appointment on Tuesday at 4:00 pm. Does that work for you?”</li>
-      <li>“Let me transfer you to a colleague now.”</li>
-      <li>“I'll send you the property brochure on WhatsApp.”</li>
-    </ul>
+      <ul>
+        <li>24/7 answering without hiring more staff.</li>
+        <li>No fatigue, no errors, no missed opportunities.</li>
+        <li>Higher conversion from calls to customers.</li>
+        <li>Cleans your schedule by avoiding double bookings or wrong data.</li>
+        <li>Scales without increasing costs.</li>
+      </ul>
 
-    <h3>6. It sends a summary to your team</h3>
-    <p>
-      When the call ends, the agent automatically sends an email or WhatsApp message with:
-    </p>
-    <ul>
-      <li>the full transcription,</li>
-      <li>the detected intent,</li>
-      <li>the outcome,</li>
-      <li>the selected option,</li>
-      <li>the recording,</li>
-      <li>next steps.</li>
-    </ul>
+      <p>At VivaSpeak our agents are specialized by sector.</p>
 
-    <h2>Why businesses are adopting them</h2>
+      <h2>Conclusion</h2>
+      <p>
+        An AI voice agent is not a rigid robot or an old IVR. It is a
+        conversational assistant capable of handling real calls like a person:
+        scheduling, confirming, answering, and transferring when needed.
+      </p>
 
-    <ul>
-      <li>24/7 answering without hiring more staff.</li>
-      <li>No fatigue, no errors, no missed opportunities.</li>
-      <li>Higher conversion from calls to customers.</li>
-      <li>Cleans your schedule by avoiding double bookings or wrong data.</li>
-      <li>Scales without increasing costs.</li>
-    </ul>
+      <p>
+        If you'd like to see how one would work in your business,
+        <a href="/en/#schedule">you can book a demo in 30 seconds</a>.
+      </p>
 
-    <p>
-      At VivaSpeak our agents are specialized by sector.
-    </p>
+      <h2>Related use cases</h2>
+      <ul>
+        <li><a href="/en/clinic/">AI for Clinics</a></li>
+        <li><a href="/en/real-estate/">AI for Real Estate</a></li>
+        <li><a href="/en/recruitment/">AI for HR</a></li>
+      </ul>
+    </article>
+  </main>
 
-    <h2>Conclusion</h2>
-    <p>
-      An AI voice agent is not a rigid robot or an old IVR. It is a conversational
-      assistant capable of handling real calls like a person: scheduling, confirming,
-      answering, and transferring when needed.
-    </p>
-
-    <p>
-      If you'd like to see how one would work in your business,
-      <a href="/en/#schedule">you can book a demo in 30 seconds</a>.
-    </p>
-
-    <h2>Related use cases</h2>
-    <ul>
-      <li><a href="/en/clinic/">AI for Clinics</a></li>
-      <li><a href="/en/real-estate/">AI for Real Estate</a></li>
-      <li><a href="/en/recruitment/">AI for HR</a></li>
-    </ul>
-
-  </article>
-
-</main>
-
-<FooterEn />
-
+  <FooterEn />
 </Layout>
