@@ -87,6 +87,33 @@ const schemaVideos = [
     embedUrl: 'https://www.youtube.com/embed/vmtha03C92E',
   },
 ];
+
+const schemaReviews = [
+  {
+    author: 'Daniel Insa',
+    role: 'Agente inmobiliario RE/MAX · Málaga',
+    body: 'Gracias a Laura, puedo atender a más clientes sin interrumpir mi trabajo. Ella responde llamadas, filtra consultas y agenda visitas en mi calendario.',
+    rating: 5,
+  },
+  {
+    author: 'Reinaldo Rodríguez',
+    role: 'Director de AllGrass · Madrid',
+    body: 'Gracias a VivaSpeak optimizamos la gestión de llamadas para prestar un mejor servicio. Rebeca atiende en 4 idiomas y nos envía un email tras cada conversación. Ha sido una inversión que se ha pagado sola.',
+    rating: 5,
+  },
+  {
+    author: 'Juan Taborda',
+    role: 'Villas y Fincas Mallorca · 20 años en el sector',
+    body: 'Ahora atendemos 24h los 7 días, no perdemos contactos y precualificamos en una fracción del tiempo, incluso en picos de demanda. Funciona muy bien, está muy pulido.',
+    rating: 5,
+  },
+  {
+    author: 'Arturo Chavarría',
+    role: 'MyCantabria Inmobiliaria · Cantabria',
+    body: 'El servicio es muy funcional y suficiente para una inmobiliaria pequeña o mediana, especialmente para gestionar los contactos que no puedes atender cuando estás realizando otras funciones. Sin lugar a dudas, volvería a contratar con VivaSpeak en el futuro.',
+    rating: 5,
+  },
+];
 ---
 
 <Layout
@@ -101,6 +128,7 @@ const schemaVideos = [
   schemaFaq={schemaFaq}
   schemaHowTo={schemaHowTo}
   schemaVideos={schemaVideos}
+  schemaReviews={schemaReviews}
   speakable={[
     '.home-title',
     '.home-description',

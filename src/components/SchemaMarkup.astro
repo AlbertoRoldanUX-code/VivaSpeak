@@ -28,6 +28,12 @@ interface Props {
     contentUrl: string;
     embedUrl: string;
   }>;
+  reviews?: Array<{
+    author: string;
+    role: string;
+    body: string;
+    rating: number;
+  }>;
 }
 
 const {
@@ -41,6 +47,7 @@ const {
   pageName = '',
   howTo = null,
   videos = [],
+  reviews = [],
 } = Astro.props;
 
 const baseUrl = 'https://vivaspeak.com';
@@ -193,6 +200,29 @@ const videoSchemas = videos.map((v) => ({
   contentUrl: v.contentUrl,
   embedUrl: v.embedUrl,
 }));
+
+const reviewSchemas = reviews.map((r) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  author: { '@type': 'Person', name: r.author, jobTitle: r.role },
+  reviewBody: r.body,
+  reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },
+  itemReviewed: { '@type': 'SoftwareApplication', name: 'VivaSpeak' },
+}));
+
+const aggregateRatingSchema =
+  reviews.length > 0
+    ? {
+        '@type': 'AggregateRating',
+        ratingValue: (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1),
+        reviewCount: reviews.length,
+        bestRating: 5,
+      }
+    : null;
+
+if (aggregateRatingSchema && product) {
+  (productSchema as Record<string, unknown>).aggregateRating = aggregateRatingSchema;
+}
 ---
 
 {
@@ -222,3 +252,4 @@ const videoSchemas = videos.map((v) => ({
 }
 {howToSchema && <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />}
 {videoSchemas.map((vs) => <script type="application/ld+json" set:html={JSON.stringify(vs)} />)}
+{reviewSchemas.map((rs) => <script type="application/ld+json" set:html={JSON.stringify(rs)} />)}

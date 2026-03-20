@@ -51,6 +51,27 @@ const schemaVideos = [
     embedUrl: 'https://www.youtube.com/embed/vmtha03C92E',
   },
 ];
+
+const schemaReviews = [
+  {
+    author: 'Daniel Insa',
+    role: 'Real Estate Agent, RE/MAX · Malaga',
+    body: 'Thanks to Laura, I can serve more clients without interrupting my work. She answers calls, filters enquiries and schedules viewings in my calendar.',
+    rating: 5,
+  },
+  {
+    author: 'Juan Taborda',
+    role: 'Villas y Fincas Mallorca · 20 years in the sector',
+    body: "Now we answer 24/7, we don't lose contacts and we pre-qualify in a fraction of the time, even during demand peaks. It works really well, very polished.",
+    rating: 5,
+  },
+  {
+    author: 'Arturo Chavarría',
+    role: 'MyCantabria Real Estate · Cantabria',
+    body: "The service is very functional and sufficient for a small or medium real estate agency, especially for managing contacts you can't attend while doing other tasks. Without a doubt, I would hire VivaSpeak again in the future.",
+    rating: 5,
+  },
+];
 ---
 
 <Layout
@@ -64,6 +85,7 @@ const schemaVideos = [
   lang="en"
   schemaFaq={schemaFaq}
   schemaVideos={schemaVideos}
+  schemaReviews={schemaReviews}
   breadcrumb={breadcrumb}
   speakable={['.hero-subtitle', '.hero-proof', '.faq-content', '.use-case-features li']}
 >

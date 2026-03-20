@@ -19,6 +19,7 @@ const {
   speakable = [],
   schemaHowTo = null,
   schemaVideos = [],
+  schemaReviews = [],
 } = Astro.props;
 const currentUrl = canonical || Astro.url.href;
 const fullOgImage = ogImage.startsWith('http')
@@ -151,6 +152,7 @@ const fullOgImage = ogImage.startsWith('http')
       pageName={title}
       howTo={schemaHowTo}
       videos={schemaVideos}
+      reviews={schemaReviews}
     />
     <!-- Calendly -->
     <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>

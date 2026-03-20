@@ -52,6 +52,27 @@ const schemaVideos = [
     embedUrl: 'https://www.youtube.com/embed/vmtha03C92E',
   },
 ];
+
+const schemaReviews = [
+  {
+    author: 'Daniel Insa',
+    role: 'Agente inmobiliario RE/MAX · Málaga',
+    body: 'Gracias a Laura, puedo atender a más clientes sin interrumpir mi trabajo. Ella responde llamadas, filtra consultas y agenda visitas en mi calendario.',
+    rating: 5,
+  },
+  {
+    author: 'Juan Taborda',
+    role: 'Villas y Fincas Mallorca · 20 años en el sector',
+    body: 'Ahora atendemos 24h los 7 días, no perdemos contactos y precualificamos en una fracción del tiempo, incluso en picos de demanda. Funciona muy bien, está muy pulido.',
+    rating: 5,
+  },
+  {
+    author: 'Arturo Chavarría',
+    role: 'MyCantabria Inmobiliaria · Cantabria',
+    body: 'El servicio es muy funcional y suficiente para una inmobiliaria pequeña o mediana, especialmente para gestionar los contactos que no puedes atender cuando estás realizando otras funciones. Sin lugar a dudas, volvería a contratar con VivaSpeak en el futuro.',
+    rating: 5,
+  },
+];
 ---
 
 <Layout
@@ -65,6 +86,7 @@ const schemaVideos = [
   keywords="agente de voz, inmobiliaria, inteligencia artificial, captación de propiedades, automatización llamadas, atención clientes, agente virtual"
   schemaFaq={schemaFaq}
   schemaVideos={schemaVideos}
+  schemaReviews={schemaReviews}
   breadcrumb={breadcrumb}
   speakable={['.hero-subtitle', '.hero-proof', '.faq-content', '.use-case-features li']}
 >
