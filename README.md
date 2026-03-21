@@ -6,7 +6,9 @@ Plataforma de agentes de voz IA para automatizar llamadas, WhatsApp y correo ele
 
 - **Astro** - Framework web moderno
 - **HTML/CSS/JavaScript** - Frontend
-- **ElevenLabs** - Agentes de voz IA
+- **Deepgram** - Speech-to-text (STT)
+- **GPT-4o mini** - Modelo de lenguaje (LLM)
+- **ElevenLabs** - Text-to-speech (TTS)
 
 ## 📦 Instalación
 
