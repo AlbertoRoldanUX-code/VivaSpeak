@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LandingHeader from '../../components/LandingHeader.astro';
+import Footer from '../../components/Footer.astro';
+import '../../../styles/resources.css';
+import { offices } from '../../data/offices';
+
+const grouped = offices.reduce<Record<string, typeof offices>>((acc, o) => {
+  (acc[o.province] ??= []).push(o);
+  return acc;
+}, {});
+const provinces = Object.keys(grouped).sort((a, b) => a.localeCompare(b, 'es'));
+
+const breadcrumb = [
+  { name: 'Inicio', url: 'https://vivaspeak.com/' },
+  { name: 'Ubicaciones', url: 'https://vivaspeak.com/ubicaciones/' },
+];
+---
+
+<Layout
+  title="Ubicaciones | Agente de Voz IA en toda España | VivaSpeak"
+  description="Encuentra tu oficina VivaSpeak. Agentes de voz IA y chatbots de WhatsApp en más de 50 ciudades de España."
+  canonical="https://vivaspeak.com/ubicaciones/"
+  alternateEs="https://vivaspeak.com/ubicaciones/"
+  alternateEn="https://vivaspeak.com/en/locations/"
+  lang="es"
+  breadcrumb={breadcrumb}
+>
+  <LandingHeader ctaLabel="Solicitar demo" ctaHref="/#schedule" secondaryHref="/" />
+
+  <main id="main-content">
+    <section class="resource-hero">
+      <div class="container">
+        <h1 class="resource-title">Nuestras ubicaciones</h1>
+        <p class="resource-subtitle">Agentes de voz IA en más de 50 ciudades de España.</p>
+      </div>
+    </section>
+
+    <section class="resource-grid-section">
+      <div class="container">
+        {
+          provinces.map((province) => (
+            <div style="margin-bottom: 2rem;">
+              <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0b3a2a;">{province}</h2>
+              <div class="resource-grid">
+                {grouped[province].map((office) => (
+                  <article class="resource-card">
+                    <h3>{office.city}</h3>
+                    <p>{office.coworking}</p>
+                    <a href={`/ubicaciones/${office.slug}/`} class="resource-link">
+                      Ver oficina →
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer langEnHref="/en/locations/" langEsHref="/ubicaciones/" />
+</Layout>
