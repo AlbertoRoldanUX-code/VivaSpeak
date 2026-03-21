@@ -399,29 +399,6 @@ export const offices: Office[] = [
     industriesEn: ['Ceramic industry', 'Coastal tourism', 'Clinics', 'Commerce and export'],
   },
   {
-    province: 'Ciudad Real',
-    city: 'Ciudad Real',
-    coworking: '[Coworking por confirmar]',
-    address: '[Dirección por confirmar]',
-    zip: '13001',
-    slug: toSlug('Ciudad Real'),
-    description:
-      'En Ciudad Real, VivaSpeak automatiza llamadas y WhatsApp para empresas manchegas con agentes de voz IA. Nuestro sistema atiende consultas, agenda citas y cualifica leads para clínicas, bodegas y negocios de servicios.',
-    whyLocal:
-      'Ciudad Real es un centro de servicios de Castilla-La Mancha con una economía ligada a la viticultura, la agroalimentación y el comercio. VivaSpeak permite a las empresas ciudadrealeñas automatizar su atención telefónica y captar más clientes.',
-    industries: [
-      'Bodegas y viticultura',
-      'Agroalimentación',
-      'Clínicas',
-      'Servicios profesionales',
-    ],
-    descriptionEn:
-      'In Ciudad Real, VivaSpeak automates calls and WhatsApp for businesses in La Mancha with AI voice agents. Our system handles inquiries, schedules appointments and qualifies leads for clinics, wineries and service businesses.',
-    whyLocalEn:
-      'Ciudad Real is a service center in Castilla-La Mancha with an economy tied to winemaking, agri-food and commerce. VivaSpeak lets local businesses automate their phone support and capture more customers.',
-    industriesEn: ['Wineries and viticulture', 'Agri-food', 'Clinics', 'Professional services'],
-  },
-  {
     province: 'Córdoba',
     city: 'Córdoba',
     coworking: 'Incubadora Invepat',
