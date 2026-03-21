@@ -1,0 +1,681 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LandingHeader from '../components/LandingHeader.astro';
+import Footer from '../components/Footer.astro';
+
+const offices = [
+  {
+    province: 'A Coruña',
+    city: 'A Coruña',
+    coworking: 'DOPAMINA Workspace',
+    address: 'Rúa Juana de Vega, 12',
+    zip: '15003',
+  },
+  {
+    province: 'Álava',
+    city: 'Vitoria-Gasteiz',
+    coworking: 'Coworking Cocubo',
+    address: 'Calle del Cubo, 1',
+    zip: '01001',
+  },
+  {
+    province: 'Albacete',
+    city: 'Albacete',
+    coworking: 'Hub 36 Albacete',
+    address: 'Calle Mayor, 36',
+    zip: '02001',
+  },
+  {
+    province: 'Alicante',
+    city: 'Alicante',
+    coworking: 'ULab',
+    address: 'Plaza de San Cristóbal, 14',
+    zip: '03002',
+  },
+  {
+    province: 'Almería',
+    city: 'Almería',
+    coworking: 'Coworking Almería WorkSpace',
+    address: 'Calle Arráez, 11',
+    zip: '04002',
+  },
+  {
+    province: 'Asturias',
+    city: 'Oviedo',
+    coworking: 'El Camaleón de Rubik',
+    address: 'Calle Manuel García Conde, 3',
+    zip: '33001',
+  },
+  {
+    province: 'Ávila',
+    city: 'Piedralaves',
+    coworking: 'CORKWORKING',
+    address: 'Calle Lavadero, s/n',
+    zip: '05440',
+  },
+  {
+    province: 'Badajoz',
+    city: 'Badajoz',
+    coworking: 'WorkLive',
+    address: 'Avenida Sinforiano Madroñero, 8',
+    zip: '06011',
+  },
+  {
+    province: 'Barcelona',
+    city: 'Barcelona',
+    coworking: 'Cowork Rambla Catalunya',
+    address: 'Carrer de Còrsega, 284',
+    zip: '08008',
+  },
+  {
+    province: 'Bizkaia',
+    city: 'Bilbao',
+    coworking: 'Bilbao Lab Coworking',
+    address: 'Alameda de Mazarredo, 25',
+    zip: '48009',
+  },
+  {
+    province: 'Burgos',
+    city: 'Burgos',
+    coworking: 'BUHUB V29',
+    address: 'Calle Vitoria, 29',
+    zip: '09004',
+  },
+  {
+    province: 'Cáceres',
+    city: 'Cáceres',
+    coworking: 'CONPARTES',
+    address: 'Calle San Pedro, 8',
+    zip: '10003',
+  },
+  {
+    province: 'Cádiz',
+    city: 'Cádiz',
+    coworking: 'Omniwork Center',
+    address: 'Calle Acacias, 10',
+    zip: '11007',
+  },
+  {
+    province: 'Cantabria',
+    city: 'Santander',
+    coworking: 'Coworking ETC Santander',
+    address: 'Calle Isabel la Católica, 1',
+    zip: '39007',
+  },
+  {
+    province: 'Castellón',
+    city: 'Castellón de la Plana',
+    coworking: 'Coworking Office',
+    address: 'Passeig de la Universitat, 13',
+    zip: '12006',
+  },
+  {
+    province: 'Ciudad Real',
+    city: 'Ciudad Real',
+    coworking: '[Coworking por confirmar]',
+    address: '[Dirección por confirmar]',
+    zip: '13001',
+  },
+  {
+    province: 'Córdoba',
+    city: 'Córdoba',
+    coworking: 'Incubadora Invepat',
+    address: 'Avenida Ronda de los Tejares, 27',
+    zip: '14008',
+  },
+  {
+    province: 'Cuenca',
+    city: 'Cuenca',
+    coworking: 'thegoodspace',
+    address: 'Calle Fermín Caballero, 3',
+    zip: '16004',
+  },
+  {
+    province: 'Gipuzkoa',
+    city: 'San Sebastián',
+    coworking: 'Coworking Donostia',
+    address: 'Calle Miracruz, 23',
+    zip: '20001',
+  },
+  {
+    province: 'Girona',
+    city: 'Girona',
+    coworking: 'COSSI Coworking',
+    address: 'Carrer Nou, 12',
+    zip: '17001',
+  },
+  {
+    province: 'Granada',
+    city: 'Granada',
+    coworking: 'Anda CoWork',
+    address: 'Avenida de Andalucía, 5',
+    zip: '18014',
+  },
+  {
+    province: 'Guadalajara',
+    city: 'Guadalajara',
+    coworking: 'Espacio Karaba',
+    address: 'Calle Marqués de Santillana, 13',
+    zip: '19002',
+  },
+  {
+    province: 'Huelva',
+    city: 'Huelva',
+    coworking: 'Coworking Huelva',
+    address: 'Calle Puerto, 8',
+    zip: '21003',
+  },
+  {
+    province: 'Huesca',
+    city: 'Huesca',
+    coworking: 'Coworking Costa',
+    address: 'Calle Coso Alto, 67',
+    zip: '22003',
+  },
+  {
+    province: 'Illes Balears',
+    city: 'Palma',
+    coworking: 'Nidus Coworking & Office',
+    address: 'Carrer de Margalida Caimari, 24',
+    zip: '07005',
+  },
+  {
+    province: 'Jaén',
+    city: 'Jaén',
+    coworking: 'Cuatro Gatos Coworking',
+    address: 'Calle Obispo Aguilar, 2',
+    zip: '23001',
+  },
+  {
+    province: 'La Rioja',
+    city: 'Logroño',
+    coworking: 'Regus Logroño',
+    address: 'Calle Chile, 54',
+    zip: '26007',
+  },
+  {
+    province: 'Las Palmas',
+    city: 'Las Palmas de Gran Canaria',
+    coworking: 'GoCoworking',
+    address: 'Calle Muelle Las Palmas, 2A',
+    zip: '35003',
+  },
+  {
+    province: 'León',
+    city: 'León',
+    coworking: 'Coworking en León',
+    address: 'Calle Ramón y Cajal, 29',
+    zip: '24001',
+  },
+  {
+    province: 'Lleida',
+    city: 'Lleida',
+    coworking: 'Lleida Cowork',
+    address: 'Carrer Torres de Sanui, 5',
+    zip: '25006',
+  },
+  {
+    province: 'Lugo',
+    city: 'Lugo',
+    coworking: 'Coworking Kastel',
+    address: 'Rúa Amendoeira, 25',
+    zip: '27003',
+  },
+  {
+    province: 'Madrid',
+    city: 'Madrid',
+    coworking: 'The Shed Coworking',
+    address: 'Calle de Hermosilla, 48',
+    zip: '28001',
+  },
+  {
+    province: 'Málaga',
+    city: 'Málaga',
+    coworking: 'La Aduana Coworking',
+    address: 'Calle Cortina del Muelle, 11',
+    zip: '29015',
+  },
+  {
+    province: 'Murcia',
+    city: 'Murcia',
+    coworking: 'Coworking Murcia Centro',
+    address: 'Calle San Antonio, 8',
+    zip: '30001',
+  },
+  {
+    province: 'Navarra',
+    city: 'Pamplona',
+    coworking: 'Pamplona Coworking',
+    address: 'Calle del Monasterio de Tulebras, 2',
+    zip: '31011',
+  },
+  {
+    province: 'Ourense',
+    city: 'Ourense',
+    coworking: 'Magma Espacio',
+    address: 'Rúa Bedoya, 27',
+    zip: '32004',
+  },
+  {
+    province: 'Palencia',
+    city: 'Palencia',
+    coworking: 'Zona Doze Coworking',
+    address: 'Plaza Pío XII, 7',
+    zip: '34005',
+  },
+  {
+    province: 'Pontevedra',
+    city: 'Pontevedra',
+    coworking: 'Peregrina25 Coworking',
+    address: 'Rúa Peregrina, 25',
+    zip: '36001',
+  },
+  {
+    province: 'Salamanca',
+    city: 'Salamanca',
+    coworking: 'Artilugio Estudio',
+    address: 'Calle Azafranal, 18',
+    zip: '37001',
+  },
+  {
+    province: 'Santa Cruz de Tenerife',
+    city: 'Santa Cruz de Tenerife',
+    coworking: 'Espacio Kernel',
+    address: 'Avenida Tres de Mayo, 30',
+    zip: '38005',
+  },
+  {
+    province: 'Segovia',
+    city: 'Segovia',
+    coworking: 'El Arco 75 Coworking',
+    address: 'Avenida Acueducto, 13',
+    zip: '40001',
+  },
+  {
+    province: 'Sevilla',
+    city: 'Sevilla',
+    coworking: 'workINcompany',
+    address: 'Calle Rioja, 13',
+    zip: '41001',
+  },
+  {
+    province: 'Soria',
+    city: 'Soria',
+    coworking: 'Espacio de Trabajo Colaborativo',
+    address: 'Calle Zapatería, 21',
+    zip: '42002',
+  },
+  {
+    province: 'Tarragona',
+    city: 'Tarragona',
+    coworking: 'COTAKO Coworking',
+    address: 'Carrer del Pare Palau, 5',
+    zip: '43001',
+  },
+  {
+    province: 'Teruel',
+    city: 'Teruel',
+    coworking: 'Espacio Coworking Teruel',
+    address: 'Calle Amantes, 17',
+    zip: '44001',
+  },
+  {
+    province: 'Toledo',
+    city: 'Toledo',
+    coworking: 'Coworking Alcázar',
+    address: 'Cuesta de Carlos V, 2',
+    zip: '45001',
+  },
+  {
+    province: 'Valencia',
+    city: 'Valencia',
+    coworking: 'Vortex Centro',
+    address: 'Carrer de Sorní, 12',
+    zip: '46004',
+  },
+  {
+    province: 'Valladolid',
+    city: 'Valladolid',
+    coworking: 'Leburó Coworking',
+    address: 'Calle Falla, 13',
+    zip: '47006',
+  },
+  {
+    province: 'Zamora',
+    city: 'Zamora',
+    coworking: 'La Ofi de Paco',
+    address: 'Avenida Alfonso IX, 2',
+    zip: '49013',
+  },
+  {
+    province: 'Zaragoza',
+    city: 'Zaragoza',
+    coworking: 'Coworking El Gancho',
+    address: 'Calle de San Pablo, 12',
+    zip: '50003',
+  },
+  {
+    province: 'Ceuta',
+    city: 'Ceuta',
+    coworking: 'SUMA-T Ceuta',
+    address: 'Calle Teniente Arrabal, 2',
+    zip: '51001',
+  },
+  {
+    province: 'Melilla',
+    city: 'Melilla',
+    coworking: 'Metropol Coworking',
+    address: 'Calle Conde del Serrallo, 13',
+    zip: '52001',
+  },
+];
+---
+
+<Layout
+  title="Oficinas VivaSpeak en España | Contacto por Provincia"
+  description="Encuentra la oficina VivaSpeak más cercana. Presencia en todas las provincias de España. Contacta con nuestro equipo de agentes IA para automatizar tu negocio."
+  canonical="https://vivaspeak.com/contacto/"
+  alternateEs="https://vivaspeak.com/contacto/"
+  lang="es"
+  robots="index, follow"
+  speakable={['.contacto-hero h1', '.contacto-hero p']}
+>
+  <LandingHeader ctaLabel="Solicitar demo" ctaHref="/#schedule" secondaryHref="/" />
+
+  <main id="main-content">
+    <section class="contacto-hero">
+      <div class="container">
+        <p class="eyebrow">Oficinas VivaSpeak</p>
+        <h1>Estamos en toda España</h1>
+        <p class="contacto-hero__sub">
+          Encuentra tu oficina más cercana y habla con nuestro equipo. Automatiza llamadas, WhatsApp
+          y atención al cliente con IA.
+        </p>
+      </div>
+    </section>
+
+    <section class="oficinas-section">
+      <div class="container">
+        {
+          offices.map((office, i) => (
+            <article
+              class={`oficina-card ${i % 2 === 0 ? 'oficina-card--left' : 'oficina-card--right'}`}
+              id={office.city.toLowerCase().replace(/\s+/g, '-')}
+            >
+              <div class="oficina-card__info">
+                <div class="oficina-card__heading">
+                  <span class="oficina-label">Oficina</span>
+                  <h2>{office.city}</h2>
+                </div>
+                <div class="oficina-card__details">
+                  <p class="oficina-card__name">{office.coworking}</p>
+                  <p class="oficina-card__address">
+                    {office.address}
+                    <br />
+                    {office.city}, {office.zip}
+                  </p>
+                  <p class="oficina-card__phone">
+                    T <a href="tel:+34951798932">(+34) 951 798 932</a>
+                  </p>
+                  <p class="oficina-card__whatsapp">
+                    <img
+                      src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/whatsapp.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                      class="oficina-icon"
+                    />
+                    <a href="https://wa.me/34951798932" target="_blank" rel="noopener noreferrer">
+                      Hablemos por WhatsApp
+                    </a>
+                  </p>
+                  <p class="oficina-card__email">
+                    <a href="mailto:alberto@vivaspeak.com">alberto@vivaspeak.com</a>
+                  </p>
+                  <a href="/#schedule" class="btn-oficina">
+                    Contáctanos
+                  </a>
+                </div>
+              </div>
+              <div class="oficina-card__map">
+                <iframe
+                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(office.coworking.startsWith('[') ? office.city + ', Spain' : office.coworking + ', ' + office.address + ', ' + office.city + ', Spain')}&zoom=15`}
+                  width="100%"
+                  height="350"
+                  style="border:0; border-radius: 16px;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title={`Mapa de la oficina VivaSpeak en ${office.city}`}
+                />
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="contacto-cta">
+      <div class="container">
+        <h2>¿No encuentras tu ciudad?</h2>
+        <p>Llámanos o escríbenos y te atendemos desde cualquier punto de España.</p>
+        <div class="cta-buttons">
+          <a href="tel:+34951798932" class="btn-primary">Llamar ahora</a>
+          <a href="/#schedule" class="btn-secondary">Reservar reunión</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .contacto-hero {
+    padding: 120px 2rem 60px;
+    background: linear-gradient(to bottom, #f5fafa, #e9f2f2);
+    text-align: center;
+  }
+  .contacto-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(120deg, var(--color-dark), var(--primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0 0 16px;
+  }
+  .contacto-hero__sub {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Offices section */
+  .oficinas-section {
+    padding: 60px 2rem 80px;
+    background: var(--white);
+  }
+  .oficinas-section .container {
+    max-width: 1100px;
+  }
+
+  /* Office card */
+  .oficina-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 50px 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .oficina-card:last-child {
+    border-bottom: none;
+  }
+  .oficina-card--right {
+    direction: rtl;
+  }
+  .oficina-card--right > * {
+    direction: ltr;
+  }
+
+  /* Info side */
+  .oficina-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .oficina-card__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .oficina-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    letter-spacing: 0.02em;
+  }
+  .oficina-card__heading h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin: 0;
+    text-align: left;
+    line-height: 1.1;
+  }
+
+  /* Details card */
+  .oficina-card__details {
+    background: var(--white-2);
+    border: 1px solid var(--gray-light);
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+  }
+  .oficina-card__details::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(26, 188, 156, 0.12);
+    pointer-events: none;
+  }
+  .oficina-card__name {
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0 0 4px;
+    font-size: 1.05rem;
+  }
+  .oficina-card__address {
+    color: var(--gray-medium);
+    margin: 0 0 14px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+  .oficina-card__phone {
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+  .oficina-card__phone a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .oficina-card__whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+  }
+  .oficina-card__whatsapp a {
+    color: #25d366;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .oficina-icon {
+    filter: invert(55%) sepia(76%) saturate(520%) hue-rotate(107deg) brightness(95%) contrast(92%);
+  }
+  .oficina-card__email {
+    margin: 0 0 18px;
+    font-size: 0.95rem;
+  }
+  .oficina-card__email a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  /* CTA button */
+  .btn-oficina {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--primary-dark);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+  .btn-oficina:hover {
+    background: var(--primary-darker);
+    transform: scale(1.02);
+  }
+
+  /* Map */
+  .oficina-card__map {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .oficina-card__map iframe {
+    display: block;
+    width: 100%;
+    min-height: 350px;
+  }
+
+  /* Bottom CTA */
+  .contacto-cta {
+    padding: 80px 2rem;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--white), #f4fffc);
+  }
+  .contacto-cta h2 {
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+  }
+  .contacto-cta p {
+    color: var(--color-text);
+    margin-bottom: 28px;
+    font-size: 1.1rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .oficina-card {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 36px 0;
+    }
+    .oficina-card--right {
+      direction: ltr;
+    }
+    .contacto-hero h1 {
+      font-size: 2rem;
+    }
+    .oficina-card__heading h2 {
+      font-size: 1.7rem;
+    }
+  }
+</style>
