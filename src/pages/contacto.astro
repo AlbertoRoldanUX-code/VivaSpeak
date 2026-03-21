@@ -2,373 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LandingHeader from '../components/LandingHeader.astro';
 import Footer from '../components/Footer.astro';
-
-const offices = [
-  {
-    province: 'A Coruña',
-    city: 'A Coruña',
-    coworking: 'DOPAMINA Workspace',
-    address: 'Rúa Juana de Vega, 12',
-    zip: '15003',
-  },
-  {
-    province: 'Álava',
-    city: 'Vitoria-Gasteiz',
-    coworking: 'Coworking Cocubo',
-    address: 'Calle del Cubo, 1',
-    zip: '01001',
-  },
-  {
-    province: 'Albacete',
-    city: 'Albacete',
-    coworking: 'Hub 36 Albacete',
-    address: 'Calle Mayor, 36',
-    zip: '02001',
-  },
-  {
-    province: 'Alicante',
-    city: 'Alicante',
-    coworking: 'ULab',
-    address: 'Plaza de San Cristóbal, 14',
-    zip: '03002',
-  },
-  {
-    province: 'Almería',
-    city: 'Almería',
-    coworking: 'Coworking Almería WorkSpace',
-    address: 'Calle Arráez, 11',
-    zip: '04002',
-  },
-  {
-    province: 'Asturias',
-    city: 'Oviedo',
-    coworking: 'El Camaleón de Rubik',
-    address: 'Calle Manuel García Conde, 3',
-    zip: '33001',
-  },
-  {
-    province: 'Ávila',
-    city: 'Piedralaves',
-    coworking: 'CORKWORKING',
-    address: 'Calle Lavadero, s/n',
-    zip: '05440',
-  },
-  {
-    province: 'Badajoz',
-    city: 'Badajoz',
-    coworking: 'WorkLive',
-    address: 'Avenida Sinforiano Madroñero, 8',
-    zip: '06011',
-  },
-  {
-    province: 'Barcelona',
-    city: 'Barcelona',
-    coworking: 'Cowork Rambla Catalunya',
-    address: 'Carrer de Còrsega, 284',
-    zip: '08008',
-  },
-  {
-    province: 'Bizkaia',
-    city: 'Bilbao',
-    coworking: 'Bilbao Lab Coworking',
-    address: 'Alameda de Mazarredo, 25',
-    zip: '48009',
-  },
-  {
-    province: 'Burgos',
-    city: 'Burgos',
-    coworking: 'BUHUB V29',
-    address: 'Calle Vitoria, 29',
-    zip: '09004',
-  },
-  {
-    province: 'Cáceres',
-    city: 'Cáceres',
-    coworking: 'CONPARTES',
-    address: 'Calle San Pedro, 8',
-    zip: '10003',
-  },
-  {
-    province: 'Cádiz',
-    city: 'Cádiz',
-    coworking: 'Omniwork Center',
-    address: 'Calle Acacias, 10',
-    zip: '11007',
-  },
-  {
-    province: 'Cantabria',
-    city: 'Santander',
-    coworking: 'Coworking ETC Santander',
-    address: 'Calle Isabel la Católica, 1',
-    zip: '39007',
-  },
-  {
-    province: 'Castellón',
-    city: 'Castellón de la Plana',
-    coworking: 'Coworking Office',
-    address: 'Passeig de la Universitat, 13',
-    zip: '12006',
-  },
-  {
-    province: 'Ciudad Real',
-    city: 'Ciudad Real',
-    coworking: '[Coworking por confirmar]',
-    address: '[Dirección por confirmar]',
-    zip: '13001',
-  },
-  {
-    province: 'Córdoba',
-    city: 'Córdoba',
-    coworking: 'Incubadora Invepat',
-    address: 'Avenida Ronda de los Tejares, 27',
-    zip: '14008',
-  },
-  {
-    province: 'Cuenca',
-    city: 'Cuenca',
-    coworking: 'thegoodspace',
-    address: 'Calle Fermín Caballero, 3',
-    zip: '16004',
-  },
-  {
-    province: 'Gipuzkoa',
-    city: 'San Sebastián',
-    coworking: 'Coworking Donostia',
-    address: 'Calle Miracruz, 23',
-    zip: '20001',
-  },
-  {
-    province: 'Girona',
-    city: 'Girona',
-    coworking: 'COSSI Coworking',
-    address: 'Carrer Nou, 12',
-    zip: '17001',
-  },
-  {
-    province: 'Granada',
-    city: 'Granada',
-    coworking: 'Anda CoWork',
-    address: 'Avenida de Andalucía, 5',
-    zip: '18014',
-  },
-  {
-    province: 'Guadalajara',
-    city: 'Guadalajara',
-    coworking: 'Espacio Karaba',
-    address: 'Calle Marqués de Santillana, 13',
-    zip: '19002',
-  },
-  {
-    province: 'Huelva',
-    city: 'Huelva',
-    coworking: 'Coworking Huelva',
-    address: 'Calle Puerto, 8',
-    zip: '21003',
-  },
-  {
-    province: 'Huesca',
-    city: 'Huesca',
-    coworking: 'Coworking Costa',
-    address: 'Calle Coso Alto, 67',
-    zip: '22003',
-  },
-  {
-    province: 'Illes Balears',
-    city: 'Palma',
-    coworking: 'Nidus Coworking & Office',
-    address: 'Carrer de Margalida Caimari, 24',
-    zip: '07005',
-  },
-  {
-    province: 'Jaén',
-    city: 'Jaén',
-    coworking: 'Cuatro Gatos Coworking',
-    address: 'Calle Obispo Aguilar, 2',
-    zip: '23001',
-  },
-  {
-    province: 'La Rioja',
-    city: 'Logroño',
-    coworking: 'Regus Logroño',
-    address: 'Calle Chile, 54',
-    zip: '26007',
-  },
-  {
-    province: 'Las Palmas',
-    city: 'Las Palmas de Gran Canaria',
-    coworking: 'GoCoworking',
-    address: 'Calle Muelle Las Palmas, 2A',
-    zip: '35003',
-  },
-  {
-    province: 'León',
-    city: 'León',
-    coworking: 'Coworking en León',
-    address: 'Calle Ramón y Cajal, 29',
-    zip: '24001',
-  },
-  {
-    province: 'Lleida',
-    city: 'Lleida',
-    coworking: 'Lleida Cowork',
-    address: 'Carrer Torres de Sanui, 5',
-    zip: '25006',
-  },
-  {
-    province: 'Lugo',
-    city: 'Lugo',
-    coworking: 'Coworking Kastel',
-    address: 'Rúa Amendoeira, 25',
-    zip: '27003',
-  },
-  {
-    province: 'Madrid',
-    city: 'Madrid',
-    coworking: 'The Shed Coworking',
-    address: 'Calle de Hermosilla, 48',
-    zip: '28001',
-  },
-  {
-    province: 'Málaga',
-    city: 'Málaga',
-    coworking: 'La Aduana Coworking',
-    address: 'Calle Cortina del Muelle, 11',
-    zip: '29015',
-  },
-  {
-    province: 'Murcia',
-    city: 'Murcia',
-    coworking: 'Coworking Murcia Centro',
-    address: 'Calle San Antonio, 8',
-    zip: '30001',
-  },
-  {
-    province: 'Navarra',
-    city: 'Pamplona',
-    coworking: 'Pamplona Coworking',
-    address: 'Calle del Monasterio de Tulebras, 2',
-    zip: '31011',
-  },
-  {
-    province: 'Ourense',
-    city: 'Ourense',
-    coworking: 'Magma Espacio',
-    address: 'Rúa Bedoya, 27',
-    zip: '32004',
-  },
-  {
-    province: 'Palencia',
-    city: 'Palencia',
-    coworking: 'Zona Doze Coworking',
-    address: 'Plaza Pío XII, 7',
-    zip: '34005',
-  },
-  {
-    province: 'Pontevedra',
-    city: 'Pontevedra',
-    coworking: 'Peregrina25 Coworking',
-    address: 'Rúa Peregrina, 25',
-    zip: '36001',
-  },
-  {
-    province: 'Salamanca',
-    city: 'Salamanca',
-    coworking: 'Artilugio Estudio',
-    address: 'Calle Azafranal, 18',
-    zip: '37001',
-  },
-  {
-    province: 'Santa Cruz de Tenerife',
-    city: 'Santa Cruz de Tenerife',
-    coworking: 'Espacio Kernel',
-    address: 'Avenida Tres de Mayo, 30',
-    zip: '38005',
-  },
-  {
-    province: 'Segovia',
-    city: 'Segovia',
-    coworking: 'El Arco 75 Coworking',
-    address: 'Avenida Acueducto, 13',
-    zip: '40001',
-  },
-  {
-    province: 'Sevilla',
-    city: 'Sevilla',
-    coworking: 'workINcompany',
-    address: 'Calle Rioja, 13',
-    zip: '41001',
-  },
-  {
-    province: 'Soria',
-    city: 'Soria',
-    coworking: 'Espacio de Trabajo Colaborativo',
-    address: 'Calle Zapatería, 21',
-    zip: '42002',
-  },
-  {
-    province: 'Tarragona',
-    city: 'Tarragona',
-    coworking: 'COTAKO Coworking',
-    address: 'Carrer del Pare Palau, 5',
-    zip: '43001',
-  },
-  {
-    province: 'Teruel',
-    city: 'Teruel',
-    coworking: 'Espacio Coworking Teruel',
-    address: 'Calle Amantes, 17',
-    zip: '44001',
-  },
-  {
-    province: 'Toledo',
-    city: 'Toledo',
-    coworking: 'Coworking Alcázar',
-    address: 'Cuesta de Carlos V, 2',
-    zip: '45001',
-  },
-  {
-    province: 'Valencia',
-    city: 'Valencia',
-    coworking: 'Vortex Centro',
-    address: 'Carrer de Sorní, 12',
-    zip: '46004',
-  },
-  {
-    province: 'Valladolid',
-    city: 'Valladolid',
-    coworking: 'Leburó Coworking',
-    address: 'Calle Falla, 13',
-    zip: '47006',
-  },
-  {
-    province: 'Zamora',
-    city: 'Zamora',
-    coworking: 'La Ofi de Paco',
-    address: 'Avenida Alfonso IX, 2',
-    zip: '49013',
-  },
-  {
-    province: 'Zaragoza',
-    city: 'Zaragoza',
-    coworking: 'Coworking El Gancho',
-    address: 'Calle de San Pablo, 12',
-    zip: '50003',
-  },
-  {
-    province: 'Ceuta',
-    city: 'Ceuta',
-    coworking: 'SUMA-T Ceuta',
-    address: 'Calle Teniente Arrabal, 2',
-    zip: '51001',
-  },
-  {
-    province: 'Melilla',
-    city: 'Melilla',
-    coworking: 'Metropol Coworking',
-    address: 'Calle Conde del Serrallo, 13',
-    zip: '52001',
-  },
-];
+import { offices } from '../data/offices';
 ---
 
 <Layout
@@ -403,7 +37,9 @@ const offices = [
               id={office.city.toLowerCase().replace(/\s+/g, '-')}
             >
               <div class="oficina-card__info">
-                <h2 class="oficina-card__city">{office.city}</h2>
+                <h2 class="oficina-card__city">
+                  <a href={`/ubicaciones/${office.slug}/`}>{office.city}</a>
+                </h2>
                 <div class="oficina-card__details">
                   <p class="oficina-card__name">{office.coworking}</p>
                   <p class="oficina-card__address">
@@ -429,6 +65,9 @@ const offices = [
                   </div>
                   <a href="/#schedule" class="btn-oficina">
                     Contáctanos
+                  </a>
+                  <a href={`/ubicaciones/${office.slug}/`} class="link-ver-mas">
+                    Ver más sobre {office.city} →
                   </a>
                 </div>
               </div>
@@ -537,6 +176,14 @@ const offices = [
     line-height: 1.1;
     text-align: center;
   }
+  .oficina-card__city a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .oficina-card__city a:hover {
+    color: var(--primary);
+  }
 
   /* Details card */
   .oficina-card__details {
@@ -642,6 +289,20 @@ const offices = [
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker));
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(22, 160, 133, 0.4);
+  }
+
+  /* Ver más link */
+  .link-ver-mas {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .link-ver-mas:hover {
+    color: var(--primary);
   }
 
   /* Map */
