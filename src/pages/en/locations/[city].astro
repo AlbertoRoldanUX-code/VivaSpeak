@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import LandingHeaderEn from '../../../components/LandingHeaderEn.astro';
-import FooterEn from '../../../components/FooterEn.astro';
+import LandingHeader from '../../../components/LandingHeader.astro';
+import Footer from '../../../components/Footer.astro';
 import '../../../../styles/ubicaciones.css';
 import { offices } from '../../../data/offices';
 import type { Office } from '../../../data/offices';
@@ -86,7 +86,7 @@ const localBusinessJsonLd = JSON.stringify({
   schemaFaq={schemaFaq}
   breadcrumb={breadcrumb}
 >
-  <LandingHeaderEn ctaLabel="Request a demo" ctaHref="/en/#schedule" secondaryHref="/en/" />
+  <LandingHeader ctaLabel="Request a demo" ctaHref="/en/#schedule" secondaryHref="/en/" />
   <main id="main-content">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="container">
@@ -237,7 +237,7 @@ const localBusinessJsonLd = JSON.stringify({
     </section>
   </main>
   <Fragment set:html={`<script type="application/ld+json">${localBusinessJsonLd}</script>`} />
-  <FooterEn
+  <Footer
     langEnHref={`/en/locations/${office.slug}/`}
     langEsHref={`/ubicaciones/${office.slug}/`}
   />
