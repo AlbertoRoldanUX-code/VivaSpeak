@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import BlogCTA from '../../components/BlogCTA.astro';
 import '../../../styles/blog.css';
 
 const title = 'Agente de Voz IA para Clínicas: Reduce Llamadas y Agenda Más Citas';
@@ -144,11 +145,6 @@ const breadcrumb = [
         permite a los profesionales centrarse en lo importante: atender pacientes.
       </p>
 
-      <p>
-        Si quieres ver cómo funcionaría en tu clínica,
-        <a href="/#schedule">puedes agendar una demo aquí</a>.
-      </p>
-
       <h2>Casos de uso relacionados</h2>
       <ul>
         <li><a href="/clinica/">IA para Clínicas</a></li>
@@ -156,6 +152,7 @@ const breadcrumb = [
         <li><a href="/reclutamiento/">IA para RRHH</a></li>
       </ul>
     </article>
+    <BlogCTA />
   </main>
 
   <Footer />

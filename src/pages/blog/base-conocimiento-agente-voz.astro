@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import BlogCTA from '../../components/BlogCTA.astro';
 import '../../../styles/blog.css';
 
 const title = 'Base de Conocimiento para Agente de Voz IA | Guía Paso a Paso';
@@ -163,11 +164,6 @@ const breadcrumb = [
         comete menos errores y transmite exactamente lo que la empresa quiere que diga.
       </p>
 
-      <p>
-        Si quieres que te ayudemos a crear o mejorar la base de conocimiento de tu agente,
-        <a href="/#schedule">puedes agendar una demo aquí</a>.
-      </p>
-
       <h2>Casos de uso relacionados</h2>
       <ul>
         <li><a href="/clinica/">IA para Clínicas</a></li>
@@ -175,6 +171,7 @@ const breadcrumb = [
         <li><a href="/reclutamiento/">IA para RRHH</a></li>
       </ul>
     </article>
+    <BlogCTA />
   </main>
 
   <Footer />
