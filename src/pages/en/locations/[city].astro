@@ -1,6 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import LandingHeaderEn from '../../../components/LandingHeaderEn.astro';
+import LandingHeader from '../../../components/LandingHeader.astro';
 import FooterEn from '../../../components/FooterEn.astro';
 import '../../../../styles/ubicaciones.css';
 import { offices } from '../../../data/offices';
@@ -86,7 +86,7 @@ const localBusinessJsonLd = JSON.stringify({
   schemaFaq={schemaFaq}
   breadcrumb={breadcrumb}
 >
-  <LandingHeaderEn ctaLabel="Request a demo" ctaHref="/en/#schedule" secondaryHref="/en/" />
+  <LandingHeader ctaLabel="Request a demo" ctaHref="/en/#schedule" secondaryHref="/en/" />
   <main id="main-content">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="container">
