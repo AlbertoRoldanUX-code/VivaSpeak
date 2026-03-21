@@ -1,0 +1,253 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LandingHeader from '../../components/LandingHeader.astro';
+import Footer from '../../components/Footer.astro';
+import '../../../styles/ubicaciones.css';
+import { offices } from '../../data/offices';
+import type { Office } from '../../data/offices';
+
+export function getStaticPaths() {
+  return offices.map((office) => ({
+    params: { city: office.slug },
+    props: { office },
+  }));
+}
+
+interface Props {
+  office: Office;
+}
+
+const { office } = Astro.props;
+
+const pageTitle = `Agente de Voz IA en ${office.city} | VivaSpeak`;
+const pageDescription = `VivaSpeak en ${office.city}: automatiza llamadas, WhatsApp y atención al cliente con IA. Oficina en ${office.coworking}, ${office.address}.`;
+const canonicalUrl = `https://vivaspeak.com/ubicaciones/${office.slug}/`;
+const alternateEn = `https://vivaspeak.com/en/locations/${office.slug}/`;
+
+const mapQuery = office.coworking.startsWith('[')
+  ? `${office.city}, Spain`
+  : `${office.coworking}, ${office.address}, ${office.city}, Spain`;
+
+const schemaFaq = [
+  {
+    question: `¿Qué hace VivaSpeak en ${office.city}?`,
+    answer: `VivaSpeak ofrece agentes de voz IA y chatbots de WhatsApp para empresas en ${office.city}. Automatizamos llamadas, agendamos citas y cualificamos leads 24/7.`,
+  },
+  {
+    question: '¿Cómo funciona el agente de voz IA?',
+    answer:
+      'Nuestro agente IA responde llamadas con voz natural, resuelve dudas frecuentes, agenda citas en tu calendario y envía un resumen a tu equipo automáticamente.',
+  },
+  {
+    question: '¿Se integra con mi software actual?',
+    answer:
+      'Sí. Conectamos con Google Calendar, HubSpot, CRMs propios y agendas con API, además de la API oficial de WhatsApp.',
+  },
+  {
+    question: '¿Puedo probarlo antes de contratarlo?',
+    answer:
+      'Cada agente incluye un piloto de una semana con tus flujos reales y KPIs compartidos en el panel.',
+  },
+  {
+    question: '¿Qué idiomas cubre el agente?',
+    answer:
+      'Los agentes suelen usar un idioma principal y le podemos añadir hasta 3 adicionales: español, inglés, portugués, francés, italiano y alemán.',
+  },
+];
+
+const breadcrumb = [
+  { name: 'Inicio', url: 'https://vivaspeak.com/' },
+  { name: 'Ubicaciones', url: 'https://vivaspeak.com/ubicaciones/' },
+  { name: office.city, url: canonicalUrl },
+];
+
+const localBusinessJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: `VivaSpeak - ${office.city}`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: office.address,
+    addressLocality: office.city,
+    postalCode: office.zip,
+    addressCountry: 'ES',
+  },
+  telephone: '+34951798932',
+  url: canonicalUrl,
+});
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalUrl}
+  alternateEs={canonicalUrl}
+  alternateEn={alternateEn}
+  ogImage="/assets/og-image.png"
+  lang="es"
+  schemaFaq={schemaFaq}
+  breadcrumb={breadcrumb}
+>
+  <LandingHeader ctaLabel="Solicitar demo" ctaHref="/#schedule" secondaryHref="/" />
+  <main id="main-content">
+    <nav class="breadcrumb" aria-label="Migas de pan">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/ubicaciones/">Ubicaciones</a></li>
+          <li aria-current="page">{office.city}</li>
+        </ol>
+      </div>
+    </nav>
+    <section class="location-hero">
+      <div class="container">
+        <p class="eyebrow">VivaSpeak en {office.province}</p>
+        <h1>Agente de Voz IA en {office.city}</h1>
+        <p class="location-hero__sub">{office.description}</p>
+        <a href="/#schedule" class="btn-primary">Solicitar demo</a>
+      </div>
+    </section>
+
+    <section class="location-services">
+      <div class="container">
+        <h2>Qué puede hacer VivaSpeak por tu negocio</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+            <h3>Llamadas de Voz IA</h3>
+            <p>Atiende llamadas 24/7 con voz natural, agenda citas y resuelve dudas frecuentes.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+            <h3>Chatbot de WhatsApp</h3>
+            <p>Responde mensajes automáticamente, consulta disponibilidad y agenda citas.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            </div>
+            <h3>Agendamiento Inteligente</h3>
+            <p>Se integra con tu software de agenda o Google Calendar para optimizar tu agenda.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+            <h3>CRM y Panel de Control</h3>
+            <p>Gestiona llamadas, mensajes, leads y citas desde un dashboard online.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-why">
+      <div class="container">
+        <h2>¿Por qué VivaSpeak en {office.city}?</h2>
+        <p class="location-why__text">{office.whyLocal}</p>
+        <div class="location-why__industries">
+          <h3>Sectores clave en {office.city}</h3>
+          <ul>
+            {office.industries.map((ind) => <li>{ind}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="location-office">
+      <div class="container">
+        <div class="location-office__grid">
+          <div class="location-office__info">
+            <h2>Nuestra oficina en {office.city}</h2>
+            <div class="location-office__details">
+              <p class="location-office__name">{office.coworking}</p>
+              <p class="location-office__address">
+                {office.address}<br />{office.city}, {office.zip}
+              </p>
+              <div class="location-office__contact">
+                <p>
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+34951798932"
+                    >(+34) 951 798 932</a
+                  >
+                </p>
+                <p>
+                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><a
+                    href="https://wa.me/34951798932"
+                    target="_blank"
+                    rel="noopener noreferrer">Hablemos por WhatsApp</a
+                  >
+                </p>
+                <p>
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i><a
+                    href="mailto:alberto@vivaspeak.com">alberto@vivaspeak.com</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="location-office__map">
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBgMyxkvnrslZQTcdCJAAs-8xE8gKeftkQ&q=${encodeURIComponent(mapQuery)}&zoom=15`}
+              width="100%"
+              height="350"
+              style="border:0; border-radius: 16px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title={`Mapa de la oficina VivaSpeak en ${office.city}`}></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-faq">
+      <div class="container">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container">
+          {
+            schemaFaq.map((faq) => (
+              <details class="faq">
+                <summary>
+                  <span class="faq-arrow">▶</span> {faq.question}
+                </summary>
+                <div class="faq-content">{faq.answer}</div>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="location-cta">
+      <div class="container">
+        <h2>Empieza hoy en {office.city}</h2>
+        <p>
+          Automatiza llamadas, WhatsApp y atención al cliente con IA. Solicita una demo
+          personalizada.
+        </p>
+        <div class="cta-buttons">
+          <a href="/#schedule" class="btn-primary">Solicitar demo</a>
+          <a
+            href="https://wa.me/34951798932"
+            class="btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Hablemos por WhatsApp
+          </a>
+        </div>
+        <nav class="location-cta__links" aria-label="Páginas relacionadas">
+          <a href="/">Inicio</a>
+          <a href="/clinica/">Clínicas</a>
+          <a href="/inmobiliaria/">Inmobiliarias</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <Fragment set:html={`<script type="application/ld+json">${localBusinessJsonLd}</script>`} />
+
+  <Footer
+    langEnHref={`/en/locations/${office.slug}/`}
+    langEsHref={`/ubicaciones/${office.slug}/`}
+  />
+</Layout>
