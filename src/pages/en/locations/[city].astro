@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import LandingHeader from '../../../components/LandingHeader.astro';
-import FooterEn from '../../../components/FooterEn.astro';
+import Footer from '../../../components/Footer.astro';
 import '../../../../styles/ubicaciones.css';
 import { offices } from '../../../data/offices';
 import type { Office } from '../../../data/offices';
@@ -237,7 +237,7 @@ const localBusinessJsonLd = JSON.stringify({
     </section>
   </main>
   <Fragment set:html={`<script type="application/ld+json">${localBusinessJsonLd}</script>`} />
-  <FooterEn
+  <Footer
     langEnHref={`/en/locations/${office.slug}/`}
     langEsHref={`/ubicaciones/${office.slug}/`}
   />
