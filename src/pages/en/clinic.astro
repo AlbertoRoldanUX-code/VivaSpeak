@@ -35,7 +35,7 @@ const schemaVideos = [
     description:
       'Real example where Clara answers a call, resolves questions about treatments and books an appointment automatically.',
     thumbnailUrl: 'https://img.youtube.com/vi/un1BHBVSBVg/maxresdefault.jpg',
-    uploadDate: '2024-06-01',
+    uploadDate: '2024-06-01T00:00:00+02:00',
     contentUrl: 'https://www.youtube.com/watch?v=un1BHBVSBVg',
     embedUrl: 'https://www.youtube.com/embed/un1BHBVSBVg',
   },
@@ -56,7 +56,11 @@ const schemaVideos = [
   breadcrumb={breadcrumb}
   speakable={['.hero-subtitle', '.faq-content', '.solution-card p']}
 >
-  <LandingHeader lang="en" ctaLabel="Activate Clara" ctaHref="https://calendly.com/vivaspeak/30min" />
+  <LandingHeader
+    lang="en"
+    ctaLabel="Activate Clara"
+    ctaHref="https://calendly.com/vivaspeak/30min"
+  />
 
   <main id="main-content">
     <section id="hero">
