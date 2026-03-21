@@ -1,20 +1,23 @@
 ---
 import '../../styles/header.css';
+const { lang = 'es' } = Astro.props;
+const isEn = lang === 'en';
+const base = isEn ? '/en' : '';
 ---
 
 <header>
   <div class="header-container">
     <div class="brand">
-      <a href="/">
+      <a href={isEn ? '/en/' : '/'}>
         <img
           src="/assets/Logo transparente cropped.png"
-          alt="Logotipo de VivaSpeak - Agentes de IA para llamadas y WhatsApp"
+          alt={isEn ? 'VivaSpeak logo - AI agents for calls and WhatsApp' : 'Logotipo de VivaSpeak - Agentes de IA para llamadas y WhatsApp'}
         />
       </a>
     </div>
     <nav class="top-nav">
       <div class="menu-toggle">
-        <a id="hamburger" aria-label="Abrir menú principal">
+        <a id="hamburger" aria-label={isEn ? 'Open main menu' : 'Abrir menú principal'}>
           <span></span>
           <span></span>
           <span></span>
@@ -22,17 +25,17 @@ import '../../styles/header.css';
       </div>
 
       <ul class="nav-list">
-        <li><a href="/#value-prop">Cómo funciona</a></li>
-        <li><a href="/#use-cases">Casos de uso</a></li>
-        <li><a href="/#price">Precio</a></li>
-        <li><a href="/#contact">Contacto</a></li>
-        <li><a class="btn-primary" href="/#schedule">Reserva reunión</a></li>
+        <li><a href={`${base}/#value-prop`}>{isEn ? 'How it works' : 'Cómo funciona'}</a></li>
+        <li><a href={`${base}/#use-cases`}>{isEn ? 'Use cases' : 'Casos de uso'}</a></li>
+        <li><a href={`${base}/#price`}>{isEn ? 'Pricing' : 'Precio'}</a></li>
+        <li><a href={`${base}/#contact`}>{isEn ? 'Contact' : 'Contacto'}</a></li>
+        <li><a class="btn-primary" href={`${base}/#schedule`}>{isEn ? 'Book meeting' : 'Reserva reunión'}</a></li>
         <li class="nav-item-login">
           <a
             href="https://panel.vivaspeak.com/login"
             class="btn-login"
             target="_blank"
-            rel="noopener noreferrer">Iniciar sesión</a
+            rel="noopener noreferrer">{isEn ? 'Log in' : 'Iniciar sesión'}</a
           >
         </li>
       </ul>

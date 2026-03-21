@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import HeaderEn from '../../../components/HeaderEn.astro';
-import FooterEn from '../../../components/FooterEn.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
 import '../../../../styles/blog.css';
 
 const title =
@@ -34,7 +34,7 @@ const breadcrumb = [
   breadcrumb={breadcrumb}
   speakable={['.blog-article > p:first-of-type', '.blog-article h2', '.blog-article h2 + p']}
 >
-  <HeaderEn />
+  <Header lang="en" />
 
   <main id="main-content" class="blog-container">
     <article class="blog-article">
@@ -177,5 +177,5 @@ const breadcrumb = [
     </article>
   </main>
 
-  <FooterEn />
+  <Footer lang="en" />
 </Layout>

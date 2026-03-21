@@ -1,20 +1,24 @@
 ---
 import '../../styles/landing-header.css';
 
+const { lang = 'es' } = Astro.props;
+const isEn = lang === 'en';
+const defaultBase = isEn ? '/en/' : '/';
+
 const {
-  ctaLabel = 'Solicitar demo',
+  ctaLabel = isEn ? 'Request a demo' : 'Solicitar demo',
   ctaHref = '#cta-final',
-  secondaryLabel = 'Volver a VivaSpeak',
-  secondaryHref = '/',
+  secondaryLabel = isEn ? 'Back to VivaSpeak' : 'Volver a VivaSpeak',
+  secondaryHref = defaultBase,
 } = Astro.props;
 ---
 
 <header class="landing-header">
   <div class="landing-header__container">
-    <a class="landing-header__brand" href="/" aria-label="Ir a VivaSpeak">
+    <a class="landing-header__brand" href={isEn ? secondaryHref : '/'} aria-label={isEn ? 'Go to VivaSpeak' : 'Ir a VivaSpeak'}>
       <img
         src="/assets/Logo transparente cropped.png"
-        alt="Logotipo de VivaSpeak"
+        alt={isEn ? 'VivaSpeak logo' : 'Logotipo de VivaSpeak'}
         loading="eager"
       />
     </a>

@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LandingHeaderEn from '../../components/LandingHeaderEn.astro';
-import FooterEn from '../../components/FooterEn.astro';
+import LandingHeader from '../../components/LandingHeader.astro';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Layout
@@ -13,7 +13,7 @@ import FooterEn from '../../components/FooterEn.astro';
   lang="en"
   keywords="AI Voice Agent, automated calls, customer engagement, VivaSpeak, terms and conditions, legal, GDPR compliance"
 >
-  <LandingHeaderEn />
+  <LandingHeader lang="en" />
 
   <main id="main-content">
     <section class="privacy-container">
@@ -220,5 +220,5 @@ import FooterEn from '../../components/FooterEn.astro';
     </section>
   </main>
 
-  <FooterEn langEnHref="/en/terms-and-conditions" langEsHref="/terminos-y-condiciones" />
+  <Footer lang="en" langEnHref="/en/terms-and-conditions" langEsHref="/terminos-y-condiciones" />
 </Layout>

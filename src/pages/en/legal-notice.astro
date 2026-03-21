@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LandingHeaderEn from '../../components/LandingHeaderEn.astro';
-import FooterEn from '../../components/FooterEn.astro';
+import LandingHeader from '../../components/LandingHeader.astro';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Layout
@@ -12,7 +12,7 @@ import FooterEn from '../../components/FooterEn.astro';
   alternateEn="https://vivaspeak.com/en/legal-notice"
   lang="en"
 >
-  <LandingHeaderEn />
+  <LandingHeader lang="en" />
   <main id="main-content">
     <section class="privacy-container">
       <h1>Legal Notice</h1>
@@ -62,5 +62,5 @@ import FooterEn from '../../components/FooterEn.astro';
     </section>
   </main>
 
-  <FooterEn langEnHref="/en/legal-notice" langEsHref="/aviso-legal" />
+  <Footer lang="en" langEnHref="/en/legal-notice" langEsHref="/aviso-legal" />
 </Layout>

@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import HeaderEn from '../../components/HeaderEn.astro';
-import FooterEn from '../../components/FooterEn.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 const schemaFaq = [
   {
@@ -138,7 +138,7 @@ const schemaReviews = [
     '.results-card p',
   ]}
 >
-  <HeaderEn />
+  <Header lang="en" />
   <main id="main-content">
     <section id="home">
       <div class="container home-container">
@@ -731,5 +731,5 @@ const schemaReviews = [
       </div>
     </section>
   </main>
-  <FooterEn />
+  <Footer lang="en" />
 </Layout>

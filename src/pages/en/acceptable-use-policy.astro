@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LandingHeaderEn from '../../components/LandingHeaderEn.astro';
-import FooterEn from '../../components/FooterEn.astro';
+import LandingHeader from '../../components/LandingHeader.astro';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Layout
@@ -13,7 +13,7 @@ import FooterEn from '../../components/FooterEn.astro';
   lang="en"
   keywords="acceptable use policy, Twilio AUP, communications compliance, VivaSpeak"
 >
-  <LandingHeaderEn />
+  <LandingHeader lang="en" />
 
   <main id="main-content">
     <section class="privacy-container">
@@ -131,5 +131,5 @@ import FooterEn from '../../components/FooterEn.astro';
     </section>
   </main>
 
-  <FooterEn langEnHref="/en/acceptable-use-policy" langEsHref="/politica-de-uso-aceptable" />
+  <Footer lang="en" langEnHref="/en/acceptable-use-policy" langEsHref="/politica-de-uso-aceptable" />
 </Layout>

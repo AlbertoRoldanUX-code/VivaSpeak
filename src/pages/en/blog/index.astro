@@ -1,8 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import HeaderEn from '../../../components/HeaderEn.astro';
-import FooterEn from '../../../components/FooterEn.astro';
-import '../../../../styles/blog.css';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
 import '../../../../styles/resources.css';
 ---
 
@@ -14,7 +13,7 @@ import '../../../../styles/resources.css';
   alternateEn="https://vivaspeak.com/en/blog/"
   lang="en"
 >
-  <HeaderEn />
+  <Header lang="en" />
 
   <main id="main-content" class="blog-container">
     <section class="resource-hero">
@@ -70,5 +69,5 @@ import '../../../../styles/resources.css';
     </section>
   </main>
 
-  <FooterEn langEnHref="/en/blog/" langEsHref="/blog/" />
+  <Footer lang="en" langEnHref="/en/blog/" langEsHref="/blog/" />
 </Layout>

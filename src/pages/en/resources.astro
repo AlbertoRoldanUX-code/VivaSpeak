@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LandingHeaderEn from '../../components/LandingHeaderEn.astro';
-import FooterEn from '../../components/FooterEn.astro';
+import LandingHeader from '../../components/LandingHeader.astro';
+import Footer from '../../components/Footer.astro';
 import '../../../styles/resources.css';
 ---
 
@@ -13,7 +13,7 @@ import '../../../styles/resources.css';
   alternateEn="https://vivaspeak.com/en/resources"
   lang="en"
 >
-  <LandingHeaderEn ctaLabel="Request a demo" ctaHref="/en/#schedule" />
+  <LandingHeader lang="en" ctaLabel="Request a demo" ctaHref="/en/#schedule" />
 
   <main id="main-content">
     <section class="resource-hero">
@@ -73,5 +73,5 @@ import '../../../styles/resources.css';
     </section>
   </main>
 
-  <FooterEn langEnHref="/en/resources" langEsHref="/recursos" />
+  <Footer lang="en" langEnHref="/en/resources" langEsHref="/recursos" />
 </Layout>

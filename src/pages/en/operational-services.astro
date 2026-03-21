@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LandingHeaderEn from '../../components/LandingHeaderEn.astro';
-import FooterEn from '../../components/FooterEn.astro';
+import LandingHeader from '../../components/LandingHeader.astro';
+import Footer from '../../components/Footer.astro';
 import '../../../styles/servicios-operativos.css';
 ---
 
@@ -15,7 +15,7 @@ import '../../../styles/servicios-operativos.css';
   ogImage="/assets/og-image.png"
   lang="en"
 >
-  <LandingHeaderEn ctaLabel="Schedule a call" ctaHref="https://calendly.com/vivaspeak/30min" />
+  <LandingHeader lang="en" ctaLabel="Schedule a call" ctaHref="https://calendly.com/vivaspeak/30min" />
   <main id="main-content" class="landing-sector">
     <section class="sector-hero">
       <div class="container hero-grid-sector">
@@ -255,5 +255,5 @@ import '../../../styles/servicios-operativos.css';
       </div>
     </section>
   </main>
-  <FooterEn langEnHref="/en/operational-services" langEsHref="/servicios-operativos" />
+  <Footer lang="en" langEnHref="/en/operational-services" langEsHref="/servicios-operativos" />
 </Layout>

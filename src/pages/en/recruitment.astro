@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LandingHeaderEn from '../../components/LandingHeaderEn.astro';
-import FooterEn from '../../components/FooterEn.astro';
+import LandingHeader from '../../components/LandingHeader.astro';
+import Footer from '../../components/Footer.astro';
 
 const schemaFaq = [
   {
@@ -45,7 +45,7 @@ import '../../../styles/recruiting.css';
   breadcrumb={breadcrumb}
   speakable={['.hero-title', '.faq-content']}
 >
-  <LandingHeaderEn />
+  <LandingHeader lang="en" />
   <main id="main-content" class="recruiting-landing">
     <section id="hero">
       <div class="container hero-grid">
@@ -250,5 +250,5 @@ import '../../../styles/recruiting.css';
       </div>
     </section>
   </main>
-  <FooterEn langEnHref="/en/recruitment" langEsHref="/reclutamiento" />
+  <Footer lang="en" langEnHref="/en/recruitment" langEsHref="/reclutamiento" />
 </Layout>
