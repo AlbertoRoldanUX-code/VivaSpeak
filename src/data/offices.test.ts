@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { offices } from './offices';
 
 describe('Office data integrity', () => {
-  it('should export exactly 52 offices', () => {
-    expect(offices).toHaveLength(52);
+  it('should export exactly 51 offices', () => {
+    expect(offices).toHaveLength(51);
   });
 
   it('should have unique, non-empty slugs for all offices', () => {

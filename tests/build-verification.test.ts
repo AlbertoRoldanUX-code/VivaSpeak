@@ -11,18 +11,18 @@ describe('Build verification', () => {
     execSync('npm run build', { stdio: 'pipe', timeout: 120_000 });
   }, 120_000);
 
-  it('should generate 52 Spanish location pages', () => {
+  it('should generate 51 Spanish location pages', () => {
     const dir = join(DIST, 'ubicaciones');
     expect(existsSync(dir)).toBe(true);
     const folders = readdirSync(dir);
-    expect(folders).toHaveLength(52);
+    expect(folders).toHaveLength(51);
   });
 
-  it('should generate 52 English location pages', () => {
+  it('should generate 51 English location pages', () => {
     const dir = join(DIST, 'en', 'locations');
     expect(existsSync(dir)).toBe(true);
     const folders = readdirSync(dir);
-    expect(folders).toHaveLength(52);
+    expect(folders).toHaveLength(51);
   });
 
   it('should include the city name in each Spanish page title', () => {

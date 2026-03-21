@@ -30,6 +30,20 @@ VivaSpeak currently has a single `contacto` page listing all 52 office locations
 5. WHEN a location page is rendered THEN the system SHALL include contact information (phone, WhatsApp, email) consistent with the contacto page.
 6. WHEN a location page is rendered THEN the system SHALL include a Google Maps embed showing the office location.
 
+### Requirement 8: Content Uniqueness and Anti-Duplicate Safeguards
+
+**User Story:** As a marketing team member, I want each location page to have genuinely distinct content (not just city-name substitution on a template), so that Google does not flag them as thin or duplicate content.
+
+#### Acceptance Criteria
+
+1. WHEN the `description` field is written for a city THEN it SHALL use a unique sentence structure and opening that differs from every other city's description — not simply "En {City}, VivaSpeak automatiza…" with swapped nouns.
+2. WHEN the `whyLocal` field is written for a city THEN it SHALL reference at least one concrete, verifiable local fact (e.g., a landmark, economic statistic, regional industry cluster, or cultural reference) that is exclusive to that city or province.
+3. WHEN the `industries` array is defined for a city THEN it SHALL contain at least one industry entry that is specific to the local economy and does not appear in more than 5 other cities' lists.
+4. WHEN any two location pages are compared THEN the combined text of `description` + `whyLocal` SHALL have a textual similarity (e.g., Jaccard or cosine on word n-grams) below 60 %, ensuring substantive differentiation beyond keyword swaps.
+5. WHEN the `descriptionEn` and `whyLocalEn` fields are written THEN they SHALL meet the same uniqueness criteria as their Spanish counterparts (criteria 1–4 above).
+6. WHEN a new office is added to the data source THEN the content author SHALL verify that its `description` and `whyLocal` do not follow the same sentence template used by any existing office entry.
+7. WHEN the site is built THEN an automated content-uniqueness check SHOULD flag any pair of offices whose `description` or `whyLocal` fields share more than 40 % of their word 3-grams, so that duplicates can be caught before deployment.
+
 ### Requirement 3: SEO Optimization for Local Search
 
 **User Story:** As a marketing team member, I want each location page to be fully optimized for local SEO, so that VivaSpeak ranks well for location-specific searches like "agente de voz IA en [ciudad]".
