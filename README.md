@@ -43,5 +43,5 @@ El sitio está configurado para desplegarse en **Netlify**.
 
 ## 📧 Contacto
 
-- **Email**: alberto@vivaspeak.com
+- **Email**: info@vivaspeak.com
 - **Web**: https://www.vivaspeak.com
