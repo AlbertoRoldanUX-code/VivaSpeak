@@ -86,7 +86,7 @@ const localBusinessJsonLd = JSON.stringify({
   schemaFaq={schemaFaq}
   breadcrumb={breadcrumb}
 >
-  <LandingHeader ctaLabel="Request a demo" ctaHref="/en/#schedule" secondaryHref="/en/" />
+  <LandingHeader lang="en" ctaLabel="Request a demo" ctaHref="/en/#schedule" secondaryHref="/en/" />
   <main id="main-content">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="container">
@@ -238,6 +238,7 @@ const localBusinessJsonLd = JSON.stringify({
   </main>
   <Fragment set:html={`<script type="application/ld+json">${localBusinessJsonLd}</script>`} />
   <Footer
+    lang="en"
     langEnHref={`/en/locations/${office.slug}/`}
     langEsHref={`/ubicaciones/${office.slug}/`}
   />
