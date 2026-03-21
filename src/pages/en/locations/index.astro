@@ -2,14 +2,10 @@
 import Layout from '../../../layouts/Layout.astro';
 import LandingHeader from '../../../components/LandingHeader.astro';
 import Footer from '../../../components/Footer.astro';
-import '../../../../styles/resources.css';
+import '../../../../styles/locations-index.css';
 import { offices } from '../../../data/offices';
 
-const grouped = offices.reduce<Record<string, typeof offices>>((acc, o) => {
-  (acc[o.province] ??= []).push(o);
-  return acc;
-}, {});
-const provinces = Object.keys(grouped).sort((a, b) => a.localeCompare(b, 'es'));
+const sorted = offices.slice().sort((a, b) => a.city.localeCompare(b.city, 'es'));
 
 const breadcrumb = [
   { name: 'Home', url: 'https://vivaspeak.com/en/' },
@@ -29,36 +25,107 @@ const breadcrumb = [
   <LandingHeader lang="en" ctaLabel="Request a demo" ctaHref="/en/#schedule" secondaryHref="/en/" />
 
   <main id="main-content">
-    <section class="resource-hero">
+    <section class="locations-hero">
       <div class="container">
-        <h1 class="resource-title">Our locations</h1>
-        <p class="resource-subtitle">AI voice agents in over 50 cities across Spain.</p>
+        <p class="eyebrow"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Locations</p>
+        <h1>AI Voice Agent across Spain</h1>
+        <p class="locations-hero__sub">
+          Automate calls, WhatsApp and customer service with AI from any city.
+        </p>
+        <div class="locations-hero__stats">
+          <div class="locations-hero__stat">
+            <strong>{sorted.length}+</strong>
+            <span>cities</span>
+          </div>
+          <div class="locations-hero__stat">
+            <strong>24/7</strong>
+            <span>automated support</span>
+          </div>
+          <div class="locations-hero__stat">
+            <strong>&lt; 2s</strong>
+            <span>response time</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="resource-grid-section">
+    <div class="locations-filter">
       <div class="container">
-        {
-          provinces.map((province) => (
-            <div style="margin-bottom: 2rem;">
-              <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0b3a2a;">{province}</h2>
-              <div class="resource-grid">
-                {grouped[province].map((office) => (
-                  <article class="resource-card">
-                    <h3>{office.city}</h3>
-                    <p>{office.coworking}</p>
-                    <a href={`/en/locations/${office.slug}/`} class="resource-link">
-                      View office →
-                    </a>
-                  </article>
-                ))}
-              </div>
-            </div>
-          ))
-        }
+        <input
+          type="text"
+          class="locations-filter__input"
+          id="locationSearch"
+          placeholder="Search city or province…"
+          aria-label="Search city or province"
+        />
+      </div>
+    </div>
+
+    <section class="locations-grid-section">
+      <div class="container">
+        <div class="locations-grid" id="locationsGrid">
+          {
+            sorted.map((office) => (
+              <a
+                href={`/en/locations/${office.slug}/`}
+                class="location-card"
+                data-city={office.city.toLowerCase()}
+                data-province={office.province.toLowerCase()}
+              >
+                <div class="location-card__icon">
+                  <i class="fa-solid fa-building" aria-hidden="true" />
+                </div>
+                <p class="location-card__province">{office.province}</p>
+                <h3>{office.city}</h3>
+                <p class="location-card__coworking">{office.coworking}</p>
+                <span class="location-card__link">
+                  View office <i class="fa-solid fa-arrow-right" aria-hidden="true" />
+                </span>
+              </a>
+            ))
+          }
+        </div>
+        <p class="locations-empty" id="locationsEmpty">No results found.</p>
+      </div>
+    </section>
+
+    <section class="locations-cta">
+      <div class="container">
+        <p class="eyebrow">Ready to start?</p>
+        <h2>Automate your business today</h2>
+        <p>Request a personalised demo and discover how VivaSpeak can help you.</p>
+        <div class="cta-buttons">
+          <a href="/en/#schedule" class="btn-primary">Request a demo</a>
+          <a
+            href="https://wa.me/34951798932"
+            class="btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
   <Footer lang="en" langEnHref="/en/locations/" langEsHref="/ubicaciones/" />
 </Layout>
+
+<script is:inline>
+  const input = document.getElementById('locationSearch');
+  const grid = document.getElementById('locationsGrid');
+  const empty = document.getElementById('locationsEmpty');
+  if (input && grid) {
+    input.addEventListener('input', () => {
+      const q = input.value.toLowerCase().trim();
+      let visible = 0;
+      grid.querySelectorAll('.location-card').forEach((card) => {
+        const match = card.dataset.city.includes(q) || card.dataset.province.includes(q);
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+    });
+  }
+</script>
