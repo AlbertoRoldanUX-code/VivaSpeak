@@ -3,56 +3,139 @@ const { langEnHref = '/en/', langEsHref = '/', lang = 'es' } = Astro.props;
 const isEn = lang === 'en';
 ---
 
-<footer>
-  <div class="Copyright">
-    <p>
-      © <span id="year"></span> VivaSpeak. {isEn ? 'All rights reserved.' : 'Todos los derechos reservados.'} |
-      <a href={isEn ? '/en/privacy-policy' : '/politica-de-privacidad'} target="_blank">{isEn ? 'Privacy Policy' : 'Política de Privacidad'}</a>
-      |
-      <a href={isEn ? '/en/terms-and-conditions' : '/terminos-y-condiciones'} target="_blank">{isEn ? 'Terms and Conditions' : 'Términos y Condiciones'}</a>
-      |
-      <a href={isEn ? '/en/acceptable-use-policy' : '/politica-de-uso-aceptable'} target="_blank">{isEn ? 'Acceptable Use Policy' : 'Política de Uso Aceptable'}</a>
-      |
-      <a href={isEn ? '/en/whatsapp-messaging-policy' : '/politica-mensajeria-whatsapp'} target="_blank">{isEn ? 'WhatsApp Messaging Policy' : 'Política de Mensajería WhatsApp'}</a>
-      |
-      <a href={isEn ? '/en/legal-notice' : '/aviso-legal'} target="_blank">{isEn ? 'Legal Notice' : 'Aviso Legal'}</a>
-      |
-      <a href={isEn ? '/en/about/' : '/sobre-nosotros/'} target="_blank">{isEn ? 'About us' : 'Sobre nosotros'}</a>
-    </p>
-    <p>
-      {isEn
-        ? 'VivaSpeak is designed to handle interactions with customers and contacts who have given prior consent. It is not used for unsolicited telemarketing campaigns.'
-        : 'VivaSpeak está diseñado para gestionar interacciones con clientes y contactos que han dado su consentimiento previo. No se utiliza para campañas de telemarketing no solicitadas.'}
-    </p>
-    <p>
-      {isEn
-        ? 'Calls may be recorded and transcribed by AI systems for service and quality purposes.'
-        : 'Las llamadas pueden ser grabadas y transcritas por sistemas de IA con fines de servicio y calidad.'}
-    </p>
-  </div>
-  <div class="social-media">
-    <a href="https://www.instagram.com/vivaspeakai" target="_blank" rel="noopener noreferrer">
-      <img
-        src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg"
-        alt="Instagram"
-      />
-    </a>
-    <a href="https://www.linkedin.com/company/vivaspeak" target="_blank" rel="noopener noreferrer">
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-        alt="LinkedIn"
-      />
-    </a>
-    <a href="https://www.youtube.com/@vivaspeak_ai" target="_blank" rel="noopener noreferrer">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/youtube.svg" alt="YouTube" />
-    </a>
-  </div>
-  <div class="footer-phone">
-    <a href="tel:+34951798932">+34 951 798 932</a>
-    <br />
-    <em>{isEn ? 'Valeria, our AI voice agent, will answer your questions.' : 'Valeria, nuestra agente de voz IA responderá tus dudas.'}</em>
-  </div>
-  <div class="footer-language">
-    <a href={langEnHref} lang="en">English</a> | <a href={langEsHref} lang="es">Español</a>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img
+          src="/assets/allgrass-logo.webp"
+          alt="VivaSpeak"
+          class="footer-logo"
+          width="140"
+          height="36"
+          loading="lazy"
+        />
+        <p class="footer-tagline">
+          {
+            isEn
+              ? 'AI voice agents that answer calls, book appointments, and delight your customers 24/7.'
+              : 'Agentes de voz IA que responden llamadas, reservan citas y atienden a tus clientes 24/7.'
+          }
+        </p>
+      </div>
+      <nav class="footer-links" aria-label={isEn ? 'Footer links' : 'Enlaces del pie de página'}>
+        <h4>{isEn ? 'Legal' : 'Legal'}</h4>
+        <ul>
+          <li>
+            <a href={isEn ? '/en/privacy-policy' : '/politica-de-privacidad'}
+              >{isEn ? 'Privacy Policy' : 'Política de Privacidad'}</a>
+          </li>
+          <li>
+            <a href={isEn ? '/en/terms-and-conditions' : '/terminos-y-condiciones'}
+              >{isEn ? 'Terms and Conditions' : 'Términos y Condiciones'}</a>
+          </li>
+          <li>
+            <a href={isEn ? '/en/acceptable-use-policy' : '/politica-de-uso-aceptable'}
+              >{isEn ? 'Acceptable Use Policy' : 'Política de Uso Aceptable'}</a>
+          </li>
+          <li>
+            <a href={isEn ? '/en/whatsapp-messaging-policy' : '/politica-mensajeria-whatsapp'}
+              >{isEn ? 'WhatsApp Messaging Policy' : 'Política de Mensajería WhatsApp'}</a>
+          </li>
+          <li>
+            <a href={isEn ? '/en/legal-notice' : '/aviso-legal'}
+              >{isEn ? 'Legal Notice' : 'Aviso Legal'}</a>
+          </li>
+          <li>
+            <a href={isEn ? '/en/about/' : '/sobre-nosotros/'}
+              >{isEn ? 'About us' : 'Sobre nosotros'}</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4>{isEn ? 'Contact' : 'Contacto'}</h4>
+        <ul>
+          <li>
+            <a href="tel:+34951798932">📞 +34 951 798 932</a>
+            <span class="footer-phone-note"
+              >{
+                isEn
+                  ? 'Valeria, our AI voice agent, will answer your questions.'
+                  : 'Valeria, nuestra agente de voz IA responderá tus dudas.'
+              }</span
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <div class="footer-social-icons">
+          <a
+            href="https://www.instagram.com/vivaspeakai"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg"
+              alt=""
+              width="24"
+              height="24"
+              aria-hidden="true"
+            /></a
+          >
+          <a
+            href="https://www.linkedin.com/company/vivaspeak"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            ><img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+              alt=""
+              width="24"
+              height="24"
+              aria-hidden="true"
+            /></a
+          >
+          <a
+            href="https://www.youtube.com/@vivaspeak_ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            ><img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/youtube.svg"
+              alt=""
+              width="24"
+              height="24"
+              aria-hidden="true"
+            /></a
+          >
+        </div>
+        <div class="footer-language-switcher">
+          <a href={langEnHref} lang="en">English</a>
+          <span class="lang-separator">|</span>
+          <a href={langEsHref} lang="es">Español</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © <span id="year"></span> VivaSpeak. {
+          isEn ? 'All rights reserved.' : 'Todos los derechos reservados.'
+        }
+      </p>
+      <p class="footer-disclaimer">
+        {
+          isEn
+            ? 'VivaSpeak is designed to handle interactions with customers and contacts who have given prior consent. It is not used for unsolicited telemarketing campaigns.'
+            : 'VivaSpeak está diseñado para gestionar interacciones con clientes y contactos que han dado su consentimiento previo. No se utiliza para campañas de telemarketing no solicitadas.'
+        }
+      </p>
+      <p class="footer-disclaimer">
+        {
+          isEn
+            ? 'Calls may be recorded and transcribed by AI systems for service and quality purposes.'
+            : 'Las llamadas pueden ser grabadas y transcritas por sistemas de IA con fines de servicio y calidad.'
+        }
+      </p>
+    </div>
   </div>
 </footer>

@@ -1,0 +1,948 @@
+/* ==========================================================================
+   Shared Landing Page Patterns
+   Used by: clinica, inmobiliaria, abogados, reclutamiento,
+            servicios-operativos, salud
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Landing base
+   -------------------------------------------------------------------------- */
+
+.landing {
+  color: var(--color-text);
+  text-align: left;
+}
+
+.landing section {
+  padding: var(--space-16) 0;
+}
+
+@media (min-width: 768px) {
+  .landing section {
+    padding: var(--space-20) 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Landing hero — two-column grid variant
+   -------------------------------------------------------------------------- */
+
+.landing-hero {
+  position: relative;
+  padding: calc(var(--space-20) + var(--space-10)) 0 var(--space-16);
+  background: linear-gradient(180deg, var(--color-bg-subtle), var(--color-bg));
+  overflow: hidden;
+}
+
+.landing-hero .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 1024px) {
+  .landing-hero {
+    padding: calc(var(--space-24) + var(--space-10)) 0 var(--space-20);
+  }
+
+  .landing-hero .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-12);
+  }
+}
+
+.landing-hero .hero-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-tight);
+  color: var(--gray-900);
+  margin: 0 0 var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .landing-hero .hero-title {
+    font-size: var(--text-5xl);
+  }
+}
+
+.landing-hero .hero-subtitle {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-6);
+}
+
+.landing-hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* Hero panel — sidebar card used in recruiting, abogados, servicios-operativos */
+
+.landing-hero .hero-panel {
+  background: var(--color-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.landing-hero .panel-card {
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-border);
+}
+
+.landing-hero .panel-card h3 {
+  margin: 0 0 var(--space-2);
+  color: var(--primary-dark);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+}
+
+.landing-hero .panel-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* Hero note callout */
+
+.hero-note {
+  margin-top: var(--space-5);
+  background: rgba(26, 188, 156, 0.08);
+  border: 1px solid rgba(26, 188, 156, 0.18);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  font-weight: var(--font-semibold);
+  color: var(--primary-dark);
+  font-size: var(--text-sm);
+}
+
+.hero-disclaimer {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-muted);
+}
+/* --------------------------------------------------------------------------
+   Landing hero — centered variant (clinica, salud)
+   -------------------------------------------------------------------------- */
+
+.landing-hero--centered {
+  text-align: center;
+}
+
+.landing-hero--centered .hero-content {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.landing-hero--centered .hero-title {
+  margin: 0;
+}
+
+.landing-hero--centered .hero-subtitle {
+  margin: 0;
+  max-width: 600px;
+}
+
+.landing-hero--centered .avatar-agent {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   Solution / feature grid
+   -------------------------------------------------------------------------- */
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.solution-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: box-shadow var(--transition-base);
+}
+
+.solution-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.solution-icon {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.solution-card h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--gray-900);
+  margin: 0 0 var(--space-2);
+}
+
+.solution-card p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Integration cards
+   -------------------------------------------------------------------------- */
+
+.integrations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .integrations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.integration-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: box-shadow var(--transition-base);
+}
+
+.integration-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.integration-card h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--gray-900);
+  margin: 0 0 var(--space-2);
+}
+
+.integration-card p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+/* --------------------------------------------------------------------------
+   Video demo section
+   -------------------------------------------------------------------------- */
+
+.landing-video {
+  background: var(--color-bg);
+}
+
+.landing-video .container {
+  max-width: 900px;
+}
+
+.landing-video .image {
+  width: 72px;
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.landing-video iframe {
+  display: block;
+  margin: var(--space-6) auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 100%;
+}
+
+.landing-video audio {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  margin: var(--space-4) auto 0;
+}
+
+/* --------------------------------------------------------------------------
+   Testimonial blocks
+   -------------------------------------------------------------------------- */
+
+.testimonial-block {
+  margin-bottom: var(--space-8);
+}
+
+.testimonial-block__title {
+  font-size: var(--text-lg);
+  color: var(--primary-dark);
+  margin: 0 0 var(--space-3);
+  font-weight: var(--font-semibold);
+}
+
+.testimonial-block__author {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-base);
+}
+
+.testimonial-block__quote {
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.testimonial-quote-block {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-6);
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+
+.testimonial-quote-block + .testimonial-quote-block {
+  margin-top: var(--space-6);
+}
+
+.testimonial-quote-block .testimonial-quote-label {
+  margin: 0 0 var(--space-3);
+  font-weight: var(--font-semibold);
+  color: var(--primary-dark);
+  font-size: var(--text-sm);
+}
+
+.testimonial-quote-block blockquote {
+  margin: 0;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+}
+
+.testimonial-cta {
+  margin-top: var(--space-8);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Feature list (use-case-features)
+   -------------------------------------------------------------------------- */
+
+.use-case-features {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.use-case-features li {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+/* --------------------------------------------------------------------------
+   Problem / pain grid
+   -------------------------------------------------------------------------- */
+
+.problem-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.problem-list li {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.problem-list li strong {
+  color: var(--primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Workflow / flow steps
+   -------------------------------------------------------------------------- */
+
+.workflow {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.workflow-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: start;
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+}
+
+.workflow-step span {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: rgba(26, 188, 156, 0.1);
+  display: grid;
+  place-items: center;
+  font-weight: var(--font-bold);
+  color: var(--primary-dark);
+  font-size: var(--text-base);
+}
+
+.workflow-step h4 {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--gray-900);
+}
+
+.workflow-step p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* --------------------------------------------------------------------------
+   Trust strip
+   -------------------------------------------------------------------------- */
+
+.trust-strip {
+  margin-top: var(--space-6);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: var(--font-semibold);
+  color: var(--gray-800);
+  font-size: var(--text-sm);
+}
+
+.trust-icon {
+  min-width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: rgba(26, 188, 156, 0.1);
+  display: grid;
+  place-items: center;
+  font-weight: var(--font-bold);
+  color: var(--primary-dark);
+  padding: 0 var(--space-2);
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Hero aside card (servicios-operativos)
+   -------------------------------------------------------------------------- */
+
+.hero-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-card h3 {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--gray-900);
+}
+
+.hero-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.hero-card li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.hero-card li::before {
+  content: '●';
+  color: var(--cta);
+  font-size: var(--text-xs);
+  flex-shrink: 0;
+}
+/* --------------------------------------------------------------------------
+   Sector card grid (servicios-operativos pattern)
+   -------------------------------------------------------------------------- */
+
+.sector-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .sector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sector-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sector-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+}
+
+.sector-card h4 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--gray-900);
+}
+
+.sector-card p {
+  margin: auto 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* --------------------------------------------------------------------------
+   Impact band (dark callout)
+   -------------------------------------------------------------------------- */
+
+.impact-band {
+  background: var(--gray-900);
+  color: var(--gray-50);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.impact-band strong {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.impact-band p {
+  margin: 0;
+  color: var(--gray-300);
+  line-height: var(--leading-relaxed);
+}
+
+.impact-band .btn-primary {
+  justify-self: start;
+}
+
+/* --------------------------------------------------------------------------
+   Proof grid
+   -------------------------------------------------------------------------- */
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .proof-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.proof-card {
+  background: rgba(26, 188, 156, 0.06);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  border: 1px solid rgba(26, 188, 156, 0.15);
+}
+
+.proof-card strong {
+  display: block;
+  font-size: var(--text-lg);
+  color: var(--primary-dark);
+  margin-bottom: var(--space-1);
+}
+
+.proof-card span {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* --------------------------------------------------------------------------
+   Agent bullets (recruiting)
+   -------------------------------------------------------------------------- */
+
+.agent-bullets {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.agent-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: rgba(26, 188, 156, 0.06);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid rgba(26, 188, 156, 0.15);
+}
+
+.agent-bullets li p {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.agent-bullets li::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  margin-top: 7px;
+  border-radius: var(--radius-full);
+  background: var(--primary-dark);
+  box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.15);
+  flex-shrink: 0;
+}
+/* --------------------------------------------------------------------------
+   CTA section — final call-to-action panel
+   -------------------------------------------------------------------------- */
+
+.landing-cta {
+  text-align: center;
+}
+
+.cta-card {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--color-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-6);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-card h2 {
+  margin: 0 0 var(--space-3);
+}
+
+.cta-card .section-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.cta-note {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* CTA panel — side-by-side variant (abogados) */
+
+.cta-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  background: var(--color-bg);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Dark CTA variant (servicios-operativos) */
+
+.final-cta {
+  background: var(--gray-900);
+  color: var(--gray-50);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta h2 {
+  color: var(--gray-50);
+  margin: 0 0 var(--space-3);
+}
+
+.final-cta p {
+  color: var(--gray-300);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta .hero-cta {
+  justify-content: center;
+  margin-top: var(--space-6);
+}
+
+/* --------------------------------------------------------------------------
+   FAQ grid (card-based layout for landing pages)
+   -------------------------------------------------------------------------- */
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 640px) {
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.faq-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-border);
+}
+
+.faq-card summary {
+  cursor: pointer;
+  font-weight: var(--font-semibold);
+  list-style: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  line-height: var(--leading-normal);
+}
+
+.faq-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-card summary:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: var(--radius-sm);
+}
+
+.faq-card[open] {
+  border-color: var(--primary);
+  background: var(--color-bg-subtle);
+}
+
+.faq-card p {
+  margin: var(--space-3) 0 0;
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  font-size: var(--text-sm);
+}
+
+/* FAQ item — single-column variant (servicios-operativos) */
+
+.faq-item {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-5);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: var(--font-semibold);
+  list-style: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: var(--radius-sm);
+}
+
+.faq-item[open] {
+  border-color: var(--primary);
+  background: var(--color-bg-subtle);
+}
+
+.faq-item p {
+  margin: var(--space-3) 0 0;
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* --------------------------------------------------------------------------
+   Pricing anchor
+   -------------------------------------------------------------------------- */
+
+.pricing-anchor {
+  background: var(--color-bg-subtle);
+}
+
+.pricing-anchor .section-header {
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-anchor .cta-buttons {
+  margin-top: var(--space-6);
+}
+
+/* --------------------------------------------------------------------------
+   Compliance card (abogados)
+   -------------------------------------------------------------------------- */
+
+.compliance-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  background: var(--color-bg);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.compliance-pill {
+  background: rgba(26, 188, 156, 0.1);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-semibold);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--primary-dark);
+  font-size: var(--text-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Section lead text
+   -------------------------------------------------------------------------- */
+
+.section-lead {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.section-lead--center {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive adjustments
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .cta-panel {
+    padding: var(--space-6);
+  }
+
+  .final-cta {
+    padding: var(--space-8);
+  }
+
+  .impact-band {
+    padding: var(--space-6);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .landing * {
+    animation: none !important;
+    transition-duration: 0ms !important;
+  }
+}

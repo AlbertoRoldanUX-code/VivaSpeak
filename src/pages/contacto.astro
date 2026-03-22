@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LandingHeader from '../components/LandingHeader.astro';
 import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
 import { offices } from '../data/offices';
 ---
 
@@ -12,35 +13,34 @@ import { offices } from '../data/offices';
   alternateEs="https://vivaspeak.com/contacto/"
   lang="es"
   robots="index, follow"
-  speakable={['.contacto-hero h1', '.contacto-hero p']}
+  speakable={['.hero-content h1', '.hero-content .hero-subtitle']}
 >
   <LandingHeader ctaLabel="Solicitar demo" ctaHref="/#schedule" secondaryHref="/" />
 
   <main id="main-content">
-    <section class="contacto-hero">
+    <section class="hero hero--centered">
       <div class="container">
-        <p class="eyebrow">Oficinas VivaSpeak</p>
-        <h1>Estamos en toda España</h1>
-        <p class="contacto-hero__sub">
-          Encuentra tu oficina más cercana y habla con nuestro equipo. Automatiza llamadas, WhatsApp
-          y atención al cliente con IA.
-        </p>
+        <div class="hero-content">
+          <span class="eyebrow">Oficinas VivaSpeak</span>
+          <h1>Estamos en toda España</h1>
+          <p class="hero-subtitle">
+            Encuentra tu oficina más cercana y habla con nuestro equipo. Automatiza llamadas,
+            WhatsApp y atención al cliente con IA.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="oficinas-section">
+    <section class="section oficinas-section">
       <div class="container">
         {
-          offices.map((office, i) => (
-            <article
-              class={`oficina-card ${i % 2 === 0 ? 'oficina-card--left' : 'oficina-card--right'}`}
-              id={office.city.toLowerCase().replace(/\s+/g, '-')}
-            >
+          offices.map((office) => (
+            <article class="oficina-card" id={office.city.toLowerCase().replace(/\s+/g, '-')}>
               <div class="oficina-card__info">
                 <h2 class="oficina-card__city">
                   <a href={`/ubicaciones/${office.slug}/`}>{office.city}</a>
                 </h2>
-                <div class="oficina-card__details">
+                <div class="card oficina-card__details">
                   <p class="oficina-card__name">{office.coworking}</p>
                   <p class="oficina-card__address">
                     {office.address}
@@ -48,25 +48,25 @@ import { offices } from '../data/offices';
                     {office.city}, {office.zip}
                   </p>
                   <div class="oficina-card__contact">
-                    <p class="oficina-card__phone">
-                      <i class="fa-solid fa-phone" aria-hidden="true" />
+                    <p>
+                      <Icon name="phone" size={16} />
                       <a href="tel:+34951798932">(+34) 951 798 932</a>
                     </p>
-                    <p class="oficina-card__whatsapp">
-                      <i class="fa-brands fa-whatsapp" aria-hidden="true" />
+                    <p>
+                      <Icon name="whatsapp" size={16} class="icon-whatsapp" />
                       <a href="https://wa.me/34951795151" target="_blank" rel="noopener noreferrer">
                         Hablemos por WhatsApp
                       </a>
                     </p>
-                    <p class="oficina-card__email">
-                      <i class="fa-solid fa-envelope" aria-hidden="true" />
+                    <p>
+                      <Icon name="envelope" size={16} />
                       <a href="mailto:info@vivaspeak.com">info@vivaspeak.com</a>
                     </p>
                   </div>
-                  <a href="/#schedule" class="btn-oficina">
+                  <a href="/#schedule" class="btn btn-primary oficina-card__cta">
                     Contáctanos
                   </a>
-                  <a href={`/ubicaciones/${office.slug}/`} class="link-ver-mas">
+                  <a href={`/ubicaciones/${office.slug}/`} class="oficina-card__link">
                     Ver más sobre {office.city} →
                   </a>
                 </div>
@@ -76,7 +76,7 @@ import { offices } from '../data/offices';
                   src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBgMyxkvnrslZQTcdCJAAs-8xE8gKeftkQ&q=${encodeURIComponent(office.coworking.startsWith('[') ? office.city + ', Spain' : office.coworking + ', ' + office.address + ', ' + office.city + ', Spain')}&zoom=15`}
                   width="100%"
                   height="350"
-                  style="border:0; border-radius: 16px;"
+                  style="border:0; border-radius: var(--radius-lg);"
                   allowfullscreen=""
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
@@ -88,53 +88,26 @@ import { offices } from '../data/offices';
         }
       </div>
     </section>
+  </main></Layout
+>
 
-    <section class="contacto-cta">
-      <div class="container">
-        <h2>¿No encuentras tu ciudad?</h2>
-        <p>Llámanos o escríbenos y te atendemos desde cualquier punto de España.</p>
-        <div class="cta-buttons">
-          <a href="tel:+34951798932" class="btn-primary">Llamar ahora</a>
-          <a href="/#schedule" class="btn-secondary">Reservar reunión</a>
-        </div>
-      </div>
-    </section>
-  </main>
-  <Footer />
-</Layout>
+<section class="section contacto-cta">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>¿No encuentras tu ciudad?</h2>
+      <p>Llámanos o escríbenos y te atendemos desde cualquier punto de España.</p>
+    </div>
+    <div class="cta-buttons">
+      <a href="tel:+34951798932" class="btn btn-primary">Llamar ahora</a>
+      <a href="/#schedule" class="btn btn-secondary">Reservar reunión</a>
+    </div>
+  </div>
+</section>
+
+<Footer />
 
 <style>
-  /* Hero */
-  .contacto-hero {
-    padding: 130px 2rem 70px;
-    background:
-      radial-gradient(circle at 20% 30%, rgba(26, 188, 156, 0.15), transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(255, 102, 0, 0.08), transparent 50%),
-      linear-gradient(to bottom, #f5fafa, #e9f2f2);
-    text-align: center;
-  }
-  .contacto-hero h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    background: linear-gradient(120deg, var(--color-dark), var(--primary-dark));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin: 0 0 16px;
-  }
-  .contacto-hero__sub {
-    font-size: 1.15rem;
-    color: var(--color-text);
-    max-width: 640px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
-
   /* Offices section */
-  .oficinas-section {
-    padding: 40px 2rem 80px;
-    background: var(--white);
-  }
   .oficinas-section .container {
     max-width: 1060px;
   }
@@ -142,221 +115,156 @@ import { offices } from '../data/offices';
   /* Office card */
   .oficina-card {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 48px;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
     align-items: center;
-    padding: 60px 0;
-    border-bottom: 1px solid rgba(26, 188, 156, 0.12);
+    padding: var(--space-12) 0;
+    border-bottom: 1px solid var(--color-border);
   }
   .oficina-card:last-child {
     border-bottom: none;
-  }
-  .oficina-card--right {
-    direction: rtl;
-  }
-  .oficina-card--right > * {
-    direction: ltr;
   }
 
   /* Info side */
   .oficina-card__info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--space-5);
     align-items: center;
     text-align: center;
   }
 
   /* City name */
   .oficina-card__city {
-    font-size: 2.4rem;
-    font-weight: 800;
+    font-size: var(--text-3xl);
+    font-weight: var(--font-extrabold);
     color: var(--primary-dark);
     margin: 0;
-    line-height: 1.1;
-    text-align: center;
+    line-height: var(--leading-tight);
   }
   .oficina-card__city a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color var(--transition-base);
   }
   .oficina-card__city a:hover {
     color: var(--primary);
   }
 
-  /* Details card */
+  /* Details card — extends .card */
   .oficina-card__details {
-    background: var(--white);
-    border: 1px solid rgba(26, 188, 156, 0.15);
-    border-radius: 20px;
-    padding: 28px 32px;
-    box-shadow: var(--shadow-md);
-    position: relative;
-    overflow: hidden;
     text-align: center;
     width: 100%;
-    max-width: 380px;
-  }
-  .oficina-card__details::after {
-    content: '';
-    position: absolute;
-    bottom: -40px;
-    right: -40px;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background: rgba(26, 188, 156, 0.06);
-    pointer-events: none;
   }
   .oficina-card__name {
-    font-weight: 700;
-    color: var(--color-dark);
-    margin: 0 0 6px;
-    font-size: 1.1rem;
+    font-weight: var(--font-bold);
+    color: var(--gray-900);
+    margin: 0 0 var(--space-1);
+    font-size: var(--text-lg);
   }
   .oficina-card__address {
-    color: var(--gray-medium);
-    margin: 0 0 18px;
-    line-height: 1.5;
-    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-5);
+    line-height: var(--leading-normal);
+    font-size: var(--text-sm);
   }
 
   /* Contact lines */
   .oficina-card__contact {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
   }
-  .oficina-card__phone,
-  .oficina-card__whatsapp,
-  .oficina-card__email {
+  .oficina-card__contact p {
     margin: 0;
-    font-size: 0.92rem;
+    font-size: var(--text-sm);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: var(--space-2);
   }
-  .oficina-card__phone i {
+  .oficina-card__contact i {
     color: var(--primary-dark);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     width: 16px;
     text-align: center;
   }
-  .oficina-card__phone a {
+  .oficina-card__contact a {
     color: var(--color-text);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: var(--font-medium);
+    transition: color var(--transition-fast);
   }
-  .oficina-card__whatsapp i {
-    color: #25d366;
-    font-size: 1rem;
-    width: 16px;
-    text-align: center;
-  }
-  .oficina-card__whatsapp a {
-    color: #25d366;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .oficina-card__email i {
+  .oficina-card__contact a:hover {
     color: var(--primary-dark);
-    font-size: 0.85rem;
-    width: 16px;
-    text-align: center;
   }
-  .oficina-card__email a {
-    color: var(--color-text);
-    text-decoration: none;
+
+  /* WhatsApp icon override */
+  .oficina-card__contact .icon-whatsapp {
+    color: #25d366;
   }
 
   /* CTA button */
-  .btn-oficina {
-    display: inline-block;
-    padding: 12px 32px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: var(--white);
-    font-weight: 700;
-    font-size: 0.95rem;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(22, 160, 133, 0.3);
-    transition: all 0.25s ease;
-  }
-  .btn-oficina:hover {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker));
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(22, 160, 133, 0.4);
+  .oficina-card__cta {
+    width: 100%;
+    margin-bottom: var(--space-3);
   }
 
   /* Ver más link */
-  .link-ver-mas {
+  .oficina-card__link {
     display: inline-block;
-    margin-top: 12px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
     color: var(--primary-dark);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color var(--transition-fast);
   }
-  .link-ver-mas:hover {
+  .oficina-card__link:hover {
     color: var(--primary);
   }
 
   /* Map */
   .oficina-card__map {
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid rgba(26, 188, 156, 0.1);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
   }
   .oficina-card__map iframe {
     display: block;
     width: 100%;
-    min-height: 380px;
+    min-height: 300px;
   }
 
   /* Bottom CTA */
-  .contacto-cta {
-    padding: 80px 2rem;
-    text-align: center;
-    background:
-      radial-gradient(circle at 50% 50%, rgba(26, 188, 156, 0.06), transparent 60%),
-      linear-gradient(to bottom, var(--white), #f4fffc);
-  }
-  .contacto-cta h2 {
-    color: var(--primary-dark);
-    margin-bottom: 12px;
-  }
-  .contacto-cta p {
-    color: var(--color-text);
-    margin-bottom: 28px;
-    font-size: 1.1rem;
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
   }
 
-  /* Responsive */
-  @media (max-width: 768px) {
+  /* Desktop: two-column office cards */
+  @media (min-width: 768px) {
     .oficina-card {
-      grid-template-columns: 1fr;
-      gap: 28px;
-      padding: 40px 0;
+      grid-template-columns: 1fr 1.2fr;
+      gap: var(--space-12);
     }
-    .oficina-card--right {
+    .oficina-card:nth-child(even) {
+      direction: rtl;
+    }
+    .oficina-card:nth-child(even) > * {
       direction: ltr;
     }
-    .contacto-hero h1 {
-      font-size: 2.2rem;
-    }
-    .oficina-card__city {
-      font-size: 1.8rem;
-    }
     .oficina-card__details {
-      max-width: 100%;
+      max-width: 380px;
+    }
+    .oficina-card__cta {
+      width: auto;
     }
     .oficina-card__map iframe {
-      min-height: 280px;
+      min-height: 380px;
     }
   }
 </style>

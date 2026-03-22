@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Hero Section — shared pattern for homepage + landing pages
+   Mobile-first: stacked layout → two-column on desktop
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  padding: calc(var(--space-20) + var(--space-4)) 0 var(--space-16);
+  background: linear-gradient(180deg, var(--color-bg-subtle), var(--color-bg));
+  overflow: hidden;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+/* --- Text column --- */
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  animation: heroFadeIn var(--transition-slow) both;
+}
+
+.hero-content h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-tight);
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.hero-content .hero-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+  max-width: 540px;
+}
+
+/* --- CTA group --- */
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* --- Visual / mockup column --- */
+
+.hero-visual {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: heroFadeIn var(--transition-slow) 100ms both;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --- Stats row --- */
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  animation: heroFadeIn var(--transition-slow) 200ms both;
+}
+
+.hero-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.hero-stat strong {
+  font-weight: var(--font-bold);
+  color: var(--gray-900);
+}
+
+/* ==========================================================================
+   Desktop: two-column layout (text left, visual right)
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: calc(var(--space-24) + var(--space-4)) 0 var(--space-20);
+  }
+
+  .hero .container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-content {
+    flex: 1 1 55%;
+    min-width: 0;
+  }
+
+  .hero-content h1 {
+    font-size: var(--text-5xl);
+  }
+
+  .hero-visual {
+    flex: 1 1 45%;
+    min-width: 0;
+  }
+}
+
+/* ==========================================================================
+   Variant: hero without visual (centered text)
+   ========================================================================== */
+
+.hero--centered .container {
+  align-items: center;
+  text-align: center;
+}
+
+.hero--centered .hero-content {
+  align-items: center;
+}
+
+.hero--centered .hero-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero--centered .hero-actions {
+  justify-content: center;
+}
+
+.hero--centered .hero-stats {
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Subtle fade-in entrance (replaces heavy animations)
+   ========================================================================== */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content,
+  .hero-visual,
+  .hero-stats {
+    animation: none;
+  }
+}

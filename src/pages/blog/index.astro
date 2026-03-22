@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import '../../../styles/resources.css';
+import '../../../styles/blog.css';
 ---
 
 <Layout
@@ -15,58 +15,79 @@ import '../../../styles/resources.css';
 >
   <Header />
 
-  <main id="main-content" class="blog-container">
-    <section class="resource-hero">
+  <main id="main-content">
+    <section class="blog-hero">
       <div class="container">
-        <h1 class="resource-title">Blog</h1>
-        <p class="resource-subtitle">Guías y artículos sobre agentes de voz IA y automatización.</p>
+        <h1>Blog</h1>
+        <p>Guías y artículos sobre agentes de voz IA y automatización.</p>
       </div>
     </section>
 
-    <section class="resource-grid-section">
-      <div class="container resource-grid">
-        <article class="resource-card">
-          <h3>Qué es un agente de voz IA y cómo funciona</h3>
-          <p>Guía completa sobre tecnología, llamadas, latencia, memoria y casos reales.</p>
-          <a href="/blog/agente-voz-ia/" class="resource-link">Leer artículo →</a>
-        </article>
-        <article class="resource-card">
-          <h3>Agente de voz IA para inmobiliarias</h3>
-          <p>Cómo captar más propietarios, filtrar compradores y automatizar visitas.</p>
-          <a href="/blog/agente-voz-inmobiliarias/" class="resource-link">Leer artículo →</a>
-        </article>
-        <article class="resource-card">
-          <h3>Agente de voz IA para clínicas</h3>
-          <p>Cómo reducir llamadas perdidas y agendar más citas con IA integrada en tu agenda.</p>
-          <a href="/blog/agente-voz-clinicas/" class="resource-link">Leer artículo →</a>
-        </article>
-        <article class="resource-card">
-          <h3>Cómo crear la base de conocimiento perfecta</h3>
-          <p>Estructura recomendada, ejemplos por sector y errores a evitar.</p>
-          <a href="/blog/base-conocimiento-agente-voz/" class="resource-link">Leer artículo →</a>
-        </article>
-        <article class="resource-card">
-          <h3>Agente de voz IA vs IVR tradicional</h3>
-          <p>Comparativa objetiva: ventajas, limitaciones y cuándo usar cada uno.</p>
-          <a href="/blog/agente-voz-ia-vs-ivr/" class="resource-link">Leer artículo →</a>
-        </article>
-        <article class="resource-card">
-          <h3>Agente de voz IA vs call center externalizado</h3>
-          <p>Costes, calidad, escalabilidad y casos donde cada opción tiene más sentido.</p>
-          <a href="/blog/agente-voz-ia-vs-call-center/" class="resource-link">Leer artículo →</a>
-        </article>
-        <article class="resource-card">
-          <h3>Coste real de automatizar llamadas con IA en 2026</h3>
-          <p>
-            Desglose de costes: licencias, telefonía, integración y comparativa con alternativas.
-          </p>
-          <a href="/blog/coste-automatizar-llamadas-ia/" class="resource-link">Leer artículo →</a>
-        </article>
-        <article class="resource-card">
-          <h3>Cómo elegir un agente de voz IA para tu negocio</h3>
-          <p>Guía de compra neutral: integraciones, latencia, idiomas, precio y soporte.</p>
-          <a href="/blog/como-elegir-agente-voz-ia/" class="resource-link">Leer artículo →</a>
-        </article>
+    <section class="blog-grid-section">
+      <div class="container">
+        <div class="grid grid-3">
+          <a href="/blog/agente-voz-ia/" class="blog-card-link">
+            <article class="card">
+              <h3>Qué es un agente de voz IA y cómo funciona</h3>
+              <p>Guía completa sobre tecnología, llamadas, latencia, memoria y casos reales.</p>
+              <span class="read-more">Leer artículo →</span>
+            </article>
+          </a>
+          <a href="/blog/agente-voz-inmobiliarias/" class="blog-card-link">
+            <article class="card">
+              <h3>Agente de voz IA para inmobiliarias</h3>
+              <p>Cómo captar más propietarios, filtrar compradores y automatizar visitas.</p>
+              <span class="read-more">Leer artículo →</span>
+            </article>
+          </a>
+          <a href="/blog/agente-voz-clinicas/" class="blog-card-link">
+            <article class="card">
+              <h3>Agente de voz IA para clínicas</h3>
+              <p>
+                Cómo reducir llamadas perdidas y agendar más citas con IA integrada en tu agenda.
+              </p>
+              <span class="read-more">Leer artículo →</span>
+            </article>
+          </a>
+          <a href="/blog/base-conocimiento-agente-voz/" class="blog-card-link">
+            <article class="card">
+              <h3>Cómo crear la base de conocimiento perfecta</h3>
+              <p>Estructura recomendada, ejemplos por sector y errores a evitar.</p>
+              <span class="read-more">Leer artículo →</span>
+            </article>
+          </a>
+          <a href="/blog/agente-voz-ia-vs-ivr/" class="blog-card-link">
+            <article class="card">
+              <h3>Agente de voz IA vs IVR tradicional</h3>
+              <p>Comparativa objetiva: ventajas, limitaciones y cuándo usar cada uno.</p>
+              <span class="read-more">Leer artículo →</span>
+            </article>
+          </a>
+          <a href="/blog/agente-voz-ia-vs-call-center/" class="blog-card-link">
+            <article class="card">
+              <h3>Agente de voz IA vs call center externalizado</h3>
+              <p>Costes, calidad, escalabilidad y casos donde cada opción tiene más sentido.</p>
+              <span class="read-more">Leer artículo →</span>
+            </article>
+          </a>
+          <a href="/blog/coste-automatizar-llamadas-ia/" class="blog-card-link">
+            <article class="card">
+              <h3>Coste real de automatizar llamadas con IA en 2026</h3>
+              <p>
+                Desglose de costes: licencias, telefonía, integración y comparativa con
+                alternativas.
+              </p>
+              <span class="read-more">Leer artículo →</span>
+            </article>
+          </a>
+          <a href="/blog/como-elegir-agente-voz-ia/" class="blog-card-link">
+            <article class="card">
+              <h3>Cómo elegir un agente de voz IA para tu negocio</h3>
+              <p>Guía de compra neutral: integraciones, latencia, idiomas, precio y soporte.</p>
+              <span class="read-more">Leer artículo →</span>
+            </article>
+          </a>
+        </div>
       </div>
     </section>
   </main>

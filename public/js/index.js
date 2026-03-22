@@ -1,24 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // --- Selectores ---
-  const menu = document.getElementById('hamburger');
-  // Seleccionamos "nav ul" (asumiendo que es la lista dentro de .top-nav)
-  const dropdown = document.querySelector('.nav-list');
-  const header = document.querySelector('header');
-  const navLinks = document.querySelectorAll('.nav-list a');
+  // --- Selectors ---
   const yearSpan = document.getElementById('year');
   const clickableImages = document.querySelectorAll('.clickable-image');
   const modal = document.getElementById('imageModal');
   const mockupCounter = document.getElementById('mockupCounter');
   const trackedForms = document.querySelectorAll('form[data-ga-submit]');
 
-  function trackEvent(name, params = {}) {
-    if (!name || typeof window.gtag !== 'function') return;
-    window.gtag('event', name, params);
+  // --- GA helpers ---
+  function trackEvent(name, params) {
+    if (!name || typeof globalThis.gtag !== 'function') return;
+    globalThis.gtag('event', name, params || {});
   }
 
   function getGaParams(element) {
     const params = {};
-    Object.entries(element.dataset).forEach(([key, value]) => {
+    Object.entries(element.dataset).forEach(function (entry) {
+      const key = entry[0];
+      const value = entry[1];
       if (!value) return;
       if (!key.startsWith('ga') || key === 'gaEvent' || key === 'gaSubmit') return;
       const paramKey = key.charAt(2).toLowerCase() + key.slice(3);
@@ -27,152 +25,90 @@ document.addEventListener('DOMContentLoaded', function () {
     return params;
   }
 
-  // --- 1. Lógica de Resize (Pantallas grandes vs móviles) ---
-  function handleResize() {
-    if (window.innerWidth > 991) {
-      // En escritorio, aseguramos que el menú se vea (reseteamos display inline para que el CSS mande)
-      if (dropdown) {
-        dropdown.classList.remove('open');
-        dropdown.style.display = '';
-      }
-      if (menu) menu.classList.remove('active');
-      if (header) header.classList.remove('menu-open');
-    } else {
-      // En móvil, si el menú no tiene la clase active, aseguramos que esté oculto al redimensionar
-      if (menu && !menu.classList.contains('active') && dropdown) {
-        dropdown.classList.remove('open');
-        dropdown.style.display = '';
-      }
-      if (menu && !menu.classList.contains('active') && header) {
-        header.classList.remove('menu-open');
-      }
-    }
-  }
-
-  window.addEventListener('resize', handleResize);
-  handleResize(); // Ejecutar una vez al cargar
-
-  // --- 2. Toggle Menú Móvil (Reemplazo de slideToggle) ---
-  if (menu && dropdown) {
-    menu.addEventListener('click', function () {
-      this.classList.toggle('active');
-
-      // Simulación de slideToggle con display
-      if (dropdown.style.display) dropdown.style.display = '';
-      dropdown.classList.toggle('open');
-      if (header) header.classList.toggle('menu-open');
-    });
-  }
-
-  // --- 3. Cerrar menú al hacer clic en un enlace ---
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 991) {
-        // Solo si el menú está visible
-        if (dropdown && dropdown.classList.contains('open')) {
-          if (menu) menu.classList.remove('active');
-          dropdown.classList.remove('open');
-          if (header) header.classList.remove('menu-open');
-        }
-      }
-    });
-  });
-
-  document.addEventListener('click', (event) => {
+  // --- GA click tracking ---
+  document.addEventListener('click', function (event) {
     const trackedElement = event.target.closest('[data-ga-event]');
     if (!trackedElement) return;
-
     trackEvent(trackedElement.dataset.gaEvent, getGaParams(trackedElement));
   });
 
-  trackedForms.forEach((form) => {
-    form.addEventListener('submit', (event) => {
+  // --- GA form submit tracking ---
+  trackedForms.forEach(function (form) {
+    form.addEventListener('submit', function (event) {
       const eventName = form.dataset.gaSubmit;
-      if (!eventName || typeof window.gtag !== 'function') return;
+      if (!eventName || typeof globalThis.gtag !== 'function') return;
 
       event.preventDefault();
       let hasSubmitted = false;
 
-      const submitForm = () => {
+      const submitForm = function () {
         if (hasSubmitted) return;
         hasSubmitted = true;
         form.submit();
       };
 
-      window.gtag('event', eventName, {
+      globalThis.gtag('event', eventName, {
         ...getGaParams(form),
         event_callback: submitForm,
         event_timeout: 1200,
       });
 
-      window.setTimeout(submitForm, 1300);
+      globalThis.setTimeout(submitForm, 1300);
     });
   });
 
-  // --- 4. Modal de Imagen ---
-
-  // Abrir modal al hacer click en imágenes
-  clickableImages.forEach((img) => {
+  // --- Image modal ---
+  clickableImages.forEach(function (img) {
     img.addEventListener('click', function () {
       openModal(this.getAttribute('src'));
     });
   });
 
-  // Cerrar modal con la tecla Escape
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeModal();
-    }
+    if (e.key === 'Escape') closeModal();
   });
 
-  // Cerrar modal al hacer click en la X o en el fondo
   if (modal) {
     modal.addEventListener('click', function (e) {
-      // Si se pulsa en el fondo (modal) o en el botón cerrar
-      if (e.target === modal || e.target.closest('.close')) {
-        closeModal();
-      }
+      if (e.target === modal || e.target.closest('.close')) closeModal();
     });
   }
 
-  // --- 5. Año dinámico ---
+  // --- Dynamic year ---
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // --- 6. Intersection Observer (Animaciones fade) ---
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
+  // --- Intersection Observer (fade animations) ---
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
       if (e.isIntersecting) e.target.classList.add('visible');
     });
   });
 
-  document.querySelectorAll('.fade').forEach((el) => observer.observe(el));
+  document.querySelectorAll('.fade').forEach(function (el) {
+    observer.observe(el);
+  });
 
-  // --- 7. Contador dinámico en el mockup ---
+  // --- Mockup counter ---
   const counterMessages = ['+1 cita confirmada', '+2 leads cualificados', '+1 WhatsApp resuelto'];
   let counterIndex = 0;
   if (mockupCounter) {
-    setInterval(() => {
+    setInterval(function () {
       counterIndex = (counterIndex + 1) % counterMessages.length;
       mockupCounter.textContent = counterMessages[counterIndex];
     }, 2800);
   }
 });
 
-// --- Funciones Globales del Modal ---
+// --- Global modal functions ---
 function openModal(src) {
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImg');
-
-  // Nota: Como el HTML del modal no estaba en tu código original,
-  // asegúrate de que existan estos IDs en tu HTML.
   if (modal && modalImg) {
     modal.style.display = 'flex';
     modalImg.src = src;
-    document.body.style.overflow = 'hidden'; // Bloquear scroll
-  } else {
-    console.warn('No se encontró el modal #imageModal o la imagen #modalImg');
+    document.body.style.overflow = 'hidden';
   }
 }
 
@@ -180,6 +116,6 @@ function closeModal() {
   const modal = document.getElementById('imageModal');
   if (modal) {
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Restaurar scroll
+    document.body.style.overflow = 'auto';
   }
 }

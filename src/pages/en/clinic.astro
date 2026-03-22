@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import LandingHeader from '../../components/LandingHeader.astro';
 import Footer from '../../components/Footer.astro';
+import '../../../styles/landing.css';
 
 const schemaFaq = [
   {
@@ -62,28 +63,33 @@ const schemaVideos = [
     ctaHref="https://calendly.com/vivaspeak/30min"
   />
 
-  <main id="main-content">
-    <section id="hero">
+  <main id="main-content" class="landing">
+    <section class="landing-hero landing-hero--centered">
       <div class="container hero-content">
-        <h1>Automate Your Clinic with Clara – 24/7 Voice Assistant</h1>
+        <h1 class="hero-title">Automate Your Clinic with Clara – 24/7 Voice Assistant</h1>
         <img
           src="/assets/clara-avatar.png"
           alt="Clara, voice assistant for clinics"
-          class="avatar-clara"
+          class="avatar-agent"
           loading="lazy"
         />
         <p class="hero-subtitle">
           Clara answers phone calls, resolves medical FAQs and schedules appointments directly in
           your calendar.
         </p>
-        <a href="https://calendly.com/vivaspeak/30min" class="btn-primary">
-          Activate Clara for your clinic
-        </a>
+        <div class="hero-actions">
+          <a href="https://calendly.com/vivaspeak/30min" class="btn btn-primary">
+            Activate Clara for your clinic
+          </a>
+        </div>
       </div>
     </section>
-    <section id="benefits">
+
+    <section class="section">
       <div class="container">
-        <h2>What Clara Does for Your Clinic</h2>
+        <div class="section-header text-center">
+          <h2>What Clara Does for Your Clinic</h2>
+        </div>
         <ul class="use-case-features">
           <li>
             📞 <strong>Answers calls 24/7</strong>: Clara responds with empathy anytime.
@@ -105,7 +111,8 @@ const schemaVideos = [
         </ul>
       </div>
     </section>
-    <section id="video-demo">
+
+    <section class="section landing-video">
       <div class="container">
         <img src="/assets/video.png" alt="Video icon" class="image" loading="lazy" />
         <h2>Watch Clara in Action</h2>
@@ -123,47 +130,45 @@ const schemaVideos = [
           allowfullscreen></iframe>
       </div>
     </section>
-    <section id="demo">
+
+    <section class="section">
       <div class="container">
         <h2>Listen to Clara</h2>
-        <audio controls>
+        <audio controls style="width: 100%; max-width: 480px;">
           <source src="/assets/audio-clara-ingles.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
       </div>
     </section>
-    <section id="faq">
+
+    <section class="section">
       <div class="container">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-container">
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span> Can Clara integrate with my calendar?
-            </summary>
-            <div class="faq-content">
+        <div class="section-header text-center">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div style="max-width: 860px; margin: 0 auto;">
+          <details class="accordion">
+            <summary>Can Clara integrate with my calendar?</summary>
+            <div class="accordion-content">
               Yes. We can connect her to Google Calendar to schedule appointments automatically.
             </div>
           </details>
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span> Can she handle emergencies?
-            </summary>
-            <div class="faq-content">
+          <details class="accordion">
+            <summary>Can she handle emergencies?</summary>
+            <div class="accordion-content">
               Clara does not replace medical staff, but she can detect urgent words and redirect
               accordingly.
             </div>
           </details>
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span> Can I test her before paying?
-            </summary>
-            <div class="faq-content">Yes, you can try her with real calls and cancel anytime.</div>
+          <details class="accordion">
+            <summary>Can I test her before paying?</summary>
+            <div class="accordion-content">
+              Yes, you can try her with real calls and cancel anytime.
+            </div>
           </details>
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span> How do I redirect my current number?
-            </summary>
-            <div class="faq-content">
+          <details class="accordion">
+            <summary>How do I redirect my current number?</summary>
+            <div class="accordion-content">
               You can redirect your number to Clara using a simple code.
               <br /><br />
               👉
@@ -172,11 +177,9 @@ const schemaVideos = [
               </a>
             </div>
           </details>
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span> How do I share my calendar with Clara?
-            </summary>
-            <div class="faq-content">
+          <details class="accordion">
+            <summary>How do I share my calendar with Clara?</summary>
+            <div class="accordion-content">
               To let Clara schedule appointments, just share your Google Calendar with us.
               <br /><br />
               👉
@@ -188,29 +191,35 @@ const schemaVideos = [
         </div>
       </div>
     </section>
-    <section class="pricing-anchor">
+
+    <section class="section pricing-anchor">
       <div class="container">
-        <div class="section-header section-header--center">
+        <div class="section-header text-center">
           <p class="eyebrow">Single Price Point</p>
           <h2>From €249/month. Final pricing defined in demo based on volume and integrations.</h2>
           <div class="cta-buttons">
-            <a href="#cta" class="btn-primary">Request demo</a>
+            <a href="#cta" class="btn btn-primary">Request demo</a>
           </div>
         </div>
       </div>
     </section>
-    <section id="cta">
-      <div class="container">
-        <h2>Ready to save time and serve more patients?</h2>
+
+    <section id="cta" class="landing-hero landing-hero--centered">
+      <div class="container hero-content">
+        <h2 class="hero-title" style="font-size: var(--text-3xl);">
+          Ready to save time and serve more patients?
+        </h2>
         <img
           src="/assets/clara-avatar.png"
           alt="Clara, voice assistant"
-          class="avatar-clara"
+          class="avatar-agent"
           loading="lazy"
         />
-        <a href="https://calendly.com/vivaspeak/30min" class="btn-primary">
-          💡 Activate Clara Now
-        </a>
+        <div class="hero-actions">
+          <a href="https://calendly.com/vivaspeak/30min" class="btn btn-primary">
+            💡 Activate Clara Now
+          </a>
+        </div>
       </div>
     </section>
   </main>

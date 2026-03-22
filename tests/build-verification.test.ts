@@ -14,14 +14,18 @@ describe('Build verification', () => {
   it('should generate 51 Spanish location pages', () => {
     const dir = join(DIST, 'ubicaciones');
     expect(existsSync(dir)).toBe(true);
-    const folders = readdirSync(dir);
+    const folders = readdirSync(dir, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
     expect(folders).toHaveLength(51);
   });
 
   it('should generate 51 English location pages', () => {
     const dir = join(DIST, 'en', 'locations');
     expect(existsSync(dir)).toBe(true);
-    const folders = readdirSync(dir);
+    const folders = readdirSync(dir, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
     expect(folders).toHaveLength(51);
   });
 
@@ -41,5 +45,10 @@ describe('Build verification', () => {
       const html = readFileSync(filePath, 'utf-8');
       expect(html).toContain(`<title>AI Voice Agent in ${office.city}`);
     });
+  });
+
+  it('should include prefers-reduced-motion media query in CSS', () => {
+    const resetCss = readFileSync('styles/reset.css', 'utf-8');
+    expect(resetCss).toContain('prefers-reduced-motion');
   });
 });

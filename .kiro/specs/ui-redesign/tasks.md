@@ -1,0 +1,163 @@
+# Implementation Plan
+
+- [x] 1. Create design tokens and CSS reset
+  - [x] 1.1 Create `styles/tokens.css` with all CSS custom properties (colors, typography, spacing, shadows, radii, transitions)
+    - Define brand colors, neutral gray scale, semantic colors, font scale, spacing scale, shadow scale, border-radius tokens, and transition tokens as specified in the design document
+    - _Requirements: 1.1, 1.2, 1.3, 1.4_
+  - [x] 1.2 Create `styles/reset.css` with minimal CSS reset and base element styles
+    - Include box-sizing reset, margin removal, font-family assignment, smooth scroll, `prefers-reduced-motion` media query, and skip-link styles
+    - _Requirements: 1.5, 13.1, 13.4, 12.4, 14.1_
+  - [x] 1.3 Create `styles/layout.css` with container, section, and grid utility classes
+    - Implement `.container`, `.section`, `.grid`, `.grid-2`, `.grid-3`, `.grid-4` with mobile-first breakpoints at 640px, 768px, and 1024px
+    - _Requirements: 1.6, 2.1, 2.2, 2.3_
+
+- [x] 2. Create shared component styles
+  - [x] 2.1 Create `styles/components.css` with button, card, eyebrow, badge, section-header, and accordion styles
+    - Implement `.btn`, `.btn-primary`, `.btn-secondary`, `.btn-ghost`, `.card`, `.card-icon`, `.eyebrow`, `.badge`, `.section-header`, `.accordion` as specified in the design
+    - Ensure all interactive elements have 44px minimum touch targets and visible focus indicators
+    - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 9.1, 9.2, 9.3, 2.4, 13.3_
+  - [x] 2.2 Add form styles to `styles/components.css`
+    - Implement input, textarea, label, radio, checkbox, and error state styles using design tokens
+    - _Requirements: 7.1, 7.2, 7.4_
+
+- [x] 3. Redesign header and navigation
+  - [x] 3.1 Rewrite `styles/header.css` with mobile-first header styles
+    - Implement fixed header with backdrop blur, mobile hamburger menu with slide-in animation, and desktop horizontal nav
+    - Merge LandingHeader styles into the same file as a variant
+    - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
+  - [x] 3.2 Update `src/components/Header.astro` markup to match new design
+    - Adjust HTML structure for the new mobile menu pattern, ensure ARIA attributes are correct, add focus trap logic for mobile menu
+    - _Requirements: 3.1, 3.2, 13.4, 13.5_
+  - [x] 3.3 Update `src/components/LandingHeader.astro` to use shared header styles
+    - Simplify to use the same base header CSS with a landing-specific variant class
+    - Delete `styles/landing-header.css`
+    - _Requirements: 3.6_
+
+- [x] 4. Create hero section styles
+  - [x] 4.1 Create `styles/hero.css` with the shared hero section pattern
+    - Implement clean hero layout: mobile stacked, desktop two-column, subtle background, generous whitespace
+    - Remove complex animations (heroPulse, counterSlide, checkPop, toastFloat, heroGlow)
+    - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 12.2_
+
+- [x] 5. Create footer styles and update component
+  - [x] 5.1 Create `styles/footer.css` with new footer layout
+    - Implement dark background footer with column layout (mobile stacked, desktop 4-column grid), social icons, language switcher
+    - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5_
+  - [x] 5.2 Update `src/components/Footer.astro` markup to match new design
+    - Restructure HTML into semantic column groups, update social icon sizing, preserve all existing links
+    - _Requirements: 6.1, 6.4_
+
+- [x] 6. Refactor global.css as the import hub
+  - [x] 6.1 Rewrite `styles/global.css` to import the new CSS files and remove all old styles
+    - Import tokens, reset, layout, components, header, footer, hero in order
+    - Remove all existing CSS rules from global.css (they are now in dedicated files)
+    - _Requirements: 1.5, 14.2_
+
+- [x] 7. Redesign homepage
+  - [x] 7.1 Update `src/pages/index.astro` hero section to use new hero pattern
+    - Replace current complex hero markup with clean hero layout, remove floating cards and animated overlays, use new CSS classes
+    - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 12.2_
+  - [x] 7.2 Update `src/pages/index.astro` value-prop, use-cases, and audience sections
+    - Replace current card markup with unified `.card` component, use `.grid` utilities, update section headers to use `.section-header` pattern
+    - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5_
+  - [x] 7.3 Update `src/pages/index.astro` testimonials section
+    - Replace gradient testimonial cards with light card design, use `.badge` for tags
+    - _Requirements: 8.1, 8.2, 8.3, 8.4_
+  - [x] 7.4 Update `src/pages/index.astro` FAQ section
+    - Replace current FAQ markup with `.accordion` component
+    - _Requirements: 9.1, 9.2, 9.3_
+  - [x] 7.5 Update `src/pages/index.astro` contact and pricing sections
+    - Apply new form styles, update contact layout to use grid utilities, clean up Calendly embed container
+    - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5_
+  - [x] 7.6 Update `src/pages/en/index.astro` with the same changes as the Spanish homepage
+    - Mirror all markup and class changes from the Spanish version
+    - _Requirements: 10.1_
+
+- [x] 8. Redesign blog pages
+  - [x] 8.1 Refactor `styles/blog.css` using design tokens
+    - Rewrite blog index and article styles using tokens, merge `styles/resources.css` into blog.css, delete `styles/resources.css`
+    - _Requirements: 11.1, 11.2, 11.3_
+  - [x] 8.2 Update `src/pages/blog/index.astro` and `src/pages/en/blog/index.astro` to use new card grid
+    - Replace resource-card markup with `.card` + `.grid .grid-3` pattern
+    - _Requirements: 11.1_
+  - [x] 8.3 Update one representative blog article page (e.g. `src/pages/blog/agente-voz-ia.astro`) to use new blog styles
+    - Verify article typography, spacing, and CTA block render correctly with new tokens
+    - _Requirements: 11.2, 11.3_
+
+- [x] 9. Redesign location pages
+  - [x] 9.1 Create `styles/locations.css` by merging and refactoring `styles/ubicaciones.css` and `styles/locations-index.css`
+    - Rewrite all location styles using design tokens and shared components, delete the two old files
+    - _Requirements: 5.1, 2.1, 2.2_
+  - [x] 9.2 Update `src/pages/ubicaciones/index.astro` and `src/pages/en/locations/index.astro` to use new grid and card components
+    - Replace location-card markup with `.card` pattern, update hero and search input styles
+    - _Requirements: 5.2, 5.5_
+  - [x] 9.3 Update `src/pages/ubicaciones/[city].astro` and `src/pages/en/locations/[city].astro` to use new component styles
+    - Apply shared section, card, accordion, and grid patterns to location detail pages
+    - _Requirements: 5.1, 9.1_
+
+- [x] 10. Redesign landing pages
+  - [x] 10.1 Create `styles/landing.css` with shared landing page patterns
+    - Extract common landing patterns (solution grids, integration cards, CTA sections, testimonial blocks) into one shared file
+    - _Requirements: 10.1, 10.2, 10.3_
+  - [x] 10.2 Refactor `src/pages/clinica.astro` and `src/pages/en/clinic.astro` to use shared components
+    - Replace page-specific card/grid markup with `.card`, `.grid`, `.section-header`, `.accordion` classes
+    - _Requirements: 10.1, 10.2, 10.3_
+  - [x] 10.3 Refactor `src/pages/inmobiliaria.astro` and `src/pages/en/real-estate.astro` to use shared components
+    - Replace inmo-landing specific styles with shared patterns, move truly unique overrides to scoped `<style>`
+    - Delete `styles/real-estate.css`
+    - _Requirements: 10.1, 10.2_
+  - [x] 10.4 Refactor `src/pages/abogados.astro` to use shared components with gold accent overrides
+    - Replace law-landing specific styles with shared patterns + scoped CSS custom property overrides for gold theme
+    - Delete `styles/abogados.css`
+    - _Requirements: 10.1, 10.2_
+  - [x] 10.5 Refactor `src/pages/reclutamiento.astro` and `src/pages/en/recruitment.astro` to use shared components
+    - Replace recruiting-landing specific styles with shared patterns
+    - Delete `styles/recruiting.css`
+    - _Requirements: 10.1, 10.2_
+  - [x] 10.6 Refactor `src/pages/servicios-operativos.astro` and `src/pages/en/operational-services.astro` to use shared components
+    - Replace landing-sector specific styles with shared patterns
+    - Delete `styles/servicios-operativos.css`
+    - _Requirements: 10.1, 10.2_
+  - [x] 10.7 Refactor `src/pages/salud.astro` to use shared components
+    - Apply same shared landing patterns
+    - _Requirements: 10.1, 10.2_
+
+- [x] 11. Update remaining pages
+  - [x] 11.1 Update `src/pages/contacto.astro` to use new design system
+    - Replace scoped styles with shared components and tokens
+    - _Requirements: 7.3, 5.1_
+  - [x] 11.2 Update `src/pages/sobre-nosotros.astro` and `src/pages/en/about.astro` to use new typography and layout tokens
+    - Replace inline styles with token-based classes
+    - _Requirements: 10.1_
+  - [x] 11.3 Refactor `src/pages/exito.astro` and `src/pages/en/success.astro` with simplified success page styles
+    - Rewrite `styles/success.css` using design tokens
+    - _Requirements: 12.1, 12.3_
+  - [x] 11.4 Update legal/policy pages (`aviso-legal`, `politica-de-privacidad`, `terminos-y-condiciones`, `politica-de-uso-aceptable`, `politica-mensajeria-whatsapp` and their EN equivalents) to use new typography tokens
+    - Ensure consistent text styling across all legal pages
+    - _Requirements: 10.1_
+
+- [x] 12. Update Layout and font loading
+  - [x] 12.1 Update `src/layouts/Layout.astro` to load Inter font and reference new CSS structure
+    - Add Inter font `<link>` with `font-display: swap`, remove Montserrat references if any, verify global.css import still works
+    - _Requirements: 14.1, 1.3_
+  - [x] 12.2 Evaluate FontAwesome usage and optimize if possible
+    - Audit which FA icons are actually used across the site; if only a handful, consider replacing with inline SVGs to reduce bundle size
+    - _Requirements: 14.4_
+
+- [x] 13. Update JavaScript for new header
+  - [x] 13.1 Update `public/js/index.js` to handle new mobile menu toggle and focus trap
+    - Ensure hamburger toggle works with new markup, implement focus trap when mobile menu is open, preserve existing Calendly/GA/modal logic
+    - _Requirements: 3.2, 13.5, 12.1_
+
+- [x] 14. Cleanup and verification
+  - [x] 14.1 Remove all deleted/unused CSS files and verify no broken imports
+    - Delete `styles/landing-header.css`, `styles/real-estate.css`, `styles/abogados.css`, `styles/recruiting.css`, `styles/servicios-operativos.css`, `styles/resources.css`, `styles/ubicaciones.css`, `styles/locations-index.css`
+    - Verify all page imports reference the correct new files
+    - _Requirements: 14.2_
+  - [x] 14.2 Run build and verify no errors
+    - Execute `npm run build` and fix any compilation errors
+    - Verify existing `tests/build-verification.test.ts` passes
+    - _Requirements: 14.2_
+  - [x] 14.3 Add `prefers-reduced-motion` test to build verification
+    - Write a test that verifies the CSS includes a `prefers-reduced-motion` media query
+    - _Requirements: 12.4_

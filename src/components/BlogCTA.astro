@@ -4,16 +4,34 @@ const isEn = lang === 'en';
 const base = isEn ? '/en' : '';
 ---
 
-<section class="footer-cta">
-  <div class="container footer-cta__content">
-    <div>
-      <p class="eyebrow">{isEn ? 'Ready to see it in your business?' : '¿Listo para verlo en tu negocio?'}</p>
-      <h3>{isEn ? 'Activate a 24/7 agent without changing your current flow' : 'Activa un agente 24/7 sin cambiar tu flujo actual'}</h3>
-      <p>{isEn ? 'You can have everything automated in less than a week.' : 'En menos de una semana puedes tener todo automatizado.'}</p>
-    </div>
-    <div class="footer-cta__actions">
-      <a href={`${base}/#contact`} class="btn-primary">{isEn ? 'Talk to sales' : 'Hablar con ventas'}</a>
-      <a href={`${base}/#schedule`} class="btn-secondary">{isEn ? 'Book a demo' : 'Reservar demo'}</a>
+<section class="section">
+  <div class="container">
+    <div class="blog-cta">
+      <p class="eyebrow">
+        {isEn ? 'Ready to see it in your business?' : '¿Listo para verlo en tu negocio?'}
+      </p>
+      <h3>
+        {
+          isEn
+            ? 'Activate a 24/7 agent without changing your current flow'
+            : 'Activa un agente 24/7 sin cambiar tu flujo actual'
+        }
+      </h3>
+      <p>
+        {
+          isEn
+            ? 'You can have everything automated in less than a week.'
+            : 'En menos de una semana puedes tener todo automatizado.'
+        }
+      </p>
+      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+        <a href={`${base}/#contact`} class="btn btn-primary"
+          >{isEn ? 'Talk to sales' : 'Hablar con ventas'}</a
+        >
+        <a href={`${base}/#schedule`} class="btn btn-secondary"
+          >{isEn ? 'Book a demo' : 'Reservar demo'}</a
+        >
+      </div>
     </div>
   </div>
 </section>

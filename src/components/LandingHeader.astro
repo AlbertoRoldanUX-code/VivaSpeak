@@ -1,5 +1,5 @@
 ---
-import '../../styles/landing-header.css';
+import '../../styles/header.css';
 
 const { lang = 'es' } = Astro.props;
 const isEn = lang === 'en';
@@ -13,18 +13,23 @@ const {
 } = Astro.props;
 ---
 
-<header class="landing-header">
-  <div class="landing-header__container">
-    <a class="landing-header__brand" href={isEn ? secondaryHref : '/'} aria-label={isEn ? 'Go to VivaSpeak' : 'Ir a VivaSpeak'}>
-      <img
-        src="/assets/Logo transparente cropped.png"
-        alt={isEn ? 'VivaSpeak logo' : 'Logotipo de VivaSpeak'}
-        loading="eager"
-      />
-    </a>
-    <div class="landing-header__actions">
-      <a class="landing-header__link" href={secondaryHref}>{secondaryLabel}</a>
-      <a class="btn-primary landing-header__cta" href={ctaHref}>{ctaLabel}</a>
+<header class="site-header site-header--landing">
+  <div class="header-container">
+    <div class="header-brand">
+      <a href={isEn ? secondaryHref : '/'} aria-label={isEn ? 'Go to VivaSpeak' : 'Ir a VivaSpeak'}>
+        <img
+          src="/assets/Logo transparente cropped.png"
+          alt={isEn ? 'VivaSpeak logo' : 'Logotipo de VivaSpeak'}
+          loading="eager"
+        />
+      </a>
     </div>
+
+    <nav class="desktop-nav" aria-label={isEn ? 'Landing navigation' : 'Navegación de landing'}>
+      <ul class="nav-list">
+        <li class="landing-secondary-link"><a href={secondaryHref}>{secondaryLabel}</a></li>
+        <li class="nav-cta"><a href={ctaHref}>{ctaLabel}</a></li>
+      </ul>
+    </nav>
   </div>
 </header>

@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LandingHeader from '../components/LandingHeader.astro';
 import Footer from '../components/Footer.astro';
-import '../../styles/recruiting.css';
+import '../../styles/landing.css';
 
 const schemaFaq = [
   {
@@ -47,8 +47,8 @@ const breadcrumb = [
   speakable={['.hero-title', '.faq-content']}
 >
   <LandingHeader ctaLabel="Solicitar demo" ctaHref="#cta-final" />
-  <main id="main-content" class="recruiting-landing">
-    <section id="hero">
+  <main id="main-content" class="landing">
+    <section class="landing-hero">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Agente de Reclutamiento con IA</span>
@@ -60,8 +60,8 @@ const breadcrumb = [
             entrantes y salientes alineadas a tus criterios de selección.
           </p>
           <div class="hero-actions">
-            <a href="#cta-final" class="btn-primary">Solicitar demo</a>
-            <a href="#solucion" class="btn-secondary">Ver el flujo de selección</a>
+            <a href="#cta-final" class="btn btn-primary">Solicitar demo</a>
+            <a href="#solucion" class="btn btn-secondary">Ver el flujo de selección</a>
           </div>
           <div class="hero-note">
             Pensado para RRHH y operaciones internas que necesitan procesos homogéneos y
@@ -98,12 +98,12 @@ const breadcrumb = [
       </div>
     </section>
 
-    <section id="problema">
+    <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">Problema</span>
           <h2>Reclutamiento lento en fases de alto volumen</h2>
-          <p class="section-subtitle">
+          <p>
             La presión por cubrir vacantes se multiplica cuando los procesos dependen de llamadas
             manuales y criterios poco consistentes.
           </p>
@@ -119,17 +119,17 @@ const breadcrumb = [
       </div>
     </section>
 
-    <section id="solucion">
+    <section id="solucion" class="section" style="background: var(--color-bg-subtle);">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">Solución VivaSpeak</span>
           <h2>Un agente de voz entrenado con tus criterios de selección</h2>
-          <p class="section-subtitle">
+          <p>
             VivaSpeak automatiza el primer filtro, reduce la carga operativa y garantiza un proceso
             profesional y consistente.
           </p>
         </div>
-        <div class="solution-grid">
+        <div class="solutions-grid">
           <div class="solution-card">
             <h3>Entrenamiento a medida</h3>
             <p>
@@ -159,56 +159,42 @@ const breadcrumb = [
       </div>
     </section>
 
-    <section id="funciones">
+    <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">Qué hace el agente</span>
           <h2>Acciones claras, sin fricción para el equipo</h2>
-          <p class="section-subtitle">
-            Diseñado para el filtrado inicial, con control y trazabilidad en cada interacción.
-          </p>
+          <p>Diseñado para el filtrado inicial, con control y trazabilidad en cada interacción.</p>
         </div>
         <ul class="agent-bullets">
-          <li>
-            <p>Llama candidatos automáticamente en campañas inbound y outbound.</p>
-          </li>
-          <li>
-            <p>Aplica knockout questions definidas por RRHH.</p>
-          </li>
-          <li>
-            <p>Detecta idioma, disponibilidad y encaje básico.</p>
-          </li>
-          <li>
-            <p>Agenda entrevistas en Google Calendar.</p>
-          </li>
-          <li>
-            <p>Escala a un humano cuando se requiere validación adicional.</p>
-          </li>
+          <li><p>Llama candidatos automáticamente en campañas inbound y outbound.</p></li>
+          <li><p>Aplica knockout questions definidas por RRHH.</p></li>
+          <li><p>Detecta idioma, disponibilidad y encaje básico.</p></li>
+          <li><p>Agenda entrevistas en Google Calendar.</p></li>
+          <li><p>Escala a un humano cuando se requiere validación adicional.</p></li>
         </ul>
       </div>
     </section>
 
-    <section id="casos-uso">
+    <section class="section" style="background: var(--color-bg-subtle);">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">Casos de uso</span>
           <h2>Escenarios típicos en empresas medianas y grandes</h2>
-          <p class="section-subtitle">
-            Ideal para operaciones internas con procesos distribuidos y alta carga operativa.
-          </p>
+          <p>Ideal para operaciones internas con procesos distribuidos y alta carga operativa.</p>
         </div>
-        <div class="use-case-grid">
-          <div class="use-case-card">
+        <div class="grid grid-3">
+          <div class="card">
             <h3>Grandes plantillas</h3>
             <p>Filtrado inicial para puestos con rotación o volumen continuo de candidatos.</p>
           </div>
-          <div class="use-case-card">
+          <div class="card">
             <h3>Empresas multiservicio</h3>
             <p>
               Procesos homogéneos para sedes, unidades o clientes internos con criterios distintos.
             </p>
           </div>
-          <div class="use-case-card">
+          <div class="card">
             <h3>Operaciones internas</h3>
             <p>
               Reclutamiento para áreas de soporte, logística, back office y servicios compartidos.
@@ -218,17 +204,17 @@ const breadcrumb = [
       </div>
     </section>
 
-    <section id="integraciones">
+    <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">Cómo se integra</span>
           <h2>Conecta con tu stack de RRHH sin fricción</h2>
-          <p class="section-subtitle">
+          <p>
             Integraciones empresariales para asegurar trazabilidad y coordinación con el equipo de
             selección.
           </p>
         </div>
-        <div class="integration-grid">
+        <div class="grid grid-3">
           <div class="integration-card">
             <h3>Google Calendar</h3>
             <p>Agenda entrevistas y sincroniza disponibilidad en tiempo real.</p>
@@ -245,7 +231,7 @@ const breadcrumb = [
       </div>
     </section>
 
-    <section id="cta-final">
+    <section id="cta-final" class="section landing-cta">
       <div class="container">
         <div class="cta-card">
           <h2>Coordina tu piloto con un especialista</h2>
@@ -253,7 +239,7 @@ const breadcrumb = [
             Revisamos tus criterios de selección y diseñamos un flujo de llamadas alineado a tus
             necesidades internas.
           </p>
-          <a href="https://calendly.com/vivaspeak/30min" class="btn-primary"
+          <a href="https://calendly.com/vivaspeak/30min" class="btn btn-primary"
             >Hablar con un especialista</a
           >
           <p class="cta-note">
