@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LandingHeader from '../components/LandingHeader.astro';
 import Footer from '../components/Footer.astro';
-import '../../styles/real-estate.css';
+import '../../styles/landing.css';
 
 const schemaFaq = [
   {
@@ -100,223 +100,251 @@ const schemaReviews = [
   schemaMainEntityService={mainEntityService}
 >
   <LandingHeader ctaLabel="Ver demo en directo" ctaHref="#cta-final" />
-  <main id="main-content" class="inmo-landing">
-    <section id="hero">
-      <div class="hero-bg">
-        <svg
-          width="100%"
-          height="180"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-          class="svg-bg"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="#16a085"
-            d="M0,160L80,186.7C160,213,320,267,480,250.7C640,235,800,149,960,106.7C1120,64,1280,64,1360,64L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-          ></path>
-        </svg>
-      </div>
-      <div class="container hero-content">
-        <h1>Atiende cada llamada. Precualifica en segundos. No pierdas un lead.</h1>
-        <p class="hero-result-line">
-          Resultado real: +12% de visitas agendadas en 30 días (inmobiliaria en Málaga).
-        </p>
-        <p class="hero-social-proof">
-          Inmobiliarias en España (Baleares, Málaga…) · 24/7 · Compatible con Idealista y Fotocasa
-        </p>
-        <p class="hero-subtitle">
-          Laura, tu asistente de voz IA: filtra alquiler y venta, recoge datos y te envía solo los
-          contactos que merecen una llamada.
-        </p>
-        <p class="hero-proof">
-          Alto volumen sin horas al teléfono. Exporta y demuestra al propietario el trabajo hecho.
-        </p>
-        <a href="#cta-final" class="btn-primary">Ver demo en directo</a>
-      </div>
-    </section>
-    <section id="problema-real">
-      <div class="container">
-        <h2>El problema real de las inmobiliarias</h2>
-        <ul class="use-case-features">
-          <li>Pones “solo mensaje” y la gente llama igual: no das abasto</li>
-          <li>Centenares de solicitudes por alquiler y no tienes tiempo de filtrar</li>
-          <li>El propietario pregunta por qué no alquilas y no tienes cómo demostrarlo</li>
-        </ul>
-        <p>Si te suena, esta página es para ti.</p>
-      </div>
-    </section>
-    <section id="use-case-landing">
-      <div class="container">
-        <p>
-          Con <strong>Laura</strong>, tu agente de voz IA, cada llamada se atiende, se cualifica
-          (alquiler/venta, solvencia, perfil) y tú solo devuelves la llamada a quien interesa.
-          Compatible con tu número o con Idealista/Fotocasa.
-        </p>
-      </div>
-      <img
-        src="/assets/inmobiliaria.png"
-        alt="Ilustración del agente de voz Laura hablando con clientes de una inmobiliaria"
-        class="image-inmobiliaria"
-      />
+  <main id="main-content" class="landing"></main></Layout
+>
+<section class="landing-hero landing-hero--centered">
+  <div class="container hero-content">
+    <h1 class="hero-title">Atiende cada llamada. Precualifica en segundos. No pierdas un lead.</h1>
+    <p class="hero-subtitle" style="font-style: italic; font-size: var(--text-sm);">
+      Resultado real: +12% de visitas agendadas en 30 días (inmobiliaria en Málaga).
+    </p>
+    <p class="eyebrow">
+      Inmobiliarias en España (Baleares, Málaga…) · 24/7 · Compatible con Idealista y Fotocasa
+    </p>
+    <p class="hero-subtitle">
+      Laura, tu asistente de voz IA: filtra alquiler y venta, recoge datos y te envía solo los
+      contactos que merecen una llamada.
+    </p>
+    <p class="hero-subtitle">
+      Alto volumen sin horas al teléfono. Exporta y demuestra al propietario el trabajo hecho.
+    </p>
+    <div class="hero-actions">
+      <a href="#cta-final" class="btn btn-primary">Ver demo en directo</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--color-bg);">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>El problema real de las inmobiliarias</h2>
+    </div>
+    <ul class="use-case-features">
+      <li><strong>Pones "solo mensaje" y la gente llama igual:</strong> no das abasto</li>
+      <li><strong>Centenares de solicitudes por alquiler</strong> y no tienes tiempo de filtrar</li>
+      <li>
+        <strong>El propietario pregunta por qué no alquilas</strong> y no tienes cómo demostrarlo
+      </li>
+    </ul>
+    <p style="margin-top: var(--space-4); color: var(--color-text-muted);">
+      Si te suena, esta página es para ti.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="text-align: center;">
+    <p
+      style="max-width: 720px; margin: 0 auto; color: var(--color-text-muted); font-size: var(--text-lg);"
+    >
+      Con <strong>Laura</strong>, tu agente de voz IA, cada llamada se atiende, se cualifica
+      (alquiler/venta, solvencia, perfil) y tú solo devuelves la llamada a quien interesa.
+      Compatible con tu número o con Idealista/Fotocasa.
+    </p>
+  </div>
+  <img
+    src="/assets/inmobiliaria.png"
+    alt="Ilustración del agente de voz Laura hablando con clientes de una inmobiliaria"
+    style="display: block; margin: var(--space-8) auto; max-width: min(720px, 92vw); border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);"
+  />
+  <div class="container">
+    <div class="section-header text-center">
       <h2>En cuatro puntos</h2>
-      <ul class="use-case-features">
-        <li>📞 <strong>Atiende</strong> llamadas 24/7 — no se pierde ninguna</li>
-        <li>
-          🔎 <strong>Filtra</strong> alquiler y venta con tu criterio (fecha, solvencia, perfil)
-        </li>
-        <li>
-          📧 <strong>Te manda solo lo bueno</strong> — email por llamada con transcripción y datos para
-          que decidas a quién llamar
-        </li>
-        <li>📊 <strong>Demuéstralo al propietario</strong> — panel con historial y exportación</li>
-      </ul>
-    </section>
-    <section id="video-demo">
-      <div class="container">
-        <img src="/assets/video.png" alt="Icono de video" class="image" />
-        <h2>Quién ya lo usa</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>📞 Atiende</h3>
+        <p>Llamadas 24/7 — no se pierde ninguna</p>
+      </div>
+      <div class="card">
+        <h3>🔎 Filtra</h3>
+        <p>Alquiler y venta con tu criterio (fecha, solvencia, perfil)</p>
+      </div>
+      <div class="card">
+        <h3>📧 Te manda solo lo bueno</h3>
+        <p>Email por llamada con transcripción y datos para que decidas a quién llamar</p>
+      </div>
+      <div class="card">
+        <h3>📊 Demuéstralo al propietario</h3>
+        <p>Panel con historial y exportación</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="testimonial-block testimonial-block--video">
-          <h3 class="testimonial-block__title">Testimonio en vídeo</h3>
-          <p class="testimonial-block__author">
-            <strong>Daniel Insa</strong> – Agente inmobiliario RE/MAX · Málaga
-          </p>
-          <p class="testimonial-block__quote">
-            <em
-              >"Gracias a Laura, puedo atender a más clientes sin interrumpir mi trabajo. Ella
-              responde llamadas, filtra consultas y agenda visitas en mi calendario."</em
-            >
-          </p>
-          <iframe
-            class="video-frame"
-            width="315"
-            height="560"
-            src="https://www.youtube.com/embed/vmtha03C92E"
-            title="Testimonio de Daniel Insa - Agente inmobiliario"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
+<section class="section landing-video">
+  <div class="container">
+    <img src="/assets/video.png" alt="Icono de video" class="image" />
+    <h2>Quién ya lo usa</h2>
 
-        <div class="testimonial-block testimonial-block--others">
-          <h3 class="testimonial-block__title">Otros inmobiliarios</h3>
-          <div class="testimonial-quote-block testimonial-quote-block--card">
-            <p class="testimonial-quote-label">
-              Juan Taborda – Villas y Fincas Mallorca · 20 años en el sector · Mallorca
-            </p>
-            <blockquote>
-              «El principal problema que teníamos era gestionar el alto volumen de llamadas,
-              especialmente en alquiler —en Baleares puede haber 200+ solicitudes por una sola
-              vivienda. Queríamos una atención más personalizada que un simple contestador. <strong
-                >Ahora atendemos 24h los 7 días, no perdemos contactos y precualificamos en una
-                fracción del tiempo</strong
-              >, incluso en picos de demanda. Funciona muy bien, está muy pulido.»
-            </blockquote>
-          </div>
-          <div class="testimonial-quote-block testimonial-quote-block--card">
-            <p class="testimonial-quote-label">
-              Arturo Chavarría – MyCantabria Inmobiliaria · Cantabria
-            </p>
-            <blockquote>
-              «La verdad es que la prueba ha sido perfecta y me ha gustado muchísimo. Considero que
-              el servicio es muy funcional y suficiente para una inmobiliaria pequeña o mediana,
-              especialmente para gestionar los contactos que no puedes atender cuando estás
-              realizando otras funciones. <strong
-                >Sin lugar a dudas, volvería a contratar con VivaSpeak en el futuro.</strong
-              >»
-            </blockquote>
-          </div>
-        </div>
+    <div class="testimonial-block">
+      <h3 class="testimonial-block__title">Testimonio en vídeo</h3>
+      <p class="testimonial-block__author">
+        <strong>Daniel Insa</strong> – Agente inmobiliario RE/MAX · Málaga
+      </p>
+      <p class="testimonial-block__quote">
+        <em
+          >"Gracias a Laura, puedo atender a más clientes sin interrumpir mi trabajo. Ella responde
+          llamadas, filtra consultas y agenda visitas en mi calendario."</em
+        >
+      </p>
+      <iframe
+        width="315"
+        height="560"
+        src="https://www.youtube.com/embed/vmtha03C92E"
+        title="Testimonio de Daniel Insa - Agente inmobiliario"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
 
-        <p class="testimonial-cta">
-          <a href="#cta-final" class="btn-primary">Ver demo en directo</a>
+    <div
+      class="testimonial-block"
+      style="padding-top: var(--space-6); border-top: 1px solid var(--color-border);"
+    >
+      <h3 class="testimonial-block__title">Otros inmobiliarios</h3>
+      <div class="testimonial-quote-block">
+        <p class="testimonial-quote-label">
+          Juan Taborda – Villas y Fincas Mallorca · 20 años en el sector · Mallorca
         </p>
+        <blockquote>
+          «El principal problema que teníamos era gestionar el alto volumen de llamadas,
+          especialmente en alquiler —en Baleares puede haber 200+ solicitudes por una sola vivienda.
+          Queríamos una atención más personalizada que un simple contestador. <strong
+            >Ahora atendemos 24h los 7 días, no perdemos contactos y precualificamos en una fracción
+            del tiempo</strong
+          >, incluso en picos de demanda. Funciona muy bien, está muy pulido.»
+        </blockquote>
       </div>
-    </section>
-    <section id="faq">
-      <div class="container">
-        <h2>Preguntas Frecuentes</h2>
-        <div class="faq-container">
-          <details class="faq">
-            <summary><span class="faq-arrow">▶</span> ¿Qué hace Laura?</summary>
-            <div class="faq-content">
-              Atiende llamadas 24/7, cualifica (alquiler/venta, presupuesto, perfil), agenda visitas
-              y te envía un email con transcripción y resumen tras cada llamada.
-            </div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-arrow">▶</span> ¿Funciona con mi número?</summary>
-            <div class="faq-content">
-              Sí. Redirigimos tu número al agente o te asignamos uno nuevo. Sin cambiar de operador.
-            </div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-arrow">▶</span> ¿Puedo escuchar las grabaciones?</summary>
-            <div class="faq-content">
-              Sí. Todas las llamadas quedan en tu panel con grabación, transcripción y resumen.
-              Filtros por fecha y resultado.
-            </div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-arrow">▶</span> ¿Puedo probarlo sin compromiso?</summary>
-            <div class="faq-content">
-              Sí. Agenda una demo, vemos el panel y hacemos una llamada de prueba. Sin permanencia.
-            </div>
-          </details>
-          <details class="faq">
-            <summary><span class="faq-arrow">▶</span> ¿Hay que instalar algo?</summary>
-            <div class="faq-content">
-              No. Todo en la nube: acceso al panel, subes tu catálogo y Laura trabaja con tu
-              información.
-            </div>
-          </details>
-          <details class="faq">
-            <summary
-              ><span class="faq-arrow">▶</span> ¿Sirve para alquiler con mucha demanda (200+ llamadas)?</summary
-            >
-            <div class="faq-content">
-              Sí. Precisamente para eso. Filtra, registra y demuestra al propietario por qué no se
-              alquila antes.
-            </div>
-          </details>
-        </div>
+      <div class="testimonial-quote-block">
+        <p class="testimonial-quote-label">
+          Arturo Chavarría – MyCantabria Inmobiliaria · Cantabria
+        </p>
+        <blockquote>
+          «La verdad es que la prueba ha sido perfecta y me ha gustado muchísimo. Considero que el
+          servicio es muy funcional y suficiente para una inmobiliaria pequeña o mediana,
+          especialmente para gestionar los contactos que no puedes atender cuando estás realizando
+          otras funciones. <strong
+            >Sin lugar a dudas, volvería a contratar con VivaSpeak en el futuro.</strong
+          >»
+        </blockquote>
       </div>
-    </section>
-    <section id="cta-final">
-      <h2>¿Cómo funciona?</h2>
-      <ul class="use-case-features">
-        <li>
-          <span class="use-case-step-number">1.</span>
-          <span class="use-case-step-text"
-            >Acceso al panel y subes tu catálogo (o nos lo pasas).</span
-          >
-        </li>
-        <li>
-          <span class="use-case-step-number">2.</span>
-          <span class="use-case-step-text"
-            >Laura atiende llamadas 24/7 con tu criterio de filtro.</span
-          >
-        </li>
-        <li>
-          <span class="use-case-step-number">3.</span>
-          <span class="use-case-step-text"
-            >Recibes email por llamada y ves todo en el panel. Tú devuelves solo a quien interesa.</span
-          >
-        </li>
-      </ul>
-      <p class="cta-final-copy">En días, sin instalaciones.</p>
-      <a href="https://calendly.com/vivaspeak/30min" class="btn-secondary"> Ver demo en directo </a>
-    </section>
-    <section id="precios" class="pricing-anchor">
-      <div class="container">
-        <div class="section-header section-header--center">
-          <p class="eyebrow">Precios</p>
-          <h2>Desde 249 €/mes. Precio final definido en la demo según volumen e integraciones.</h2>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
 
-  <Footer langEnHref="/en/real-estate" langEsHref="/inmobiliaria" />
-</Layout>
+    <p class="testimonial-cta">
+      <a href="#cta-final" class="btn btn-primary">Ver demo en directo</a>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Preguntas Frecuentes</h2>
+    </div>
+    <div style="max-width: 860px; margin: 0 auto;">
+      <details class="accordion">
+        <summary>¿Qué hace Laura?</summary>
+        <div class="accordion-content">
+          Atiende llamadas 24/7, cualifica (alquiler/venta, presupuesto, perfil), agenda visitas y
+          te envía un email con transcripción y resumen tras cada llamada.
+        </div>
+      </details>
+      <details class="accordion">
+        <summary>¿Funciona con mi número?</summary>
+        <div class="accordion-content">
+          Sí. Redirigimos tu número al agente o te asignamos uno nuevo. Sin cambiar de operador.
+        </div>
+      </details>
+      <details class="accordion">
+        <summary>¿Puedo escuchar las grabaciones?</summary>
+        <div class="accordion-content">
+          Sí. Todas las llamadas quedan en tu panel con grabación, transcripción y resumen. Filtros
+          por fecha y resultado.
+        </div>
+      </details>
+      <details class="accordion">
+        <summary>¿Puedo probarlo sin compromiso?</summary>
+        <div class="accordion-content">
+          Sí. Agenda una demo, vemos el panel y hacemos una llamada de prueba. Sin permanencia.
+        </div>
+      </details>
+      <details class="accordion">
+        <summary>¿Hay que instalar algo?</summary>
+        <div class="accordion-content">
+          No. Todo en la nube: acceso al panel, subes tu catálogo y Laura trabaja con tu
+          información.
+        </div>
+      </details>
+      <details class="accordion">
+        <summary>¿Sirve para alquiler con mucha demanda (200+ llamadas)?</summary>
+        <div class="accordion-content">
+          Sí. Precisamente para eso. Filtra, registra y demuestra al propietario por qué no se
+          alquila antes.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="cta-final" class="section" style="background: var(--color-bg-subtle);">
+  <div class="container" style="text-align: center;">
+    <div class="section-header text-center">
+      <h2>¿Cómo funciona?</h2>
+    </div>
+    <div class="workflow" style="max-width: 570px; margin: 0 auto;">
+      <div class="workflow-step">
+        <span>1</span>
+        <div>
+          <h4>Acceso al panel</h4>
+          <p>Subes tu catálogo (o nos lo pasas).</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <span>2</span>
+        <div>
+          <h4>Laura atiende 24/7</h4>
+          <p>Con tu criterio de filtro.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <span>3</span>
+        <div>
+          <h4>Recibes email por llamada</h4>
+          <p>Ves todo en el panel. Tú devuelves solo a quien interesa.</p>
+        </div>
+      </div>
+    </div>
+    <p
+      style="margin-top: var(--space-6); font-weight: var(--font-semibold); color: var(--color-text-muted);"
+    >
+      En días, sin instalaciones.
+    </p>
+    <div style="margin-top: var(--space-4);">
+      <a href="https://calendly.com/vivaspeak/30min" class="btn btn-secondary"
+        >Ver demo en directo</a
+      >
+    </div>
+  </div>
+</section>
+
+<section class="section pricing-anchor">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="eyebrow">Precios</p>
+      <h2>Desde 249 €/mes. Precio final definido en la demo según volumen e integraciones.</h2>
+    </div>
+  </div>
+</section>
+
+<Footer langEnHref="/en/real-estate" langEsHref="/inmobiliaria" />

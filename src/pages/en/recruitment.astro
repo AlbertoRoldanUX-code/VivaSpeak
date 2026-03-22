@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import LandingHeader from '../../components/LandingHeader.astro';
 import Footer from '../../components/Footer.astro';
+import '../../../styles/landing.css';
 
 const schemaFaq = [
   {
@@ -29,7 +30,6 @@ const breadcrumb = [
   { name: 'Home', url: 'https://vivaspeak.com/en/' },
   { name: 'Recruitment with AI', url: 'https://vivaspeak.com/en/recruitment/' },
 ];
-import '../../../styles/recruiting.css';
 ---
 
 <Layout
@@ -46,8 +46,8 @@ import '../../../styles/recruiting.css';
   speakable={['.hero-title', '.faq-content']}
 >
   <LandingHeader lang="en" />
-  <main id="main-content" class="recruiting-landing">
-    <section id="hero">
+  <main id="main-content" class="landing">
+    <section class="landing-hero">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">AI Recruiting Agent</span>
@@ -57,8 +57,8 @@ import '../../../styles/recruiting.css';
             and outbound calls aligned to your criteria.
           </p>
           <div class="hero-actions">
-            <a href="#cta-final" class="btn-primary">Request a demo</a>
-            <a href="#solucion" class="btn-secondary">See the selection flow</a>
+            <a href="#cta-final" class="btn btn-primary">Request a demo</a>
+            <a href="#solucion" class="btn btn-secondary">See the selection flow</a>
           </div>
           <div class="hero-note">
             Built for HR and internal operations teams that need consistent, controlled processes.
@@ -92,12 +92,12 @@ import '../../../styles/recruiting.css';
       </div>
     </section>
 
-    <section id="problema">
+    <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">Problem</span>
           <h2>Slow recruiting in high-volume stages</h2>
-          <p class="section-subtitle">
+          <p>
             Pressure to fill roles increases when processes rely on manual calls and inconsistent
             criteria.
           </p>
@@ -112,17 +112,17 @@ import '../../../styles/recruiting.css';
       </div>
     </section>
 
-    <section id="solucion">
+    <section id="solucion" class="section" style="background: var(--color-bg-subtle);">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">VivaSpeak Solution</span>
           <h2>A voice assistant trained on your hiring criteria</h2>
-          <p class="section-subtitle">
+          <p>
             VivaSpeak automates the first filter, reduces operational load, and ensures a
             professional, consistent process.
           </p>
         </div>
-        <div class="solution-grid">
+        <div class="solutions-grid">
           <div class="solution-card">
             <h3>Tailored training</h3>
             <p>
@@ -151,57 +151,43 @@ import '../../../styles/recruiting.css';
       </div>
     </section>
 
-    <section id="funciones">
+    <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">What the agent does</span>
           <h2>Clear actions, no friction for the team</h2>
-          <p class="section-subtitle">
-            Built for early screening with control and traceability in every interaction.
-          </p>
+          <p>Built for early screening with control and traceability in every interaction.</p>
         </div>
         <ul class="agent-bullets">
-          <li>
-            <p>Calls candidates automatically in inbound and outbound flows.</p>
-          </li>
-          <li>
-            <p>Applies knockout questions defined by HR.</p>
-          </li>
-          <li>
-            <p>Detects language, availability, and basic fit.</p>
-          </li>
-          <li>
-            <p>Schedules interviews in Google Calendar.</p>
-          </li>
-          <li>
-            <p>Escalates to a human when extra validation is needed.</p>
-          </li>
+          <li><p>Calls candidates automatically in inbound and outbound flows.</p></li>
+          <li><p>Applies knockout questions defined by HR.</p></li>
+          <li><p>Detects language, availability, and basic fit.</p></li>
+          <li><p>Schedules interviews in Google Calendar.</p></li>
+          <li><p>Escalates to a human when extra validation is needed.</p></li>
         </ul>
       </div>
     </section>
 
-    <section id="casos-uso">
+    <section class="section" style="background: var(--color-bg-subtle);">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">Use cases</span>
           <h2>Typical scenarios in mid-sized and large companies</h2>
-          <p class="section-subtitle">
-            Ideal for internal operations with distributed processes and high operational load.
-          </p>
+          <p>Ideal for internal operations with distributed processes and high operational load.</p>
         </div>
-        <div class="use-case-grid">
-          <div class="use-case-card">
+        <div class="grid grid-3">
+          <div class="card">
             <h3>Large workforces</h3>
             <p>Early screening for roles with ongoing hiring needs or high volume.</p>
           </div>
-          <div class="use-case-card">
+          <div class="card">
             <h3>Multi-service companies</h3>
             <p>
               Standardized processes across sites, business units, or internal clients with
               different criteria.
             </p>
           </div>
-          <div class="use-case-card">
+          <div class="card">
             <h3>Internal operations</h3>
             <p>Recruiting for support, logistics, back office, and shared services teams.</p>
           </div>
@@ -209,17 +195,17 @@ import '../../../styles/recruiting.css';
       </div>
     </section>
 
-    <section id="integraciones">
+    <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="eyebrow">How it integrates</span>
           <h2>Connects with your HR stack without friction</h2>
-          <p class="section-subtitle">
+          <p>
             Enterprise-grade integrations for traceability and coordination with your recruiting
             team.
           </p>
         </div>
-        <div class="integration-grid">
+        <div class="grid grid-3">
           <div class="integration-card">
             <h3>Google Calendar</h3>
             <p>Schedules interviews and syncs availability in real time.</p>
@@ -236,14 +222,15 @@ import '../../../styles/recruiting.css';
       </div>
     </section>
 
-    <section id="cta-final">
+    <section id="cta-final" class="section landing-cta">
       <div class="container">
         <div class="cta-card">
           <h2>Align your pilot with a specialist</h2>
           <p class="section-subtitle">
             We review your hiring criteria and design a call flow aligned to internal requirements.
           </p>
-          <a href="https://calendly.com/vivaspeak/30min" class="btn-primary">Talk to a specialist</a
+          <a href="https://calendly.com/vivaspeak/30min" class="btn btn-primary"
+            >Talk to a specialist</a
           >
           <p class="cta-note">Compatible with internal compliance and data protection processes.</p>
         </div>

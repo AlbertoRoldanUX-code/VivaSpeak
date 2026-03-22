@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
 
 const schemaFaq = [
   {
@@ -129,146 +130,101 @@ const schemaReviews = [
   schemaHowTo={schemaHowTo}
   schemaVideos={schemaVideos}
   schemaReviews={schemaReviews}
-  speakable={[
-    '.home-title',
-    '.home-description',
-    '.faq-content',
-    '.value-card p',
-    '.results-card p',
-  ]}
+  speakable={['.home-title', '.home-description', '.faq-content', '.card p']}
 >
   <Header />
   <main id="main-content">
-    <section id="home">
-      <div class="container home-container">
-        <div class="hero-bg-accent hero-bg-accent-one"></div>
-        <div class="hero-bg-accent hero-bg-accent-two"></div>
-        <div class="hero-grid">
-          <div class="hero-left">
-            <h1 class="home-title">
-              Atiende llamadas, WhatsApp y filtra leads automáticamente 24/7
-            </h1>
-            <p class="home-description">
-              Agenda citas, cualifica contactos y usa nuestro CRM o actualiza el tuyo sin
-              interrumpir tu trabajo
-            </p>
-            <p class="home-urgency">
-              Tus clientes no esperan. Si no respondes en segundos, llaman al siguiente.
-            </p>
-            <div class="cta-buttons">
-              <a
-                href="#schedule"
-                class="btn-primary"
-                data-ga-event="hero_try_agent_click"
-                data-ga-location="hero"
-              >
-                Reserva reunión
-              </a>
-              <a
-                href="#video-demo"
-                class="btn-secondary"
-                data-ga-event="hero_demo_click"
-                data-ga-location="hero"
-              >
-                <i class="fa-solid fa-play"></i> Ver cómo funciona
-              </a>
-            </div>
-            <div class="hero-trust">
-              <div class="hero-stats">
-                <div class="hero-stat">
-                  <strong>&lt; 2 s</strong>
-                  <span>tiempo medio de respuesta</span>
-                </div>
-                <div class="hero-stat">
-                  <strong>24/7</strong>
-                  <span>atención automática</span>
-                </div>
-                <div class="hero-stat">
-                  <strong>0</strong>
-                  <span>llamadas perdidas</span>
-                </div>
-              </div>
-            </div>
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="eyebrow">Agentes IA para empresas</p>
+          <h1 class="home-title">Atiende llamadas, WhatsApp y filtra leads automáticamente 24/7</h1>
+          <p class="hero-subtitle home-description">
+            Agenda citas, cualifica contactos y usa nuestro CRM o actualiza el tuyo sin interrumpir
+            tu trabajo
+          </p>
+          <div class="hero-actions">
+            <a
+              href="#schedule"
+              class="btn btn-primary"
+              data-ga-event="hero_try_agent_click"
+              data-ga-location="hero"
+            >
+              Reserva reunión
+            </a>
+            <a
+              href="#video-demo"
+              class="btn btn-secondary"
+              data-ga-event="hero_demo_click"
+              data-ga-location="hero"
+            >
+              <Icon name="play" size={14} /> Ver cómo funciona
+            </a>
           </div>
-          <div class="hero-right">
-            <div class="hero-mockup">
-              <picture>
-                <source srcset="/assets/whatsapp-mockup.webp" type="image/webp" />
-                <img
-                  src="/assets/whatsapp-mockup.webp"
-                  alt="Conversación de un agente VivaSpeak en WhatsApp"
-                  class="clickable-image"
-                  fetchpriority="high"
-                  loading="eager"
-                />
-              </picture>
-              <div class="mockup-overlay">
-                <div class="mockup-counter">
-                  <span id="mockupCounter">+1 cita confirmada</span>
-                </div>
-                <div class="mockup-check">
-                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                </div>
-                <div class="mockup-toast" role="status" aria-live="polite">
-                  <span class="mockup-toast__label">Nueva cita creada</span>
-                  <span class="mockup-toast__time">· 16:00</span>
-                  <span class="mockup-toast__name">Silvia Pérez</span>
-                </div>
-              </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>&lt; 2 s</strong>
+              <span>tiempo medio de respuesta</span>
             </div>
-            <div class="hero-floating-card">
-              <i class="fa-solid fa-robot"></i>
-              <div>
-                <p class="card-label">Agente Laura</p>
-                <p class="card-value">Confirma una cita en 42s</p>
-              </div>
+            <div class="hero-stat">
+              <strong>24/7</strong>
+              <span>atención automática</span>
+            </div>
+            <div class="hero-stat">
+              <strong>0</strong>
+              <span>llamadas perdidas</span>
             </div>
           </div>
         </div>
+        <div class="hero-visual">
+          <picture>
+            <source srcset="/assets/whatsapp-mockup.webp" type="image/webp" />
+            <img
+              src="/assets/whatsapp-mockup.webp"
+              alt="Conversación de un agente VivaSpeak en WhatsApp"
+              fetchpriority="high"
+              loading="eager"
+            />
+          </picture>
+        </div>
       </div>
     </section>
-    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Vista ampliada">
-      <span class="close" aria-label="Cerrar">&times;</span>
-      <img
-        class="modal-content"
-        id="modalImg"
-        alt="Visual ampliada de la conversación de un agente VivaSpeak en WhatsApp"
-      />
-    </div>
-    <section id="value-prop" class="value-summary">
+    <section id="value-prop" class="section">
       <div class="container">
-        <p class="eyebrow">Cómo funciona VivaSpeak</p>
-        <h2>Tu agente IA atiende, cualifica y agenda sin fricción</h2>
-        <div class="value-grid">
-          <article class="value-card">
-            <span class="value-step">1</span>
+        <div class="section-header text-center">
+          <p class="eyebrow">Cómo funciona VivaSpeak</p>
+          <h2>Tu agente IA atiende, cualifica y agenda sin fricción</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-icon">1</div>
             <h3>Un cliente llama o escribe por WhatsApp</h3>
             <p>La IA responde al instante con voz natural.</p>
           </article>
-          <article class="value-card">
-            <span class="value-step">2</span>
+          <article class="card">
+            <div class="card-icon">2</div>
             <h3>La IA cualifica y responde preguntas</h3>
             <p>Accede a tu base de conocimiento para resolver dudas reales.</p>
           </article>
-          <article class="value-card">
-            <span class="value-step">3</span>
+          <article class="card">
+            <div class="card-icon">3</div>
             <h3>Agenda una cita en tu calendario real</h3>
             <p>Conecta con Google Calendar, CRM o agenda interna.</p>
           </article>
-          <article class="value-card">
-            <span class="value-step">4</span>
+          <article class="card">
+            <div class="card-icon">4</div>
             <h3>Tu equipo recibe un resumen automático</h3>
             <p>Email o WhatsApp con la conversación y la siguiente acción.</p>
           </article>
-          <article class="value-card value-card--panel">
-            <span class="value-step">5</span>
+          <article class="card">
+            <div class="card-icon">5</div>
             <h3>Consulta todos los leads en un panel siempre disponible</h3>
             <p>
               Un CRM visual donde puedes ver, filtrar y gestionar todos los contactos de un vistazo.
             </p>
           </article>
-          <article class="value-card">
-            <span class="value-step">6</span>
+          <article class="card">
+            <div class="card-icon">6</div>
             <h3>Llama o envía mensajes desde el panel sin salir del sistema</h3>
             <p>
               Activa seguimientos, responde contactos y lanza llamadas o mensajes sin salir del
@@ -278,35 +234,35 @@ const schemaReviews = [
         </div>
       </div>
     </section>
-    <section id="use-cases" class="results">
+    <section id="use-cases" class="section" style="background: var(--color-bg-subtle);">
       <div class="container">
-        <div class="section-header section-header--center">
+        <div class="section-header text-center">
           <p class="eyebrow">Qué problemas resuelve VivaSpeak</p>
           <h2>Los puntos donde más se te escapan llamadas, citas y leads</h2>
         </div>
-        <div class="results-grid">
-          <article class="results-card">
+        <div class="grid grid-2">
+          <article class="card">
             <h3>No puedes atender llamadas mientras trabajas</h3>
             <p>El agente atiende, filtra y agenda por ti sin cortar tu operación.</p>
           </article>
-          <article class="results-card">
+          <article class="card">
             <h3>Te escriben fuera de horario</h3>
             <p>Responde WhatsApp automáticamente y deja la conversación encarrilada.</p>
           </article>
-          <article class="results-card">
+          <article class="card">
             <h3>Pierdes leads de formularios</h3>
             <p>La IA llama o responde al instante antes de que el lead se enfríe.</p>
           </article>
-          <article class="results-card">
+          <article class="card">
             <h3>Recibes demasiadas consultas repetidas</h3>
             <p>La IA contesta preguntas frecuentes y solo escala lo importante.</p>
           </article>
         </div>
       </div>
     </section>
-    <section id="audience" class="value-summary">
+    <section id="audience" class="section">
       <div class="container">
-        <div class="section-header section-header--center">
+        <div class="section-header text-center">
           <p class="eyebrow">Qué puede hacer VivaSpeak</p>
           <h2>
             Especialmente útil para negocios que reciben más consultas de las que pueden atender
@@ -316,42 +272,42 @@ const schemaReviews = [
             competencia, VivaSpeak está pensado para tu negocio.
           </p>
         </div>
-        <div class="value-grid audience-grid">
-          <article class="value-card">
+        <div class="grid grid-3">
+          <article class="card">
             <h3>Respuestas a preguntas</h3>
             <p>
               Responde instantáneamente a cualquier pregunta que le hagan sobre tu negocio para que
               no tengas que repetir continuamente la misma información.
             </p>
           </article>
-          <article class="value-card">
+          <article class="card">
             <h3>Agendamiento de citas</h3>
             <p>
               Agenda visitas automáticamente. Refresca tu base de datos para ver qué contacto tiene
               potencial.
             </p>
           </article>
-          <article class="value-card">
+          <article class="card">
             <h3>Filtrado de leads</h3>
             <p>
               Cualifica al lead y no pierdas tiempo con interacciones que no llevan a ningún lado.
             </p>
           </article>
-          <article class="value-card">
+          <article class="card">
             <h3>Captación de leads</h3>
             <p>
               Contacta leads al instante por teléfono antes de que se enfríen para ver si realmente
               pueden traer algún valor.
             </p>
           </article>
-          <article class="value-card">
+          <article class="card">
             <h3>Envío de recordatorios</h3>
             <p>
               Envía mensajes antes de la cita para que tus clientes no se olviden y puedan
               confirmar.
             </p>
           </article>
-          <article class="value-card">
+          <article class="card">
             <h3>Envío de petición de reseñas</h3>
             <p>
               Pide a tus clientes que escriban unas palabras en Google sobre la experiencia con tu
@@ -362,16 +318,16 @@ const schemaReviews = [
       </div>
     </section>
 
-    <section id="price" class="pricing-anchor">
+    <section id="price" class="section">
       <div class="container">
-        <div class="section-header section-header--center">
+        <div class="section-header text-center">
           <p class="eyebrow">Automatiza tu negocio desde el primer mes</p>
           <h2>Precio según volumen de llamadas e integraciones.</h2>
           <p>La mayoría de clientes empiezan entre 150 € y 400 € al mes.</p>
-          <div class="cta-buttons">
+          <div class="hero-actions" style="justify-content: center; margin-top: var(--space-6);">
             <a
               href="#contact"
-              class="btn-primary"
+              class="btn btn-primary"
               data-ga-event="pricing_try_agent_click"
               data-ga-location="pricing"
             >
@@ -381,10 +337,9 @@ const schemaReviews = [
         </div>
       </div>
     </section>
-    <section id="video-demo">
+    <section id="video-demo" class="section" style="background: var(--color-bg-subtle);">
       <div class="container">
-        <div class="section-header">
-          <img src="/assets/video.png" alt="Icono de video" class="section-icon" />
+        <div class="section-header text-center">
           <p class="eyebrow">Demo interactiva</p>
           <h2>Mira cómo funciona en 90 segundos</h2>
           <p>
@@ -393,8 +348,11 @@ const schemaReviews = [
             equipo en cuestión de segundos.
           </p>
         </div>
-        <div class="demo-grid">
-          <div class="demo-video-card">
+        <div class="grid grid-2" style="align-items: center;">
+          <div
+            class="card"
+            style="padding: 0; overflow: hidden; display: flex; justify-content: center;"
+          >
             <iframe
               width="315"
               height="560"
@@ -402,27 +360,39 @@ const schemaReviews = [
               title="Demo Clara VivaSpeak - Agente de voz IA para clínicas"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+              allowfullscreen
+              style="border-radius: var(--radius-lg);"></iframe>
           </div>
-          <div class="demo-details">
-            <ul class="checklist">
-              <li>Reserva citas con confirmación en tiempo real.</li>
-              <li>Tu equipo recibe un resumen automático por email.</li>
-              <li>Puede transferir la llamada a una persona cuando la conversación lo exige.</li>
+          <div>
+            <ul
+              style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-4);"
+            >
+              <li style="display: flex; align-items: flex-start; gap: var(--space-3);">
+                <span style="color: var(--primary); font-size: var(--text-xl);">✓</span>
+                <span>Reserva citas con confirmación en tiempo real.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-3);">
+                <span style="color: var(--primary); font-size: var(--text-xl);">✓</span>
+                <span>Tu equipo recibe un resumen automático por email.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: var(--space-3);">
+                <span style="color: var(--primary); font-size: var(--text-xl);">✓</span>
+                <span
+                  >Puede transferir la llamada a una persona cuando la conversación lo exige.</span
+                >
+              </li>
             </ul>
-
-            <div class="cta-buttons">
-              <a href="#contact" class="btn-primary">Haznos una pregunta</a>
-              <a href="#schedule" class="btn-secondary">Reserva una reunión</a>
+            <div class="hero-actions" style="margin-top: var(--space-6);">
+              <a href="#contact" class="btn btn-primary">Haznos una pregunta</a>
+              <a href="#schedule" class="btn btn-secondary">Reserva una reunión</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Sección de Testimonios y Estudios de Caso -->
-    <section id="testimonials">
+    <section id="testimonials" class="section" style="background: var(--color-bg-subtle);">
       <div class="container">
-        <div class="section-header section-header--center">
+        <div class="section-header text-center">
           <p class="eyebrow">Resultados reales</p>
           <h2>Testimonios y casos de éxito</h2>
           <p>
@@ -431,188 +401,175 @@ const schemaReviews = [
           </p>
         </div>
 
-        <div class="testimonials-grid">
-          <!-- Testimonio 1: Daniel Insa (card compacta con vídeo) -->
-          <div class="testimonial-item testimonial-item--video">
-            <div class="testimonial-content">
-              <div class="testimonial-author">
-                <h3>Daniel Insa</h3>
-                <p class="author-role">Agente inmobiliario</p>
-                <p class="author-details">+15 años de experiencia en el sector</p>
-              </div>
-
-              <div class="testimonial-media">
-                <iframe
-                  width="315"
-                  height="560"
-                  src="https://www.youtube.com/embed/vmtha03C92E"
-                  title="Testimonio de Daniel Insa - Agente inmobiliario"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <div style="margin-bottom: var(--space-4);">
+              <h3>Daniel Insa</h3>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">
+                Agente inmobiliario
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">
+                +15 años de experiencia en el sector
+              </p>
+            </div>
+            <div style="border-radius: var(--radius-md); overflow: hidden;">
+              <iframe
+                width="315"
+                height="560"
+                src="https://www.youtube.com/embed/vmtha03C92E"
+                title="Testimonio de Daniel Insa - Agente inmobiliario"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="display: block; max-width: 100%;"></iframe>
             </div>
           </div>
 
-          <!-- Testimonio 2: Reinaldo Rodríguez -->
-          <div class="testimonial-item no-video">
-            <div class="testimonial-content">
-              <div class="testimonial-author">
-                <h3>Reinaldo Rodríguez</h3>
-                <p class="author-role">Director de AllGrass</p>
-                <p class="author-details">Césped artificial y jardinería · Madrid</p>
-              </div>
-
-              <div class="testimonial-media">
-                <img
-                  src="/assets/allgrass-logo.webp"
-                  alt="Logo AllGrass"
-                  class="testimonial-placeholder"
-                />
-              </div>
-
-              <blockquote class="testimonial-quote">
-                "Gracias a VivaSpeak optimizamos la gestión de llamadas para prestar un mejor
-                servicio. <strong>Rebeca</strong> atiende en
-                <strong>4 idiomas</strong> y nos envía un email tras cada conversación. Ha sido una inversión
-                que se ha pagado sola."
-              </blockquote>
-
-              <div class="testimonial-tags">
-                <span class="tag">🌍 4 idiomas</span>
-                <span class="tag">⚡ Respuesta instantánea</span>
-                <span class="tag">🌱 Jardinería</span>
-                <span class="tag">📊 Panel online</span>
-              </div>
+          <div class="card">
+            <div style="margin-bottom: var(--space-4);">
+              <h3>Reinaldo Rodríguez</h3>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">
+                Director de AllGrass
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">
+                Césped artificial y jardinería · Madrid
+              </p>
+            </div>
+            <div style="margin-bottom: var(--space-4);">
+              <img
+                src="/assets/allgrass-logo.webp"
+                alt="Logo AllGrass"
+                style="max-height: 48px; width: auto;"
+                loading="lazy"
+              />
+            </div>
+            <blockquote
+              style="font-style: italic; margin: 0 0 var(--space-4); line-height: var(--leading-relaxed); color: var(--color-text);"
+            >
+              "Gracias a VivaSpeak optimizamos la gestión de llamadas para prestar un mejor
+              servicio. <strong>Rebeca</strong> atiende en
+              <strong>4 idiomas</strong> y nos envía un email tras cada conversación. Ha sido una inversión
+              que se ha pagado sola."
+            </blockquote>
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="badge">🌍 4 idiomas</span>
+              <span class="badge">⚡ Respuesta instantánea</span>
+              <span class="badge">🌱 Jardinería</span>
+              <span class="badge">📊 Panel online</span>
             </div>
           </div>
 
-          <!-- Testimonio 3: Juan Taborda -->
-          <div class="testimonial-item no-video">
-            <div class="testimonial-content">
-              <div class="testimonial-author">
-                <h3>Juan Taborda</h3>
-                <p class="author-role">Villas y Fincas Mallorca</p>
-                <p class="author-details">20 años en el sector · Alquiler en Baleares</p>
-              </div>
-
-              <blockquote class="testimonial-quote">
-                "El principal problema que teníamos era gestionar el alto volumen de llamadas,
-                especialmente en alquiler —en Baleares puede haber 200+ solicitudes por una sola
-                vivienda. Queríamos una atención más personalizada que un simple contestador. <strong
-                  >Ahora atendemos 24h los 7 días, no perdemos contactos y precualificamos en una
-                  fracción del tiempo</strong
-                >, incluso en picos de demanda. Funciona muy bien, está muy pulido."
-              </blockquote>
-
-              <div class="testimonial-tags">
-                <span class="tag">🏠 Alquiler Baleares</span>
-                <span class="tag">⚡ Soporta picos</span>
-                <span class="tag">📞 200+ solicitudes/vivienda</span>
-                <span class="tag">✅ Filtro real</span>
-              </div>
+          <div class="card">
+            <div style="margin-bottom: var(--space-4);">
+              <h3>Juan Taborda</h3>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">
+                Villas y Fincas Mallorca
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">
+                20 años en el sector · Alquiler en Baleares
+              </p>
+            </div>
+            <blockquote
+              style="font-style: italic; margin: 0 0 var(--space-4); line-height: var(--leading-relaxed); color: var(--color-text);"
+            >
+              "El principal problema que teníamos era gestionar el alto volumen de llamadas,
+              especialmente en alquiler —en Baleares puede haber 200+ solicitudes por una sola
+              vivienda. Queríamos una atención más personalizada que un simple contestador. <strong
+                >Ahora atendemos 24h los 7 días, no perdemos contactos y precualificamos en una
+                fracción del tiempo</strong
+              >, incluso en picos de demanda. Funciona muy bien, está muy pulido."
+            </blockquote>
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="badge">🏠 Alquiler Baleares</span>
+              <span class="badge">⚡ Soporta picos</span>
+              <span class="badge">📞 200+ solicitudes/vivienda</span>
+              <span class="badge">✅ Filtro real</span>
             </div>
           </div>
 
-          <!-- Testimonio 4: Arturo Chavarría (mismo nivel que Juan, sin ilustración) -->
-          <div class="testimonial-item no-video">
-            <div class="testimonial-content">
-              <div class="testimonial-author">
-                <h3>Arturo Chavarría</h3>
-                <p class="author-role">MyCantabria Inmobiliaria</p>
-                <p class="author-details">Inmobiliaria · Cantabria</p>
-              </div>
-
-              <blockquote class="testimonial-quote">
-                "La verdad es que la prueba ha sido perfecta y me ha gustado muchísimo. Considero
-                que el servicio es muy funcional y suficiente para una inmobiliaria pequeña o
-                mediana, especialmente para gestionar los contactos que no puedes atender cuando
-                estás realizando otras funciones. <strong
-                  >Sin lugar a dudas, volvería a contratar con VivaSpeak en el futuro.</strong
-                >"
-              </blockquote>
-
-              <div class="testimonial-tags">
-                <span class="tag">🏠 Inmobiliaria Cantabria</span>
-                <span class="tag">📞 Gestión de contactos</span>
-                <span class="tag">⚡ Atender cuando no puedes</span>
-                <span class="tag">✅ Sin duda volvería</span>
-              </div>
+          <div class="card">
+            <div style="margin-bottom: var(--space-4);">
+              <h3>Arturo Chavarría</h3>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">
+                MyCantabria Inmobiliaria
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">
+                Inmobiliaria · Cantabria
+              </p>
+            </div>
+            <blockquote
+              style="font-style: italic; margin: 0 0 var(--space-4); line-height: var(--leading-relaxed); color: var(--color-text);"
+            >
+              "La verdad es que la prueba ha sido perfecta y me ha gustado muchísimo. Considero que
+              el servicio es muy funcional y suficiente para una inmobiliaria pequeña o mediana,
+              especialmente para gestionar los contactos que no puedes atender cuando estás
+              realizando otras funciones. <strong
+                >Sin lugar a dudas, volvería a contratar con VivaSpeak en el futuro.</strong
+              >"
+            </blockquote>
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="badge">🏠 Inmobiliaria Cantabria</span>
+              <span class="badge">📞 Gestión de contactos</span>
+              <span class="badge">⚡ Atender cuando no puedes</span>
+              <span class="badge">✅ Sin duda volvería</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq">
+    <section id="faq" class="section">
       <div class="container">
-        <img src="/assets/faq-icon.png" alt="Icono de preguntas frecuentes" class="image" />
-        <h2>Preguntas Frecuentes (FAQ)</h2>
-        <div class="faq-container">
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span>
-              ¿Qué es exactamente VivaSpeak?
-            </summary>
-            <div class="faq-content">
+        <div class="section-header text-center">
+          <p class="eyebrow">FAQ</p>
+          <h2>Preguntas Frecuentes</h2>
+        </div>
+        <div style="max-width: 720px; margin: 0 auto;">
+          <details class="accordion">
+            <summary>¿Qué es exactamente VivaSpeak?</summary>
+            <div class="accordion-content faq-content">
               Un sistema de automatización de negocios, que se especializa en la comunicación por
               voz y WhatsApp. Para responder dudas usamos la información del negocio que es editable
               desde nuestro panel. Nuestros agentes se especializan en cualificar leads.
             </div>
           </details>
 
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span>
-              ¿Cómo se estructura el precio?
-            </summary>
-            <div class="faq-content">
+          <details class="accordion">
+            <summary>¿Cómo se estructura el precio?</summary>
+            <div class="accordion-content faq-content">
               El precio se define por agente según volumen, sector e integraciones. Te damos un
               único plan operativo sin desglose técnico.
             </div>
           </details>
 
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span>
-              ¿Se integra con mis herramientas?
-            </summary>
-            <div class="faq-content">
+          <details class="accordion">
+            <summary>¿Se integra con mis herramientas?</summary>
+            <div class="accordion-content faq-content">
               Sí. Conectamos Google Calendar, HubSpot, CRMs propios y agendas con API, además de la
               API oficial de WhatsApp. Incluimos guías de desvío y de compartición de calendario.
             </div>
           </details>
 
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span>
-              ¿Puedo probarlo antes de contratarlo?
-            </summary>
-            <div class="faq-content">
+          <details class="accordion">
+            <summary>¿Puedo probarlo antes de contratarlo?</summary>
+            <div class="accordion-content faq-content">
               Cada agente incluye un piloto de una semana con tus flujos reales y KPIs compartidos
               en el panel.
             </div>
           </details>
 
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span>
-              ¿Qué idiomas cubre?
-            </summary>
-            <div class="faq-content">
+          <details class="accordion">
+            <summary>¿Qué idiomas cubre?</summary>
+            <div class="accordion-content faq-content">
               Los agentes suelen usar un idioma principal y le podemos añadir hasta 3 adicionales,
               entre ellos se encuentran español, inglés, portugués, francés, italiano y alemán.
               Pregunta por otros idiomas o acentos antes del lanzamiento.
             </div>
           </details>
 
-          <details class="faq">
-            <summary>
-              <span class="faq-arrow">▶</span>
-              ¿Puede el agente de voz IA transferir la llamada a una persona?
-            </summary>
-            <div class="faq-content">
+          <details class="accordion">
+            <summary>¿Puede el agente de voz IA transferir la llamada a una persona?</summary>
+            <div class="accordion-content faq-content">
               Sí, se puede programar que por ejemplo en caso de urgencia o filtrado positivo se
               transfiera la llamada a la persona adecuada.
             </div>
@@ -621,36 +578,54 @@ const schemaReviews = [
       </div>
     </section>
     <!-- Contacto -->
-    <section id="contact">
-      <div class="contact-call-box">
-        <p class="question">📞 ¿Prefieres hablar?</p>
-        <p class="answer">
-          Llama al
-          <strong><a href="tel:+34951798932">+34 951 798 932</a></strong>
-          y nuestra agente IA te dará los básicos mientras te conectamos con un especialista.
-        </p>
-      </div>
+    <section id="contact" class="section">
       <div class="container">
-        <div class="section-header section-header--center">
-          <img src="/assets/contacto.png" alt="Icono de contacto" class="section-icon" />
+        <div
+          class="card"
+          style="text-align: center; padding: var(--space-6); margin-bottom: var(--space-10); background: var(--color-bg-subtle);"
+        >
+          <p style="font-weight: var(--font-semibold); margin: 0 0 var(--space-2);">
+            📞 ¿Prefieres hablar?
+          </p>
+          <p style="margin: 0; color: var(--color-text-muted);">
+            Llama al
+            <strong
+              ><a href="tel:+34951798932" style="color: var(--primary-dark); text-decoration: none;"
+                >+34 951 798 932</a
+              ></strong
+            >
+            y nuestra agente IA te dará los básicos mientras te conectamos con un especialista.
+          </p>
+        </div>
+        <div class="section-header text-center">
           <p class="eyebrow">Contacto</p>
           <h2>Cuéntanos qué necesitas automatizar</h2>
           <p>Te respondemos el mismo día.</p>
         </div>
-        <div class="contact-layout">
-          <div class="contact-info-card">
+        <div class="grid grid-2" style="align-items: start;">
+          <div class="card">
             <h3>¿Qué recibirás?</h3>
-            <ul class="contact-list">
+            <ul
+              style="list-style: none; padding: 0; margin: var(--space-4) 0; display: flex; flex-direction: column; gap: var(--space-3);"
+            >
               <li>✅ Recomendación de agente y canales necesarios.</li>
               <li>🛠️ Checklist de integraciones (calendarios, CRM, agenda).</li>
               <li>💰 Costes claros de setup y soporte.</li>
             </ul>
-            <div class="contact-highlight">
-              <p>Soporte: L-V 9:00-19:00 CET</p>
-              <a href="tel:+34951798932" class="link-style">+34 951 798 932</a>
+            <div
+              style="padding: var(--space-4); background: var(--color-bg-subtle); border-radius: var(--radius-md);"
+            >
+              <p style="margin: 0 0 var(--space-2); font-weight: var(--font-medium);">
+                Soporte: L-V 9:00-19:00 CET
+              </p>
+              <a
+                href="tel:+34951798932"
+                style="color: var(--primary-dark); text-decoration: none; font-weight: var(--font-semibold);"
+                >+34 951 798 932</a
+              >
             </div>
           </div>
-          <div class="contact-form">
+          <div>
             <form
               action="/exito"
               name="contact"
@@ -659,90 +634,124 @@ const schemaReviews = [
               data-netlify-honeypot="bot-field"
               data-ga-submit="form_submit"
               data-ga-location="contact_form"
+              style="display: flex; flex-direction: column; gap: var(--space-4);"
             >
               <input type="hidden" name="form-name" value="contact" />
-              <label for="name">Nombre</label>
-              <input type="text" name="name" id="name" required />
-
-              <label for="email">Correo electrónico</label>
-              <input type="email" name="email" id="email" required />
-
-              <label for="solution-type">¿Qué necesitas automatizar?</label>
-              <div class="radio-group">
-                <label>
-                  <input type="radio" name="solution-type" value="leads-sales" required />
-                  Captación de leads / ventas
-                </label>
-                <label>
-                  <input type="radio" name="solution-type" value="bookings" />
-                  Reservas y agenda
-                </label>
-                <label>
-                  <input type="radio" name="solution-type" value="support" />
-                  Soporte / atención al cliente
-                </label>
-                <label>
-                  <input type="radio" name="solution-type" value="operations" />
-                  Operaciones internas / RRHH
-                </label>
-                <label>
-                  <input type="radio" name="solution-type" value="not-sure" />
-                  No estoy seguro, necesito asesoría
-                </label>
+              <div>
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" required />
               </div>
-
-              <label for="message">Mensaje</label>
-              <textarea name="message" id="message" required></textarea>
-
-              <div class="consent-container">
-                <input type="checkbox" id="privacy-consent" class="checkbox-style" required />
-                <label for="privacy-consent">
+              <div>
+                <label for="email">Correo electrónico</label>
+                <input type="email" name="email" id="email" required />
+              </div>
+              <div>
+                <label for="solution-type">¿Qué necesitas automatizar?</label>
+                <div
+                  style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-2);"
+                >
+                  <label
+                    style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-base); color: var(--color-text);"
+                  >
+                    <input type="radio" name="solution-type" value="leads-sales" required />
+                    Captación de leads / ventas
+                  </label>
+                  <label
+                    style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-base); color: var(--color-text);"
+                  >
+                    <input type="radio" name="solution-type" value="bookings" />
+                    Reservas y agenda
+                  </label>
+                  <label
+                    style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-base); color: var(--color-text);"
+                  >
+                    <input type="radio" name="solution-type" value="support" />
+                    Soporte / atención al cliente
+                  </label>
+                  <label
+                    style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-base); color: var(--color-text);"
+                  >
+                    <input type="radio" name="solution-type" value="operations" />
+                    Operaciones internas / RRHH
+                  </label>
+                  <label
+                    style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-base); color: var(--color-text);"
+                  >
+                    <input type="radio" name="solution-type" value="not-sure" />
+                    No estoy seguro, necesito asesoría
+                  </label>
+                </div>
+              </div>
+              <div>
+                <label for="message">Mensaje</label>
+                <textarea name="message" id="message" required></textarea>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: var(--space-2);">
+                <input type="checkbox" id="privacy-consent" required />
+                <label
+                  for="privacy-consent"
+                  style="font-size: var(--text-sm); color: var(--color-text);"
+                >
                   Acepto los
-                  <a href="terminos-y-condiciones" target="_blank" class="link-style"
-                    >Términos y Condiciones</a
+                  <a
+                    href="terminos-y-condiciones"
+                    target="_blank"
+                    style="color: var(--primary-dark);">Términos y Condiciones</a
                   >
                   y la
-                  <a href="politica-de-privacidad" target="_blank" class="link-style"
-                    >Política de Privacidad</a
+                  <a
+                    href="politica-de-privacidad"
+                    target="_blank"
+                    style="color: var(--primary-dark);">Política de Privacidad</a
                   >.
                 </label>
               </div>
               <div data-netlify-recaptcha="true"></div>
-              <button type="submit" class="btn-primary btn-contact"> Enviar </button>
+              <button type="submit" class="btn btn-primary" style="width: 100%;"> Enviar </button>
             </form>
           </div>
         </div>
-        <!-- <section id="schedule"> -->
-        <div id="schedule" class="contact-calendly" aria-label="Agendar una reunión">
+        <div
+          id="schedule"
+          class="card"
+          style="margin-top: var(--space-12); text-align: center;"
+          aria-label="Agendar una reunión"
+        >
           <h3>¿Prefieres elegir hora?</h3>
-          <p>Reserva una demo con pantalla compartida.</p>
+          <p style="color: var(--color-text-muted);">Reserva una demo con pantalla compartida.</p>
           <div class="calendly-inline-widget" data-url="https://calendly.com/vivaspeak/30min"></div>
         </div>
-        <!-- </section> -->
       </div>
     </section>
-    <section class="footer-cta">
-      <div class="container footer-cta__content">
+    <section class="section" style="background: var(--color-bg-subtle);">
+      <div
+        class="container"
+        style="display: flex; flex-direction: column; gap: var(--space-6); align-items: center; text-align: center;"
+      >
         <div>
           <p class="eyebrow">Último empujón</p>
-          <h3>
+          <h3
+            style="font-size: var(--text-3xl); font-weight: var(--font-bold); color: var(--gray-900); margin: var(--space-3) 0 0; line-height: var(--leading-tight);"
+          >
             En 7 días puedes tener un agente IA atendiendo llamadas y WhatsApp automáticamente.
           </h3>
-          <p>
+          <p
+            style="font-size: var(--text-lg); color: var(--color-text-muted); margin: var(--space-3) 0 0; line-height: var(--leading-relaxed);"
+          >
             Configuramos el agente a medida para que no vuelvas a perder oportunidades por no
             contestar a tiempo.
           </p>
         </div>
-        <div class="footer-cta__actions">
+        <div class="hero-actions" style="justify-content: center;">
           <a
             href="#contact"
-            class="btn-primary"
+            class="btn btn-primary"
             data-ga-event="footer_try_agent_click"
             data-ga-location="footer"
           >
             Envía una pregunta
           </a>
-          <a href="#schedule" class="btn-secondary">Reservar un hueco para hablar</a>
+          <a href="#schedule" class="btn btn-secondary">Reservar un hueco para hablar</a>
         </div>
       </div>
     </section>

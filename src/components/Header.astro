@@ -3,42 +3,181 @@ import '../../styles/header.css';
 const { lang = 'es' } = Astro.props;
 const isEn = lang === 'en';
 const base = isEn ? '/en' : '';
+
+const navItems = [
+  { href: `${base}/#value-prop`, label: isEn ? 'How it works' : 'Cómo funciona' },
+  { href: `${base}/#use-cases`, label: isEn ? 'Use cases' : 'Casos de uso' },
+  { href: `${base}/#price`, label: isEn ? 'Pricing' : 'Precio' },
+  { href: `${base}/#contact`, label: isEn ? 'Contact' : 'Contacto' },
+];
+
+const ctaLabel = isEn ? 'Book meeting' : 'Reserva reunión';
+const ctaHref = `${base}/#schedule`;
+const loginLabel = isEn ? 'Log in' : 'Iniciar sesión';
+const loginHref = 'https://panel.vivaspeak.com/login';
+const menuOpenLabel = isEn ? 'Open main menu' : 'Abrir menú principal';
+const menuCloseLabel = isEn ? 'Close main menu' : 'Cerrar menú principal';
 ---
 
-<header>
+<header class="site-header">
   <div class="header-container">
-    <div class="brand">
+    <div class="header-brand">
       <a href={isEn ? '/en/' : '/'}>
         <img
           src="/assets/Logo transparente cropped.png"
-          alt={isEn ? 'VivaSpeak logo - AI agents for calls and WhatsApp' : 'Logotipo de VivaSpeak - Agentes de IA para llamadas y WhatsApp'}
+          alt={isEn
+            ? 'VivaSpeak logo - AI agents for calls and WhatsApp'
+            : 'Logotipo de VivaSpeak - Agentes de IA para llamadas y WhatsApp'}
         />
       </a>
     </div>
-    <nav class="top-nav">
-      <div class="menu-toggle">
-        <a id="hamburger" aria-label={isEn ? 'Open main menu' : 'Abrir menú principal'}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-      </div>
 
+    <!-- Hamburger (mobile only, hidden on desktop via CSS) -->
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="nav-panel"
+      aria-label={menuOpenLabel}
+      data-label-open={menuOpenLabel}
+      data-label-close={menuCloseLabel}
+    >
+      <span class="hamburger-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <!-- Desktop nav (hidden on mobile via CSS) -->
+    <nav class="desktop-nav" aria-label={isEn ? 'Main navigation' : 'Navegación principal'}>
       <ul class="nav-list">
-        <li><a href={`${base}/#value-prop`}>{isEn ? 'How it works' : 'Cómo funciona'}</a></li>
-        <li><a href={`${base}/#use-cases`}>{isEn ? 'Use cases' : 'Casos de uso'}</a></li>
-        <li><a href={`${base}/#price`}>{isEn ? 'Pricing' : 'Precio'}</a></li>
-        <li><a href={`${base}/#contact`}>{isEn ? 'Contact' : 'Contacto'}</a></li>
-        <li><a class="btn-primary" href={`${base}/#schedule`}>{isEn ? 'Book meeting' : 'Reserva reunión'}</a></li>
-        <li class="nav-item-login">
-          <a
-            href="https://panel.vivaspeak.com/login"
-            class="btn-login"
-            target="_blank"
-            rel="noopener noreferrer">{isEn ? 'Log in' : 'Iniciar sesión'}</a
-          >
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+        <li class="nav-cta"><a href={ctaHref}>{ctaLabel}</a></li>
+        <li class="nav-login">
+          <a href={loginHref} target="_blank" rel="noopener noreferrer">{loginLabel}</a>
         </li>
       </ul>
     </nav>
   </div>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="nav-overlay" data-open="false" aria-hidden="true"></div>
+
+  <!-- Mobile nav panel (slide-in) -->
+  <nav
+    class="nav-panel"
+    id="nav-panel"
+    data-open="false"
+    aria-label={isEn ? 'Mobile navigation' : 'Navegación móvil'}
+    role="dialog"
+    aria-modal="true"
+  >
+    <ul class="nav-list">
+      {
+        navItems.map((item) => (
+          <li>
+            <a href={item.href}>{item.label}</a>
+          </li>
+        ))
+      }
+      <li class="nav-cta"><a href={ctaHref}>{ctaLabel}</a></li>
+      <li class="nav-login">
+        <a href={loginHref} target="_blank" rel="noopener noreferrer">{loginLabel}</a>
+      </li>
+    </ul>
+  </nav>
 </header>
+
+<script>
+  function initMobileMenu() {
+    const toggle = document.getElementById('menu-toggle') as HTMLElement | null;
+    const panel = document.getElementById('nav-panel') as HTMLElement | null;
+    const overlay = document.getElementById('nav-overlay') as HTMLElement | null;
+    if (!toggle || !panel || !overlay) return;
+
+    const labelOpen = (toggle as HTMLElement & { dataset: DOMStringMap }).dataset.labelOpen || '';
+    const labelClose = (toggle as HTMLElement & { dataset: DOMStringMap }).dataset.labelClose || '';
+
+    function openMenu() {
+      toggle!.setAttribute('aria-expanded', 'true');
+      toggle!.setAttribute('aria-label', labelClose);
+      (panel! as HTMLElement).dataset.open = 'true';
+      (overlay! as HTMLElement).dataset.open = 'true';
+      overlay!.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const firstLink = panel!.querySelector('a') as HTMLElement | null;
+      if (firstLink) firstLink.focus();
+    }
+
+    function closeMenu() {
+      toggle!.setAttribute('aria-expanded', 'false');
+      toggle!.setAttribute('aria-label', labelOpen);
+      (panel! as HTMLElement).dataset.open = 'false';
+      (overlay! as HTMLElement).dataset.open = 'false';
+      overlay!.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      toggle!.focus();
+    }
+
+    function isOpen(): boolean {
+      return toggle!.getAttribute('aria-expanded') === 'true';
+    }
+
+    toggle.addEventListener('click', () => {
+      isOpen() ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    // Close on nav link click
+    panel.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen()) {
+        closeMenu();
+      }
+    });
+
+    // Focus trap: toggle button + all focusable elements inside the panel
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key !== 'Tab' || !isOpen()) return;
+
+      const focusableEls = Array.from(
+        panel!.querySelectorAll<HTMLElement>('a, button, [tabindex]:not([tabindex="-1"])')
+      );
+      // Include the toggle button as part of the trap so Shift+Tab from first link wraps to toggle
+      const allFocusable: HTMLElement[] = [toggle! as HTMLElement, ...focusableEls];
+      const first = allFocusable[0];
+      const last = allFocusable[allFocusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
+    // Reset on resize to desktop
+    const mq = window.matchMedia('(min-width: 1024px)');
+    mq.addEventListener('change', (e) => {
+      if (e.matches && isOpen()) closeMenu();
+    });
+  }
+
+  // Run on initial load and on Astro page transitions
+  initMobileMenu();
+  document.addEventListener('astro:after-swap', initMobileMenu);
+</script>

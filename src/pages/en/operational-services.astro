@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import LandingHeader from '../../components/LandingHeader.astro';
 import Footer from '../../components/Footer.astro';
-import '../../../styles/servicios-operativos.css';
+import '../../../styles/landing.css';
 ---
 
 <Layout
@@ -15,10 +15,14 @@ import '../../../styles/servicios-operativos.css';
   ogImage="/assets/og-image.png"
   lang="en"
 >
-  <LandingHeader lang="en" ctaLabel="Schedule a call" ctaHref="https://calendly.com/vivaspeak/30min" />
-  <main id="main-content" class="landing-sector">
-    <section class="sector-hero">
-      <div class="container hero-grid-sector">
+  <LandingHeader
+    lang="en"
+    ctaLabel="Schedule a call"
+    ctaHref="https://calendly.com/vivaspeak/30min"
+  />
+  <main id="main-content" class="landing">
+    <section class="landing-hero">
+      <div class="container hero-grid">
         <div>
           <p class="eyebrow">For multiservice companies and distributed teams</p>
           <h1 class="hero-title">
@@ -28,12 +32,12 @@ import '../../../styles/servicios-operativos.css';
             VivaSpeak coordinates calls, WhatsApp and email to control clock-ins, detect incidents
             and unreported absences, leaving traceability and reports ready for HR and operations.
           </p>
-          <div class="hero-cta">
-            <a class="btn-primary" href="https://calendly.com/vivaspeak/30min">
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://calendly.com/vivaspeak/30min">
               Schedule a quick call
             </a>
             <a
-              class="btn-secondary"
+              class="btn btn-secondary"
               href="mailto:info@vivaspeak.com?subject=VivaSpeak%20-%20Operational%20communications"
               >Contact by email</a
             >
@@ -66,16 +70,16 @@ import '../../../styles/servicios-operativos.css';
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <div class="container">
-        <h2 class="sector-section-title sector-section-title--narrow">
-          Structured internal communication, not just scattered messages
-        </h2>
-        <p class="section-lead section-lead--center">
-          The difference is not just contacting people, but doing it in an orderly, measurable and
-          repeatable way. VivaSpeak orchestrates multi-channel campaigns, collects responses and
-          consolidates information in a single dashboard.
-        </p>
+        <div class="section-header text-center">
+          <h2>Structured internal communication, not just scattered messages</h2>
+          <p>
+            The difference is not just contacting people, but doing it in an orderly, measurable and
+            repeatable way. VivaSpeak orchestrates multi-channel campaigns, collects responses and
+            consolidates information in a single dashboard.
+          </p>
+        </div>
         <div class="sector-grid">
           <article class="sector-card">
             <h4>Smart segmentation</h4>
@@ -100,19 +104,22 @@ import '../../../styles/servicios-operativos.css';
             You define the flow and VivaSpeak executes, records and leaves reports ready for
             internal audit.
           </p>
-          <a class="btn-primary" href="https://calendly.com/vivaspeak/30min"> See fit on a call </a>
+          <a class="btn btn-primary" href="https://calendly.com/vivaspeak/30min">
+            See fit on a call
+          </a>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section" style="background: var(--color-bg-subtle);">
       <div class="container">
-        <h2 class="sector-section-title">How would the pilot work for your team?</h2>
-        <p class="section-lead section-lead--center">
-          In 3 steps we can have the operational flow running and validate it with a representative
-          group of employees.
-        </p>
-
+        <div class="section-header text-center">
+          <h2>How would the pilot work for your team?</h2>
+          <p>
+            In 3 steps we can have the operational flow running and validate it with a
+            representative group of employees.
+          </p>
+        </div>
         <div class="workflow">
           <div class="workflow-step">
             <span>1</span>
@@ -153,13 +160,15 @@ import '../../../styles/servicios-operativos.css';
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <div class="container">
-        <h2 class="sector-section-title">Coordinated channels for maximum coverage</h2>
-        <p class="section-lead section-lead--center">
-          We use the most effective channel based on the employee profile and the type of
-          communication, always with traceability.
-        </p>
+        <div class="section-header text-center">
+          <h2>Coordinated channels for maximum coverage</h2>
+          <p>
+            We use the most effective channel based on the employee profile and the type of
+            communication, always with traceability.
+          </p>
+        </div>
         <div class="sector-grid">
           <article class="sector-card">
             <h4>AI calls</h4>
@@ -181,13 +190,15 @@ import '../../../styles/servicios-operativos.css';
       </div>
     </section>
 
-    <section>
+    <section class="section" style="background: var(--color-bg-subtle);">
       <div class="container">
-        <h2 class="sector-section-title">Compliance and data protection</h2>
-        <p class="section-lead section-lead--center">
-          Designed for companies with transparency, compliance and ESG goals. Flows are built with
-          consent and minimal exposure of personal data.
-        </p>
+        <div class="section-header text-center">
+          <h2>Compliance and data protection</h2>
+          <p>
+            Designed for companies with transparency, compliance and ESG goals. Flows are built with
+            consent and minimal exposure of personal data.
+          </p>
+        </div>
         <div class="sector-grid">
           <article class="sector-card">
             <h4>Consent and opt-out</h4>
@@ -209,10 +220,12 @@ import '../../../styles/servicios-operativos.css';
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <div class="container">
-        <h2 class="sector-section-title">Quick questions</h2>
-        <div class="faq-grid">
+        <div class="section-header text-center">
+          <h2>Quick questions</h2>
+        </div>
+        <div class="faq-grid" style="max-width: 860px; margin: 0 auto;">
           <details class="faq-item">
             <summary>Can we start with an initial pilot?</summary>
             <p>
@@ -237,20 +250,22 @@ import '../../../styles/servicios-operativos.css';
       </div>
     </section>
 
-    <section>
-      <div class="container final-cta">
-        <h2>If it fits, let’s talk this week</h2>
-        <p class="final-cta-text">
-          In a short call we can define the flow for clock-ins and incidents, and set up a fast
-          pilot.
-        </p>
-        <div class="hero-cta">
-          <a class="btn-primary" href="https://calendly.com/vivaspeak/30min"> Book a call </a>
-          <a
-            class="btn-secondary"
-            href="mailto:info@vivaspeak.com?subject=VivaSpeak%20-%20Operational%20Pilot"
-            >Send an email</a
-          >
+    <section class="section">
+      <div class="container">
+        <div class="final-cta">
+          <h2>If it fits, let's talk this week</h2>
+          <p>
+            In a short call we can define the flow for clock-ins and incidents, and set up a fast
+            pilot.
+          </p>
+          <div class="hero-actions" style="justify-content: center; margin-top: var(--space-6);">
+            <a class="btn btn-primary" href="https://calendly.com/vivaspeak/30min"> Book a call </a>
+            <a
+              class="btn btn-secondary"
+              href="mailto:info@vivaspeak.com?subject=VivaSpeak%20-%20Operational%20Pilot"
+              >Send an email</a
+            >
+          </div>
         </div>
       </div>
     </section>

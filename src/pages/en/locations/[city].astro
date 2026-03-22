@@ -2,7 +2,8 @@
 import Layout from '../../../layouts/Layout.astro';
 import LandingHeader from '../../../components/LandingHeader.astro';
 import Footer from '../../../components/Footer.astro';
-import '../../../../styles/ubicaciones.css';
+import Icon from '../../../components/Icon.astro';
+import '../../../../styles/locations.css';
 import { offices } from '../../../data/offices';
 import type { Office } from '../../../data/offices';
 
@@ -102,38 +103,38 @@ const localBusinessJsonLd = JSON.stringify({
         <p class="eyebrow">VivaSpeak in {office.province}</p>
         <h1>AI Voice Agent in {office.city}</h1>
         <p class="location-hero__sub">{office.descriptionEn}</p>
-        <a href="/en/#schedule" class="btn-primary">Request a demo</a>
+        <a href="/en/#schedule" class="btn btn-primary">Request a demo</a>
       </div>
     </section>
     <section class="location-services">
       <div class="container">
         <h2>What VivaSpeak can do for your business</h2>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+        <div class="grid grid-2">
+          <article class="card">
+            <div class="card-icon"><Icon name="phone" size={20} /></div>
             <h3>AI Voice Calls</h3>
             <p>
               Answer calls 24/7 with a natural voice, schedule appointments and resolve common
               questions.
             </p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+          <article class="card">
+            <div class="card-icon"><Icon name="whatsapp" size={20} /></div>
             <h3>WhatsApp Chatbot</h3>
             <p>Reply to messages automatically, check availability and book appointments.</p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon">
-              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          <article class="card">
+            <div class="card-icon">
+              <Icon name="calendar-check" size={20} />
             </div>
             <h3>Smart Scheduling</h3>
             <p>
               Integrates with your scheduling software or Google Calendar to optimise your agenda.
             </p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon">
-              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          <article class="card">
+            <div class="card-icon">
+              <Icon name="chart-line" size={20} />
             </div>
             <h3>CRM &amp; Dashboard</h3>
             <p>Manage calls, messages, leads and appointments from a single online dashboard.</p>
@@ -163,20 +164,18 @@ const localBusinessJsonLd = JSON.stringify({
               </p>
               <div class="location-office__contact">
                 <p>
-                  <i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+34951798932"
-                    >(+34) 951 798 932</a
-                  >
+                  <Icon name="phone" size={16} /><a href="tel:+34951798932">(+34) 951 798 932</a>
                 </p>
                 <p>
-                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><a
+                  <Icon name="whatsapp" size={16} class="icon-whatsapp" /><a
                     href="https://wa.me/34951795151"
                     target="_blank"
                     rel="noopener noreferrer">Chat on WhatsApp</a
                   >
                 </p>
                 <p>
-                  <i class="fa-solid fa-envelope" aria-hidden="true"></i><a
-                    href="mailto:info@vivaspeak.com">info@vivaspeak.com</a
+                  <Icon name="envelope" size={16} /><a href="mailto:info@vivaspeak.com"
+                    >info@vivaspeak.com</a
                   >
                 </p>
               </div>
@@ -202,11 +201,9 @@ const localBusinessJsonLd = JSON.stringify({
         <div class="faq-container">
           {
             schemaFaq.map((faq) => (
-              <details class="faq">
-                <summary>
-                  <span class="faq-arrow">▶</span> {faq.question}
-                </summary>
-                <div class="faq-content">{faq.answer}</div>
+              <details class="accordion">
+                <summary>{faq.question}</summary>
+                <div class="accordion-content">{faq.answer}</div>
               </details>
             ))
           }
@@ -218,13 +215,13 @@ const localBusinessJsonLd = JSON.stringify({
         <h2>Get started today in {office.city}</h2>
         <p>Automate calls, WhatsApp and customer service with AI. Request a personalised demo.</p>
         <div class="cta-buttons">
-          <a href="/en/#schedule" class="btn-primary">Request a demo</a>
+          <a href="/en/#schedule" class="btn btn-primary">Request a demo</a>
           <a
             href="https://wa.me/34951795151"
-            class="btn-secondary"
+            class="btn btn-secondary"
             target="_blank"
             rel="noopener noreferrer"
-            ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Chat on WhatsApp</a
+            ><Icon name="whatsapp" size={18} /> Chat on WhatsApp</a
           >
         </div>
         <nav class="location-cta__links" aria-label="Related pages">

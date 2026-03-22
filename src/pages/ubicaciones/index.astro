@@ -2,7 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import LandingHeader from '../../components/LandingHeader.astro';
 import Footer from '../../components/Footer.astro';
-import '../../../styles/locations-index.css';
+import Icon from '../../components/Icon.astro';
+import '../../../styles/locations.css';
 import { offices } from '../../data/offices';
 
 const sorted = offices.slice().sort((a, b) => a.city.localeCompare(b.city, 'es'));
@@ -28,7 +29,7 @@ const breadcrumb = [
     <section class="locations-hero">
       <div class="container">
         <p class="eyebrow">
-          <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ubicaciones
+          <Icon name="location-dot" size={16} /> Ubicaciones
         </p>
         <h1>Agente de Voz IA en toda España</h1>
         <p class="locations-hero__sub">
@@ -75,13 +76,13 @@ const breadcrumb = [
                 data-province={office.province.toLowerCase()}
               >
                 <div class="location-card__icon">
-                  <i class="fa-solid fa-building" aria-hidden="true" />
+                  <Icon name="building" size={20} />
                 </div>
                 <p class="location-card__province">{office.province}</p>
                 <h3>{office.city}</h3>
                 <p class="location-card__coworking">{office.coworking}</p>
                 <span class="location-card__link">
-                  Ver oficina <i class="fa-solid fa-arrow-right" aria-hidden="true" />
+                  Ver oficina <Icon name="arrow-right" size={14} />
                 </span>
               </a>
             ))
@@ -97,14 +98,14 @@ const breadcrumb = [
         <h2>Automatiza tu negocio hoy</h2>
         <p>Solicita una demo personalizada y descubre cómo VivaSpeak puede ayudarte.</p>
         <div class="cta-buttons">
-          <a href="/#schedule" class="btn-primary">Solicitar demo</a>
+          <a href="/#schedule" class="btn btn-primary">Solicitar demo</a>
           <a
             href="https://wa.me/34951795151"
-            class="btn-secondary"
+            class="btn btn-secondary"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+            <Icon name="whatsapp" size={18} /> WhatsApp
           </a>
         </div>
       </div>
